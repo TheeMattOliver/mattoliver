@@ -18,7 +18,7 @@ export const COLORS = {
   dropdownPanelBackground: {
     light: 'hsl(0deg, 0%, 100%)',
     dark: 'hsl(212deg, 8%, 24%)' // near-black
-  }, 
+  },
   primary: {
     light: 'hsl(0deg, 0%, 0%)', // white
     dark: 'hsl(50deg, 100%, 50%)', // yellow
@@ -49,9 +49,24 @@ export const COLORS = {
     dark: 'hsl(0deg, 0%, 70%)',
   },
   gray900: {
-    light: 'hsl(220deg, 26%, 14%)', // text-color900
+    light: 'hsl(0deg, 0%, 10%)',
     dark: 'hsl(210deg, 38%, 95%)' // text-color200
   },
+};
+
+// For this site, we'll going desktop-first.
+export const BREAKPOINTS = {
+  phone: 600,
+  tablet: 950,
+  laptop: 1300,
+};
+
+// default size is for large screens, so use max-width bc we want things to apply if it 
+// is this size or smaller 
+export const QUERIES = {
+  phoneAndSmaller: `(max-width: ${BREAKPOINTS.phone / 16}rem)`,
+  tabletAndSmaller: `(max-width: ${BREAKPOINTS.tablet / 16}rem)`,
+  laptopAndSmaller: `(max-width: ${BREAKPOINTS.laptop / 16}rem)`,
 };
 
 export const COLOR_MODE_KEY = 'color-mode';
