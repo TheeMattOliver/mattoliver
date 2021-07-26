@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Website`,
-    description: `Website description.`,
+    title: `Matt Oliver`,
+    description: `Product portfolio for Matt Oliver, a product manager and web developer, based in Austin, Texas.`,
     author: `Matt Oliver`,
     siteUrl: `https://github.com/theemattoliver`
   },

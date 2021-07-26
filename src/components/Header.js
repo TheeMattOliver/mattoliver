@@ -13,7 +13,6 @@ const Wrapper = styled.header`
 `;
 
 const Header = (siteTitle) => {
-	console.log('siteTitle Header: ', siteTitle)
 	const { title } = siteTitle
 	return (
 		<>
@@ -37,15 +36,15 @@ const Header = (siteTitle) => {
 				</nav>
 			</Wrapper>
 		</>
-		)
+	)
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+	siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+	siteTitle: ``,
 }
 
 export default Header
