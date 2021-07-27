@@ -8,6 +8,8 @@ import BrightTitle from '../components/BrightTitle'
 
 const HomeContainer = styled.div`
 	padding: 16px;
+	width: 100%;
+	background-color: honeydew; 
 `;
 
 const SecondaryHead = styled.h2`
@@ -25,7 +27,7 @@ export default function Home() {
 		<>
 			<Layout>
 				<HomeContainer>
-					<BrightTitle>
+					{/* <BrightTitle className="text-red-500">
 						Big H1
 					</BrightTitle>
 					<SecondaryHead>
@@ -36,7 +38,7 @@ export default function Home() {
 					</TertiaryHead>
 					<StyledLink>
 						I am a link
-					</StyledLink>
+					</StyledLink> */}
 				</HomeContainer>
 			</Layout>
 		</>

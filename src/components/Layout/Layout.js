@@ -6,11 +6,7 @@ import styled from "styled-components"
 import Header from "../Header"
 import Footer from "../Footer"
 
-const MainWrapper = styled.div`
-  background-color: var(--color-background);
-`;
-
-const Layout = ({ children }) => {
+const Layout = ({ children, ...props }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,18 +21,35 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header title={data.site.siteMetadata.title} />
-      <div className="flex flex-col h-screen justify-between">
-        <main className="mb-auto">
-          <MainWrapper>
+      <Wrapper>
+        <Header title={data.site.siteMetadata.title} />
+        {/* <div className="flex flex-col justify-between"> */}
+        <Middle>
+          <Main>
             {children}
-          </MainWrapper>
-        </main>
+          </Main>
+        </Middle>
         <Footer data={data.site.siteMetadata} />
-      </div>
+        {/* </div> */}
+      </Wrapper>
     </>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+`;
+const Middle = styled.section`
+  flex: 1;
+  display: flex;
+`;
+const Main = styled.main`
+  background-color: var(--color-background);
+  display: flex;
+  flex: 3;
+`;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

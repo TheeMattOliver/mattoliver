@@ -8,7 +8,7 @@ const Footer = (siteMetaData) => {
 	const { title, siteUrl } = siteMetaData.data
 
 	return (
-		<FooterWrapper className="max-w-7xl px-4 py-6 space-x-10">
+		<FooterWrapper className="px-4 py-6 space-x-10">
 			<FooterLeft className="space-x-4">
 				<FooterCredit>
 					&copy; {new Date().getFullYear()}
@@ -44,6 +44,7 @@ export default Footer
 const FooterWrapper = styled.footer`
 	display: flex;
 	background: var(--color-background);
+	border: 2px solid black;
 `;
 const FooterLeft = styled.div`
 	margin-right: auto;
