@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import DarkToggle from './DarkToggle'
-import LanguageFlyoutMenu from './LanguageFlyoutMenu'
+import DarkToggle from '../DarkToggle'
+import LanguageFlyoutMenu from '../LanguageFlyoutMenu'
 
 const Header = (siteTitle) => {
 	const { title } = siteTitle

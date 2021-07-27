@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-tailwind-intl-darkmode",
+  "name": "Oliver portfolio site",
   "private": true,
-  "description": "Starter for Gatsby, Tailwind, Internationalization, Dark Mode and Styled Components",
+  "description": "Product & dev portfolio for Matt Oliver.",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {

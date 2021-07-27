@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import LanguageList from './LanguageList'
+import LanguageList from '../LanguageList/LanguageList'
 
 const LanguagesPanelDiv = styled.div`
 	background: var(--color-panelBackground);

@@ -5,6 +5,9 @@ import { Link } from "gatsby"
 
 const FooterWrapper = styled.footer`
 	background: var(--color-background);
+	li {
+		color: var(--color-textPrimary);
+	}
 `;
 
 const FooterLeftContent = styled.div`
