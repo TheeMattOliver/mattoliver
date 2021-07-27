@@ -13,8 +13,7 @@ const Header = (siteTitle) => {
 			<NavWrapper className="flex space-between px-4 py-4 space-x-10 items-baseline">
 				<Logo to="/">
 					<span className="sr-only">Return to home page</span>
-					{/* {title} */}
-					Site title
+					{title}
 				</Logo>
 				<LanguageFlyoutMenu />
 				<DarkToggleIcon />
@@ -29,7 +28,7 @@ const NavWrapper = styled.header`
 	}
 	display: flex;
 	background: var(--color-background);
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid var(--color-borderPrimary);
 `;
 
 const Logo = styled(Link)`
