@@ -8,6 +8,10 @@ Design system:
 
 [Figma](https://www.figma.com/file/U7LRjFK3yqItc2eJe7cPdM/Oliver-Portfolio-2021?node-id=0%3A1)
 
+Fonts:
+
+- `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`
+
 ## 🚀 Run locally:
 
 1.  **Install.**
