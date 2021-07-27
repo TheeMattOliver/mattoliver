@@ -1,31 +1,27 @@
 export const COLORS = {
-  text: {
-    light: 'hsl(0deg, 0%, 10%)', // white
-    dark: 'hsl(0deg, 0%, 100%)', // near-black
+  textPrimary: {
+    light: 'hsl(210deg, 12%, 16%)', // dark grey #24292E
+    dark: 'hsl(210deg, 17%, 82%)', // light grey #C9D1D9
+  },
+  textSecondary: {
+    light: 'hsl(212deg, 9%, 38%)', // gry #586069
+    dark: 'hsl(212deg, 9%, 58%)' // light grey #8B949E
+  },
+  textTertiary: {
+    light: 'hsl(212deg, 8%, 45%)', // grey #6A737D
+    dark: 'hsl(212deg, 9%, 58%)', // light grey #C9D1D9
+  },
+  textLink: {
+    light: 'hsl(212deg, 97%, 43%)', // blue #0366D6
+    dark: 'hsl(212deg, 100%, 67%)', // light blue #58A6FF
   },
   background: {
     light: 'hsl(0deg, 0%, 100%)', // white
-    dark: 'hsl(200deg, 20%, 9%)', // black
-  },
-  footerBackground: {
-    light: 'hsl(200deg, 20%, 9%)', // navy navy blue
-    dark: 'hsl(240deg, 1%, 72%)', // medium-gray #7b7b7b
-  },
-  footerText: {
-    light: 'hsl(0deg, 0%, 100%)', // near-black
-    dark: 'hsl(200deg, 20%, 9%)', // near-black    
+    dark: 'hsl(216deg, 28%, 7%)', // near-black #0D1117
   },
   dropdownPanelBackground: {
     light: 'hsl(0deg, 0%, 100%)',
-    dark: 'hsl(212deg, 8%, 24%)' // near-black
-  },
-  primary: {
-    light: 'hsl(0deg, 0%, 0%)', // white
-    dark: 'hsl(50deg, 100%, 50%)', // yellow
-  },
-  secondary: {
-    light: 'hsl(250deg, 100%, 50%)', // Purplish-blue
-    dark: 'hsl(190deg, 100%, 40%)', // Cyan
+    dark: 'hsl(0deg, 0%, 100%)' // 
   },
   langPrimary: {
     light: 'hsl(0deg, 0%, 0%)', // white
@@ -36,6 +32,14 @@ export const COLORS = {
     dark: 'hsl(0deg, 0%, 50%)',
   },
   // Grays, scaling from least-noticeable to most-noticeable
+  gray50: {
+    light: 'hsl(0deg, 0%, 96%)',
+    dark: 'hsl(0deg, 0%, 30%)',
+  },
+  gray100: {
+    light: 'hsl(0deg, 0%, 90%)',
+    dark: 'hsl(0deg, 0%, 30%)',
+  },
   gray300: {
     light: 'hsl(0deg, 0%, 70%)',
     dark: 'hsl(0deg, 0%, 30%)',
