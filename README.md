@@ -1,12 +1,7 @@
 <!-- START -->
 <h1 align="center">
-  MGO Portfolio site. more.
+  MGO Portfolio site. 
 </h1>
-<h2 align="center">
-Built with Gatsby, Tailwind CSS, SSR, and 
-</h2>
-
-i18n is currently enabled with a local plugin that re-implements `gatsby-plugin-intl` for Gatsby V3.
 
 ## 🚀 Quick start
 
