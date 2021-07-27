@@ -9,7 +9,7 @@ const Header = (siteTitle) => {
 	const { title } = siteTitle
 	return (
 		<>
-			<NavWrapper className="max-w-7xl mx-auto px-4 space-x-10 items-baseline">
+			<NavWrapper className="max-w-7xl mx-auto px-4 py-4 space-x-10 items-baseline">
 				<Logo>{title}</Logo>
 				<LanguageFlyoutMenu />
 				<DarkToggle />
@@ -19,11 +19,11 @@ const Header = (siteTitle) => {
 }
 
 const NavWrapper = styled.header`
-	background: var(--color-background);
-	nav {
+	a, div {
 		color: var(--color-textPrimary);
 	}
 	display: flex;
+	background: var(--color-background);
 `;
 
 const Logo = styled.a`

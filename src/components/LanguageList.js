@@ -22,7 +22,7 @@ const LanguageList = () => {
               role="button"
               tabIndex={0}
               style={{
-                color: currentLocale === language ? `var(--color-langPrimary)` : `var(--color-langSecondary)`,
+                color: currentLocale === language ? `var(--color-textPrimary)` : `var(--color-textSecondary)`,
                 margin: 10,
                 textDecoration: `underline`,
                 cursor: `pointer`

@@ -19,17 +19,9 @@ export const COLORS = {
     light: 'hsl(0deg, 0%, 100%)', // white
     dark: 'hsl(216deg, 28%, 7%)', // near-black #0D1117
   },
-  dropdownPanelBackground: {
-    light: 'hsl(0deg, 0%, 100%)',
-    dark: 'hsl(0deg, 0%, 100%)' // 
-  },
-  langPrimary: {
-    light: 'hsl(0deg, 0%, 0%)', // white
-    dark: 'hsl(212deg, 18%, 81%)', // light-gray-blue
-  },
-  langSecondary: {
-    light: 'hsl(0deg, 0%, 50%)',
-    dark: 'hsl(0deg, 0%, 50%)',
+  panelBackground: {
+    light: 'hsl(0deg, 0%, 100%)', // white
+    dark: 'hsl(210deg, 12%, 16%)' // charcoal-black #24292E
   },
   // Grays, scaling from least-noticeable to most-noticeable
   gray50: {
@@ -54,7 +46,7 @@ export const COLORS = {
   },
   gray900: {
     light: 'hsl(0deg, 0%, 10%)',
-    dark: 'hsl(210deg, 38%, 95%)' // text-color200
+    dark: 'hsl(210deg, 38%, 95%)'
   },
 };
 
