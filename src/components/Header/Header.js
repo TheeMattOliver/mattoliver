@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby"
 
-import DarkToggle from '../DarkToggle'
+import DarkToggleIcon from "../DarkToggleIcon"
 import LanguageFlyoutMenu from '../LanguageFlyoutMenu'
 
 const Header = (siteTitle) => {
@@ -11,12 +11,12 @@ const Header = (siteTitle) => {
 	return (
 		<>
 			<NavWrapper className="max-w-7xl mx-auto px-4 py-4 space-x-10 items-baseline">
-				<Logo>
+				<Logo to="/">
 					<span className="sr-only">Return to home page</span>
 					{title}
 				</Logo>
 				<LanguageFlyoutMenu />
-				<DarkToggle />
+				<DarkToggleIcon />
 			</NavWrapper>
 		</>
 	)
