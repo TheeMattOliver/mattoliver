@@ -10,7 +10,8 @@ import {
   INITIAL_COLOR_MODE_CSS_PROP,
 } from './src/constants';
 
-
+// credit to Josh W Comeau for this implementation, see:
+// https://www.joshwcomeau.com/react/dark-mode/
 function setColorsByTheme() {
   const colors = '🌈';
   const colorModeKey = '🔑';
@@ -83,8 +84,8 @@ const FallbackStyles = () => {
 };
 
 export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
-  setHeadComponents(<FallbackStyles key={`123456789`}/>);
-  setPreBodyComponents(<MagicScriptTag key={`987654321`}/>);
+  setHeadComponents(<FallbackStyles key={`123456789`} />);
+  setPreBodyComponents(<MagicScriptTag key={`987654321`} />);
 };
 
 export const wrapPageElement = ({ element }) => {
