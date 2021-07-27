@@ -37,4 +37,7 @@ export default DarkToggleIcon;
 
 const Toggle = styled.div`
   cursor: pointer;
+  svg {
+    margin-top: -1.15rem;
+  }
 `

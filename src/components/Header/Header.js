@@ -10,12 +10,12 @@ const Header = (siteTitle) => {
 	const { title } = siteTitle
 	return (
 		<>
-			<NavWrapper className="flex space-between px-4 py-4 space-x-10 items-baseline">
+			<NavWrapper className="flex space-between px-4 py-8 space-x-10 items-baseline">
 				<Logo to="/">
 					<span className="sr-only">Return to home page</span>
 					{title}
 				</Logo>
-				<LanguageFlyoutMenu />
+				{/* <LanguageFlyoutMenu /> */}
 				<DarkToggleIcon />
 			</NavWrapper>
 		</>
