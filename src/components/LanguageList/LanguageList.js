@@ -18,7 +18,7 @@ const LanguageList = () => {
               key={language}
               className="-m-3 p-3 block rounded-md hover:bg-gray-100 transition ease-in-out duration-150"
               onClick={() => changeLocale(language)}
-              onKeyDown={() => changeLocale(language)}
+              // onKeyDown={() => changeLocale(language)}
               role="button"
               tabIndex={0}
               style={{
