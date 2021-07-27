@@ -1,9 +1,10 @@
 <!-- START -->
-<h1 align="center">
-  MGO Portfolio site. 
-</h1>
+# Matt Oliver
 
-## 🚀 Quick start
+Personal portfolio site of product manager and software engineer Matt Oliver, built with [Gatsby](https://gatsbyjs.org), a [Sanity](https://sanity.io) CMS, and deployed with [Netlify](https://netlify.com).
+
+
+## 🚀 Run locally:
 
 1.  **Install.**
 
@@ -22,11 +23,9 @@
 
 1.  **Open the source code and start editing!**
 
-    Site is now running at `http://localhost:8000`!
+    Site will run at `http://localhost:8000`.
 
 ## 🧐 What's inside?
-
-This is a fast way to get started with a Gatsby project, Tailwind CSS, native dark mode, styled components, and svg. A quick look at the top-level files and directories:
 
 ```.
 ├── LICENSE
