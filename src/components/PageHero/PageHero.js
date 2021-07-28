@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby-plugin-intl';
-import Spacer from '../Spacer';
 
 const PageHero = ({ children }) => {
   return (
-    <div className="max-w-7xl mx-auto px-8">
+    <div className="max-w-7xl mx-auto px-6">
       {/* Content goes here */}
       <HeroMain className="mt-8">
         <HeroTitle>{children}</HeroTitle>
-        <Spacer axis='vertical' size={500} />
       </HeroMain>
     </div >
   )

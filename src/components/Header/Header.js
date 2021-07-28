@@ -10,7 +10,7 @@ const Header = (siteTitle) => {
 	const { title } = siteTitle
 	return (
 		<>
-			<NavWrapper className="flex justify-between px-4 py-8 space-x-10 items-baseline px-6">
+			<NavWrapper className="justify-between px-6 py-8 space-x-10 items-baseline">
 				<Logo to="/">
 					<span className="sr-only">Return to home page</span>
 					{title}
@@ -20,15 +20,15 @@ const Header = (siteTitle) => {
 					<NavLink to="/about">About</NavLink>
 					<NavLink to="/work">Work</NavLink>
 					<NavLink to="/contact">Contact</NavLink>
+					<DarkToggleIcon />
 				</DesktopNav>
 
-				<DarkToggleIcon />
 			</NavWrapper>
 		</>
 	)
 }
 
-export const Spacer = styled.div`
+const HeaderSpacer = styled.div`
   min-width: ${p => p.size}px;
 `
 
@@ -50,7 +50,7 @@ const DesktopNav = styled.nav`
   display: flex;
   gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
   margin: 0px 48px;
-  
+	/* margin-left:auto; */
   @media ${QUERIES.tabletAndSmaller} {
     display: none;
   }

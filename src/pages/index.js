@@ -7,7 +7,7 @@ import PageHero from "../components/PageHero";
 import Spacer from "../components/Spacer"
 
 const Wrapper = styled.div`
-	width: 100%;
+	/* width: 100%; */
 `;
 
 const SecondaryHead = styled.h2`
@@ -28,6 +28,7 @@ export default function Home() {
 			<Layout>
 				<Wrapper>
 					<PageHero>Product-focused, creative engineer on a mission.</PageHero>
+					<Spacer axis='vertical' size={1000} />
 				</Wrapper>
 			</Layout>
 		</>
