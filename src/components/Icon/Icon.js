@@ -28,9 +28,12 @@ const Icon = ({ id, color, size, strokeWidth, ...delegated }) => {
 
 const Wrapper = styled.div`
   & > svg {
+    padding: 0;
     display: block;
     stroke-width: ${(p) =>
     p.strokeWidth !== undefined ? p.strokeWidth + 'px' : undefined};
+    width: ${(p) =>
+    p.width !== undefined ? p.width + 'px' : undefined};
   }
 `;
 

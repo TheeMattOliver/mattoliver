@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby-plugin-intl"
@@ -9,9 +9,12 @@ import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu/";
 import VisuallyHidden from "../VisuallyHidden";
 import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
 
 const Header = (siteTitle) => {
 	const { title } = siteTitle
+	const [showMobileMenu, setShowMobileMenu] = useState(false);
+
 	return (
 		<>
 			<NavWrapper className="justify-between px-6 py-8 space-x-10 items-baseline">
@@ -26,7 +29,26 @@ const Header = (siteTitle) => {
 					<NavLink to="/contact">Contact</NavLink>
 					<DarkToggleIcon />
 				</DesktopNav>
+				<MobileActions>
+					<UnstyledButton onClick={() => setShowMobileMenu(true)}>
+						<Icon
+							id="menu"
+							strokeWidth={2}
+							size={24}
+							color={COLORS.gray900}
+							width={24}
+							className="-mb-1" />
+						<VisuallyHidden>
+							Menu
+						</VisuallyHidden>
+					</UnstyledButton>
+					<DarkToggleIcon />
+				</MobileActions>
 
+				<MobileMenu
+					isOpen={showMobileMenu}
+					onDismiss={() => setShowMobileMenu(false)}
+				/>
 			</NavWrapper>
 		</>
 	)
@@ -68,10 +90,10 @@ const NavLink = styled(Link)`
 const MobileActions = styled.div`
 // on desktop, shouldn't be shown
   display: none;
-
   @media ${QUERIES.tabletAndSmaller} {
     gap: 32px;
     display: flex;
+		align-items: center;
   }
   @media ${QUERIES.phoneAndSmaller} {
     gap: 16px;

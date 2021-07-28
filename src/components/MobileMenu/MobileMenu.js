@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
@@ -8,24 +8,33 @@ import { QUERIES, COLORS, WEIGHTS } from '../../constants';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
+import { ThemeContext } from '../ThemeContext';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
+  const { colorMode, setColorMode } = useContext(ThemeContext);
+
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <Content>
         <CloseButton onClick={onDismiss}>
-          <Icon id="close" />
+          <Icon
+            id="close"
+            strokeWidth={2}
+            size={24}
+            color={`${colorMode === 'light' ? COLORS.textPrimary.light : COLORS.textPrimary.dark}`}
+            width={24} />
           <VisuallyHidden>
             Close menu
           </VisuallyHidden>
 
         </CloseButton>
-        <Filler />
         <Nav>
+          <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/work">Work</NavLink>
           <NavLink href="/contact">Contact</NavLink>
         </Nav>
+        <Filler />
       </Content>
     </Overlay>
   );
@@ -67,14 +76,12 @@ const Nav = styled.nav`
   gap: 16px;
 `;
 const NavLink = styled.a`
-  color: ${COLORS.gray900};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--color-textPrimary);
   text-decoration: none;
-  font-size: 1.125rem;
-  text-transform: uppercase;
+  font-size: 2.125rem;
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-textSecondary);
   }
 `;
 
