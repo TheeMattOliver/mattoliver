@@ -61,6 +61,13 @@ export const BREAKPOINTS = {
   laptop: 1300,
 };
 
+export const WEIGHTS = {
+  normal: 500,
+  medium: 600,
+  bold: 800,
+};
+
+
 // default size is for large screens, so use max-width bc we want things to apply if it 
 // is this size or smaller 
 export const QUERIES = {

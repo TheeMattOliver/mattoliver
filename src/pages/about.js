@@ -19,14 +19,14 @@ const StyledLink = styled.a`
 	color: var(--color-textLink);
 `;
 
-export default function Home() {
-	return (
-		<>
-			<Layout>
-				<Wrapper>
-					<HomeHero />
-				</Wrapper>
-			</Layout>
-		</>
-	);
+export default function AboutPage() {
+  return (
+    <>
+      <Layout>
+        <Wrapper>
+          <h1>About</h1>
+        </Wrapper>
+      </Layout>
+    </>
+  );
 }
