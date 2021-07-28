@@ -23,10 +23,10 @@ const DarkToggleIcon = () => {
         }}
       >
         {
-          colorMode === 'light' && <MoonIcon className="h-10 w-10 pl-2 pr-2 -m-3 inline-block rounded-md hover:bg-gray-50 hover:text-gray-900 transition ease-in-out duration-150" />
+          colorMode === 'light' && <MoonIcon className="h-10 w-10 pl-2 pr-2 -m-3 inline-block rounded-md hover:text-blue-500 transition ease-in-out duration-150" />
         }
         {
-          colorMode === 'dark' && <SunIcon className="h-10 w-10 pl-2 pr-2 -m-3 inline-block rounded-md hover:bg-gray-50 hover:text-gray-900 transition ease-in-out duration-150" />
+          colorMode === 'dark' && <SunIcon className="h-10 w-10 pl-2 pr-2 -m-3 inline-block rounded-md hover:text-blue-300 transition ease-in-out duration-150" />
         }
       </Toggle>
     </>

@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
-
+import { Link } from 'gatsby-plugin-intl';
 import { QUERIES, COLORS, WEIGHTS } from '../../constants';
 
 import UnstyledButton from '../UnstyledButton';
@@ -15,7 +15,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
-      <Content>
+      <Content aria-label="Mobile menu">
         <CloseButton onClick={onDismiss}>
           <Icon
             id="close"
@@ -29,10 +29,10 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
         </CloseButton>
         <Nav>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/work">Work</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/work">Work</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </Nav>
         <Filler />
       </Content>
@@ -75,7 +75,7 @@ const Nav = styled.nav`
   flex-direction: column;
   gap: 16px;
 `;
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   color: var(--color-textPrimary);
   text-decoration: none;
   font-size: 2.125rem;

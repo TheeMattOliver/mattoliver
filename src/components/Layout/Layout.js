@@ -7,6 +7,7 @@ import Header from "../Header"
 import Footer from "../Footer"
 
 const Layout = ({ children, ...props }) => {
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,14 +24,12 @@ const Layout = ({ children, ...props }) => {
     <>
       <Wrapper>
         <Header title={data.site.siteMetadata.title} />
-        {/* <div className="flex flex-col justify-between"> */}
         <Middle>
           <Main>
             {children}
           </Main>
         </Middle>
         <Footer data={data.site.siteMetadata} />
-        {/* </div> */}
       </Wrapper>
     </>
   )

@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 import PageHero from "../components/PageHero";
 
 const Wrapper = styled.div`
-	width: 100%;
+	
 `;
 
 const SecondaryHead = styled.h2`
