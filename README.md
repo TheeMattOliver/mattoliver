@@ -1,7 +1,7 @@
 <!-- START -->
 # Matt Oliver
 
-Personal portfolio site of product manager and software engineer Matt Oliver, built with [Gatsby](https://gatsbyjs.org), [Sanity](https://sanity.io) CMS, and deployed with [Netlify](https://netlify.com).
+Personal portfolio site of product manager and software engineer Matt Oliver, built in React with [Gatsby](https://gatsbyjs.org) and headless [Sanity](https://sanity.io) CMS. Deployed with [Netlify](https://netlify.com).
 
 ---
 ## 📌 Design system:
