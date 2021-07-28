@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
@@ -5,6 +6,9 @@ import { Link } from "gatsby-plugin-intl"
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 
 import DarkToggleIcon from "../DarkToggleIcon"
+import MobileMenu from "../MobileMenu/";
+import VisuallyHidden from "../VisuallyHidden";
+import Icon from "../Icon";
 
 const Header = (siteTitle) => {
 	const { title } = siteTitle
@@ -12,7 +16,7 @@ const Header = (siteTitle) => {
 		<>
 			<NavWrapper className="justify-between px-6 py-8 space-x-10 items-baseline">
 				<Logo to="/">
-					<span className="sr-only">Return to home page</span>
+					<VisuallyHidden>Return to home page</VisuallyHidden>
 					{title}
 				</Logo>
 

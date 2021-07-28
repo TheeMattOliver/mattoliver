@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { ThemeContext } from '../ThemeContext';
 import styled from 'styled-components';

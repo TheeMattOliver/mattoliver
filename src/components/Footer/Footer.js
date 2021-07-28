@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react"
 import styled from "styled-components"
 
@@ -25,7 +26,7 @@ const Footer = () => {
 
 			<FooterLink href="mailto:matt@mattoliver.computer" className="-mb-3">
 				<span className="sr-only">Email</span>
-				<svg className={`hover:text-blue-900 transition ease-in-out duration-150`} xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 32 32" stroke="currentColor">
+				<svg className={`hover:text-blue-900 transition ease-in-out duration-150 h-10 w-10`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" stroke="currentColor">
 					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 				</svg>
 			</FooterLink>
