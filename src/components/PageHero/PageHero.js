@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby-plugin-intl';
-const HomeHero = () => {
+import Spacer from '../Spacer';
+
+const PageHero = ({ children }) => {
   return (
     <div className="max-w-7xl mx-auto px-8">
       {/* Content goes here */}
       <HeroMain className="mt-8">
-        <HeroTitle>Product-focused, creative engineer on a mission.</HeroTitle>
+        <HeroTitle>{children}</HeroTitle>
+        <Spacer axis='vertical' size={500} />
       </HeroMain>
     </div >
   )
 }
 
-export default HomeHero
+export default PageHero
 
 const HeroTitle = styled.h1`
   color: var(--color-textPrimary);

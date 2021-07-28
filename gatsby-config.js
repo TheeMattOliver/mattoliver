@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Matt Oliver`,
-    description: `Product portfolio for Matt Oliver, a product manager and web developer, based in Austin, Texas.`,
+    description: `Product portfolio for Matt Oliver, a product-focused, mission-driven creative engineer based in Austin, Texas.`,
     author: `Matt Oliver`,
     siteUrl: `https://github.com/theemattoliver`
   },
@@ -18,6 +18,15 @@ module.exports = {
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      }
+    },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `9ox83bxr`,
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN
       }
     },
     {

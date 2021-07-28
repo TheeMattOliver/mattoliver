@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
 import Layout from '../components/Layout'
-import HomeHero from "../components/HomeHero";
+import PageHero from "../components/PageHero";
 
 const Wrapper = styled.div`
 	width: 100%;
@@ -24,7 +24,7 @@ export default function AboutPage() {
     <>
       <Layout>
         <Wrapper>
-          <h1>About</h1>
+          <PageHero>About page</PageHero>
         </Wrapper>
       </Layout>
     </>

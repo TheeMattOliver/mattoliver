@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
 import Layout from '../components/Layout'
-import HomeHero from "../components/HomeHero";
+import PageHero from "../components/PageHero";
+import Spacer from "../components/Spacer"
 
 const Wrapper = styled.div`
 	width: 100%;
@@ -19,12 +20,14 @@ const StyledLink = styled.a`
 	color: var(--color-textLink);
 `;
 
+const homeHeadline = 'Product-focused, creative engineer on a mission.'
+
 export default function Home() {
 	return (
 		<>
 			<Layout>
 				<Wrapper>
-					<HomeHero />
+					<PageHero>Product-focused, creative engineer on a mission.</PageHero>
 				</Wrapper>
 			</Layout>
 		</>
