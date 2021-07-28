@@ -8,8 +8,6 @@ const HomeHero = () => {
       <HeroMain className="mt-8">
         <HeroTitle>Product-focused, creative engineer on a mission.</HeroTitle>
       </HeroMain>
-
-
     </div >
   )
 }
