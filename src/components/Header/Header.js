@@ -10,6 +10,7 @@ import MobileMenu from "../MobileMenu/";
 import VisuallyHidden from "../VisuallyHidden";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
+import MouseTest from "../MouseTest"
 
 const HEADER_HIDE_THRESHOLD = 400;
 
@@ -59,6 +60,7 @@ const Header = (siteTitle) => {
 				<Logo to="/">
 					<VisuallyHidden>Return to home page</VisuallyHidden>
 					{title}
+					<MouseTest />
 				</Logo>
 
 				<DesktopNav>
