@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby-plugin-intl"
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 
+import { COLORS, QUERIES, WEIGHTS } from '../../constants';
+import debounce from '../../lib/utils'
 import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu/";
 import VisuallyHidden from "../VisuallyHidden";
