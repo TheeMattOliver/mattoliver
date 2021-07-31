@@ -3,8 +3,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import "@fontsource/recursive/variable-full.css"
-
 import Header from "../Header"
 import Footer from "../Footer"
 

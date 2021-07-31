@@ -26,6 +26,8 @@ const HeroTitle = styled.h1`
   );
   width: clamp(500px, 65%, 800px);
   max-width: 100%;
+  font-family: system-ui;
+  font-variation-settings: 'wght' 750;
 `;
 const HeroMain = styled.main`
 `;
