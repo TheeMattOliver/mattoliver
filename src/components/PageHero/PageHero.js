@@ -19,9 +19,6 @@ export default PageHero
 const HeroTitle = styled.h1`
   color: var(--color-textPrimary);
   font-weight: bold;
-`
-
-const HeroMain = styled.main`
   font-size: clamp(
     2.2rem,
     3.3vw + 1.25rem,
@@ -29,4 +26,6 @@ const HeroMain = styled.main`
   );
   width: clamp(500px, 65%, 800px);
   max-width: 100%;
+`;
+const HeroMain = styled.main`
 `;
