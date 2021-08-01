@@ -95,7 +95,7 @@ const Header = (siteTitle) => {
 
 const HeaderSpacer = styled.div`
   min-width: ${p => p.size}px;
-`
+`;
 
 const NavWrapper = styled.header`
 	a, div {
@@ -115,12 +115,13 @@ const Logo = styled(Link)`
 `;
 
 const DesktopNav = styled.nav`
-  display: flex;
-  gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
-  margin: 0px 48px;
-	/* margin-left:auto; */
-  @media ${QUERIES.tabletAndSmaller} {
-    display: none;
+  display: none;
+  
+	@media ${QUERIES.laptopAndUp} {
+		display: flex;
+		gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
+		margin: 0px 48px;
+		/* margin-left:auto; */
   }
 `;
 
@@ -130,17 +131,17 @@ const NavLink = styled(Link)`
 `;
 
 const MobileActions = styled.div`
-// on desktop, shouldn't be shown
-  display: none;
-  @media ${QUERIES.tabletAndSmaller} {
+  display: flex;
+	gap: 16px;
+	align-items: center;
+	
+  @media ${QUERIES.tabletAndUp} {
     gap: 32px;
-    display: flex;
-		align-items: center;
   }
-  @media ${QUERIES.phoneAndSmaller} {
-    gap: 16px;
-  }
-`
+	@media ${QUERIES.laptopAndUp} {
+		display: none;
+	}
+`;
 
 Header.propTypes = {
 	siteTitle: PropTypes.string,

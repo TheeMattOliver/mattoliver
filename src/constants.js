@@ -54,11 +54,16 @@ export const COLORS = {
   },
 };
 
-// For this site, we'll going desktop-first.
+// Mobile first
+// export const BREAKPOINTS = {
+//   phone: 600,
+//   tablet: 950,
+//   laptop: 1300,
+// };
 export const BREAKPOINTS = {
-  phone: 600,
-  tablet: 950,
-  laptop: 1300,
+  tabletMin: 550,
+  laptopMin: 1100,
+  desktopMin: 1500,
 };
 
 export const WEIGHTS = {
@@ -70,10 +75,19 @@ export const WEIGHTS = {
 
 // default size is for large screens, so use max-width bc we want things to apply if it 
 // is this size or smaller 
+// export const QUERIES = {
+//   phoneAndSmaller: `(max-width: ${BREAKPOINTS.phone / 16}rem)`,
+//   tabletAndSmaller: `(max-width: ${BREAKPOINTS.tablet / 16}rem)`,
+//   laptopAndSmaller: `(max-width: ${BREAKPOINTS.laptop / 16}rem)`,
+// };
+
 export const QUERIES = {
-  phoneAndSmaller: `(max-width: ${BREAKPOINTS.phone / 16}rem)`,
-  tabletAndSmaller: `(max-width: ${BREAKPOINTS.tablet / 16}rem)`,
-  laptopAndSmaller: `(max-width: ${BREAKPOINTS.laptop / 16}rem)`,
+  tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+  laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+  desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+  tabletOnly: `
+    (min-width: ${BREAKPOINTS.tabletMin / 16}rem) and
+    (max-width: ${(BREAKPOINTS.laptopMin - 1) / 16}rem)`,
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

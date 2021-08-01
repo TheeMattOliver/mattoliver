@@ -2,20 +2,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby-plugin-intl';
+import { QUERIES } from '../../constants';
 
 const PageHero = ({ children }) => {
   return (
-    <div className="max-w-7xl mx-auto px-6">
-      {/* Content goes here */}
+    <Wrapper className="max-w-7xl mx-auto px-6">
       <HeroMain className="mt-8">
         <HeroTitle>{children}</HeroTitle>
       </HeroMain>
-    </div >
+    </Wrapper >
   )
 }
 
 export default PageHero
 
+const Wrapper = styled.div`
+  @media ${QUERIES.laptopAndUp} {
+    max-width: 80rem;
+  }
+`;
 const HeroTitle = styled.h1`
   color: var(--color-textPrimary);
   font-weight: bold;
