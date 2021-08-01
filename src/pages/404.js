@@ -1,13 +1,13 @@
 import React from "react"
 import { FormattedMessage, injectIntl } from "gatsby-plugin-intl"
 
-import Layout from "../components/Layout"
+import MainLayout from "../components/MainLayout"
 import SEO from "../components/SEO"
 
 const NotFoundPage = ({ intl }) => {
   return (
     <>
-      <Layout>
+      <MainLayout>
         <SEO
           lang={intl.locale}
           title={`404: ${intl.formatMessage({ id: "title" })}`}
@@ -18,7 +18,7 @@ const NotFoundPage = ({ intl }) => {
         <p>
           <FormattedMessage id="notfound.description" />
         </p>
-      </Layout>
+      </MainLayout>
     </>
   )
 }

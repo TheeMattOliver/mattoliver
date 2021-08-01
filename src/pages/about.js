@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
-import Layout from '../components/Layout'
+import MainLayout from '../components/MainLayout'
 import PageHero from "../components/PageHero";
 
 const Wrapper = styled.div`
@@ -23,11 +23,11 @@ const StyledLink = styled.a`
 export default function AboutPage() {
   return (
     <>
-      <Layout>
+      <MainLayout>
         <Wrapper>
           <PageHero>About page</PageHero>
         </Wrapper>
-      </Layout>
+      </MainLayout>
     </>
   );
 }

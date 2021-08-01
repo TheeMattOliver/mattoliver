@@ -61,6 +61,7 @@ export const COLORS = {
 //   laptop: 1300,
 // };
 export const BREAKPOINTS = {
+  phoneMin: 450,
   tabletMin: 550,
   laptopMin: 1100,
   desktopMin: 1500,
@@ -82,6 +83,7 @@ export const WEIGHTS = {
 // };
 
 export const QUERIES = {
+  phoneMinAndUp: `(min-width: ${BREAKPOINTS.phoneMin / 16}rem})`,
   tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
   laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
   desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,

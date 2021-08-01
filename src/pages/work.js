@@ -3,31 +3,22 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
-import Layout from '../components/Layout'
+import MainLayout from '../components/MainLayout'
 import PageHero from "../components/PageHero";
-
-const Wrapper = styled.div`
-
-`;
-
-const SecondaryHead = styled.h2`
-	color: var(--color-textSecondary);
-`;
-const TertiaryHead = styled.h3`
-	color: var(--color-textTertiary);
-`;
-const StyledLink = styled.a`
-	color: var(--color-textLink);
-`;
+import BasicGrid from "../components/BasicGrid";
 
 export default function WorkPage() {
   return (
     <>
-      <Layout>
+      <MainLayout>
         <Wrapper>
           <PageHero>Projects page</PageHero>
+          <BasicGrid />
         </Wrapper>
-      </Layout>
+      </MainLayout>
     </>
   );
 }
+const Wrapper = styled.div`
+  position: relative;
+`;

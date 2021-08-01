@@ -54,6 +54,24 @@ table {
 	border-spacing: 0;
 }
 
+/* Global styles */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+	/*
+		Create a stacking context, without a z-index.
+		This ensures that all portal content (modals and tooltips) will
+		float above the app.
+	*/
+	isolation: isolate;
+}
+
+/* Needed in order to prevent vertical scroll burglars */
 html, body, #___gatsby {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	height: 100%;
