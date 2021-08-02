@@ -51,6 +51,7 @@ const Overlay = styled(DialogOverlay)`
   background: hsl(220deg 5% 40% / 0.8);
   display: flex;
   justify-content: flex-end;
+  z-index: 2;
 `;
 
 const Content = styled(DialogContent)`

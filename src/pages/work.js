@@ -3,19 +3,20 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
-import MainLayout from '../components/MainLayout'
+import GridLayout from '../components/GridLayout'
+
 import PageHero from "../components/PageHero";
 import BasicGrid from "../components/BasicGrid";
 
 export default function WorkPage() {
   return (
     <>
-      <MainLayout>
+      <GridLayout>
         <Wrapper>
-          <PageHero>Projects page</PageHero>
+          <PageHero>Selected Work</PageHero>
           <BasicGrid />
         </Wrapper>
-      </MainLayout>
+      </GridLayout>
     </>
   );
 }

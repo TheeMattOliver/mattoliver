@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 import Header from "../Header"
 import Footer from "../Footer"
+import { QUERIES } from "../../constants"
 
 const GridLayout = ({ children, ...props }) => {
 
@@ -40,6 +41,9 @@ const Wrapper = styled.div`
   display: grid;
 `;
 const Middle = styled.section`
+  @media ${QUERIES.laptopAndUp} {
+    max-width: 80rem;
+  }
 `;
 const Main = styled.main`
   background-color: var(--color-background);

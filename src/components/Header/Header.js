@@ -107,6 +107,7 @@ const NavWrapper = styled.header`
 	position: sticky;
 	top: 0;
 	transition: transform 250ms;
+	z-index: 1;
 `;
 
 const Logo = styled(Link)`
