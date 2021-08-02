@@ -9,9 +9,7 @@ import Spacer from "../components/Spacer"
 import BasicGrid from "../components/BasicGrid";
 import { QUERIES } from "../constants";
 
-
 const homeHeadline = 'Product-focused, creative engineer on a mission.'
-
 
 export default function Home() {
 	return (
