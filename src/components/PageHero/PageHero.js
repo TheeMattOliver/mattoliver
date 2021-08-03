@@ -6,10 +6,10 @@ import { QUERIES } from '../../constants';
 
 const PageHero = ({ children }) => {
   return (
-    <Wrapper className="max-w-7xl mx-auto px-6">
-      <HeroMain className="mt-8">
+    <Wrapper>
+      <HeroBox>
         <HeroTitle>{children}</HeroTitle>
-      </HeroMain>
+      </HeroBox>
     </Wrapper >
   )
 }
@@ -17,6 +17,9 @@ const PageHero = ({ children }) => {
 export default PageHero
 
 const Wrapper = styled.div`
+  padding: 0 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
   }
@@ -34,5 +37,6 @@ const HeroTitle = styled.h1`
   font-family: system-ui;
   font-variation-settings: 'wght' 750;
 `;
-const HeroMain = styled.main`
+const HeroBox = styled.div`
+  margin-top: 2rem;
 `;

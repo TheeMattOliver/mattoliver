@@ -11,6 +11,9 @@ import { QUERIES } from "../constants";
 
 const homeHeadline = 'Product-focused, creative engineer on a mission.'
 
+// const copyText = 'Product manager, developer, and maker with experience working across the entire product stack - from turning written business requirements into scoped user stories, to shipping production code and beyond. Currently building political tech to power progressive social causes and always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.'
+const copyText = 'Currently building political tech to power progressive social causes. Always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.'
+
 export default function Home() {
 	return (
 		<>
@@ -21,7 +24,7 @@ export default function Home() {
 					</PageHero>
 					<HeroCopyWrapper>
 						<HeroCopyText>
-							Product manager, developer, and maker with experience working across the entire product stack - from turning written business requirements into scoped user stories, to shipping production code and beyond. Currently building political tech to power progressive social causes and always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.
+							{copyText}
 						</HeroCopyText>
 					</HeroCopyWrapper>
 					{/* <Spacer axis='vertical' size={1000} /> */}
