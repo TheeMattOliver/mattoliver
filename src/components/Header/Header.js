@@ -70,6 +70,7 @@ const NavWrapper = styled.header`
 	top: 0;
 	transition: transform 250ms;
 	z-index: 1;
+  scroll-margin-top: 72px;
 `;
 
 const Logo = styled(Link)`

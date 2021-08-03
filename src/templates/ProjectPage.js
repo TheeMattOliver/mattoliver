@@ -31,9 +31,7 @@ const ProjectPage = () => {
         </HeaderWrapper>
 
         <PageTitleWrapper>
-          <div>
-            <PageTitle>Project Name</PageTitle>
-          </div>
+          <PageTitle>Project Name</PageTitle>
         </PageTitleWrapper>
 
         <Aside>
@@ -41,26 +39,26 @@ const ProjectPage = () => {
             <h2>Technologies</h2>
             <ul>
               <TechListItem>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 Javascript
               </TechListItem>
               <TechListItem>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 React
               </TechListItem>
               <TechListItem>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 Angular
               </TechListItem>
               <TechListItem>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 SQL
               </TechListItem>
@@ -203,6 +201,15 @@ const PageTitleWrapper = styled.div`
   padding: 5rem 0;
 `;
 
+const PageTitleBackground = styled.div`
+  object-fit: cover;
+  background-color: #e6f6f7;
+  opacity: 0.4;
+  background-image:  linear-gradient(#70b2e8 0.8px, transparent 0.8px), linear-gradient(90deg, #70b2e8 0.8px, transparent 0.8px), linear-gradient(#70b2e8 0.4px, transparent 0.4px), linear-gradient(90deg, #70b2e8 0.4px, #e6f6f7 0.4px);
+  background-size: 20px 20px, 20px 20px, 4px 4px, 4px 4px;
+  background-position: -0.8px -0.8px, -0.8px -0.8px, -0.4px -0.4px, -0.4px -0.4px;
+  `;
+
 const PageTitle = styled.h1`
   color: var(--color-textPrimary);
   font-weight: ${WEIGHTS.bold};
@@ -285,7 +292,7 @@ const Section = styled.section`
   position: relative;
   display: flex;
   align-items: flex-start;
-  min-height: 400px;
+  /* min-height: 400px; */
   background: var(--color-backgroundPrimary);
   margin-top: 2rem;
   &:last-of-type {
