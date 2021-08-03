@@ -1,9 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `Matt Oliver`,
-    description: `Product portfolio for Matt Oliver, a product-focused, mission-driven creative engineer based in Austin, Texas.`,
+    titleTemplate: "%s · Austin, TX",
+    description: `Product portfolio for Matt Oliver, an artist and engineer based in Austin, Texas.`,
     author: `Matt Oliver`,
-    siteUrl: `https://github.com/theemattoliver`
+    siteUrl: `https://github.com/theemattoliver`,
+    image: "/egypt-desk.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@theemattoliver",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
