@@ -16,103 +16,104 @@ export default function ContactForm() {
         {/* Contact information */}
         <ContactInformation>
           {/* 
-            <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
-              <svg
-                  className="absolute inset-0 w-full h-full"
-                  width={343}
-                  height={388}
-                  viewBox="0 0 343 388"
-                  fill="none"
-                  preserveAspectRatio="xMidYMid slice"
-                  xmlns="http://www.w3.org/2000/svg"
+          <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
+            <svg
+              className="absolute inset-0 w-full h-full"
+              width={343}
+              height={388}
+              viewBox="0 0 343 388"
+              fill="none"
+              preserveAspectRatio="xMidYMid slice"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M-99 461.107L608.107-246l707.103 707.107-707.103 707.103L-99 461.107z"
+                fill="url(#linear1)"
+                fillOpacity=".1"
+              />
+              <defs>
+                <linearGradient
+                  id="linear1"
+                  x1="254.553"
+                  y1="107.554"
+                  x2="961.66"
+                  y2="814.66"
+                  gradientUnits="userSpaceOnUse"
                 >
-                  <path
-                    d="M-99 461.107L608.107-246l707.103 707.107-707.103 707.103L-99 461.107z"
-                    fill="url(#linear1)"
-                    fillOpacity=".1"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="linear1"
-                      x1="254.553"
-                      y1="107.554"
-                      x2="961.66"
-                      y2="814.66"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#fff" />
-                      <stop offset={1} stopColor="#fff" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div
-                className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none sm:block lg:hidden"
-                aria-hidden="true"
-              >
-                <svg
-                  className="absolute inset-0 w-full h-full"
-                  width={359}
-                  height={339}
-                  viewBox="0 0 359 339"
-                  fill="none"
-                  preserveAspectRatio="xMidYMid slice"
-                  xmlns="http://www.w3.org/2000/svg"
+                  <stop stopColor="#fff" />
+                  <stop offset={1} stopColor="#fff" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div
+            className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none sm:block lg:hidden"
+            aria-hidden="true"
+          >
+            <svg
+              className="absolute inset-0 w-full h-full"
+              width={359}
+              height={339}
+              viewBox="0 0 359 339"
+              fill="none"
+              preserveAspectRatio="xMidYMid slice"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M-161 382.107L546.107-325l707.103 707.107-707.103 707.103L-161 382.107z"
+                fill="url(#linear2)"
+                fillOpacity=".1"
+              />
+              <defs>
+                <linearGradient
+                  id="linear2"
+                  x1="192.553"
+                  y1="28.553"
+                  x2="899.66"
+                  y2="735.66"
+                  gradientUnits="userSpaceOnUse"
                 >
-                  <path
-                    d="M-161 382.107L546.107-325l707.103 707.107-707.103 707.103L-161 382.107z"
-                    fill="url(#linear2)"
-                    fillOpacity=".1"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="linear2"
-                      x1="192.553"
-                      y1="28.553"
-                      x2="899.66"
-                      y2="735.66"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#fff" />
-                      <stop offset={1} stopColor="#fff" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div> 
-              <div
-                className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none lg:block"
-                aria-hidden="true"
-              >
-                <svg
-                  className="absolute inset-0 w-full h-full"
-                  width={160}
-                  height={678}
-                  viewBox="0 0 160 678"
-                  fill="none"
-                  preserveAspectRatio="xMidYMid slice"
-                  xmlns="http://www.w3.org/2000/svg"
+                  <stop stopColor="#fff" />
+                  <stop offset={1} stopColor="#fff" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div
+            className="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none lg:block"
+            aria-hidden="true"
+          >
+            <svg
+              className="absolute inset-0 w-full h-full"
+              width={160}
+              height={678}
+              viewBox="0 0 160 678"
+              fill="none"
+              preserveAspectRatio="xMidYMid slice"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M-161 679.107L546.107-28l707.103 707.107-707.103 707.103L-161 679.107z"
+                fill="url(#linear3)"
+                fillOpacity=".1"
+              />
+              <defs>
+                <linearGradient
+                  id="linear3"
+                  x1="192.553"
+                  y1="325.553"
+                  x2="899.66"
+                  y2="1032.66"
+                  gradientUnits="userSpaceOnUse"
                 >
-                  <path
-                    d="M-161 679.107L546.107-28l707.103 707.107-707.103 707.103L-161 679.107z"
-                    fill="url(#linear3)"
-                    fillOpacity=".1"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="linear3"
-                      x1="192.553"
-                      y1="325.553"
-                      x2="899.66"
-                      y2="1032.66"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#fff" />
-                      <stop offset={1} stopColor="#fff" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-            */}
+                  <stop stopColor="#fff" />
+                  <stop offset={1} stopColor="#fff" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div> 
+          */}
+
           <h3>Contact</h3>
           <p>
             Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
@@ -342,8 +343,8 @@ const ContactInformation = styled.div`
   /* text-lg font-medium text-white */
   h3 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    color: ${COLORS.gray50.light};
+  margin-bottom: 1rem;
+  color: ${COLORS.gray50.light};
   }
   /* mt-6 text-base text-indigo-50 max-w-3xl */
   p {
@@ -385,6 +386,7 @@ const ContactInformation = styled.div`
   }
 `;
 
+
 const SocialIconsList = styled.ul`
   /* mt-8 flex space-x-12 */
   margin-top: 2rem;
@@ -392,7 +394,7 @@ const SocialIconsList = styled.ul`
 `;
 
 const FormWrapper = styled.div`
-/* py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 */
+  /* py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 */
   padding: 2.5rem;
   h3 {
     /* text-lg font-medium text-gray-900 */
@@ -404,7 +406,7 @@ const FormWrapper = styled.div`
     grid-column: span 2 / span 2;
   }
   @media ${QUERIES.desktopAndUp} {
-   padding: 3rem; 
+    padding: 3rem; 
   }
 `;
 
@@ -432,7 +434,7 @@ const InputWrapper = styled.div`
 `;
 
 const Input = styled.input`
-/* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md */
+  /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md */
   padding: 0.75rem 1rem;
   display: block;
   width: 100%;
@@ -443,7 +445,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-/* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md */
+  /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md */
   padding: 0.75rem 1rem;
   display: block;
   width: 100%;
