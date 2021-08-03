@@ -45,6 +45,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  header, main, footer {
+    flex-shrink: 0;
+  }
 `;
 const Middle = styled.section`
   flex: 1;
@@ -55,6 +58,9 @@ const Main = styled.main`
   display: flex;
   flex: 3;
   width: 100%;
+  @media ${QUERIES.tabletAndUp} {
+    flex: 1;
+  }
 `;
 
 MainLayout.propTypes = {
