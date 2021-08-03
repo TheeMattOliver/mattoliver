@@ -96,7 +96,7 @@ const NavLink = styled(Link)`
 
 const MobileActions = styled.div`
   display: flex;
-	gap: 16px;
+	gap: 24px;
 	align-items: center;
 	
   @media ${QUERIES.tabletAndUp} {
