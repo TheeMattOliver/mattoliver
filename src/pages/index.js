@@ -5,8 +5,7 @@ import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
 import MainLayout from '../components/MainLayout'
 import PageHero from "../components/PageHero";
-import Spacer from "../components/Spacer"
-import BasicGrid from "../components/BasicGrid";
+
 import { QUERIES } from "../constants";
 
 const homeHeadline = 'Product-focused, creative engineer on a mission.'

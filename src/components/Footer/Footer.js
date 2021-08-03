@@ -60,7 +60,6 @@ const FooterLeft = styled.div`
 const FooterCredit = styled.p`
 	color: var(--color-textPrimary);
 `;
-
 const FooterLink = styled.a`
 	color: var(--color-textLink);
 `;

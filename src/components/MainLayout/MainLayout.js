@@ -50,13 +50,14 @@ const Wrapper = styled.div`
   }
 `;
 const Middle = styled.section`
-  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 0;
   display: flex;
 `;
 const Main = styled.main`
   background-color: var(--color-background);
   display: flex;
-  flex: 3;
+  flex: 1;
   width: 100%;
   @media ${QUERIES.tabletAndUp} {
     flex: 1;
