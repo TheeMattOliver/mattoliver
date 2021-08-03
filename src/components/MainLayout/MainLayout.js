@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 import MagicHeader from "../MagicHeader"
 import Footer from "../Footer"
+import { QUERIES } from "../../constants"
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -29,11 +30,9 @@ const MainLayout = ({ children, ...props }) => {
     <>
       <Wrapper>
         <MagicHeader title={data.site.siteMetadata.title} />
-        <Middle>
-          <Main>
-            {children}
-          </Main>
-        </Middle>
+        <Main>
+          {children}
+        </Main>
         <Footer data={data.site.siteMetadata} />
       </Wrapper>
     </>
@@ -45,14 +44,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100%;
 `;
-const Middle = styled.section`
-  flex: 1;
-  display: flex;
-`;
+
 const Main = styled.main`
   background-color: var(--color-background);
   display: flex;
-  flex: 3;
+  flex: 1;
 `;
 
 MainLayout.propTypes = {

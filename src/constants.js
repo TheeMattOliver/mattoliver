@@ -23,6 +23,10 @@ export const COLORS = {
     light: 'hsl(0deg, 0%, 100%)', // white
     dark: 'hsl(210deg, 12%, 16%)' // charcoal-black #24292E
   },
+  panelBackgroundDark: {
+    light: 'hsl(210deg, 13%, 12%)', // charcoal #1B1F23
+    dark: 'hsl(0deg, 0%, 4%)', // near-black #0A0A0A
+  },
   borderPrimary: {
     light: 'hsl(214deg, 13%, 90%)', // grey #E1E4E8
     dark: 'hsl(212deg, 12%, 21%)', // charcoal-black #30363D
