@@ -2,7 +2,9 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Link } from "gatsby"
+import VisuallyHidden from "../VisuallyHidden"
+import Icon from "../Icon"
+import { COLORS } from "../../constants"
 
 const Footer = () => {
 
@@ -13,31 +15,32 @@ const Footer = () => {
 					&copy; {new Date().getFullYear()}
 				</FooterCredit>
 
-				{/* <FooterLink
+				<FooterLink
 					href="https://github.com/TheeMattOliver/mgo-portfolio-web"
 					rel="noopener noreferrer"
 					target="_blank"
 				>
-					<span className="sr-only">Github</span>
+					<VisuallyHidden>Github</VisuallyHidden>
 					View source
-				</FooterLink> */}
+				</FooterLink>
 			</FooterLeft>
 
 
-			<FooterLink href="mailto:matt@mattoliver.computer" className="-mb-3">
-				<span className="sr-only">Email</span>
-				<svg className={`hover:text-blue-900 transition ease-in-out duration-150 h-10 w-10`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" stroke="currentColor">
+			<FooterLink href="mailto:matt@mattoliver.xyz">
+				<VisuallyHidden>Email</VisuallyHidden>
+				<Icon id={`email`} size={24} width={24} strokeWidth={2} aria-hidden="true" />
+				{/* <svg className={`hover:text-blue-900 transition ease-in-out duration-150 h-10 w-10`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" stroke="currentColor">
 					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-				</svg>
+				</svg> */}
 			</FooterLink>
 
 			<FooterLink
 				href="https://github.com/theemattoliver/mgo-portfolio-web"
 				rel="noopener noreferrer"
 				target="_blank">
-				<span className="sr-only">Github</span>
-				<svg className={`hover:text-blue-900 transition ease-in-out duration-150`} width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path fillRule="evenodd" clipRule="evenodd" d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0V0Z" fill="currentColor" />
+				<VisuallyHidden>Gihtub</VisuallyHidden>
+				<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="24" width="24" fill="currentColor">
+					<path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
 				</svg>
 			</FooterLink>
 
@@ -61,5 +64,11 @@ const FooterCredit = styled.p`
 	color: var(--color-textPrimary);
 `;
 const FooterLink = styled.a`
-	color: var(--color-textLink);
+	color: ${COLORS.gray300.light};
+	& > svg {
+    display: block;
+  }
+	&:hover {
+		color: ${COLORS.blue500.light};
+	}
 `;
