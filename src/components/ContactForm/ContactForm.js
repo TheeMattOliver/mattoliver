@@ -357,6 +357,7 @@ const ContactInformation = styled.div`
       1.25vw + .5rem,
       1.45rem
     );
+    width: clamp(300px, 95%, 750px);
   }
   /* mt-8 space-y-6 */
   dl {

@@ -1,5 +1,9 @@
 {
-  "name": "Oliver portfolio site",
+  "name": "mgo-portfolio-web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheeMattOliver/mgo-portfolio-web"
+  },
   "private": true,
   "description": "Product & dev portfolio for Matt Oliver.",
   "version": "0.1.0",
@@ -42,11 +46,7 @@
     "prettier": "2.2.1",
     "tailwindcss": "^2.0.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/theemattoliver/gatsby-tailwind-intl-darkmode"
-  },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/TheeMattOliver/mgo-portfolio-web/issues"
   }
 }

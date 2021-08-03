@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 const Main = styled.main`
   background-color: var(--color-background);
   display: flex;
-  flex: 1;
+  flex: 3;
 `;
 
 MainLayout.propTypes = {
