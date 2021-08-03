@@ -4,12 +4,16 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import Header from "../Header"
+import MagicHeader from "../MagicHeader"
 import Footer from "../Footer"
 import { QUERIES } from "../../constants"
 
-const GridLayout = ({ children, ...props }) => {
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 
+const GridLayout = ({ children, ...props }) => {
   const data = useStaticQuery(graphql`
     query GridLayoutTitleQuery {
       site {
@@ -25,7 +29,7 @@ const GridLayout = ({ children, ...props }) => {
   return (
     <>
       <Wrapper>
-        <Header title={data.site.siteMetadata.title} />
+        <MagicHeader title={data.site.siteMetadata.title} />
         <Middle>
           <Main>
             {children}

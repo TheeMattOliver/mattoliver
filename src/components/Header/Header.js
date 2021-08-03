@@ -7,90 +7,52 @@ import { Link } from "gatsby-plugin-intl"
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 import debounce from '../../lib/utils'
 import DarkToggleIcon from "../DarkToggleIcon"
-import MobileMenu from "../MobileMenu/";
+import MobileMenu from "../MobileMenu";
 import VisuallyHidden from "../VisuallyHidden";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
 
-const HEADER_HIDE_THRESHOLD = 400;
-
 const Header = (siteTitle) => {
-	const { title } = siteTitle
-	const [showMobileMenu, setShowMobileMenu] = useState(false);
-	const [isHeaderVisible, setIsHeaderVisible] = useState(true)
-	useEffect(() => {
-		// to know which direction the user is scrolling
-		// keep track of whatever the value was in the previous iteration
-		let previousScrollValue;
-		function handleScroll(event) {
-			const currentScroll = window.scrollY;
-			// console.log({ currentScroll })
-			if (typeof previousScrollValue !== 'number') {
-				previousScrollValue = currentScroll
-				return;
-			}
-			console.log({ previousScrollValue }, { currentScroll })
-			console.log({ isHeaderVisible })
-			// determine scroll direction
-			const direction = currentScroll > previousScrollValue ? 'down' : 'up'
-			// hide the header if we're scrolling down
-			// get below a certain point and hide the header
-			if (isHeaderVisible && direction === 'down' && currentScroll > HEADER_HIDE_THRESHOLD) {
-				setIsHeaderVisible(false)
-				// else show the header
-			} else if (!isHeaderVisible && direction === 'up') {
-				setIsHeaderVisible(true)
-			}
-			// whether we have a previous value or not, last thing to do
-			// is update the scroll value
-			previousScrollValue = currentScroll
-		}
-		window.addEventListener('scroll', handleScroll);
-		// clean up
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		}
-	}, [isHeaderVisible])
+  const { title } = siteTitle
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-	const transform = isHeaderVisible ? 'translateY(0%)' : 'translateY(-100%)'
+  return (
+    <>
+      <NavWrapper className={`justify-between px-6 py-8 space-x-10 items-baseline shadow-sm`}>
+        <Logo to="/">
+          <VisuallyHidden>Return to home page</VisuallyHidden>
+          {title}
+        </Logo>
 
-	return (
-		<>
-			<NavWrapper style={{ transform }} className={`justify-between px-6 py-8 space-x-10 items-baseline shadow-sm`}>
-				<Logo to="/">
-					<VisuallyHidden>Return to home page</VisuallyHidden>
-					{title}
-				</Logo>
+        <DesktopNav>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/work">Work</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+          <DarkToggleIcon />
+        </DesktopNav>
+        <MobileActions>
+          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+            <Icon
+              id="menu"
+              strokeWidth={2}
+              size={24}
+              color={COLORS.gray900}
+              width={24}
+              className="-mb-1" />
+            <VisuallyHidden>
+              Menu
+            </VisuallyHidden>
+          </UnstyledButton>
+          <DarkToggleIcon />
+        </MobileActions>
 
-				<DesktopNav>
-					<NavLink to="/about">About</NavLink>
-					<NavLink to="/work">Work</NavLink>
-					<NavLink to="/contact">Contact</NavLink>
-					<DarkToggleIcon />
-				</DesktopNav>
-				<MobileActions>
-					<UnstyledButton onClick={() => setShowMobileMenu(true)}>
-						<Icon
-							id="menu"
-							strokeWidth={2}
-							size={24}
-							color={COLORS.gray900}
-							width={24}
-							className="-mb-1" />
-						<VisuallyHidden>
-							Menu
-						</VisuallyHidden>
-					</UnstyledButton>
-					<DarkToggleIcon />
-				</MobileActions>
-
-				<MobileMenu
-					isOpen={showMobileMenu}
-					onDismiss={() => setShowMobileMenu(false)}
-				/>
-			</NavWrapper>
-		</>
-	)
+        <MobileMenu
+          isOpen={showMobileMenu}
+          onDismiss={() => setShowMobileMenu(false)}
+        />
+      </NavWrapper>
+    </>
+  )
 }
 
 const HeaderSpacer = styled.div`
@@ -145,11 +107,11 @@ const MobileActions = styled.div`
 `;
 
 Header.propTypes = {
-	siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-	siteTitle: ``
+  siteTitle: ``
 }
 
 export default Header
