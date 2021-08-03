@@ -55,9 +55,6 @@ const Main = styled.main`
   display: flex;
   flex: 3;
   width: 100%;
-  @media ${QUERIES.tabletAndUp} {
-    flex: 1;
-  }
 `;
 
 MainLayout.propTypes = {
