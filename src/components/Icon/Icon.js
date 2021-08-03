@@ -3,15 +3,20 @@ import styled from 'styled-components/macro';
 import {
   SearchIcon,
   MenuIcon,
-  XIcon,
-  MailIcon
+  XIcon
 } from '@heroicons/react/solid';
+
+import {
+  PhoneIcon,
+  MailIcon
+} from '@heroicons/react/outline';
 
 const icons = {
   search: SearchIcon,
   menu: MenuIcon,
   close: XIcon,
-  email: MailIcon
+  email: MailIcon,
+  phone: PhoneIcon
 };
 
 const Icon = ({ id, color, size, strokeWidth, ...delegated }) => {

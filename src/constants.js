@@ -27,6 +27,20 @@ export const COLORS = {
     light: 'hsl(214deg, 13%, 90%)', // grey #E1E4E8
     dark: 'hsl(212deg, 12%, 21%)', // charcoal-black #30363D
   },
+  buttonPrimary: {
+    light: 'hsl(212deg, 97%, 43%)', // #0366D6
+    dark: 'hsl(212deg, 100%, 67%)', // #58A6FF
+  },
+  // White
+  white: {
+    light: 'hsl(0deg, 0%, 96%)', // #F2F2F2
+    dark: 'hsl(0deg, 0%, 95%)', // #F2F2F2
+  },
+  // Black
+  black: {
+    light: 'hsl(0deg, 0%, 0%)', // #000000
+    dark: 'hsl(0deg, 0%, 0%)', // #000000
+  },
   // Grays, scaling from least-noticeable to most-noticeable
   gray50: {
     light: 'hsl(0deg, 0%, 96%)',
@@ -51,6 +65,35 @@ export const COLORS = {
   gray900: {
     light: 'hsl(0deg, 0%, 10%)',
     dark: 'hsl(210deg, 38%, 95%)'
+  },
+  // Blues, scaling from least-noticeable to darkest navy
+  blue50: {
+    light: 'hsl(212deg, 98%, 93%)', // #DCECFF
+    dark: 'hsl(212deg, 100%, 95%)', // #E5F1FF
+  },
+  blue100: {
+    light: 'hsl(212deg, 97%, 83%)', // #A9D1FE
+    dark: 'hsl(212deg, 100%, 92%)', // #D6E9FF
+  },
+  blue300: {
+    light: 'hsl(212deg, 97%, 63%)', // #459BFC
+    dark: 'hsl(212deg, 100%, 83%)', // #A8D1FF
+  },
+  blue500: {
+    light: 'hsl(212deg, 97%, 43%)', // #0366D6
+    dark: 'hsl(212deg, 100%, 67%)', // #58A6FF
+  },
+  blue700: {
+    light: 'hsl(212deg, 97%, 33%)', // #024FA6
+    dark: 'hsl(212deg, 100%, 47%)', // #0070F0
+  },
+  blue900: {
+    light: 'hsl(212deg, 97%, 25%)', // #023B7D
+    dark: 'hsl(212deg, 100%, 31%)' // #004A9E
+  },
+  blue1000: {
+    light: 'hsl(212deg, 97%, 16%)', // #012750
+    dark: 'hsl(212deg, 100%, 24%)' // #00397A
   },
 };
 
