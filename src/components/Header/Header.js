@@ -82,8 +82,13 @@ const DesktopNav = styled.nav`
   display: none;
   
 	@media ${QUERIES.laptopAndUp} {
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		align-items: center;
 		gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
+		/* No Flexbox gap on Safari 
+		display: flex;
+		gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem); */
 		margin: 0px 48px;
 		/* margin-left:auto; */
   }
@@ -92,15 +97,23 @@ const DesktopNav = styled.nav`
 const NavLink = styled(Link)`
   font-size: 1.125rem;
   text-decoration: none;
+  &:not(:last-of-type) {
+    margin-left: 1rem;
+  }
 `;
 
 const MobileActions = styled.div`
-  display: flex;
-	gap: 16px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	align-items: center;
-	
+	gap: 16px;
+	/* no Safari flexbox gap support
+	gap: 16px;
+	display: flex;
+	align-items: center;
+	 */
   @media ${QUERIES.tabletAndUp} {
-    gap: 32px;
+		gap: 32px;
   }
 	@media ${QUERIES.laptopAndUp} {
 		display: none;
