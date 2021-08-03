@@ -4,12 +4,14 @@ import {
   SearchIcon,
   MenuIcon,
   XIcon,
+  MailIcon
 } from '@heroicons/react/solid';
 
 const icons = {
   search: SearchIcon,
   menu: MenuIcon,
   close: XIcon,
+  email: MailIcon
 };
 
 const Icon = ({ id, color, size, strokeWidth, ...delegated }) => {
