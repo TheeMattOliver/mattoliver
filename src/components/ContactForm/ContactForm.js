@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
+// import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import Icon from '../Icon'
+// import Icon from '../Icon'
 import VisuallyHidden from '../VisuallyHidden';
 
 export default function ContactForm() {

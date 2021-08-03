@@ -30,9 +30,11 @@ const MainLayout = ({ children, ...props }) => {
     <>
       <Wrapper>
         <MagicHeader title={data.site.siteMetadata.title} />
-        <Main>
-          {children}
-        </Main>
+        <Middle>
+          <Main>
+            {children}
+          </Main>
+        </Middle>
         <Footer data={data.site.siteMetadata} />
       </Wrapper>
     </>
@@ -44,11 +46,18 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100%;
 `;
-
+const Middle = styled.section`
+  flex: 1;
+  display: flex;
+`;
 const Main = styled.main`
   background-color: var(--color-background);
   display: flex;
   flex: 3;
+  width: 100%;
+  @media ${QUERIES.tabletAndUp} {
+    flex: 1;
+  }
 `;
 
 MainLayout.propTypes = {
