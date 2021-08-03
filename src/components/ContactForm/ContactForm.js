@@ -338,7 +338,7 @@ const ContactInformation = styled.div`
   /* relative overflow-hidden py-10 px-6 bg-indigo-700 sm:px-10 xl:p-12 */
   position: relative;
   overflow: hidden;
-  padding: 4rem 2.5rem;
+  padding: 4rem 1rem;
   background: var(--color-panelBackgroundDark);
   /* text-lg font-medium text-white */
   h3 {
@@ -395,7 +395,8 @@ const SocialIconsList = styled.ul`
 
 const FormWrapper = styled.div`
   /* py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 */
-  padding: 2.5rem;
+  padding-top: 2.5rem;
+  padding: 1rem;
   h3 {
     /* text-lg font-medium text-gray-900 */
     font-size: 1.125rem;
@@ -403,6 +404,7 @@ const FormWrapper = styled.div`
     color: var(--color-textPrimary);
   }
   @media ${QUERIES.tabletAndUp} {
+    padding: 2.5rem;
     grid-column: span 2 / span 2;
   }
   @media ${QUERIES.desktopAndUp} {
@@ -442,6 +444,10 @@ const Input = styled.input`
   color: ${COLORS.gray900.light};
   border: 1px solid var(--color-borderPrimary);
   border-radius: 0.375rem;
+  box-shadow: none;
+  @media ${QUERIES.tabletAndUp} {
+    box-shadow: revert;
+  }
 `;
 
 const TextArea = styled.textarea`
