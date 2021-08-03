@@ -65,7 +65,7 @@ table {
 h1, h2, h3, h4, h5, h6, p {
 	text-rendering: optimizelegibility;
 }
-
+/* purgecss start ignore */
 #root {
 	/*
 		Create a stacking context, without a z-index.
@@ -84,3 +84,4 @@ html, body, #___gatsby {
 #gatsby-focus-wrapper {
   height: 100%;
 }
+/* purgecss end ignore */
