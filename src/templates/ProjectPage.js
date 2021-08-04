@@ -89,7 +89,7 @@ const ProjectPage = () => {
                 </li>
               </ol>
             </TableOfContents>
-            <DesktopBackButton to='/'>
+            <DesktopBackButton to='/work'>
               &larr; Back to Projects
             </DesktopBackButton>
           </StickySidebar>
