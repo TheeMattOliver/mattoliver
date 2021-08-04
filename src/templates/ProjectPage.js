@@ -144,7 +144,7 @@ const ProjectPage = () => {
             <ImgPlaceholder />
           </Section>
 
-          <MobileBackButton to='/'>
+          <MobileBackButton to='/work'>
             &larr; Back to Projects
           </MobileBackButton>
 
