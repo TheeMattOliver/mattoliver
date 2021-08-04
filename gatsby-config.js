@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Matt Oliver`,
     titleTemplate: "%s · Austin, TX",
-    description: `Product portfolio for Matt Oliver, an artist and engineer based in Austin, Texas.`,
+    description: `Web and digital product portfolio for Matt Oliver, an artist and engineer based in Austin, Texas.`,
     author: `Matt Oliver`,
     siteUrl: `https://github.com/theemattoliver`,
-    image: "/egypt-desk.jpg", // Path to your image you placed in the 'static' folder
+    image: "/egypt-desk.jpg",
     twitterUsername: "@theemattoliver",
   },
   plugins: [

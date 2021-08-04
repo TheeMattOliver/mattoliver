@@ -35,7 +35,7 @@ const Footer = () => {
 			</FooterLink>
 
 			<FooterLink
-				href="https://github.com/theemattoliver/mgo-portfolio-web"
+				href="https://github.com/theemattoliver"
 				rel="noopener noreferrer"
 				target="_blank">
 				<VisuallyHidden>Gihtub</VisuallyHidden>
