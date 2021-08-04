@@ -12,6 +12,10 @@ Fonts:
 
 - `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`
 
+## Performance
+
+![Lighthouse scores](https://media.giphy.com/media/xsFI8ZHYL3SbDxgMKo/giphy.gif)
+
 ## 🚀 Run locally:
 
 1.  **Install.**

@@ -66,8 +66,7 @@ const Main = styled.main`
 `;
 
 MainLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-  intl: PropTypes.object.isRequired
+  children: PropTypes.node.isRequired
 }
 
 export default MainLayout

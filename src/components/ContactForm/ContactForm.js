@@ -116,7 +116,7 @@ export default function ContactForm() {
 
           <h3>Contact</h3>
           <p>
-            If you've found an issue with the site or you'd like to inquire about working together, please send me a message.
+            Please send me a message if you'd like to inquire about working together or to schedule some time to talk.
           </p>
           <p>Or, feel free to email me directly: <a href="mailto:matt@mattoliver.xyz" rel="noopener noreferrer" target="_blank">matt@mattoliver.xyz</a></p>
 
