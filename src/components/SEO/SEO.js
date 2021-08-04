@@ -25,7 +25,12 @@ const SEO = ({ title, description, image, lang, article }) => {
     url: `${siteUrl}${pathname}`,
   }
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    <Helmet
+      title={seo.title}
+      titleTemplate={titleTemplate}
+      htmlAttributes={{
+        lang,
+      }}>
 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -57,7 +62,6 @@ const SEO = ({ title, description, image, lang, article }) => {
 
       {seo.image && <meta name="twitter:image" content={seo.image} />}
 
-      {<html lang="en-US" />}
     </Helmet>
   )
 }

@@ -30,7 +30,7 @@ const MainLayout = ({ children, intl, ...props }) => {
   return (
     <>
       <Wrapper>
-        <MagicHeader title={intl.formatMessage({ id: data.site.siteMetadata.title })} />
+        <MagicHeader title={data.site.siteMetadata.title} />
         <Middle>
           <Main>
             {children}
@@ -70,4 +70,4 @@ MainLayout.propTypes = {
   intl: PropTypes.object.isRequired
 }
 
-export default injectIntl(MainLayout)
+export default MainLayout

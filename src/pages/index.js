@@ -15,10 +15,12 @@ const homeHeadline = 'Product-focused, creative engineer on a mission.'
 const copyText = 'Currently building political tech to power progressive social causes. Always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.'
 
 export default function Home() {
+	const intl = useIntl()
 	return (
 		<>
 			<SEO
-				title={`Matt Oliver`}>
+				title={`Matt Oliver`}
+				lang={intl.locale}>
 			</SEO>
 			<MainLayout>
 				<Wrapper>
