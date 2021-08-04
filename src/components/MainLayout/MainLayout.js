@@ -2,6 +2,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { injectIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 
 import MagicHeader from "../MagicHeader"
@@ -13,7 +14,7 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
 }
 
-const MainLayout = ({ children, ...props }) => {
+const MainLayout = ({ children, intl, ...props }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,7 +30,7 @@ const MainLayout = ({ children, ...props }) => {
   return (
     <>
       <Wrapper>
-        <MagicHeader title={data.site.siteMetadata.title} />
+        <MagicHeader title={intl.formatMessage({ id: data.site.siteMetadata.title })} />
         <Middle>
           <Main>
             {children}
@@ -66,6 +67,7 @@ const Main = styled.main`
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  intl: PropTypes.object.isRequired
 }
 
-export default MainLayout
+export default injectIntl(MainLayout)

@@ -3,9 +3,9 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
-import MainLayout from '../components/MainLayout'
+import MainLayout from "../components/MainLayout";
 import PageHero from "../components/PageHero";
-
+import SEO from "../components/SEO";
 
 const SecondaryHead = styled.h2`
 	color: var(--color-textSecondary);
@@ -20,6 +20,9 @@ const StyledLink = styled.a`
 export default function AboutPage() {
   return (
     <>
+      <SEO
+        title={`About`}>
+      </SEO>
       <MainLayout>
         <Wrapper>
           <PageHero>About page</PageHero>

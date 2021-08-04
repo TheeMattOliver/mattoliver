@@ -3,14 +3,17 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
-import GridLayout from '../components/GridLayout'
-
+import GridLayout from "../components/GridLayout";
+import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
 import BasicGrid from "../components/BasicGrid";
 
 export default function WorkPage() {
   return (
     <>
+      <SEO
+        title={`Work`}>
+      </SEO>
       <GridLayout>
         <Wrapper>
           <PageHero>Selected Work</PageHero>

@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
+import SEO from "../components/SEO";
 import MainLayout from '../components/MainLayout'
 import PageHero from "../components/PageHero";
 
@@ -16,6 +17,9 @@ const copyText = 'Currently building political tech to power progressive social 
 export default function Home() {
 	return (
 		<>
+			<SEO
+				title={`Matt Oliver`}>
+			</SEO>
 			<MainLayout>
 				<Wrapper>
 					<PageHero>
