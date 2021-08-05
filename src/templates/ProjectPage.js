@@ -41,7 +41,6 @@ export default function ProjectPage({ data }) {
                   )
                 })
               }
-
             </ul>
           </TechListWrapper>
 
