@@ -12,7 +12,7 @@ import SectionHeader from '../components/SectionHeader';
 
 const ProjectPage = () => {
   const data = useStaticQuery(graphql`
-  query ProjectPageTemplateTitleQuery {
+  query DummyProjectPageTitleQuery {
     site {
       siteMetadata {
         title
@@ -44,6 +44,24 @@ const ProjectPage = () => {
                 </svg>
                 Javascript
               </TechListItem>
+              <TechListItem>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                React
+              </TechListItem>
+              <TechListItem>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                Angular
+              </TechListItem>
+              <TechListItem>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                SQL
+              </TechListItem>
             </ul>
           </TechListWrapper>
 
@@ -54,6 +72,19 @@ const ProjectPage = () => {
                 <li>
                   <a href="#introduction">
                     Introduction
+                  </a>
+                </li>
+                <li>Purpose & Goal</li>
+                <li>Impact</li>
+                <li>Background</li>
+                <li>Feature Spotlight</li>
+                <li>UI Challenges</li>
+                <li>Data & Backend Challenges</li>
+                <li>Accessibility Challenges</li>
+                <li>Current Status</li>
+                <li>
+                  <a href="#takeaways">
+                    Learnings & Takeaways
                   </a>
                 </li>
               </ol>
@@ -70,6 +101,7 @@ const ProjectPage = () => {
             <ImgPlaceholder />
           </LedeWrapper>
 
+
           <Section>
             <SectionHeaderWrapper >
               <SectionHeader id={`introduction`}>
@@ -78,6 +110,38 @@ const ProjectPage = () => {
             </SectionHeaderWrapper>
             <ImgPlaceholder />
             <Spacer axis='vertical' size={1000} />
+          </Section>
+
+          <Section>
+            <SectionHeaderWrapper >
+              <SectionHeader id={`purpose`}>
+                Purpose & Goal
+              </SectionHeader>
+            </SectionHeaderWrapper>
+            <ImgPlaceholder />
+            <Spacer axis='vertical' size={1000} />
+          </Section>
+
+          <Section>
+            <SectionHeaderWrapper >
+              <SectionHeader id={`impact`}>
+                Impact
+              </SectionHeader>
+            </SectionHeaderWrapper>
+            <ImgPlaceholder />
+            <Spacer axis='vertical' size={1000} />
+          </Section>
+
+          <Spacer axis='vertical' size={1000} />
+          <Spacer axis='vertical' size={300} />
+
+          <Section>
+            <SectionHeaderWrapper >
+              <SectionHeader id={`takeaways`}>
+                Takeaways
+              </SectionHeader>
+            </SectionHeaderWrapper >
+            <ImgPlaceholder />
           </Section>
 
           <MobileBackButton to='/work'>
@@ -105,13 +169,13 @@ const Wrapper = styled.div`
   'footer footer';
   grid-template-columns: 1fr;
   @media ${QUERIES.laptopAndUp} {
-      grid-template-areas:
-      'header header'
-      'page-title page-title'
-      'sidebar main'
-      'footer footer';
-  grid-template-columns: 14rem 1fr;
-  }
+    grid-template-areas:
+    'header header'
+    'page-title page-title'
+    'sidebar main'
+    'footer footer';
+    grid-template-columns: 14rem 1fr;
+    }
   gap: 16px;
   margin: 0 auto;
   isolation: isolate;
