@@ -3,12 +3,12 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
-import ProjectPage from "../templates/ProjectPage";
+import DummyProjectPage from "../templates/DummyProjectPage";
 
 export default function AboutPage() {
   return (
     <>
-      <ProjectPage />
+      <DummyProjectPage />
     </>
   );
 }

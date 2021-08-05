@@ -5,12 +5,12 @@
     "url": "https://github.com/TheeMattOliver/mgo-portfolio-web"
   },
   "private": true,
-  "description": "Product & dev portfolio for Matt Oliver.",
+  "description": "Web & digital product portfolio for Matt Oliver.",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "GATSBY_HOT_LOADER=fast-refresh gatsby develop",
+    "build": "NODE_OPTIONS=\"-r esm\" gatsby build",
+    "develop": "NODE_OPTIONS=\"-r esm\" gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -22,6 +22,7 @@
     "@reach/dialog": "^0.15.3",
     "@sanity/block-content-to-react": "^3.0.0",
     "babel-plugin-styled-components": "^1.12.0",
+    "esm": "^3.2.25",
     "gatsby": "^3.0.1",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-intl": "^0.3.3",

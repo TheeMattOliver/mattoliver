@@ -3,6 +3,8 @@ import React from 'react';
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby-plugin-intl";
+import { GatsbyImage } from "gatsby-plugin-image"
+
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { QUERIES, WEIGHTS } from "../constants"
@@ -10,40 +12,36 @@ import Spacer from '../components/Spacer';
 import ImgPlaceholder from '../components/ImgPlaceholder';
 import SectionHeader from '../components/SectionHeader';
 
-const ProjectPage = () => {
-  const data = useStaticQuery(graphql`
-  query ProjectPageTemplateTitleQuery {
-    site {
-      siteMetadata {
-        title
-        siteUrl
-        author
-      }
-    }
-  }
-`)
-
+export default function ProjectPage({ data }) {
+  const { title, technologies } = data.project
   return (
     <>
       <Wrapper>
         <HeaderWrapper>
-          <Header title={data.site.siteMetadata.title} />
+          <Header title={`Matt Oliver`} />
         </HeaderWrapper>
 
         <PageTitleWrapper>
-          <PageTitle>Project Name</PageTitle>
+          <PageTitle>{title}</PageTitle>
         </PageTitleWrapper>
 
         <Aside>
           <TechListWrapper>
             <h2>Technologies</h2>
             <ul>
-              <TechListItem>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                Javascript
-              </TechListItem>
+              {
+                technologies.map(item => {
+                  return (
+                    <TechListItem key={item.id}>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {item.title}
+                    </TechListItem>
+                  )
+                })
+              }
+
             </ul>
           </TechListWrapper>
 
@@ -87,14 +85,57 @@ const ProjectPage = () => {
         </Main>
 
         <FooterWrapper>
-          <Footer data={data.site.siteMetadata} />
+          <Footer />
         </FooterWrapper>
       </Wrapper>
     </>
   )
 }
 
-export default ProjectPage
+export const query = graphql`
+  query($slug: String!) {
+    project: sanityProject(slug: {current: {eq: $slug}}) {
+      id
+      title
+      author {
+        id
+        name
+        image {
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          }
+        }
+      }
+      categories {
+        title
+        _key
+      }
+      mainImage {
+        asset {
+          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          id
+          title
+        }
+      }
+      publishedAt
+      technologies {
+        title
+        id
+      }
+      tags {
+        value
+        label
+        _key
+      }
+      slug {
+        current
+      }
+      excerpt {
+        _rawChildren(resolveReferences: {maxDepth: 10})
+      }
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   display: grid;
@@ -208,7 +249,6 @@ const MobileBackButton = styled(Link)`
 const DesktopBackButton = styled(Link)`
 `;
 const LedeWrapper = styled.div`
-
 `;
 
 const LedeText = styled.p`
