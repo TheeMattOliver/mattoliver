@@ -7,15 +7,21 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import SEO from "../components/SEO"
 import { QUERIES, WEIGHTS } from "../constants"
 import Spacer from '../components/Spacer';
 import ImgPlaceholder from '../components/ImgPlaceholder';
 import SectionHeader from '../components/SectionHeader';
 
 export default function ProjectPage({ data }) {
-  const { title, technologies } = data.project
+  const { title, technologies, content, mainImage } = data.project
+  const ledeRawText = content[0].text[0]._rawChildren[0].text
+
   return (
     <>
+      <SEO
+        title={title}>
+      </SEO>
       <Wrapper>
         <HeaderWrapper>
           <Header title={`Matt Oliver`} />
@@ -48,11 +54,16 @@ export default function ProjectPage({ data }) {
             <h2>Table of Contents</h2>
             <TableOfContents>
               <ol>
-                <li>
-                  <a href="#introduction">
-                    Introduction
-                  </a>
-                </li>
+                {/* remove the lede & excerpt */}
+                {content.slice(2).map(item => {
+                  return (
+                    <li key={item._key}>
+                      <a href={item.anchor}>
+                        {item.heading}
+                      </a>
+                    </li>
+                  )
+                })}
               </ol>
             </TableOfContents>
             <DesktopBackButton to='/work'>
@@ -63,19 +74,51 @@ export default function ProjectPage({ data }) {
 
         <Main>
           <LedeWrapper>
-            <LedeText>Platea dictumst vestibulum rhoncus est. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Accumsan sit amet nulla facilisi.</LedeText>
-            <ImgPlaceholder />
+            <LedeText>{ledeRawText}</LedeText>
+            <ImageWrapper>
+              <GatsbyImage
+                image={mainImage?.asset?.gatsbyImageData}
+                alt={mainImage?.asset?.altText}
+              />
+            </ImageWrapper>
           </LedeWrapper>
 
-          <Section>
-            <SectionHeaderWrapper >
-              <SectionHeader id={`introduction`}>
-                Introduction
-              </SectionHeader>
-            </SectionHeaderWrapper>
-            <ImgPlaceholder />
-            <Spacer axis='vertical' size={1000} />
-          </Section>
+          {/* todo: make this smooth scroll to anchor */}
+          {content.slice(2).map(item => {
+            return (
+              <Section key={item._key}>
+                <SectionHeaderWrapper >
+                  <SectionHeader id={item.anchor}>
+                    {item.heading}
+                  </SectionHeader>
+                </SectionHeaderWrapper>
+
+                <SectionImageContainer>
+                  <SectionImageWrapper>
+                    <SectionMainImage
+                      image={item.image?.asset.gatsbyImageData}
+                      alt={``}
+                    />
+                  </SectionImageWrapper>
+                </SectionImageContainer>
+
+                <SectionCopyWrapper>
+                  {item.text.map(graf => {
+                    return (
+                      <>
+                        <SectionCopyGraf>
+                          {graf._rawChildren[0].text}
+                        </SectionCopyGraf>
+                        <br />
+                      </>
+                    )
+                  })}
+                </SectionCopyWrapper>
+
+                {/* <Spacer axis='vertical' size={550} /> */}
+              </Section>
+            )
+          })}
 
           <MobileBackButton to='/work'>
             &larr; Back to Projects
@@ -114,6 +157,7 @@ export const query = graphql`
           gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
           id
           title
+          altText
         }
       }
       publishedAt
@@ -129,9 +173,37 @@ export const query = graphql`
       slug {
         current
       }
-      excerpt {
-        _rawChildren(resolveReferences: {maxDepth: 10})
+      content {
+        ... on SanityImageSection {
+          _key
+          _type
+          label
+          heading
+          anchor
+          image {
+            asset {
+              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+              altText
+            }
+          }
+          text {
+            _rawChildren(resolveReferences: {maxDepth: 10})
+            _key
+          }
+        }
+        ... on SanityTextSection {
+          _key
+          _type
+          label
+          heading
+          text {
+            _key
+            _rawChildren(resolveReferences: {maxDepth: 10})
+          }
+        }
       }
+      startedAt
+      endedAt
     }
   }
 `;
@@ -139,13 +211,13 @@ export const query = graphql`
 const Wrapper = styled.div`
   display: grid;
   grid-template-areas:
-  'header header'
-  'page-title page-title'
-  'main main'
-  'footer footer';
+    'header header'
+    'page-title page-title'
+    'main main'
+    'footer footer';
   grid-template-columns: 1fr;
   @media ${QUERIES.laptopAndUp} {
-      grid-template-areas:
+    grid-template-areas:
       'header header'
       'page-title page-title'
       'sidebar main'
@@ -174,7 +246,10 @@ const PageTitleWrapper = styled.div`
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 5rem 0;
+  padding: 0 1rem;
+  @media ${QUERIES.tabletAndUp} {
+    padding: 5rem 0;
+  }
 `;
 
 const PageTitleBackground = styled.div`
@@ -201,7 +276,9 @@ const Main = styled.main`
   background-color: var(--color-background);
   display: grid;
   /* border: solid 1px tomato; */
-  margin: 1rem 1rem 0 1rem;
+  @media ${QUERIES.tabletAndUp} {
+    margin: 1rem 1rem 0 1rem;
+  }
   @media ${QUERIES.laptopAndUp} {
   }
 `;
@@ -223,7 +300,7 @@ const Aside = styled.aside`
     }
     li {
       font-size: 1.125;
-      filter: saturate(0);
+      /* filter: saturate(0); */
       margin-top: 0.5rem;
       font-weight: ${WEIGHTS.normal}
     }
@@ -254,30 +331,80 @@ const LedeText = styled.p`
   color: var(--color-textPrimary);
   margin-top: .75rem;
   margin-bottom: .75rem;
-  padding: 0 1.5rem;
   line-height: 1.5rem;
+  padding: 0 1rem;
   font-size: clamp(
     1rem,
     /* 1.3vw + .9rem, */
     1.25vw + .5rem,
     1.45rem
   );
+  width: clamp(300px, 95%, 65ch);  
+  
+  @media ${QUERIES.tabletAndUp} {
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 const Section = styled.section`
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  /* min-height: 400px; */
+
   background: var(--color-backgroundPrimary);
-  margin-top: 2rem;
-  &:last-of-type {
-    margin-bottom: 4rem;
+  display: grid;
+  grid-template-areas:
+    'header'
+    'image'
+    'copy';
+  grid-template-columns: 1fr;
+  gap: 16px;
+  @media ${QUERIES.tabletAndUp} {
+    grid-template-areas:
+    'header image'
+    'header copy';
+    grid-template-columns: 1fr 3fr;
+    margin-top: 2rem;
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }
   }
 `;
 const SectionHeaderWrapper = styled.div`
-  margin-bottom: 2rem;
-  position: sticky;
-  top: 8rem;
+  grid-area: header;
+  @media ${QUERIES.tabletAndUp} {  
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 8rem;
+    align-self: flex-start;
+  }
+`;
+
+const SectionCopyWrapper = styled.div`
+  grid-area: copy;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: ${WEIGHTS.thin};
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: 2rem;
+  }
+`;
+
+const SectionCopyGraf = styled.p`
+  color: var(--color-textPrimary);
+	margin-top: .75rem;
+	line-height: 1.25rem;
+  padding: 0 1rem;
+  font-size: clamp(
+    1rem,
+		1.25vw + .5rem,
+    1.45rem
+  );
+  @media ${QUERIES.tabletAndUp} {
+    line-height: 1.75rem;
+    padding: 0 1.5rem;
+  }
+
+  width: clamp(300px, 95%, 65ch);  
 `;
 
 const StickySidebar = styled.div`
@@ -293,4 +420,42 @@ const TechListWrapper = styled.div`
 const TechListItem = styled.li`
   display: flex;
   align-items: center;
+`;
+
+const ImageWrapper = styled.div`
+  border: solid 1px var(--color-borderPrimary);
+  border-radius: 3px;
+  padding: 16px;
+  margin: 0 1rem 1rem 1rem;
+  /* filter: drop-shadow(1px 2px 3px var(--color-gray300)); */
+  flex: 1;
+`;
+
+const SectionImageContainer = styled.div`
+  grid-area: image;
+  border: solid 1px var(--color-borderPrimary);
+  border-radius: 3px;
+  padding: .25rem;
+  margin: 0 1rem;
+  /* filter: drop-shadow(1px 2px 3px var(--color-gray300)); */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media ${QUERIES.tabletAndUp} {
+    margin: 0 1rem 1rem 1rem;
+  }
+`;
+
+const SectionImageWrapper = styled.div`
+  border-radius: 3px;
+  padding: 1rem;
+  display: flex;
+  flex: 1;
+  height: 400px;
+`;
+
+const SectionMainImage = styled(GatsbyImage)`
+  object-fit: scale-down;
+  width: 100%;
 `;

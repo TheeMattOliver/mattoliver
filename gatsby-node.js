@@ -20,7 +20,7 @@ async function turnProjectsIntoPages({ graphql, actions }) {
   // 3. Loop over each project and create a page for that project
   data.projects.nodes.forEach(project => {
     actions.createPage({
-      path: `projects/${project.slug.current}`,
+      path: `work/${project.slug.current}`,
       component: projectPageTemplate,
       context: {
         slug: project.slug.current
