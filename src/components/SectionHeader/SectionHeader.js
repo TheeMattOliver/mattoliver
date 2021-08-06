@@ -27,6 +27,8 @@ const SectionTitle = styled.h3`
   @media ${QUERIES.laptopAndUp} {
     line-height: 3rem;
     padding: 0 1.5rem;
+    // optical alignment with table of contents aside:
+    margin-top: -.67rem;
   }
 `;
 

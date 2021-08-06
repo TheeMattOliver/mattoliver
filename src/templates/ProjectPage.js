@@ -78,7 +78,7 @@ export default function ProjectPage({ data }) {
             <ImageWrapper>
               <GatsbyImage
                 image={mainImage?.asset?.gatsbyImageData}
-                alt={mainImage?.asset?.altText}
+                alt={''}
               />
             </ImageWrapper>
           </LedeWrapper>
@@ -222,12 +222,12 @@ const Wrapper = styled.div`
       'page-title page-title'
       'sidebar main'
       'footer footer';
-  grid-template-columns: 14rem 1fr;
+    grid-template-columns: 14rem 1fr;
   }
-  gap: 16px;
-  margin: 0 auto;
-  isolation: isolate;
-  color: var(--color-textPrimary);
+    gap: 16px;
+    margin: 0 auto;
+    isolation: isolate;
+    color: var(--color-textPrimary);
 `;
 
 const HeaderWrapper = styled.div`
