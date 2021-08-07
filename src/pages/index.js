@@ -50,7 +50,7 @@ const HeroCopyWrapper = styled.div`
 const HeroCopyText = styled.p`
   color: var(--color-textPrimary);
 	margin-top: .75rem;
-	padding: 0 1.5rem;
+	padding: 0 1rem;
 	line-height: 1.5rem;
   font-size: clamp(
     1rem,
@@ -58,6 +58,8 @@ const HeroCopyText = styled.p`
 		1.25vw + .5rem,
     1.45rem
   );
-
   width: clamp(300px, 95%, 750px);
+	@media ${QUERIES.tabletAndUp} {
+		padding: 0 1.5rem;
+	}
 `;

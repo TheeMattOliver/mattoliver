@@ -3,8 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby-plugin-intl";
+import { format } from 'date-fns';
 
 import { QUERIES } from '../../constants';
+import Spacer from '../Spacer';
 
 export default function ProjectList({ projects }) {
   return (
@@ -14,32 +16,60 @@ export default function ProjectList({ projects }) {
           return (
             <ProjectCardWrapper key={project.id}>
               <Link to={`/work/${project.slug.current}`}>
+                <ProjectCardHeader>
+                  <h2>{project.title}</h2>
+                  {` `}
+                  <span></span>
+                  {` `}
+                  <small>
+                    <time dateTime="">
+                      {format(new Date(project.endedAt), 'MMMM yyyy')}
+                    </time>
+                  </small>
+                </ProjectCardHeader>
                 <ProjectImageWrapper>
                   <ProjectMainImage
                     image={project.previewImage?.asset.gatsbyImageData}
                     alt={``}
                   />
                 </ProjectImageWrapper>
-                <ProjectCardContentWrapper>
-                  <h2>{project.title}</h2> -
-                  <small>{project.endedAt}</small>
-                </ProjectCardContentWrapper>
+                <ProjectCardContent>
+                  <p>
+                    {project.excerpt.text[0]._rawChildren[0].text}
+                  </p>
+                </ProjectCardContent>
+                <OffsetProjectCardContentWrapper>
+                  <h2>{project.title}</h2>
+                  {` `}
+                  <span></span>
+                  {` `}
+                  <small>
+                    <time dateTime="">
+                      {format(new Date(project.endedAt), 'MMMM yyyy')}
+                    </time>
+                  </small>
+                  <p>
+                    {project.excerpt.text[0]._rawChildren[0].text}
+                  </p>
+                </OffsetProjectCardContentWrapper>
               </Link>
             </ProjectCardWrapper>
           )
         })}
+        <Spacer axis='vertical' size={100} />
       </GridWrapper>
     </>
   )
 }
 
 const GridWrapper = styled.div`
-  --min-column-width: min(320px, 100%);
+  --min-column-width: min(440px, 100%);
   display: grid;
   grid-template-columns:
     repeat(auto-fill, minmax(var(--min-column-width), 1fr));
-  gap: 16px;
+  grid-gap: 2rem;
   padding: 16px;
+  
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
   }
@@ -50,38 +80,97 @@ const GridWrapper = styled.div`
 
 const ProjectCardWrapper = styled.div`
   /* padding: 16px;
-  padding: .25rem; */
-  /* justify-content: center;
-  align-items: center; */
-  margin: 0 1rem; 
-  height: 280px; 
+  padding: .25rem; 
+  justify-content: center;
+  align-items: center; 
   border: solid 1px var(--color-borderPrimary);
+  height: 280px; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--color-panelBackground);
   border-radius: 3px;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+
+  @media ${QUERIES.tabletAndUp} {
+    margin: 4rem 3.25rem 4rem 2rem;
+  }
+  @media ${QUERIES.laptopAndUp} {
+    margin: 4rem 3.25rem 4rem 2rem;
+  }
   @media ${QUERIES.desktopAndUp} {
-    margin: 0 1rem 1rem 1rem;
+    margin: 1rem;
   }
 `;
 
-const ProjectCardContentWrapper = styled.div`
-  border: solid 1px var(--color-borderPrimary);
-  background: var(--color-panelBackground);
-  border-radius: 3px;
-  position: absolute;
-  flex: 1;
-  margin-top: -3rem;
-  margin-right: -.75rem;
-  right: 0;
-  padding: 1rem 1.5rem 1.5rem;
+const ProjectCardHeader = styled.div`
+  display: block;
+  margin: 1rem 0;
   h2 {
     font-size: calc(1rem + 1vw);
     display: inline-block;
     margin-bottom: .5rem;
     color: var(--color-textPrimary);
+  }
+  small, time {
+    color: var(--color-textSecondary);
+  }
+  @media ${QUERIES.tabletAndUp} {
+    display: none;
+  }
+`;
+const ProjectCardContent = styled.div`
+  display: block;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  p {
+    margin-top: .5rem;
+    color: var(--color-textSecondary);
+  }
+  @media ${QUERIES.tabletAndUp} {
+    display: none;
+  }
+`;
+
+const OffsetProjectCardContentWrapper = styled.div`
+  display: none;
+  h2 {
+    font-size: calc(1rem + 1vw);
+    display: inline-block;
+    margin-bottom: .5rem;
+    color: var(--color-textPrimary);
+  }
+  small, time {
+    color: var(--color-textSecondary);
+  }
+  p {
+    margin-top: .5rem;
+    color: var(--color-textSecondary);
+  }
+  @media ${QUERIES.tabletAndUp} {
+    display: block;
+    background: var(--color-panelBackground);
+    flex: 1;
+    h2 {
+      font-size: calc(1rem + 1vw);
+      display: inline-block;
+      margin-bottom: .5rem;
+      color: var(--color-textPrimary);
+    }
+    small, time {
+      color: var(--color-textSecondary);
+    }
+    p {
+      margin-top: .5rem;
+      color: var(--color-textSecondary);
+    }
+    padding: 1rem 1.5rem 1.5rem;
+    border-radius: 3px;
+    border: solid 1px var(--color-borderPrimary);
+    position: absolute;
+    margin-top: -3rem;
+    margin-right: -2.5rem;
+    margin-left: 2rem;
 
   }
 `;
@@ -89,7 +178,7 @@ const ProjectCardContentWrapper = styled.div`
 const ProjectImageWrapper = styled.div`
   flex: 1;
   display: flex;
-  border: solid 1px deeppink;
+  border: solid 1px var(--color-borderPrimary);
   &:hover {
     opacity: 0.5;
     filter: grayscale(0.8);
@@ -101,7 +190,13 @@ const ProjectMainImage = styled(GatsbyImage)`
   object-fit: cover;
   object-position: top left;
   flex: 1;
-  /* max-width: 95%; */
+`;
+
+const ProjectTitleLink = styled(props => <Link {...props} />)`
+  color: red;
+  /* &:hover {
+    text-decoration: underline;
+  } */
 `;
 
 

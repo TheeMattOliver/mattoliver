@@ -56,6 +56,11 @@ export const query = graphql`
         }
         title
         endedAt
+        excerpt {
+          text {
+            _rawChildren(resolveReferences: {maxDepth: 10})
+          }
+        }
       }
     }
   }

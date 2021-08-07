@@ -8,6 +8,9 @@ module.exports = {
     image: "/egypt-desk.jpg",
     twitterUsername: "@theemattoliver",
   },
+  flags: {
+    DEV_SSR: false
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,

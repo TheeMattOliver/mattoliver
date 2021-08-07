@@ -17,9 +17,12 @@ const PageHero = ({ children }) => {
 export default PageHero
 
 const Wrapper = styled.div`
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   margin-left: auto;
   margin-right: auto;
+  @media ${QUERIES.tabletAndUp} {
+    padding: 0 1.5rem;
+  }
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
   }
