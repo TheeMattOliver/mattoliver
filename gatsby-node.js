@@ -3,6 +3,7 @@ import path from 'path';
 async function turnProjectsIntoPages({ graphql, actions }) {
   // 1. Get a template for this page
   const projectPageTemplate = path.resolve('./src/templates/ProjectPage.js')
+  const portableTextPageTemplate = path.resolve('./src/templates/ProjectPagePortableText.js')
   // 2. Query all the projects
   const { data } = await graphql(`
     query {
@@ -27,6 +28,16 @@ async function turnProjectsIntoPages({ graphql, actions }) {
       }
     })
   })
+
+  // data.projects.nodes.forEach(project => {
+  //   actions.createPage({
+  //     path: `fake/${project.slug.current}`,
+  //     component: portableTextPageTemplate,
+  //     context: {
+  //       slug: project.slug.current
+  //     }
+  //   })
+  // })
 }
 
 export async function createPages(params) {

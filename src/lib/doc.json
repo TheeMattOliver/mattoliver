@@ -1,0 +1,761 @@
+{
+  "_createdAt": "2021-08-05T02:55:31Z",
+  "_id": "2ab51fbb-7377-4834-9ee7-582440275984",
+  "_rev": "X0nMOJB2vstypuSyNPsNk2",
+  "_type": "project",
+  "_updatedAt": "2021-08-06T19:47:58Z",
+  "author": {
+    "_ref": "bc2f4c72-8726-40d5-94c6-4aee57ccfd99",
+    "_type": "reference"
+  },
+  "categories": [
+    {
+      "_key": "30116540281e",
+      "_ref": "94f57d08-120f-4ff8-bc59-8a90b8eeaa46",
+      "_type": "reference"
+    }
+  ],
+  "content": [
+    {
+      "_key": "7186394c1735",
+      "_type": "textSection",
+      "heading": "Lede",
+      "label": "Lede",
+      "text": [
+        {
+          "_key": "3ab0bc8ae17c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "76e0e84756ed",
+              "_type": "span",
+              "marks": [],
+              "text": "This is the lede. It should be no more than two or three brief sentences about this project, what it's about, and so on. Here is one more sentence."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "fc679fdb641b",
+      "_type": "textSection",
+      "heading": "Excerpt",
+      "label": "Excerpt",
+      "text": [
+        {
+          "_key": "6801cce91564",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "a298f97102af",
+              "_type": "span",
+              "marks": [],
+              "text": "This is an excerpt. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "4c6e615031a1",
+      "_type": "imageSection",
+      "anchor": "#introduction",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to Action"
+      },
+      "heading": "Introduction",
+      "image": {
+        "_type": "figure",
+        "alt": "Bubble chart",
+        "asset": {
+          "_ref": "image-f03d116288f0d14c47bed9f37c2b7b90d2ab1666-1717x1717-png",
+          "_type": "reference"
+        },
+        "caption": "Bubble chart"
+      },
+      "label": "Introduction",
+      "text": [
+        {
+          "_key": "557594bb0027",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "aaf3f371517c",
+              "_type": "span",
+              "marks": [],
+              "text": "This is the introduction section. "
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "73b2309cd3d5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8c4b976912f6",
+              "_type": "span",
+              "marks": [],
+              "text": "Here is a list of the most salient points to make in the introduction:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a57d7adb33e6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "85f7c67c7bb4",
+              "_type": "span",
+              "marks": [],
+              "text": "\n\n• Item 1"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9eef448496b8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3ad1024e6a5b",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 2"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9aec063ede67",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3c64a97c27a8",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 3"
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "974986e85856",
+              "_type": "link",
+              "href": "https://www.google.com"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "033b2dd70613",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "3d6cc3d9e671",
+              "_type": "span",
+              "marks": [],
+              "text": "\n\nYou will have to learn how to parse "
+            },
+            {
+              "_key": "8652d8a4bd3e",
+              "_type": "span",
+              "marks": [
+                "974986e85856"
+              ],
+              "text": "hypertext links to websites."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "974986e85856",
+              "_type": "link",
+              "href": "https://www.google.com"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "7b04714aaed0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "022b46fe7b01",
+              "_type": "span",
+              "marks": [],
+              "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "f2840e1d0106",
+      "_type": "imageSection",
+      "anchor": "#purpose",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to action"
+      },
+      "heading": "Purpose & Goal",
+      "image": {
+        "_type": "figure",
+        "alt": "blend image",
+        "asset": {
+          "_ref": "image-ab511130020ec14757e9e7ea281674ef1f28a4ba-1715x720-png",
+          "_type": "reference"
+        },
+        "caption": "blend image"
+      },
+      "label": "Purpose and Goal",
+      "text": [
+        {
+          "_key": "e3a1e07025c1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "39c08f280b4b",
+              "_type": "span",
+              "marks": [],
+              "text": "This is the purpose and goal section. It has some text and an image.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "d1b000dd4e65",
+      "_type": "imageSection",
+      "anchor": "#impact",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to Action"
+      },
+      "heading": "Impact",
+      "image": {
+        "_type": "figure",
+        "alt": "Scatter",
+        "asset": {
+          "_ref": "image-e3e4b2c42d470d19d2d387eb3230460820980028-1151x720-png",
+          "_type": "reference"
+        },
+        "caption": "Scatter"
+      },
+      "label": "Impact",
+      "text": [
+        {
+          "_key": "582735fd8bd9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "35fa177e55a7",
+              "_type": "span",
+              "marks": [],
+              "text": "This the impact section, it will have lots of text.\n\nHere's a bulleted list of items:\n\n• Item 1"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "755d59319a62",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "53889013ad54",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 2"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4c6f65928837",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "658a3209bfad",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 3\n\nHere is another paragraph. It is very short, but it is very good.\n\nAnd another, also good, but longer. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n\n"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "43aad6a7ebfb",
+      "_type": "imageSection",
+      "anchor": "#feature-spotlight",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to Action"
+      },
+      "heading": "Feature Spotlight",
+      "image": {
+        "_type": "figure",
+        "alt": "Venn",
+        "asset": {
+          "_ref": "image-d5970438c4d9fa9e1d8d7dec855f35058d99cd99-1079x1079-png",
+          "_type": "reference"
+        },
+        "caption": "Venn"
+      },
+      "label": "Feature Spotlight",
+      "text": [
+        {
+          "_key": "c5e3b7958839",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8aded9ba6f4c",
+              "_type": "span",
+              "marks": [],
+              "text": "Here is a block of text. \n\nThe three most important things to know are:\n\n• Bullet point one\n• Bullet point two\n• Bullet point three\n\nNow, here is a bit of code:\n\n"
+            },
+            {
+              "_key": "f4151c85c610",
+              "_type": "span",
+              "marks": [
+                "code"
+              ],
+              "text": "const Lobsterize = (arr) => {\n  arr.map(item => item.concat('Lobster')) \n}\n"
+            },
+            {
+              "_key": "9f84397c4485",
+              "_type": "span",
+              "marks": [],
+              "text": "\nDid that work? More text follows now:\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "7d29b4687cca",
+      "_type": "imageSection",
+      "anchor": "#ui-challenges",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to Action"
+      },
+      "heading": "UI Challenges",
+      "image": {
+        "_type": "figure",
+        "alt": "Image",
+        "asset": {
+          "_ref": "image-5e07415f56f0b5f6d740abce387f85c0636e1ab9-720x720-png",
+          "_type": "reference"
+        },
+        "caption": "Image"
+      },
+      "label": "UI Challenges",
+      "text": [
+        {
+          "_key": "fdcb829b4b46",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5bb3ec1fd42f",
+              "_type": "span",
+              "marks": [],
+              "text": "This is another section. It is about something. It will have many paragraphs. Here are some bullet points:\n\n• Bullet point 1"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7d10b0f80517",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e1b5ce4b7bcd",
+              "_type": "span",
+              "marks": [],
+              "text": "• Bullet point 2"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "30ca9acca030",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eab8166ad6d9",
+              "_type": "span",
+              "marks": [],
+              "text": "• Bullet point 3"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "84b4a5fe3a52",
+      "_type": "imageSection",
+      "anchor": "#backend-challenges",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to Action"
+      },
+      "heading": "Data & Backend Challenges",
+      "image": {
+        "_type": "figure",
+        "alt": "Map",
+        "asset": {
+          "_ref": "image-7d647b56d679913add9e1cbac57fb908388f1e5d-1717x1073-png",
+          "_type": "reference"
+        },
+        "caption": "Map"
+      },
+      "label": "Data and Backend Challenges",
+      "text": [
+        {
+          "_key": "f7c70934ca76",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2ac402dafce4",
+              "_type": "span",
+              "marks": [],
+              "text": "Here is a paragraph for this section, and here are the top level bullet points:\n\n• Bullet point 1\n\n• Bullet point 2"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6446a3e762c8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "94d0d835927d",
+              "_type": "span",
+              "marks": [],
+              "text": "\n• Bullet point 3\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "f28f764cc08c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "06a572d9d81f",
+              "_type": "span",
+              "marks": [],
+              "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "eb8ab9aad8a5",
+      "_type": "imageSection",
+      "anchor": "#accessibility-challenges",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to Action"
+      },
+      "heading": "Accessibility Challenges",
+      "image": {
+        "_type": "figure",
+        "alt": "Caption",
+        "asset": {
+          "_ref": "image-e3e4b2c42d470d19d2d387eb3230460820980028-1151x720-png",
+          "_type": "reference"
+        },
+        "caption": "Caption"
+      },
+      "label": "Accessibility Challenges",
+      "text": [
+        {
+          "_key": "930fa3b9f23f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "61ebf6936627",
+              "_type": "span",
+              "marks": [],
+              "text": "This the impact section, it will have lots of text.\n\nHere's a bulleted list of items:\n\n• Item 1"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7f9cebdab5bc",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "06df75904333",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 2"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "676c5433d897",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7b61103606f8",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 3\n\nHere is another paragraph. It is very short, but it is very good.\n\nAnd another, also good, but longer. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat "
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "40b6391d5d3b",
+      "_type": "imageSection",
+      "anchor": "#current-status",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to action"
+      },
+      "heading": "Current Status",
+      "image": {
+        "_type": "figure",
+        "alt": "Alt text",
+        "asset": {
+          "_ref": "image-d5970438c4d9fa9e1d8d7dec855f35058d99cd99-1079x1079-png",
+          "_type": "reference"
+        },
+        "caption": "Caption"
+      },
+      "label": "Current Status",
+      "text": [
+        {
+          "_key": "48c57fa6cd69",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eee604b913c5",
+              "_type": "span",
+              "marks": [],
+              "text": "This the impact section, it will have lots of text.\n\nHere's a bulleted list of items:\n\n• Item 1"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "fd7ba304dc88",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2deafeb6a8cf",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 2"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5bf0bf513a3b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cec5cc0e5aef",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 3\n\nHere is another paragraph. It is very short, but it is very good.\n\nAnd another, also good, but longer. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n\n"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    },
+    {
+      "_key": "962a711715e6",
+      "_type": "imageSection",
+      "anchor": "#conclusion",
+      "cta": {
+        "_type": "cta",
+        "link": "https://www.google.com",
+        "title": "Call to Action"
+      },
+      "heading": "Conclusion & Takeaways",
+      "image": {
+        "_type": "figure",
+        "alt": "Alt text",
+        "asset": {
+          "_ref": "image-29c203e84d2cd9d0755885bdb05efff1cd78c745-1715x900-png",
+          "_type": "reference"
+        },
+        "caption": "Caption"
+      },
+      "label": "Conclusion and Takeaways",
+      "text": [
+        {
+          "_key": "1dfec2feb36a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e05e06202b67",
+              "_type": "span",
+              "marks": [],
+              "text": "This the impact section, it will have lots of text.\n\nHere's a bulleted list of items:\n\n• Item 1"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d8a316e35ccf",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2deafeb6a8cf",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 2"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6ef25c61fa80",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cec5cc0e5aef",
+              "_type": "span",
+              "marks": [],
+              "text": "• Item 3\n\nHere is another paragraph. It is very short, but it is very good.\n\nAnd another, also good, but longer. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n\n"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ]
+    }
+  ],
+  "endedAt": "2019-11-02T06:00:00.000Z",
+  "mainImage": {
+    "_type": "figure",
+    "alt": "US Map",
+    "asset": {
+      "_ref": "image-7d647b56d679913add9e1cbac57fb908388f1e5d-1717x1073-png",
+      "_type": "reference"
+    },
+    "caption": "A figure of the United States"
+  },
+  "publishedAt": "2021-07-29T00:30:00.000Z",
+  "relatedProjects": [],
+  "slug": {
+    "_type": "slug",
+    "current": "sample-project-three"
+  },
+  "startedAt": "2019-08-01T06:00:00.000Z",
+  "tags": [
+    {
+      "label": "d3.js",
+      "value": "d3.js"
+    },
+    {
+      "label": "react",
+      "value": "react"
+    },
+    {
+      "label": "gatsby",
+      "value": "gatsby"
+    },
+    {
+      "label": "javascript",
+      "value": "javascript"
+    },
+    {
+      "label": "accessibility",
+      "value": "accessibility"
+    },
+    {
+      "label": "front-end",
+      "value": "front-end"
+    },
+    {
+      "label": "mapbox",
+      "value": "mapbox"
+    },
+    {
+      "label": "graphql",
+      "value": "graphql"
+    },
+    {
+      "label": "netlify",
+      "value": "netlify"
+    }
+  ],
+  "technologies": [
+    {
+      "_key": "07e4639fec2b",
+      "_ref": "48f95826-fc10-4341-877d-95b28f05a4e7",
+      "_type": "reference"
+    },
+    {
+      "_key": "47d0a398dc43",
+      "_ref": "bbd837d7-8cbb-4009-aef1-9470d150129c",
+      "_type": "reference"
+    },
+    {
+      "_key": "2e470a18f38a",
+      "_ref": "786ecad3-003b-4463-a616-3a64c049fd1a",
+      "_type": "reference"
+    },
+    {
+      "_key": "3f53d8fe7f40",
+      "_ref": "0a9e215b-ed70-4507-8b93-29f3c789229d",
+      "_type": "reference"
+    }
+  ],
+  "title": "Sample Project Three"
+}

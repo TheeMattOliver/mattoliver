@@ -3,20 +3,20 @@ import React from 'react';
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby-plugin-intl";
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import SEO from "../components/SEO"
-import { QUERIES, WEIGHTS } from "../constants"
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { QUERIES, WEIGHTS } from "../constants";
 import Spacer from '../components/Spacer';
 import ImgPlaceholder from '../components/ImgPlaceholder';
 import SectionHeader from '../components/SectionHeader';
 
-export default function ProjectPage({ data }) {
-  const { title, technologies, content, mainImage } = data.project
-  const ledeRawText = content[0].text[0]._rawChildren[0].text
 
+export default function ProjectPage({ data }) {
+  const { title, technologies, content, mainImage, _rawContent } = data.project
+  const ledeRawText = content[0].text[0]._rawChildren[0].text
   return (
     <>
       <SEO
@@ -38,7 +38,7 @@ export default function ProjectPage({ data }) {
               {
                 technologies.map(item => {
                   return (
-                    <TechListItem key={item.id}>
+                    <TechListItem key={item._key}>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -58,7 +58,8 @@ export default function ProjectPage({ data }) {
                 {content.slice(2).map(item => {
                   return (
                     <li key={item._key}>
-                      <a href={item.anchor}>
+                      <a href={`#${item.anchor}`}
+                      >
                         {item.heading}
                       </a>
                     </li>
@@ -75,6 +76,7 @@ export default function ProjectPage({ data }) {
         <Main>
           <LedeWrapper>
             <LedeText>{ledeRawText}</LedeText>
+
             <ImageWrapper>
               <GatsbyImage
                 image={mainImage?.asset?.gatsbyImageData}
@@ -88,7 +90,7 @@ export default function ProjectPage({ data }) {
             return (
               <Section key={item._key}>
                 <SectionHeaderWrapper >
-                  <SectionHeader id={item.anchor}>
+                  <SectionHeader key={item._key} id={`#${item.anchor}`}>
                     {item.heading}
                   </SectionHeader>
                 </SectionHeaderWrapper>
@@ -102,12 +104,16 @@ export default function ProjectPage({ data }) {
                   </SectionImageWrapper>
                 </SectionImageContainer>
 
-                <SectionCopyWrapper>
-                  {item.text.map(graf => {
+                <SectionCopyWrapper key={item._key}>
+                  {item.text.map((graf, index) => {
+                    console.log({ graf })
                     return (
                       <>
-                        <SectionCopyGraf>
-                          {graf._rawChildren[0].text}
+                        <SectionCopyGraf key={graf._key}>
+                          {graf._rawChildren[0]?.text}
+                          {graf._rawChildren[1]?.text}
+                          {graf._rawChildren[2]?.text}
+                          {graf._rawChildren[3]?.text}
                         </SectionCopyGraf>
                         <br />
                       </>
@@ -115,7 +121,7 @@ export default function ProjectPage({ data }) {
                   })}
                 </SectionCopyWrapper>
 
-                {/* <Spacer axis='vertical' size={550} /> */}
+                <Spacer axis='vertical' size={80} />
               </Section>
             )
           })}
@@ -168,7 +174,6 @@ export const query = graphql`
       tags {
         value
         label
-        _key
       }
       slug {
         current
@@ -184,11 +189,19 @@ export const query = graphql`
             asset {
               gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
               altText
+              assetId
             }
           }
           text {
             _rawChildren(resolveReferences: {maxDepth: 10})
             _key
+            children {
+              _key
+              _type
+              marks
+              text
+            }
+            _type
           }
         }
         ... on SanityTextSection {
@@ -204,6 +217,7 @@ export const query = graphql`
       }
       startedAt
       endedAt
+      _rawContent(resolveReferences: {maxDepth: 10})
     }
   }
 `;
@@ -216,6 +230,10 @@ const Wrapper = styled.div`
     'main main'
     'footer footer';
   grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0 auto;
+  isolation: isolate;
+  color: var(--color-textPrimary);
   @media ${QUERIES.laptopAndUp} {
     grid-template-areas:
       'header header'
@@ -224,10 +242,6 @@ const Wrapper = styled.div`
       'footer footer';
     grid-template-columns: 14rem 1fr;
   }
-    gap: 16px;
-    margin: 0 auto;
-    isolation: isolate;
-    color: var(--color-textPrimary);
 `;
 
 const HeaderWrapper = styled.div`
@@ -259,7 +273,7 @@ const PageTitleBackground = styled.div`
   background-image:  linear-gradient(#70b2e8 0.8px, transparent 0.8px), linear-gradient(90deg, #70b2e8 0.8px, transparent 0.8px), linear-gradient(#70b2e8 0.4px, transparent 0.4px), linear-gradient(90deg, #70b2e8 0.4px, #e6f6f7 0.4px);
   background-size: 20px 20px, 20px 20px, 4px 4px, 4px 4px;
   background-position: -0.8px -0.8px, -0.8px -0.8px, -0.4px -0.4px, -0.4px -0.4px;
-  `;
+`;
 
 const PageTitle = styled.h1`
   color: var(--color-textPrimary);
@@ -340,7 +354,6 @@ const LedeText = styled.p`
     1.45rem
   );
   width: clamp(300px, 95%, 65ch);  
-  
   @media ${QUERIES.tabletAndUp} {
     padding: 0 1.5rem;
     margin-bottom: 1.5rem;
@@ -348,7 +361,6 @@ const LedeText = styled.p`
 `;
 const Section = styled.section`
   position: relative;
-
   background: var(--color-backgroundPrimary);
   display: grid;
   grid-template-areas:
@@ -368,6 +380,7 @@ const Section = styled.section`
     }
   }
 `;
+
 const SectionHeaderWrapper = styled.div`
   grid-area: header;
   @media ${QUERIES.tabletAndUp} {  

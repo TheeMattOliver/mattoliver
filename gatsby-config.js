@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Matt Oliver`,
-    titleTemplate: "%s · Matt Oliver",
+    titleTemplate: "%s · Matt Oliver · Austin, TX",
     description: `Web and digital product portfolio for Matt Oliver, an artist and engineer based in Austin, Texas.`,
     author: `Matt Oliver`,
     siteUrl: `https://adoring-bohr-7062c0.netlify.app`,
