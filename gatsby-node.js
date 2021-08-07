@@ -3,7 +3,6 @@ import path from 'path';
 async function turnProjectsIntoPages({ graphql, actions }) {
   // 1. Get a template for this page
   const projectPageTemplate = path.resolve('./src/templates/ProjectPage.js')
-  const portableTextPageTemplate = path.resolve('./src/templates/ProjectPagePortableText.js')
   // 2. Query all the projects
   const { data } = await graphql(`
     query {
@@ -30,8 +29,17 @@ async function turnProjectsIntoPages({ graphql, actions }) {
   })
 }
 
+async function turnTechnologiesIntoPages() {
+  // 1. Get the template
+  const technologiesTemplate = path.resolve('./src/pages/work.js')
+  // 
+
+}
+
 export async function createPages(params) {
   console.log('Creating pages!')
   // Create pages dynamically
-  await turnProjectsIntoPages(params);
+  await Promise.all([
+    turnProjectsIntoPages(params)
+  ])
 }

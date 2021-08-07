@@ -64,12 +64,6 @@ export default function ProjectPage({ data }) {
                     <li key={item._key}>
                       <a
                         href={`#${item.anchor}`}
-                      // onClick={(e) => {
-                      //   e.preventDefault();
-                      //   document.querySelector(`${item.anchor}`).scrollIntoView({
-                      //     behavior: "smooth"
-                      //   });
-                      // }}
                       >
                         {item.heading}
                       </a>
