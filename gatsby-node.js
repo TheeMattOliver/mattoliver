@@ -28,16 +28,6 @@ async function turnProjectsIntoPages({ graphql, actions }) {
       }
     })
   })
-
-  // data.projects.nodes.forEach(project => {
-  //   actions.createPage({
-  //     path: `fake/${project.slug.current}`,
-  //     component: portableTextPageTemplate,
-  //     context: {
-  //       slug: project.slug.current
-  //     }
-  //   })
-  // })
 }
 
 export async function createPages(params) {

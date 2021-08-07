@@ -13,6 +13,10 @@ import Spacer from '../components/Spacer';
 import ImgPlaceholder from '../components/ImgPlaceholder';
 import SectionHeader from '../components/SectionHeader';
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 
 export default function ProjectPage({ data }) {
   const { title, technologies, content, mainImage, _rawContent } = data.project
@@ -58,7 +62,14 @@ export default function ProjectPage({ data }) {
                 {content.slice(2).map(item => {
                   return (
                     <li key={item._key}>
-                      <a href={`#${item.anchor}`}
+                      <a
+                        href={`#${item.anchor}`}
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   document.querySelector(`${item.anchor}`).scrollIntoView({
+                      //     behavior: "smooth"
+                      //   });
+                      // }}
                       >
                         {item.heading}
                       </a>
@@ -90,7 +101,7 @@ export default function ProjectPage({ data }) {
             return (
               <Section key={item._key}>
                 <SectionHeaderWrapper >
-                  <SectionHeader key={item._key} id={`#${item.anchor}`}>
+                  <SectionHeader key={item._key} id={`${item.anchor}`}>
                     {item.heading}
                   </SectionHeader>
                 </SectionHeaderWrapper>
@@ -422,6 +433,7 @@ const SectionCopyGraf = styled.p`
 
 const StickySidebar = styled.div`
   position: sticky;
+  /* position: -webkit-sticky; */
   top: 8rem;
 `;
 
