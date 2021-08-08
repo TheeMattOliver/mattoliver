@@ -48,11 +48,15 @@ export const COLORS = {
   // Grays, scaling from least-noticeable to most-noticeable
   gray50: {
     light: 'hsl(0deg, 0%, 96%)',
-    dark: 'hsl(0deg, 0%, 30%)',
+    dark: 'hsl(0deg, 0%, 5%)',
   },
   gray100: {
     light: 'hsl(0deg, 0%, 90%)',
-    dark: 'hsl(0deg, 0%, 30%)',
+    dark: 'hsl(0deg, 0%, 10%)',
+  },
+  gray200: {
+    light: 'hsl(0deg, 0%, 80%)',
+    dark: 'hsl(0deg, 0%, 20%)',
   },
   gray300: {
     light: 'hsl(0deg, 0%, 70%)',
@@ -65,6 +69,10 @@ export const COLORS = {
   gray700: {
     light: 'hsl(0deg, 0%, 30%)',
     dark: 'hsl(0deg, 0%, 70%)',
+  },
+  gray800: {
+    light: 'hsl(0deg, 0%, 20%)',
+    dark: 'hsl(0deg, 0%, 80%)',
   },
   gray900: {
     light: 'hsl(0deg, 0%, 10%)',
@@ -121,6 +129,7 @@ export const WEIGHTS = {
   thin: 400,
   normal: 500,
   medium: 600,
+  heavy: 700,
   bold: 800,
 };
 

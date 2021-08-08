@@ -9,9 +9,9 @@ import ProjectList from "../components/ProjectList";
 import GridLayout from "../components/GridLayout";
 import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
+import TechnologyFilter from "../components/TechnologyFilter";
 
-
-export default function WorkPage({ data }) {
+export default function WorkPage({ data, pageContext }) {
   const intl = useIntl()
   const projects = data.projects.nodes
   return (
@@ -23,6 +23,7 @@ export default function WorkPage({ data }) {
       <GridLayout>
         <Wrapper>
           <PageHero>Selected Work - {projects.length} Projects</PageHero>
+          <TechnologyFilter activeTechnology={pageContext.technology} />
           <ProjectList projects={projects} />
         </Wrapper>
       </GridLayout>
@@ -31,8 +32,17 @@ export default function WorkPage({ data }) {
 }
 
 export const query = graphql`
-  query AllProjectsQuery {
-    projects: allSanityProject {
+  query AllProjectsQuery($technology: [String]) {
+    projects: allSanityProject(filter: {
+      technologies: { 
+        elemMatch: {
+          title: {
+            in: $technology
+          }
+        }
+      }
+    }
+      ) {
       nodes {
         id
         previewImage {

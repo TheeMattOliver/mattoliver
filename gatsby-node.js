@@ -29,10 +29,33 @@ async function turnProjectsIntoPages({ graphql, actions }) {
   })
 }
 
-async function turnTechnologiesIntoPages() {
+async function turnTechnologiesIntoPages({ graphql, actions }) {
   // 1. Get the template
-  const technologiesTemplate = path.resolve('./src/pages/work.js')
-  // 
+  const technologyTemplate = path.resolve('./src/pages/work.js')
+  // 2. query the technologies
+  const { data } = await graphql(`
+    query {
+      technologies: allSanityTechnology {
+        nodes {
+          title
+          id
+        }
+      }
+    }
+  `);
+  // 3. create page for that technology
+  data.technologies.nodes.forEach((technology) => {
+    console.log(`Creating page for technology:` + technology.title)
+    actions.createPage({
+      path: `technology/${technology.title}`,
+      component: technologyTemplate,
+      context: {
+        technology: technology.title,
+        technologyRegex: `/${technology.title}/i`
+      }
+    })
+  })
+  // 4. pass technology data to work.js
 
 }
 
@@ -40,6 +63,7 @@ export async function createPages(params) {
   console.log('Creating pages!')
   // Create pages dynamically
   await Promise.all([
-    turnProjectsIntoPages(params)
+    turnProjectsIntoPages(params),
+    turnTechnologiesIntoPages(params)
   ])
 }
