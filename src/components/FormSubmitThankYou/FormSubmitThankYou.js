@@ -1,16 +1,14 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import styled from 'styled-components';
-// import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
+import { Link } from 'gatsby-plugin-intl';
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-// import Icon from '../Icon'
 import VisuallyHidden from '../VisuallyHidden';
 
-export default function ContactForm() {
+export default function FormSubmitThankYou() {
   return (
-    <ContactFormContainer>
+    <ThankYouWrapper>
       <VisuallyHidden>
-        Contact form
+        Form submitted successfully
       </VisuallyHidden>
 
       <Grid>
@@ -116,10 +114,10 @@ export default function ContactForm() {
           */}
 
           <h3>Contact</h3>
-          <p>
+          {/* <p>
             I'd love to hear from you about working together or scheduling some time to talk.
-          </p>
-          <p>This form's submissions are forwarded to my personal inbox, or as an alternative you can also feel free to email me directly: <a href="mailto:matt@mattoliver.xyz" rel="noopener noreferrer" target="_blank">matt@mattoliver.xyz</a></p>
+          </p> */}
+          <p>This form's submissions go directly to me but you can also feel free to email me directly: <a href="mailto:matt@mattoliver.xyz" rel="noopener noreferrer" target="_blank">matt@mattoliver.xyz</a></p>
 
           {/* <dl className="space-y-6">
             <dt>
@@ -205,129 +203,22 @@ export default function ContactForm() {
         </ContactInformation>
 
         {/* Contact form */}
-        <FormWrapper>
-          <h3>Send a message</h3>
-          <Form
-            method="POST"
-            netlify-honeypot="bot-field"
-            data-netlify="true"
-            name="website-contact-form"
-            className="gap-y-6 sm:gap-x-8"
-            action="/thank-you"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="website-contact-form" />
-            <div>
-              <Label htmlFor="first-name">
-                First name
-              </Label>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  autoComplete="given-name"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div>
-              <Label htmlFor="last-name">
-                Last name
-              </Label>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div>
-              <Label htmlFor="email">
-                Email
-              </Label>
-              <InputWrapper>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div>
-              <div className="flex justify-between">
-                <Label htmlFor="phone">
-                  Phone
-                </Label>
-                <OptionalText id="phone-optional">
-                  Optional
-                </OptionalText>
-              </div>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  autoComplete="tel"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  aria-describedby="phone-optional"
-                />
-              </InputWrapper>
-            </div>
-            <div className="sm:col-span-2">
-              <Label htmlFor="subject">
-                Subject
-              </Label>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div className="sm:col-span-2">
-              <div className="flex justify-between">
-                <Label htmlFor="message">
-                  Message
-                </Label>
-                <OptionalText id="message-max">
-                  Max. 500 characters please
-                </OptionalText>
-              </div>
-              <InputWrapper>
-                <TextArea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  aria-describedby="message-max"
-                  defaultValue={''}
-                />
-              </InputWrapper>
-            </div>
-            <div className="sm:col-span-2 sm:flex sm:justify-end">
-              <Button
-                type="submit"
-                className="shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto"
-              >
-                Submit
-              </Button>
-            </div>
-          </Form>
-        </FormWrapper>
+        <MessageWrapper>
+          <h3>Success!</h3>
+          <p>Thanks for your note.</p>
+          <p>I'll be in touch very soon, and until then feel free to keep poking around the site.</p>
+          <NavigationLinksWrapper>
+            <NavigationLink to='/'>
+              &larr; Back to Home
+            </NavigationLink>
+          </NavigationLinksWrapper>
+        </MessageWrapper>
       </Grid>
-    </ContactFormContainer>
+    </ThankYouWrapper>
   )
 }
 
-const ContactFormContainer = styled.div`
+const ThankYouWrapper = styled.div`
   flex: 1;
   /* relative bg-white shadow-xl */
   position: relative;
@@ -336,9 +227,9 @@ const ContactFormContainer = styled.div`
 
 const Grid = styled.div`
   /* grid grid-cols-1 lg:grid-cols-3 */
-  min-height: 100%;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  min-height: 100%;
   @media ${QUERIES.laptopAndUp} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -403,80 +294,54 @@ const SocialIconsList = styled.ul`
   display: flex;
 `;
 
-const FormWrapper = styled.div`
+const MessageWrapper = styled.div`
   /* py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 */
-  padding-top: 2.5rem;
+  padding-top: 4rem;
   padding: 1rem;
   h3 {
-    /* text-lg font-medium text-gray-900 */
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    color: var(--color-textPrimary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-gray900);
+  }
+  /* mt-6 text-base text-indigo-50 max-w-3xl */
+  p {
+    margin-top: 1.5rem;
+    color: var(--color-gray700);
+    max-width: 48rem;
+    line-height: 1.5rem;
+    font-size: clamp(
+      1rem,
+      /* 1.3vw + .9rem, */
+      1.25vw + .5rem,
+      1.45rem
+    );
+    width: clamp(300px, 95%, 750px);
   }
   @media ${QUERIES.tabletAndUp} {
-    padding: 2.5rem;
+    padding: 1rem;
     grid-column: span 2 / span 2;
   }
   @media ${QUERIES.desktopAndUp} {
-    padding: 3rem; 
+    padding: 4rem; 
   }
 `;
 
-const Form = styled.form`
-  /* mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 */
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  @media ${QUERIES.tabletAndUp} {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+const NavigationLinksWrapper = styled.div`
+  display: flex;
+  margin-top: 4rem;
+  width: 85%;
 `;
 
-const Label = styled.label`
-  /* block text-sm font-medium text-gray-900 */
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: ${WEIGHTS.medium};
-  color: var(--color-textPrimary);
+const NavigationLink = styled(Link)`
+  margin-top: 4rem;
+  font-size: 1.125;
+  filter: saturate(0);
+  margin-top: 0.5rem;
+  color: var(--color-gray700);
+  font-weight: ${WEIGHTS.normal};
 `;
 
-const InputWrapper = styled.div`
-  margin: 0.25rem;
-`;
 
-const Input = styled.input`
-  /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md */
-  padding: 0.75rem 1rem;
-  display: block;
-  width: 100%;
-  background: var(--color-backgroundPrimary);
-  color: ${COLORS.gray900.light};
-  border: 1px solid var(--color-borderPrimary);
-  border-radius: 0.375rem;
-  box-shadow: none;
-  @media ${QUERIES.tabletAndUp} {
-    box-shadow: revert;
-  }
-`;
-
-const TextArea = styled.textarea`
-  /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md */
-  padding: 0.75rem 1rem;
-  display: block;
-  width: 100%;
-  background: var(--color-backgroundPrimary);
-  color: ${COLORS.gray900.light};
-  border: 1px solid var(--color-borderPrimary);
-  border-radius: 0.375rem;
-`;
-
-const OptionalText = styled.span`
-  /* text-sm text-gray-500 */
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: var(--color-textSecondary);
-`;
 
 const Button = styled.button`
   /* mt-2 w-full inline-flex items-center justify-center px-6 py-3 border 

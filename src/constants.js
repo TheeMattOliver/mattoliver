@@ -66,6 +66,10 @@ export const COLORS = {
     light: 'hsl(0deg, 0%, 50%)',
     dark: 'hsl(0deg, 0%, 50%)',
   },
+  gray600: {
+    light: 'hsl(0deg, 0%, 40%)',
+    dark: 'hsl(0deg, 0%, 60%)',
+  },
   gray700: {
     light: 'hsl(0deg, 0%, 30%)',
     dark: 'hsl(0deg, 0%, 70%)',
