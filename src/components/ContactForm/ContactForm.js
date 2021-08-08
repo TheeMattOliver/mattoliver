@@ -427,6 +427,9 @@ const Form = styled.form`
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  input, select, textarea {
+    color: var(--color-textPrimary);
+  }
   @media ${QUERIES.tabletAndUp} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
