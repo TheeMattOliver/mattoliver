@@ -61,6 +61,14 @@ export default function TechnologyFilter({ activeTechnology }) {
   // Loop over and display the tag and the count of projects in that technology
   return (
     <Wrapper>
+      <Link to='/work'>
+        <Badge>
+          All
+          <Count>
+            {technologies.nodes.length}
+          </Count>
+        </Badge>
+      </Link>
       {technologiesWithCounts.map((technology) => {
         return (
           <Link
@@ -93,6 +101,10 @@ const Wrapper = styled.div`
     &.active {
       background-color: ${COLORS.gray900.light};
       color: ${COLORS.gray50.light};
+    };
+    &[aria-current='page'] {
+      background-color: ${COLORS.gray900.light};
+      color: ${COLORS.gray50.light};
     }
   }
   @media ${QUERIES.tabletAndUp} {
@@ -111,8 +123,6 @@ const Badge = styled.span`
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: ${WEIGHTS.normal};
-  
-  
 `;
 
 const Count = styled.span`
@@ -132,15 +142,3 @@ const Count = styled.span`
   color: ${COLORS.gray900.light};
   font-weight: ${WEIGHTS.heavy};
 `;
-
-// ${props => {
-//   if (props.active) {
-//     return `
-//       background-color: ${COLORS.gray900.light};
-//     `;
-//   } else {
-//     return `
-//       background-color: ${COLORS.gray100.light};  
-//     `;
-//   }
-// }}
