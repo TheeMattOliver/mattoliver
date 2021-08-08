@@ -134,6 +134,17 @@ const DesktopNav = styled.nav`
 const NavLink = styled(Link)`
   font-size: 1.125rem;
   text-decoration: none;
+	&:not(:last-of-type) {
+    margin-left: 1rem;
+  }
+  &.active {
+		text-decoration: underline;
+		text-underline-offset: .45rem;
+	};
+  &[aria-current='page'] {
+  	text-decoration: underline;
+		text-underline-offset: .45rem;
+  }
 `;
 
 const MobileActions = styled.div`

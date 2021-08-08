@@ -96,15 +96,15 @@ const Wrapper = styled.div`
   width: clamp(300px, 95%, 750px);
   a {
     border-radius: 0.375rem;
-    background-color: ${COLORS.gray100.light};
-    color: ${COLORS.gray800.light};
+    background-color: var(--color-gray100);
+    color: var(--color-gray800);
     &.active {
-      background-color: ${COLORS.gray900.light};
-      color: ${COLORS.gray50.light};
+      background-color: var(--color-gray700);
+      color: var(--color-gray50);
     };
     &[aria-current='page'] {
-      background-color: ${COLORS.gray900.light};
-      color: ${COLORS.gray50.light};
+      background-color: var(--color-gray700);
+      color: var(--color-gray50);
     }
   }
   @media ${QUERIES.tabletAndUp} {

@@ -100,6 +100,14 @@ const NavLink = styled(Link)`
   &:not(:last-of-type) {
     margin-left: 1rem;
   }
+  &.active {
+		text-decoration: underline;
+		text-underline-offset: .45rem;
+	};
+  &[aria-current='page'] {
+  	text-decoration: underline;
+		text-underline-offset: .45rem;
+  }
 `;
 
 const MobileActions = styled.div`
