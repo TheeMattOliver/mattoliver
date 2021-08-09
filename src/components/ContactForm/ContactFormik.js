@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useFormik, Form, Formik, Field } from 'formik';
 import * as Yup from 'yup';
 
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
+import FormSubmitThankYou from '../FormSubmitThankYou/';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -14,6 +15,8 @@ const encode = (data) => {
 }
 
 const ContactFormik = () => {
+  const [submissionMessage, setSubmissionMessage] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   return (
     <Formik
       initialValues={{
@@ -47,167 +50,171 @@ const ContactFormik = () => {
           })
         })
           .then(() => {
-            alert('Success');
+            setSubmissionMessage("Success!");
+            setIsSubmitted(true)
             actions.resetForm()
           })
           .catch(() => {
-            alert('Error');
+            setSubmissionMessage("Sorry, looks like something's going wrong on my end. If you wouldn't mind, please email me at matt@mattoliver.xyz so I can get it fixed.");
           })
           .finally(() => actions.setSubmitting(false))
       }}
     >
       {formik => (
-        <StyledForm
-          method="POST"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-          name="website-contact-form"
-          className="gap-y-6 sm:gap-x-8"
-          action="/thank-you"
-          onSubmit={formik.handleSubmit}
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="website-contact-form" />
-          <div>
-            <Label htmlFor="firstName">
-              First name
-            </Label>
-            <InputWrapper>
-              <Input
-                type="text"
-                name="firstName"
-                id="firstName"
-                autoComplete="given-name"
-                className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                {...formik.getFieldProps('firstName')}
-              />
-            </InputWrapper>
-            {formik.touched.firstName && formik.errors.firstName ? (
-              <ErrorMessageWrapper>
-                <ErrorMessage>
-                  {formik.errors.firstName}
-                </ErrorMessage>
-              </ErrorMessageWrapper>
-            ) : null}
-          </div>
-          <div>
-            <Label htmlFor="lastName">
-              Last name
-            </Label>
-            <InputWrapper>
-              <Input
-                type="text"
-                name="lastName"
-                id="lastName"
-                autoComplete="family-name"
-                className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                {...formik.getFieldProps('lastName')}
-              />
-            </InputWrapper>
-            {formik.touched.lastName && formik.errors.lastName ? (
-              <ErrorMessageWrapper>
-                <ErrorMessage>
-                  {formik.errors.lastName}
-                </ErrorMessage>
-              </ErrorMessageWrapper>
-            ) : null}
-          </div>
-          <div>
-            <Label htmlFor="email">
-              Email
-            </Label>
-            <InputWrapper>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                className={`shadow-sm focus:ring-blue-500 focus:border-blue-500`}
-                {...formik.getFieldProps('email')}
-              />
-            </InputWrapper>
-            {formik.touched.email && formik.errors.email ? (
-              <ErrorMessageWrapper>
-                <ErrorMessage>
-                  {formik.errors.email}
-                </ErrorMessage>
-              </ErrorMessageWrapper>
-            ) : null}
-          </div>
-          <div>
-            <div className="flex justify-between">
-              <Label htmlFor="phone">
-                Phone
+        !isSubmitted ? (
+          <StyledForm
+            method="POST"
+            netlify-honeypot="bot-field"
+            data-netlify="true"
+            name="website-contact-form"
+            className="gap-y-6 sm:gap-x-8"
+            onSubmit={formik.handleSubmit}
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="website-contact-form" />
+            <div>
+              <Label htmlFor="firstName">
+                First name
               </Label>
-              <OptionalText id="phone-optional">
-                Optional
-              </OptionalText>
+              <InputWrapper>
+                <Input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  autoComplete="given-name"
+                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  {...formik.getFieldProps('firstName')}
+                />
+              </InputWrapper>
+              {formik.touched.firstName && formik.errors.firstName ? (
+                <ErrorMessageWrapper>
+                  <ErrorMessage>
+                    {formik.errors.firstName}
+                  </ErrorMessage>
+                </ErrorMessageWrapper>
+              ) : null}
             </div>
-            <InputWrapper>
-              <Input
-                type="text"
-                name="phone"
-                id="phone"
-                autoComplete="tel"
-                className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                aria-describedby="phone-optional"
-                {...formik.getFieldProps('phone')}
-              />
-            </InputWrapper>
-          </div>
-          <div className="sm:col-span-2">
-            <Label htmlFor="subject">
-              Subject
-            </Label>
-            <InputWrapper>
-              <Input
-                type="text"
-                name="subject"
-                id="subject"
-                className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                {...formik.getFieldProps('subject')}
-              />
-            </InputWrapper>
-          </div>
-          <div className="sm:col-span-2">
-            <div className="flex justify-between">
-              <Label htmlFor="message">
-                Message
+            <div>
+              <Label htmlFor="lastName">
+                Last name
               </Label>
-              <OptionalText id="message-max">
-                Max. 500 characters please
-              </OptionalText>
+              <InputWrapper>
+                <Input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  autoComplete="family-name"
+                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  {...formik.getFieldProps('lastName')}
+                />
+              </InputWrapper>
+              {formik.touched.lastName && formik.errors.lastName ? (
+                <ErrorMessageWrapper>
+                  <ErrorMessage>
+                    {formik.errors.lastName}
+                  </ErrorMessage>
+                </ErrorMessageWrapper>
+              ) : null}
             </div>
-            <InputWrapper>
-              <TextArea
-                id="message"
-                name="message"
-                rows={4}
-                className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                aria-describedby="message-max"
-                defaultValue={''}
-                {...formik.getFieldProps('message')}
-              />
-            </InputWrapper>
-            {formik.touched.firstName && formik.errors.firstName ? (
-              <ErrorMessageWrapper>
-                <ErrorMessage>
-                  {formik.errors.message}
-                </ErrorMessage>
-              </ErrorMessageWrapper>
-            ) : null}
-          </div>
-          <div className="sm:col-span-2 sm:flex sm:justify-end">
-            <Button
-              type="submit"
-              className="shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto"
-            >
-              Submit
-            </Button>
-          </div>
-        </StyledForm>
+            <div>
+              <Label htmlFor="email">
+                Email
+              </Label>
+              <InputWrapper>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  className={`shadow-sm focus:ring-blue-500 focus:border-blue-500`}
+                  {...formik.getFieldProps('email')}
+                />
+              </InputWrapper>
+              {formik.touched.email && formik.errors.email ? (
+                <ErrorMessageWrapper>
+                  <ErrorMessage>
+                    {formik.errors.email}
+                  </ErrorMessage>
+                </ErrorMessageWrapper>
+              ) : null}
+            </div>
+            <div>
+              <div className="flex justify-between">
+                <Label htmlFor="phone">
+                  Phone
+                </Label>
+                <OptionalText id="phone-optional">
+                  Optional
+                </OptionalText>
+              </div>
+              <InputWrapper>
+                <Input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  autoComplete="tel"
+                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  aria-describedby="phone-optional"
+                  {...formik.getFieldProps('phone')}
+                />
+              </InputWrapper>
+            </div>
+            <div className="sm:col-span-2">
+              <Label htmlFor="subject">
+                Subject
+              </Label>
+              <InputWrapper>
+                <Input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  {...formik.getFieldProps('subject')}
+                />
+              </InputWrapper>
+            </div>
+            <div className="sm:col-span-2">
+              <div className="flex justify-between">
+                <Label htmlFor="message">
+                  Message
+                </Label>
+                <OptionalText id="message-max">
+                  Max. 500 characters please
+                </OptionalText>
+              </div>
+              <InputWrapper>
+                <TextArea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  aria-describedby="message-max"
+                  // defaultValue={''}
+                  {...formik.getFieldProps('message')}
+                />
+              </InputWrapper>
+              {formik.touched.firstName && formik.errors.firstName ? (
+                <ErrorMessageWrapper>
+                  <ErrorMessage>
+                    {formik.errors.message}
+                  </ErrorMessage>
+                </ErrorMessageWrapper>
+              ) : null}
+            </div>
+            <div className="sm:col-span-2 sm:flex sm:justify-end">
+              <Button
+                type="submit"
+                className="shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto"
+              >
+                Submit
+              </Button>
+            </div>
+            {submissionMessage && (<p>{submissionMessage}</p>)}
+          </StyledForm>
+        ) : (
+          <FormSubmitThankYou />
+        )
       )}
-
     </Formik>
   )
 }

@@ -16,7 +16,7 @@ export default function ContactPage() {
         title={`Thank you`}>
       </SEO>
       <MainLayout>
-        <FormSubmitThankYou />
+
       </MainLayout>
     </>
   );
