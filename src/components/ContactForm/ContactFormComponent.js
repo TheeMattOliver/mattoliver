@@ -118,7 +118,7 @@ export default function ContactFormComponent() {
           <p>
             I'd love to hear from you about working together or scheduling some time to talk.
           </p>
-          <p>This form's submissions are forwarded to my personal inbox, or as an alternative you can also feel free to email me directly: <a href="mailto:matt@mattoliver.xyz" rel="noopener noreferrer" target="_blank">matt@mattoliver.xyz</a></p>
+          <p>This form's submissions are forwarded to my inbox, but as an alternative you can always feel free to email me directly: <a href="mailto:matt@mattoliver.xyz" rel="noopener noreferrer" target="_blank">matt@mattoliver.xyz</a></p>
 
           {/* <dl className="space-y-6">
             <dt>
