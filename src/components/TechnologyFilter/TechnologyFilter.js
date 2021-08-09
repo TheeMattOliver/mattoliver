@@ -32,7 +32,6 @@ function countProjectsInTechnologies(projects) {
 }
 
 export default function TechnologyFilter({ activeTechnology }) {
-  console.log({ activeTechnology })
   // Get a list of technologies
   // Get a list of projects with those technologies
   const { technologies, projects } = useStaticQuery(graphql`
@@ -57,7 +56,7 @@ export default function TechnologyFilter({ activeTechnology }) {
   // console.log({ technologies, projects })
   // Count how many projects are in each technology
   const technologiesWithCounts = countProjectsInTechnologies(projects.nodes)
-  console.log({ technologiesWithCounts })
+  // console.log({ technologiesWithCounts })
   // Loop over and display the tag and the count of projects in that technology
   return (
     <Wrapper>

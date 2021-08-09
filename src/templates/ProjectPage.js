@@ -111,7 +111,6 @@ export default function ProjectPage({ data }) {
 
                 <SectionCopyWrapper key={item._key}>
                   {item.text.map((graf, index) => {
-                    console.log({ graf })
                     return (
                       <>
                         <SectionCopyGraf key={graf._key}>

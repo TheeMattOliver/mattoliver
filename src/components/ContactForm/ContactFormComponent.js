@@ -3,8 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
+import ContactFormik from './ContactFormik';
 
-export default function ContactForm() {
+export default function ContactFormComponent() {
   return (
     <ContactFormContainer>
       <VisuallyHidden>
@@ -205,121 +206,9 @@ export default function ContactForm() {
         {/* Contact form */}
         <FormWrapper>
           <h3>Send a message</h3>
-          <Form
-            method="POST"
-            netlify-honeypot="bot-field"
-            data-netlify="true"
-            name="website-contact-form"
-            className="gap-y-6 sm:gap-x-8"
-            action="/thank-you"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="website-contact-form" />
-            <div>
-              <Label htmlFor="first-name">
-                First name
-              </Label>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  autoComplete="given-name"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div>
-              <Label htmlFor="last-name">
-                Last name
-              </Label>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div>
-              <Label htmlFor="email">
-                Email
-              </Label>
-              <InputWrapper>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div>
-              <div className="flex justify-between">
-                <Label htmlFor="phone">
-                  Phone
-                </Label>
-                <OptionalText id="phone-optional">
-                  Optional
-                </OptionalText>
-              </div>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  autoComplete="tel"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  aria-describedby="phone-optional"
-                />
-              </InputWrapper>
-            </div>
-            <div className="sm:col-span-2">
-              <Label htmlFor="subject">
-                Subject
-              </Label>
-              <InputWrapper>
-                <Input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-              </InputWrapper>
-            </div>
-            <div className="sm:col-span-2">
-              <div className="flex justify-between">
-                <Label htmlFor="message">
-                  Message
-                </Label>
-                <OptionalText id="message-max">
-                  Max. 500 characters please
-                </OptionalText>
-              </div>
-              <InputWrapper>
-                <TextArea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  aria-describedby="message-max"
-                  defaultValue={''}
-                />
-              </InputWrapper>
-            </div>
-            <div className="sm:col-span-2 sm:flex sm:justify-end">
-              <Button
-                type="submit"
-                className="shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto"
-              >
-                Submit
-              </Button>
-            </div>
-          </Form>
+          <ContactFormik />
         </FormWrapper>
+
       </Grid>
     </ContactFormContainer>
   )

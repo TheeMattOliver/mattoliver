@@ -8,6 +8,7 @@ import ContactForm from "../components/ContactForm";
 import SEO from "../components/SEO";
 
 import { QUERIES, WEIGHTS } from "../constants";
+import ContactFormComponent from "../components/ContactForm/ContactFormComponent";
 
 export default function ContactPage() {
   return (
@@ -16,7 +17,8 @@ export default function ContactPage() {
         title={`Matt Oliver`}>
       </SEO>
       <MainLayout>
-        <ContactForm />
+        {/* <ContactForm /> */}
+        <ContactFormComponent />
       </MainLayout>
     </>
   );

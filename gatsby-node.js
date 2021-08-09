@@ -45,7 +45,7 @@ async function turnTechnologiesIntoPages({ graphql, actions }) {
   `);
   // 3. create page for that technology
   data.technologies.nodes.forEach((technology) => {
-    console.log(`Creating page for technology:` + technology.title)
+    // console.log(`Creating page for technology:` + technology.title)
     actions.createPage({
       path: `technology/${technology.title}`,
       component: technologyTemplate,
