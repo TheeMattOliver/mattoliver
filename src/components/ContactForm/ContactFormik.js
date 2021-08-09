@@ -7,8 +7,13 @@ import * as Yup from 'yup';
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
 
-const ContactFormik = () => {
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
+const ContactFormik = () => {
   return (
     <Formik
       initialValues={{
@@ -32,21 +37,33 @@ const ContactFormik = () => {
         message: Yup.string()
           .max(500, 'Uh oh, your message is too long. Please keep your message to 500 characters or less.')
       })}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+      onSubmit={(values, actions) => {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({
+            "form-name": "website-contact-form",
+            ...values
+          })
+        })
+          .then(() => {
+            alert('Success');
+            actions.resetForm()
+          })
+          .catch(() => {
+            alert('Error');
+          })
+          .finally(() => actions.setSubmitting(false))
       }}
     >
       {formik => (
         <StyledForm
           method="POST"
-          // netlify-honeypot="bot-field"
-          // data-netlify="true"
-          // name="website-contact-form"
-          // className="gap-y-6 sm:gap-x-8"
-          // action="/thank-you"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          name="website-contact-form"
+          className="gap-y-6 sm:gap-x-8"
+          action="/thank-you"
           onSubmit={formik.handleSubmit}
         >
           <input type="hidden" name="bot-field" />
