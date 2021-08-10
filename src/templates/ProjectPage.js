@@ -93,7 +93,6 @@ export default function ProjectPage({ data }) {
 
           {/* todo: make this smooth scroll to anchor */}
           {content.slice(2).map(item => {
-            console.log({ content })
             return (
               <Section key={item._key}>
                 <SectionHeaderWrapper >
@@ -411,6 +410,40 @@ const SectionCopyWrapper = styled.div`
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: ${WEIGHTS.thin};
+  p {
+    color: var(--color-textPrimary);
+    margin-top: .75rem;
+    line-height: 1.25rem;
+    padding: 0 1rem;
+    font-size: clamp(
+      1rem,
+      1.25vw + .5rem,
+      1.45rem
+    );
+    @media ${QUERIES.tabletAndUp} {
+      line-height: 1.75rem;
+      padding: 0 1.5rem;
+    }
+    width: clamp(300px, 95%, 65ch);  
+  }
+  p > a {
+    color: var(--color-textLink);
+    text-decoration: underline;
+  }
+  pre {
+    padding: 1.375rem!important;
+    margin: 2rem 1rem!important;
+    @media ${QUERIES.tabletAndUp} {
+      margin: 2rem 1.5rem!important;
+    }
+  }
+  code {
+    font-size: clamp(
+      1rem,
+      1.45vw,
+      1.65rem
+    )!important;
+  }
   @media ${QUERIES.tabletAndUp} {
     margin-top: 2rem;
   }
