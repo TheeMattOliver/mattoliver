@@ -27,9 +27,9 @@ const PortableTextSandbox = () => {
           <PortableText blocks={item.text} key={item._key} serializers={serializers} />
         )
       })}
-      <pre>
+      {/* <pre>
         {JSON.stringify(doc, null, 2)}
-      </pre>
+      </pre> */}
 
 
       <Wrapper>

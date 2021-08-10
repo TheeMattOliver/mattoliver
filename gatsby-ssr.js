@@ -10,7 +10,7 @@ import {
   INITIAL_COLOR_MODE_CSS_PROP,
 } from './src/constants';
 
-// credit to Josh W Comeau for this implementation, see:
+// credit to Josh W Comeau for this wonderful implementation, see:
 // https://www.joshwcomeau.com/react/dark-mode/
 function setColorsByTheme() {
   const colors = '🌈';

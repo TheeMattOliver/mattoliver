@@ -1,19 +1,23 @@
-import React from 'react'
+import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { getFluidGatsbyImage, getGatsbyImageData } from 'gatsby-source-sanity'
+import { getGatsbyImageData } from "gatsby-source-sanity";
+import clientConfig from "../../../client-config";
 
-const sanityConfig = { projectId: '9ox83bxr', dataset: 'production' }
-
-
-export default ({ node }) => {
+const Figure = ({ node }) => {
+  if (!node || !node.asset || !node.asset._id) {
+    return null;
+  }
+  const gatsbyImageData = getGatsbyImageData(
+    node,
+    { maxWidth: 675 },
+    clientConfig.sanity
+  );
   return (
     <figure>
-      <GatsbyImage
-        image={getGatsbyImageData(node.image.asset.assetId, { maxWidth: 1024 }, sanityConfig)}
-        alt={node.image.alt}
-
-      />
-      <figcaption>{node.image.caption}</figcaption>
+      <GatsbyImage image={gatsbyImageData} alt={node.alt} />
+      <figcaption>{node.caption}</figcaption>
     </figure>
-  )
-}
+  );
+};
+
+export default Figure

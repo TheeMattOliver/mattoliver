@@ -12,6 +12,7 @@ import { QUERIES, WEIGHTS } from "../constants";
 import Spacer from '../components/Spacer';
 import ImgPlaceholder from '../components/ImgPlaceholder';
 import SectionHeader from '../components/SectionHeader';
+import PortableText from '../components/PortableText/PortableText';
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -92,6 +93,7 @@ export default function ProjectPage({ data }) {
 
           {/* todo: make this smooth scroll to anchor */}
           {content.slice(2).map(item => {
+            console.log({ content })
             return (
               <Section key={item._key}>
                 <SectionHeaderWrapper >
@@ -109,8 +111,15 @@ export default function ProjectPage({ data }) {
                   </SectionImageWrapper>
                 </SectionImageContainer>
 
-                <SectionCopyWrapper key={item._key}>
+                <SectionCopyWrapper>
+                  {item._rawText && <PortableText blocks={item._rawText} />}
+                </SectionCopyWrapper>
+
+                {/* <SectionCopyWrapper key={item._key}>
                   {item.text.map((graf, index) => {
+                    console.log({ graf })
+                    graf.markDefs = [];
+
                     return (
                       <>
                         <SectionCopyGraf key={graf._key}>
@@ -123,7 +132,7 @@ export default function ProjectPage({ data }) {
                       </>
                     )
                   })}
-                </SectionCopyWrapper>
+                </SectionCopyWrapper> */}
 
                 <Spacer axis='vertical' size={80} />
               </Section>
@@ -186,6 +195,7 @@ export const query = graphql`
         ... on SanityImageSection {
           _key
           _type
+          _rawText
           label
           heading
           anchor
