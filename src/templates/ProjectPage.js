@@ -418,8 +418,8 @@ const SectionHeaderWrapper = styled.div`
 const SectionHeaderAnchor = styled.a`
   svg {
     position: absolute; 
-    left: 0px;
-    transform: translateY(34%);
+    left: -10px;
+    transform: translateY(50%);
     opacity: .45; 
     scroll-margin-top: 128px;
     transition: opacity 250ms ease 0s;
