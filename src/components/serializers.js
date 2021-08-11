@@ -17,6 +17,7 @@ const serializers = {
         <SyntaxHighlighter language={language || 'text'} style={vscDarkPlus}>{code}</SyntaxHighlighter>
       )
     },
+    twitter: ({ node }) => `<div id="${node.id}" class="tweet"></div>`
   },
   marks: {
     link: ({ children, mark }) =>
