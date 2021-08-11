@@ -1,6 +1,7 @@
 import React from "react";
 import Figure from "./Figure";
 import EmbedHTML from './EmbedHTML';
+import TwitterTweetEmbed from './TwitterTweetEmbed'
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -17,7 +18,8 @@ const serializers = {
         <SyntaxHighlighter language={language || 'text'} style={vscDarkPlus}>{code}</SyntaxHighlighter>
       )
     },
-    twitter: ({ node }) => `<div id="${node.id}" class="tweet"></div>`
+    // twitter: ({ node }) => `<div id="${node.id}" class="tweet"></div>`
+    twitter: ({ node }) => <TwitterTweetEmbed tweetId={node.id} options={{ conversation: "none" }} />
   },
   marks: {
     link: ({ children, mark }) =>

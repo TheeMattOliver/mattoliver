@@ -75,6 +75,7 @@ const GridWrapper = styled.div`
   }
   @media ${QUERIES.desktopAndUp} {
     max-width: none;
+    grid-gap: 4rem;
   }
 `;
 
