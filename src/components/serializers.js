@@ -16,7 +16,7 @@ const serializers = {
       return (
         <SyntaxHighlighter language={language || 'text'} style={vscDarkPlus}>{code}</SyntaxHighlighter>
       )
-    }
+    },
   },
   marks: {
     link: ({ children, mark }) =>
@@ -28,7 +28,9 @@ const serializers = {
         </a>
       ) : (
         <a href={mark.href}>{children}</a>
-      )
+      ),
+    strong: (props) => <strong>{props.children}</strong>,
+    em: (props) => <em>{props.children}</em>,
   }
 };
 

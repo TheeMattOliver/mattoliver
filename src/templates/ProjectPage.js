@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled, { css } from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby-plugin-intl";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -22,6 +22,7 @@ if (typeof window !== "undefined") {
 export default function ProjectPage({ data }) {
   const { title, technologies, content, mainImage, _rawContent } = data.project
   const ledeRawText = content[0].text[0]._rawChildren[0].text
+  const [hovered, setHovered] = useState(false)
   return (
     <>
       <SEO
@@ -93,11 +94,19 @@ export default function ProjectPage({ data }) {
 
           {/* todo: make this smooth scroll to anchor */}
           {content.slice(2).map(item => {
+            console.log({ content })
             return (
               <Section key={item._key}>
-                <SectionHeaderWrapper >
+                <SectionHeaderWrapper>
                   <SectionHeader key={item._key} id={`${item.anchor}`}>
-                    {item.heading}
+                    <SectionHeaderAnchor href={`#${item.anchor}`} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                      <SectionHeaderIconWrapper hovered={hovered}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                      </SectionHeaderIconWrapper>
+                      {item.heading}
+                    </SectionHeaderAnchor>
                   </SectionHeader>
                 </SectionHeaderWrapper>
 
@@ -114,7 +123,8 @@ export default function ProjectPage({ data }) {
                   {item._rawText && <PortableText blocks={item._rawText} />}
                 </SectionCopyWrapper>
 
-                {/* <SectionCopyWrapper key={item._key}>
+                {/* 
+                <SectionCopyWrapper key={item._key}>
                   {item.text.map((graf, index) => {
                     console.log({ graf })
                     graf.markDefs = [];
@@ -131,7 +141,8 @@ export default function ProjectPage({ data }) {
                       </>
                     )
                   })}
-                </SectionCopyWrapper> */}
+                </SectionCopyWrapper> 
+                */}
 
                 <Spacer axis='vertical' size={80} />
               </Section>
@@ -404,6 +415,22 @@ const SectionHeaderWrapper = styled.div`
     align-self: flex-start;
   }
 `;
+const SectionHeaderAnchor = styled.a`
+  svg {
+    position: absolute; 
+    left: 0px;
+    transform: translateY(34%);
+    opacity: .45; 
+    scroll-margin-top: 128px;
+    transition: opacity 250ms ease 0s;
+  }
+`;
+
+const SectionHeaderIconWrapper = styled.div`
+  ${SectionHeaderAnchor}:hover ~ & {
+    opacity: 1;
+  }
+`;
 
 const SectionCopyWrapper = styled.div`
   grid-area: copy;
@@ -443,6 +470,12 @@ const SectionCopyWrapper = styled.div`
       1.45vw,
       1.65rem
     )!important;
+  }
+  strong {
+    font-weight: ${WEIGHTS.bold};
+  }
+  em {
+    font-style: italic;
   }
   @media ${QUERIES.tabletAndUp} {
     margin-top: 2rem;

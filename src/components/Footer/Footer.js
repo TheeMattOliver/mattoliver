@@ -21,7 +21,7 @@ const Footer = () => {
 					target="_blank"
 				>
 					<VisuallyHidden>Github</VisuallyHidden>
-					View source
+					Source
 				</FooterLink>
 			</FooterLeft>
 

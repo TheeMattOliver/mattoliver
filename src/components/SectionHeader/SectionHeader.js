@@ -13,6 +13,8 @@ const SectionHeader = ({ id, children }) => {
 }
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const SectionTitle = styled.h3`
