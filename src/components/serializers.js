@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import Figure from "./Figure";
 import EmbedHTML from './EmbedHTML';
 import TwitterTweetEmbed from './TwitterTweetEmbed'
@@ -19,7 +20,7 @@ const serializers = {
       )
     },
     // twitter: ({ node }) => `<div id="${node.id}" class="tweet"></div>`
-    twitter: ({ node }) => <TwitterTweetEmbed tweetId={node.id} options={{ conversation: "none" }} />
+    twitter: ({ node }) => <Tweet><TwitterTweetEmbed tweetId={node.id} options={{ conversation: "none" }} /></Tweet>
   },
   marks: {
     link: ({ children, mark }) =>
@@ -38,3 +39,7 @@ const serializers = {
 };
 
 export default serializers;
+
+const Tweet = styled.div`
+  padding: 1rem;
+`;

@@ -12,6 +12,20 @@ import { ThemeContext } from '../ThemeContext';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext);
+  // Close on "Escape"
+  React.useEffect(() => {
+    function handleKeydown(ev) {
+      if (ev.key === 'Escape') {
+        onDismiss();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeydown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeydown);
+    };
+  });
 
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
