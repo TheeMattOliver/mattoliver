@@ -56,6 +56,34 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
 export default MobileMenu;
 
+function getTransitionStyles(isOpen) {
+  return {
+    backdropStyles: {
+      transition: 'opacity',
+      transitionDuration: isOpen ? '1000ms' : '500ms',
+      transitionDelay: isOpen ? '0ms' : '100ms',
+    },
+    menuStyles: {
+      transition: 'transform',
+      transitionDuration: isOpen
+        ? '400ms'
+        : '250ms',
+      transitionDelay: isOpen
+        ? '250ms'
+        : '0ms',
+      transitionTimingFunction: isOpen
+        ? 'ease-out'
+        : 'ease-in',
+    },
+    closeButtonStyles: {
+      transition: 'opacity, transform',
+      transitionDuration: '250ms',
+      transitionDelay: isOpen ? '600ms' : '0ms',
+    }
+  };
+}
+
+
 const Overlay = styled(DialogOverlay)`
   position: fixed;
   top: 0;
@@ -75,6 +103,7 @@ const Content = styled(DialogContent)`
   padding: 32px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const CloseButton = styled(UnstyledButton)`
