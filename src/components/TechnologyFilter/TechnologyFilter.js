@@ -93,10 +93,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: clamp(300px, 95%, 750px);
+ 
   a {
     border-radius: 0.375rem;
     background-color: var(--color-gray100);
     color: var(--color-gray800);
+    
     &.active {
       background-color: var(--color-gray700);
       color: var(--color-gray50);

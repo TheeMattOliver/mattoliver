@@ -416,19 +416,21 @@ const SectionHeaderWrapper = styled.div`
   }
 `;
 const SectionHeaderAnchor = styled.a`
-  svg {
-    position: absolute; 
-    left: -10px;
-    transform: translateY(50%);
-    opacity: .45; 
-    scroll-margin-top: 128px;
-    transition: opacity 250ms ease 0s;
+  &:hover ${SectionHeaderIconWrapper} {
+    svg {
+      opacity: 1
+    }
   }
 `;
 
 const SectionHeaderIconWrapper = styled.div`
-  ${SectionHeaderAnchor}:hover ~ & {
-    opacity: 1;
+  svg {
+    position: absolute; 
+    left: -10px;
+    transform: translateY(50%);
+    opacity: 0; 
+    scroll-margin-top: 128px;
+    transition: opacity 250ms ease 0s;
   }
 `;
 
@@ -458,10 +460,12 @@ const SectionCopyWrapper = styled.div`
     text-decoration: underline;
   }
   pre {
+    max-width: 340px;
     padding: 1.375rem!important;
     margin: 2rem 1rem!important;
     @media ${QUERIES.tabletAndUp} {
       margin: 2rem 1.5rem!important;
+      max-width: revert;
     }
   }
   code {
