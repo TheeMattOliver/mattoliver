@@ -60,8 +60,8 @@ export default function ProjectPage({ data }) {
             <h2>Table of Contents</h2>
             <TableOfContents>
               <ol>
-                {/* remove the lede & excerpt */}
-                {content.slice(2).map(item => {
+                {/* remove the lede */}
+                {content.slice(1).map(item => {
                   return (
                     <li key={item._key}>
                       <a
@@ -93,7 +93,7 @@ export default function ProjectPage({ data }) {
           </LedeWrapper>
 
           {/* todo: make this smooth scroll to anchor */}
-          {content.slice(2).map(item => {
+          {content.slice(1).map(item => {
             console.log({ content })
             return (
               <Section key={item._key}>
