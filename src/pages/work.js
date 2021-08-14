@@ -6,7 +6,7 @@ import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 import { QUERIES } from "../constants";
 
 import ProjectList from "../components/ProjectList";
-import GridLayout from "../components/GridLayout";
+import MainLayout from "../components/MainLayout";
 import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
 import TechnologyFilter from "../components/TechnologyFilter";
@@ -20,13 +20,13 @@ export default function WorkPage({ data, pageContext }) {
         title={`Work`}
         lang={intl.locale}>
       </SEO>
-      <GridLayout>
+      <MainLayout>
         <Wrapper>
           <PageHero>Selected Work - {projects.length} Projects</PageHero>
           <TechnologyFilter activeTechnology={pageContext.technology} />
           <ProjectList projects={projects} />
         </Wrapper>
-      </GridLayout>
+      </MainLayout>
     </>
   );
 }

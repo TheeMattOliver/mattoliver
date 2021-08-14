@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby-plugin-intl";
 import { format } from 'date-fns';
 
-import { QUERIES } from '../../constants';
+import { QUERIES, TRANSITIONS } from '../../constants';
 import Spacer from '../Spacer';
 
 export default function ProjectList({ projects }) {
@@ -180,10 +180,25 @@ const ProjectImageWrapper = styled.div`
   flex: 1;
   display: flex;
   border: solid 1px var(--color-borderPrimary);
+  transition: opacity 100ms ${TRANSITIONS.normalOut};
   &:hover {
-    opacity: 0.5;
     filter: grayscale(0.8);
-  } 
+    &::after {
+      opacity: 0.5;
+    }
+  };
+  &::after {
+    /* background: linear-gradient(var(--color-blue50), var(--color-blue900)); */
+    background: linear-gradient(var(--color-gray50), var(--color-gray900));
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 250ms ${TRANSITIONS.normal};
+    width: 100%;
+  }
 `;
 
 const ProjectMainImage = styled(GatsbyImage)`
@@ -191,6 +206,17 @@ const ProjectMainImage = styled(GatsbyImage)`
   object-fit: cover;
   object-position: top left;
   flex: 1;
+  &::after {
+    background-image: linear-gradient(var(--color-blue50), var(--color-blue500));
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 150ms ${TRANSITIONS.normal};
+    width: 100%;
+  }
 `;
 
 const ProjectTitleLink = styled(props => <Link {...props} />)`

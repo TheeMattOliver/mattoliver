@@ -138,7 +138,6 @@ export const WEIGHTS = {
   bold: 800,
 };
 
-
 // default size is for large screens, so use max-width bc we want things to apply if it 
 // is this size or smaller 
 // export const QUERIES = {
@@ -158,6 +157,16 @@ export const QUERIES = {
     (min-width: ${BREAKPOINTS.tabletMin / 16}rem) and
     (max-width: ${(BREAKPOINTS.laptopMin - 1) / 16}rem)`,
 };
+
+export const TRANSITIONS = {
+  // Transitions
+  normal: `cubic-bezier(0.445, 0.05, 0.55, 0.95)`,
+  normalIn: `cubic-bezier(0.47, 0, 0.745, 0.715)`,
+  normalOut: `cubic-bezier(0.39, 0.575, 0.565, 1)`,
+  snappy: `cubic-bezier(0.77, 0, 0.175, 1)`,
+  snappyIn: `cubic-bezier(0.895, 0.03, 0.685, 0.22)`,
+  snappyOut: `cubic-bezier(0.165, 0.84, 0.44, 1)`
+}
 
 export const COLOR_MODE_KEY = 'color-mode';
 export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
