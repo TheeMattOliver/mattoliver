@@ -135,6 +135,7 @@ const ProjectCardContent = styled.div`
 
 const OffsetProjectCardContentWrapper = styled.div`
   display: none;
+  line-height: 1.25rem;
   h2 {
     font-size: calc(1rem + 1vw);
     display: inline-block;
@@ -172,7 +173,6 @@ const OffsetProjectCardContentWrapper = styled.div`
     margin-top: -3rem;
     margin-right: -2.5rem;
     margin-left: 2rem;
-
   }
 `;
 

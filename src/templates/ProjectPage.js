@@ -415,13 +415,6 @@ const SectionHeaderWrapper = styled.div`
     align-self: flex-start;
   }
 `;
-const SectionHeaderAnchor = styled.a`
-  &:hover ${SectionHeaderIconWrapper} {
-    svg {
-      opacity: 1
-    }
-  }
-`;
 
 const SectionHeaderIconWrapper = styled.div`
   svg {
@@ -431,6 +424,13 @@ const SectionHeaderIconWrapper = styled.div`
     opacity: 0; 
     scroll-margin-top: 128px;
     transition: opacity 250ms ease 0s;
+  }
+`;
+const SectionHeaderAnchor = styled.a`
+  &:hover ${SectionHeaderIconWrapper} {
+    svg {
+      opacity: 1
+    }
   }
 `;
 
