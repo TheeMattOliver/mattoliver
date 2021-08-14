@@ -10,7 +10,6 @@ import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { QUERIES, WEIGHTS } from "../constants";
 import Spacer from '../components/Spacer';
-import ImgPlaceholder from '../components/ImgPlaceholder';
 import SectionHeader from '../components/SectionHeader';
 import PortableText from '../components/PortableText/PortableText';
 
@@ -426,6 +425,7 @@ const SectionHeaderIconWrapper = styled.div`
     transition: opacity 250ms ease 0s;
   }
 `;
+
 const SectionHeaderAnchor = styled.a`
   &:hover ${SectionHeaderIconWrapper} {
     svg {

@@ -141,6 +141,19 @@ const OffsetProjectCardContentWrapper = styled.div`
     display: inline-block;
     margin-bottom: .5rem;
     color: var(--color-textPrimary);
+    text-decoration: none;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
   }
   small, time {
     color: var(--color-textSecondary);

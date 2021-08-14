@@ -97,18 +97,6 @@ const HeaderSpacer = styled.div`
   min-width: ${p => p.size}px;
 `;
 
-const NavWrapper = styled.header`
-	a, div {
-		color: var(--color-textPrimary);
-	}
-	display: flex;
-	background: var(--color-background);
-	border-bottom: 1px solid var(--color-borderPrimary);
-	position: sticky;
-	top: 0;
-	transition: transform 250ms;
-	z-index: 1;
-`;
 
 const Logo = styled(Link)`
 	font-size: 1.5rem;
@@ -134,17 +122,50 @@ const DesktopNav = styled.nav`
 const NavLink = styled(Link)`
   font-size: 1.125rem;
   text-decoration: none;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 99%;
+		height: 1px;
+		bottom: -.43rem;
+		left: 0;
+		background-color: #000;
+		transform: scaleX(0);
+		transform-origin: top left;
+		transition: transform 0.3s ease;	
+	}
+	&:hover::before {
+		transform: scaleX(1);
+	}
 	&:not(:last-of-type) {
     margin-left: 1rem;
-  }
+  };
   &.active {
 		text-decoration: underline;
 		text-underline-offset: .45rem;
+		pointer-events: none;
 	};
   &[aria-current='page'] {
   	text-decoration: underline;
 		text-underline-offset: .45rem;
+		transform: 0;
+		pointer-events: none;
   }
+`;
+
+const NavWrapper = styled.header`
+	a, div {
+		color: var(--color-textPrimary);
+	}
+	display: flex;
+	background: var(--color-background);
+	border-bottom: 1px solid var(--color-borderPrimary);
+	position: sticky;
+	top: 0;
+	transition: transform 250ms;
+	z-index: 1;
 `;
 
 const MobileActions = styled.div`
