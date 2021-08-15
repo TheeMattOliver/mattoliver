@@ -23,7 +23,7 @@ export default function ProjectList({ projects }) {
                   {` `}
                   <small>
                     <time dateTime="">
-                      {format(new Date(project.endedAt), 'MMMM yyyy')}
+                      {format(new Date(project.startedAt), 'MMMM yyyy')}
                     </time>
                   </small>
                 </ProjectCardHeader>
@@ -45,7 +45,7 @@ export default function ProjectList({ projects }) {
                   {` `}
                   <small>
                     <time dateTime="">
-                      {format(new Date(project.endedAt), 'MMMM yyyy')}
+                      {format(new Date(project.startedAt), 'MMMM yyyy')}
                     </time>
                   </small>
                   <p>
@@ -58,6 +58,7 @@ export default function ProjectList({ projects }) {
         })}
         <Spacer axis='vertical' size={100} />
       </GridWrapper>
+      <Spacer axis='vertical' size={200} />
     </>
   )
 }

@@ -33,7 +33,7 @@ export default function WorkPage({ data, pageContext }) {
 
 export const query = graphql`
   query AllProjectsQuery($technology: [String]) {
-    projects: allSanityProject(filter: {
+    projects: allSanityProject(sort: {fields: startedAt, order: DESC}, filter: {
       technologies: { 
         elemMatch: {
           title: {
@@ -66,6 +66,7 @@ export const query = graphql`
         }
         title
         endedAt
+        startedAt
         excerpt {
           text {
             _rawChildren(resolveReferences: {maxDepth: 10})

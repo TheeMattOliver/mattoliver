@@ -93,7 +93,6 @@ export default function ProjectPage({ data }) {
 
           {/* todo: make this smooth scroll to anchor */}
           {content.slice(1).map(item => {
-            console.log({ content })
             return (
               <Section key={item._key}>
                 <SectionHeaderWrapper>
