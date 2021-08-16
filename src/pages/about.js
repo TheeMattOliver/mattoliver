@@ -6,6 +6,7 @@ import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 import MainLayout from "../components/MainLayout";
 import PageHero from "../components/PageHero";
 import SEO from "../components/SEO";
+import Spacer from "../components/Spacer";
 
 const SecondaryHead = styled.h2`
 	color: var(--color-textSecondary);
@@ -26,6 +27,8 @@ export default function AboutPage() {
       <MainLayout>
         <Wrapper>
           <PageHero>About page</PageHero>
+          <Spacer axis='vertical' size={1000} />
+
         </Wrapper>
       </MainLayout>
     </>

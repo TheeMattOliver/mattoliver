@@ -10,6 +10,7 @@ import MainLayout from "../components/MainLayout";
 import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
 import TechnologyFilter from "../components/TechnologyFilter";
+import Spacer from "../components/Spacer";
 
 export default function WorkPage({ data, pageContext }) {
   const intl = useIntl()
@@ -25,6 +26,8 @@ export default function WorkPage({ data, pageContext }) {
           <PageHero>Selected Work - {projects.length} Projects</PageHero>
           <TechnologyFilter activeTechnology={pageContext.technology} />
           <ProjectList projects={projects} />
+          <Spacer axis='vertical' size={1000} />
+
         </Wrapper>
       </MainLayout>
     </>
