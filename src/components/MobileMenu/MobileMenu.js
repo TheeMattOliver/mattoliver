@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import { Link } from 'gatsby-plugin-intl';
@@ -13,7 +13,7 @@ import { ThemeContext } from '../ThemeContext';
 const MobileMenu = ({ isOpen, onDismiss }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext);
   // Close on "Escape"
-  React.useEffect(() => {
+  useEffect(() => {
     function handleKeydown(ev) {
       if (ev.key === 'Escape') {
         onDismiss();
@@ -55,34 +55,6 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 };
 
 export default MobileMenu;
-
-function getTransitionStyles(isOpen) {
-  return {
-    backdropStyles: {
-      transition: 'opacity',
-      transitionDuration: isOpen ? '1000ms' : '500ms',
-      transitionDelay: isOpen ? '0ms' : '100ms',
-    },
-    menuStyles: {
-      transition: 'transform',
-      transitionDuration: isOpen
-        ? '400ms'
-        : '250ms',
-      transitionDelay: isOpen
-        ? '250ms'
-        : '0ms',
-      transitionTimingFunction: isOpen
-        ? 'ease-out'
-        : 'ease-in',
-    },
-    closeButtonStyles: {
-      transition: 'opacity, transform',
-      transitionDuration: '250ms',
-      transitionDelay: isOpen ? '600ms' : '0ms',
-    }
-  };
-}
-
 
 const Overlay = styled(DialogOverlay)`
   position: fixed;

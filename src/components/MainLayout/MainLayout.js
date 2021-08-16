@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 import MagicHeader from "../MagicHeader"
 import Footer from "../Footer"
-import { QUERIES } from "../../constants"
+import { QUERIES, TRANSITIONS } from "../../constants"
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -35,22 +35,17 @@ const MainLayout = ({ children, intl, ...props }) => {
         <Middle>
           <MotionMain
             initial={{
-              opacity: 0,
-              x: -200
+              opacity: 0
             }}
             animate={{
-              opacity: 1,
-              x: 0
+              opacity: 1
             }}
             exit={{
-              opacity: 0,
-              x: 200
+              opacity: 0
             }}
             transition={{
-              type: "spring",
-              mass: 0.35,
-              stiffness: 75,
-              duration: 0.3
+              duration: 0.4,
+              ease: [0.17, 0.67, 0.83, 0.67]
             }}>
             {children}
           </MotionMain>
