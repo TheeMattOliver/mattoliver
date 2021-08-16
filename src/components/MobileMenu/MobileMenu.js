@@ -3,6 +3,8 @@ import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import { Link } from 'gatsby-plugin-intl';
+import { AnimatePresence, motion } from 'framer-motion';
+
 import { QUERIES, COLORS, WEIGHTS } from '../../constants';
 
 import UnstyledButton from '../UnstyledButton';
@@ -12,6 +14,10 @@ import { ThemeContext } from '../ThemeContext';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext);
+
+  const MotionDialogOverlay = motion(Overlay);
+  const MotionDialogContent = motion(Content);
+
   // Close on "Escape"
   useEffect(() => {
     function handleKeydown(ev) {
@@ -28,8 +34,20 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   });
 
   return (
-    <Overlay isOpen={isOpen} onDismiss={onDismiss}>
-      <Content aria-label="Mobile menu">
+    <MotionDialogOverlay
+      isOpen={isOpen}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onDismiss={onDismiss}
+    >
+      <MotionDialogContent
+        initial={{ x: '100%' }}
+        animate={{ x: '0%' }}
+        exit={{ x: '100%' }}
+        transition={{ min: 0, max: 100, bounceDamping: 9 }}
+        aria-label="Mobile menu"
+      >
         <CloseButton onClick={onDismiss}>
           <Icon
             id="close"
@@ -49,8 +67,8 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
           <NavLink to="/contact">Contact</NavLink>
         </Nav>
         <Filler />
-      </Content>
-    </Overlay>
+      </MotionDialogContent>
+    </MotionDialogOverlay>
   );
 };
 
