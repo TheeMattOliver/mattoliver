@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { injectIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 import MagicHeader from "../MagicHeader"
 import Footer from "../Footer"
@@ -32,9 +33,27 @@ const MainLayout = ({ children, intl, ...props }) => {
       <Wrapper>
         <MagicHeader title={data.site.siteMetadata.title} />
         <Middle>
-          <Main>
+          <MotionMain
+            initial={{
+              opacity: 0,
+              x: -200
+            }}
+            animate={{
+              opacity: 1,
+              x: 0
+            }}
+            exit={{
+              opacity: 0,
+              x: 200
+            }}
+            transition={{
+              type: "spring",
+              mass: 0.35,
+              stiffness: 75,
+              duration: 0.3
+            }}>
             {children}
-          </Main>
+          </MotionMain>
         </Middle>
         <Footer data={data.site.siteMetadata} />
       </Wrapper>
@@ -56,6 +75,15 @@ const Middle = styled.section`
   display: flex;
 `;
 const Main = styled.main`
+  background-color: var(--color-background);
+  display: flex;
+  flex: 1;
+  width: 100%;
+  @media ${QUERIES.tabletAndUp} {
+    flex: 1;
+  }
+`;
+const MotionMain = styled(motion.main)`
   background-color: var(--color-background);
   display: flex;
   flex: 1;

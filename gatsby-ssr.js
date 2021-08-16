@@ -3,6 +3,7 @@ import React from 'react';
 import App from './src/components/App';
 
 import Terser from 'terser';
+import { AnimatePresence } from 'framer-motion';
 
 import {
   COLOR_MODE_KEY,
@@ -89,5 +90,5 @@ export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
 };
 
 export const wrapPageElement = ({ element }) => {
-  return <App>{element}</App>;
+  return <App><AnimatePresence exitBeforeEnter>{element}</AnimatePresence></App>;
 };
