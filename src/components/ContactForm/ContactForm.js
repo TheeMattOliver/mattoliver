@@ -387,6 +387,9 @@ const ContactInformation = styled.div`
     &:hover {
       color: ${COLORS.blue500.light};
     }
+    &:focus-visible {
+      color: ${COLORS.blue500.light};
+    }
   }
   @media ${QUERIES.desktopAndUp} {
     padding: 4rem 1.5rem;
