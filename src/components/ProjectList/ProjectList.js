@@ -17,15 +17,15 @@ export default function ProjectList({ projects }) {
             <ProjectCardWrapper key={project.id}>
               <Link to={`/work/${project.slug.current}`}>
                 <ProjectCardHeader>
-                  <h2>{project.title}</h2>
-                  {` `}
-                  <span></span>
-                  {` `}
                   <small>
                     <time dateTime="">
                       {format(new Date(project.startedAt), 'MMMM yyyy')}
                     </time>
                   </small>
+                  <h2>{project.title}</h2>
+                  {` `}
+                  <span></span>
+                  {` `}
                 </ProjectCardHeader>
                 <ProjectImageWrapper>
                   <ProjectMainImage
