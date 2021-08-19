@@ -438,6 +438,7 @@ const SectionCopyWrapper = styled.div`
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: ${WEIGHTS.thin};
+  /* display: flex; */
   p {
     color: var(--color-textPrimary);
     margin-top: .75rem;
@@ -464,7 +465,9 @@ const SectionCopyWrapper = styled.div`
     margin: 2rem 1rem!important;
     @media ${QUERIES.tabletAndUp} {
       margin: 2rem 1.5rem!important;
-      max-width: revert;
+      /* max-width: revert; */
+      /* flex: 1; */
+      max-width: 88%;
     }
   }
   code {
@@ -473,6 +476,28 @@ const SectionCopyWrapper = styled.div`
       1.45vw,
       1.65rem
     )!important;
+    position: relative;
+    display: inline;
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    font-size: 0.9em;
+    letter-spacing: -0.5px;
+    padding: 4.5px 6px;
+    margin: 1px -1px;
+    background: rgba(115, 125, 140, 0.17);
+    border-radius: 3px;
+    -webkit-box-decoration-break: clone;
+  }
+  pre code {
+    position: revert;
+    display: revert;
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    font-size: revert;
+    letter-spacing: revert;
+    padding: revert;
+    margin: revert;
+    background: revert;
+    border-radius: revert;
+    -webkit-box-decoration-break: revert;
   }
   strong {
     font-weight: ${WEIGHTS.bold};
