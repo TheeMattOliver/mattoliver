@@ -16,7 +16,12 @@ const serializers = {
       const { code, language } = node;
       if (!code) return null;
       return (
-        <SyntaxHighlighter language={language || 'text'} style={vscDarkPlus}>{code}</SyntaxHighlighter>
+        <SyntaxHighlighter
+          language={language || 'text'}
+          style={vscDarkPlus}
+        >
+          {code}
+        </SyntaxHighlighter>
       )
     },
     // twitter: ({ node }) => `<div id="${node.id}" class="tweet"></div>`
