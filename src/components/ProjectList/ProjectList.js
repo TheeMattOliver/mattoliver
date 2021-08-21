@@ -39,15 +39,21 @@ export default function ProjectList({ projects }) {
                   </p>
                 </ProjectCardContent>
                 <OffsetProjectCardContentWrapper>
-                  <h2>{project.title}</h2>
-                  {` `}
-                  <span></span>
-                  {` `}
-                  <small>
-                    <time dateTime="">
-                      {format(new Date(project.startedAt), 'MMMM yyyy')}
-                    </time>
-                  </small>
+                  <OffsetProjectCardHeader>
+                    <small>
+                      <time dateTime="">
+                        {format(new Date(project.startedAt), 'MMMM yyyy')}
+                      </time>
+                      {` `}
+                      <span>-</span>
+                      {` `}
+                      <time dateTime="">
+                        {format(new Date(project.endedAt), 'MMMM yyyy')}
+                      </time>
+                    </small>
+                    <h2>{project.title}</h2>
+                  </OffsetProjectCardHeader>
+
                   <p>
                     {project.excerpt.text[0]._rawChildren[0].text}
                   </p>
@@ -188,6 +194,12 @@ const OffsetProjectCardContentWrapper = styled.div`
     margin-right: -2.5rem;
     margin-left: 2rem;
   }
+`;
+
+const OffsetProjectCardHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `;
 
 const ProjectImageWrapper = styled.div`

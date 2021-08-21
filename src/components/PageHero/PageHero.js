@@ -24,7 +24,10 @@ const Wrapper = styled.div`
     padding: 0 1.5rem;
   }
   @media ${QUERIES.laptopAndUp} {
-    max-width: 80rem;
+    /* max-width: 80rem; */
+  }
+  @media ${QUERIES.desktopAndUp} {
+    /* max-width: revert; */
   }
 `;
 const HeroTitle = styled.h1`
