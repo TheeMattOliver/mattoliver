@@ -46,15 +46,15 @@ const ButtonList = styled.div`
   gap: 16px;
 `;
 
-const ButtonListItem = styled.div`
-  flex-basis: 100%;
-  padding: 12px;
-  min-width: 0px;
-  gap: 16px;
-  @media ${QUERIES.tabletAndUp} {
-    flex-basis: 50%;
-  }
-`;
+// const ButtonListItem = styled.div`
+//   flex-basis: 100%;
+//   padding: 12px;
+//   min-width: 0px;
+//   gap: 16px;
+//   @media ${QUERIES.tabletAndUp} {
+//     flex-basis: 50%;
+//   }
+// `;
 
 const ButtonContainer = styled.div`
   flex: 1;

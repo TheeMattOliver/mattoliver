@@ -240,8 +240,8 @@ const ContactInformation = styled.div`
   /* text-lg font-medium text-white */
   h3 {
     font-size: 2rem;
-  margin-bottom: 1rem;
-  color: ${COLORS.gray50.light};
+    margin-bottom: 1rem;
+    color: ${COLORS.gray50.light};
   }
   /* mt-6 text-base text-indigo-50 max-w-3xl */
   p {

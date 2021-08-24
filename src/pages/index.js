@@ -10,6 +10,7 @@ import PageHero from "../components/PageHero";
 import { QUERIES } from "../constants";
 import Spacer from "../components/Spacer";
 import HeroButtonGroup from "../components/HeroButtonGroup";
+import RecentProjectList from "../components/RecentProjectList";
 
 const homeHeadline = 'Product-focused, creative engineer on a mission.'
 
@@ -26,16 +27,22 @@ export default function Home() {
 			</SEO>
 			<MainLayout>
 				<Wrapper>
-					<PageHero>
-						{homeHeadline}
-					</PageHero>
-					<HeroCopyWrapper>
-						<HeroCopyText>
-							{copyText}
-						</HeroCopyText>
-					</HeroCopyWrapper>
-					<Spacer axis='vertical' size={100} />
-					<HeroButtonGroup />
+					{/* Hero */}
+					<HeroWrapper>
+						<PageHero>
+							{homeHeadline}
+						</PageHero>
+						<HeroCopyWrapper>
+							<HeroCopyText>
+								{copyText}
+							</HeroCopyText>
+						</HeroCopyWrapper>
+						<Spacer axis='vertical' size={100} />
+						<HeroButtonGroup />
+					</HeroWrapper>
+					{/* Recent projects */}
+					<RecentProjectList />
+
 					<Spacer axis='vertical' size={1000} />
 
 				</Wrapper>
@@ -67,4 +74,8 @@ const HeroCopyText = styled.p`
 	@media ${QUERIES.tabletAndUp} {
 		padding: 0 1.5rem;
 	}
+`;
+
+const HeroWrapper = styled.div`
+	min-height: 80vh;
 `;

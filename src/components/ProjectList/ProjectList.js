@@ -87,17 +87,11 @@ const GridWrapper = styled.div`
 `;
 
 const ProjectCardWrapper = styled.div`
-  /* padding: 16px;
-  padding: .25rem; 
-  justify-content: center;
-  align-items: center; 
-  border: solid 1px var(--color-borderPrimary);
-  height: 280px; */
   position: relative;
   display: flex;
   flex-direction: column;
   background: var(--color-panelBackground);
-  border-radius: 3px;
+  border-radius: 5px;
   flex: 1;
 
   @media ${QUERIES.tabletAndUp} {
@@ -187,7 +181,7 @@ const OffsetProjectCardContentWrapper = styled.div`
       color: var(--color-textSecondary);
     }
     padding: 1rem 1.5rem 1.5rem;
-    border-radius: 3px;
+    border-radius: 5px;
     border: solid 1px var(--color-borderPrimary);
     position: absolute;
     margin-top: -3rem;
@@ -206,6 +200,7 @@ const ProjectImageWrapper = styled.div`
   flex: 1;
   display: flex;
   border: solid 1px var(--color-borderPrimary);
+  border-radius: 5px;
   transition: opacity 100ms ${TRANSITIONS.normalOut};
   &:hover {
     filter: grayscale(0.8);
