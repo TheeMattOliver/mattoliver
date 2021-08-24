@@ -13,46 +13,46 @@ import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
 
 const Header = (siteTitle) => {
-  const { title } = siteTitle
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+	const { title } = siteTitle
+	const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  return (
-    <>
-      <NavWrapper className={`justify-between px-6 py-8 space-x-10 items-baseline shadow-sm`}>
-        <Logo to="/">
-          <VisuallyHidden>Return to home page</VisuallyHidden>
-          {title}
-        </Logo>
+	return (
+		<>
+			<NavWrapper className={`justify-between px-6 py-8 space-x-10 items-baseline shadow-sm`}>
+				<Logo to="/">
+					<VisuallyHidden>Return to home page</VisuallyHidden>
+					{title}
+				</Logo>
 
-        <DesktopNav>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/work">Work</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-          <DarkToggleIcon />
-        </DesktopNav>
-        <MobileActions>
-          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
-            <Icon
-              id="menu"
-              strokeWidth={2}
-              size={24}
-              color={COLORS.gray900}
-              width={24}
-              className="-mb-1" />
-            <VisuallyHidden>
-              Menu
-            </VisuallyHidden>
-          </UnstyledButton>
-          <DarkToggleIcon />
-        </MobileActions>
+				<DesktopNav>
+					<NavLink to="/about">About</NavLink>
+					<NavLink to="/work">Work</NavLink>
+					<NavLink to="/contact">Contact</NavLink>
+					<DarkToggleIcon />
+				</DesktopNav>
+				<MobileActions>
+					<UnstyledButton onClick={() => setShowMobileMenu(true)}>
+						<Icon
+							id="menu"
+							strokeWidth={2}
+							size={24}
+							color={COLORS.gray900}
+							width={24}
+							className="-mb-1" />
+						<VisuallyHidden>
+							Menu
+						</VisuallyHidden>
+					</UnstyledButton>
+					<DarkToggleIcon />
+				</MobileActions>
 
-        <MobileMenu
-          isOpen={showMobileMenu}
-          onDismiss={() => setShowMobileMenu(false)}
-        />
-      </NavWrapper>
-    </>
-  )
+				<MobileMenu
+					isOpen={showMobileMenu}
+					onDismiss={() => setShowMobileMenu(false)}
+				/>
+			</NavWrapper>
+		</>
+	)
 }
 
 const HeaderSpacer = styled.div`
@@ -97,16 +97,36 @@ const DesktopNav = styled.nav`
 const NavLink = styled(Link)`
   font-size: 1.125rem;
   text-decoration: none;
-  &:not(:last-of-type) {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 99%;
+		height: 1px;
+		bottom: -.43rem;
+		left: 0;
+		background-color: #000;
+		transform: scaleX(0);
+		transform-origin: top left;
+		transition: transform 0.3s ease;	
+	}
+	&:hover::before {
+		transform: scaleX(1);
+	}
+	&:not(:last-of-type) {
     margin-left: 1rem;
-  }
+  };
   &.active {
 		text-decoration: underline;
 		text-underline-offset: .45rem;
+		pointer-events: none;
 	};
   &[aria-current='page'] {
   	text-decoration: underline;
 		text-underline-offset: .45rem;
+		transform: 0;
+		pointer-events: none;
   }
 `;
 
@@ -129,11 +149,11 @@ const MobileActions = styled.div`
 `;
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+	siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``
+	siteTitle: ``
 }
 
 export default Header

@@ -261,14 +261,6 @@ const Wrapper = styled.div`
       'page-title page-title'
       'sidebar main'
       'footer footer';
-    grid-template-columns: 14rem 1fr;
-  }
-  @media ${QUERIES.laptopAndUp} {
-    grid-template-areas:
-      'header header'
-      'page-title page-title'
-      'sidebar main'
-      'footer footer';
     /* grid-template-columns: 14rem 1fr; */
     grid-template-columns:
       minmax(50px, 14rem)
@@ -293,6 +285,8 @@ const PageTitleWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
+  gap: 16px;
+  display: flex;
   @media ${QUERIES.tabletAndUp} {
     padding: 5rem 0;
   }

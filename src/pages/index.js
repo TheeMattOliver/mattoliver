@@ -9,6 +9,7 @@ import PageHero from "../components/PageHero";
 
 import { QUERIES } from "../constants";
 import Spacer from "../components/Spacer";
+import HeroButtonGroup from "../components/HeroButtonGroup";
 
 const homeHeadline = 'Product-focused, creative engineer on a mission.'
 
@@ -33,6 +34,8 @@ export default function Home() {
 							{copyText}
 						</HeroCopyText>
 					</HeroCopyWrapper>
+					<Spacer axis='vertical' size={100} />
+					<HeroButtonGroup />
 					<Spacer axis='vertical' size={1000} />
 
 				</Wrapper>
