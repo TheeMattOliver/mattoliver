@@ -40,7 +40,7 @@ export default function RecentProjectList() {
   console.log({ sortedSlicedProjects })
   return (
     <Wrapper>
-      <SectionTitle>Recent:</SectionTitle>
+      <SectionTitle>Recent work:</SectionTitle>
       <RecentProjectGrid>
         {
           sortedSlicedProjects.map(project => {
@@ -56,7 +56,7 @@ export default function RecentProjectList() {
                   <ProjectCardFooter>
                     <h2>{project.title}</h2>
                     <ProjectCategoryWrapper>
-                      {project.categories.slice(0, -1).map(category => {
+                      {project.categories.slice(0, -2).map(category => {
                         return (
                           <p key={category.key}>{category.title}</p>
                         )

@@ -43,8 +43,6 @@ export default function Home() {
 					{/* Recent projects */}
 					<RecentProjectList />
 
-					<Spacer axis='vertical' size={1000} />
-
 				</Wrapper>
 			</MainLayout>
 		</>
