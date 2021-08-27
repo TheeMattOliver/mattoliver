@@ -131,7 +131,7 @@ const NavLink = styled(Link)`
 		height: 1px;
 		bottom: -.43rem;
 		left: 0;
-		background-color: #000;
+		background-color: var(--color-textPrimary);
 		transform: scaleX(0);
 		transform-origin: top left;
 		transition: transform 0.3s ease;	

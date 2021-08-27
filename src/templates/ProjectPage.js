@@ -341,7 +341,8 @@ const Aside = styled.aside`
     li {
       font-size: 1.125;
       /* filter: saturate(0); */
-      margin-top: 0.5rem;
+      margin-top: 1.25rem;
+      margin-left: .25rem;
       font-weight: ${WEIGHTS.normal}
     }
   }

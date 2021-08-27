@@ -62,9 +62,7 @@ export default function ProjectList({ projects }) {
             </ProjectCardWrapper>
           )
         })}
-        <Spacer axis='vertical' size={100} />
       </GridWrapper>
-      <Spacer axis='vertical' size={200} />
     </>
   )
 }
@@ -90,12 +88,13 @@ const ProjectCardWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--color-panelBackground);
+  background: var(--color-background);
   border-radius: 5px;
   flex: 1;
 
   @media ${QUERIES.tabletAndUp} {
     margin: 4rem 3.25rem 4rem 2rem;
+    background: var(--color-panelBackground);
   }
   @media ${QUERIES.laptopAndUp} {
     margin: 4rem 3.25rem 4rem 2rem;
@@ -106,7 +105,10 @@ const ProjectCardWrapper = styled.div`
 `;
 
 const ProjectCardHeader = styled.div`
-  display: block;
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
   margin: 1rem 0;
   h2 {
     font-size: calc(1rem + 1vw);
@@ -123,6 +125,7 @@ const ProjectCardHeader = styled.div`
 `;
 const ProjectCardContent = styled.div`
   display: block;
+  padding: .5rem;
   margin-bottom: 2rem;
   margin-top: 1rem;
   p {

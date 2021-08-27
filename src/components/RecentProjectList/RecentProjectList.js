@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -6,7 +7,6 @@ import { Link } from "gatsby-plugin-intl";
 import styled from "styled-components";
 
 import { QUERIES, TRANSITIONS } from "../../constants";
-
 
 export default function RecentProjectList() {
   const data = useStaticQuery(graphql`
@@ -80,13 +80,14 @@ export default function RecentProjectList() {
 }
 
 const Wrapper = styled.div`
-  margin: 1rem;
+  margin: 1.5rem;
+  margin-top: 2rem;
 `;
 
 const SectionTitle = styled.h3`
   color: var(--color-textPrimary);
 	padding: 0;
-  font-weight: medium;
+  font-weight: bold;
   font-size: clamp(
     1.5rem,
 		2.25vw + .5rem,
@@ -94,12 +95,12 @@ const SectionTitle = styled.h3`
   );
   @media ${QUERIES.laptopAndUp} {
     line-height: 3rem;
-    padding: 0;
+    padding: 0rem;
   }
 `;
 
 const RecentProjectGrid = styled.div`
-  --min-column-width: min(370px, 100%);
+  --min-column-width: min(440px, 100%);
   display: grid;
   grid-template-columns:
     repeat(auto-fill, minmax(var(--min-column-width), 1fr));
@@ -157,13 +158,13 @@ const ProjectCardFooter = styled.div`
   bottom: 0px;
   left: 0px;
   right: 0px;
-  padding: 1rem 1rem;
+  padding: 0.75rem;
   background: var(--color-background);
   border: .1px solid var(--color-borderPrimary);
   border-top: none;
   border-radius: 0 0 5px 5px;
   h2 {
-    font-size: calc(1rem + 1vw);
+    font-size: 1rem;
     display: inline-block;
     margin-bottom: .5rem;
     color: var(--color-textPrimary);
@@ -173,11 +174,25 @@ const ProjectCardFooter = styled.div`
     font-style: italic;
     margin-top: .25rem;
   }
+  @media ${QUERIES.tabletAndUp} {
+    padding: 1rem 1rem;
+    h2 {
+      font-size: calc(1rem + 1vw);
+    }
+  }
 `;
 
 const ProjectCategoryWrapper = styled.div`
   display: flex;
   gap: 16px;
+  p {
+    font-size: .75rem;
+  }
+  @media ${QUERIES.tabletAndUp} {
+    p {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const ProjectImageWrapper = styled.div`
@@ -229,6 +244,7 @@ const NavBtnWrapper = styled.div`
   width: 100%;
   justify-content: flex-end;
   margin-top: 2rem;
+  color: var(--color-textPrimary);
 `;
 
 const ProjectNavigationButton = styled(Link)`
@@ -243,7 +259,7 @@ const ProjectNavigationButton = styled(Link)`
 		height: 1px;
 		bottom: -.43rem;
 		left: 0;
-		background-color: #000;
+		background-color: var(--color-textPrimary);
 		transform: scaleX(0);
 		transform-origin: top left;
 		transition: transform 0.3s ease;	

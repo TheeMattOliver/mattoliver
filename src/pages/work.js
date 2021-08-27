@@ -26,7 +26,7 @@ export default function WorkPage({ data, pageContext }) {
           <PageHero>Selected Work - {projects.length} Projects</PageHero>
           <TechnologyFilter activeTechnology={pageContext.technology} />
           <ProjectList projects={projects} />
-          <Spacer axis='vertical' size={1000} />
+          <Spacer axis='vertical' size={100} />
 
         </Wrapper>
       </MainLayout>

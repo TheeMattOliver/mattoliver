@@ -75,5 +75,5 @@ const HeroCopyText = styled.p`
 `;
 
 const HeroWrapper = styled.div`
-	min-height: 80vh;
+	/* min-height: 80vh; */
 `;
