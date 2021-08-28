@@ -40,6 +40,9 @@ export default function Home() {
 						<Spacer axis='vertical' size={100} />
 						<HeroButtonGroup />
 					</HeroWrapper>
+
+					<Spacer axis='vertical' size={100} />
+
 					{/* Recent projects */}
 					<RecentProjectList />
 

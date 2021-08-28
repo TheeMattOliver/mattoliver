@@ -27,7 +27,6 @@ export default function WorkPage({ data, pageContext }) {
           <TechnologyFilter activeTechnology={pageContext.technology} />
           <ProjectList projects={projects} />
           <Spacer axis='vertical' size={100} />
-
         </Wrapper>
       </MainLayout>
     </>
@@ -60,9 +59,16 @@ export const query = graphql`
           label
         }
         technologies {
-          _key
-          id
           title
+          id
+          description
+          image {
+            caption
+            alt
+            asset {
+              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+            }
+          }
         }
         slug {
           current

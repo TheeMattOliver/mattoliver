@@ -63,9 +63,9 @@ export default function TechnologyFilter({ activeTechnology }) {
       <Link to='/work'>
         <Badge>
           All
-          <Count>
+          {/* <Count>
             {technologies.nodes.length}
-          </Count>
+          </Count> */}
         </Badge>
       </Link>
       {technologiesWithCounts.map((technology) => {
@@ -77,9 +77,9 @@ export default function TechnologyFilter({ activeTechnology }) {
           >
             <Badge>
               {technology.title}
-              <Count>
+              {/* <Count>
                 {technology.count}
-              </Count>
+              </Count> */}
             </Badge>
           </Link>
         )
