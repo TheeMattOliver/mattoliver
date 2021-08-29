@@ -16,10 +16,6 @@ import img from "../assets/images/matt.jpg"
 import HeroButtonGroup from "../components/HeroButtonGroup";
 import SecondaryHeroBtnLink from "../components/HeroButtonGroup/SecondaryHeroBtnLink";
 import PrimaryHeroBtnLink from "../components/HeroButtonGroup/PrimaryHeroBtnLink";
-import TertiaryHeroBtnLink from "../components/HeroButtonGroup/TertiaryHeroBtnLink";
-
-// const homeHeadline = 'Product-focused, creative engineer on a mission.'
-// const copyText = 'My focus is building political tech to power progressive social causes. Always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.'
 
 export default function AboutPage({ data }) {
   const intl = useIntl();
@@ -35,8 +31,6 @@ export default function AboutPage({ data }) {
       </SEO>
       <MainLayout>
         <PageWrapper>
-
-
           <FlexWrapper>
             {/* Hero */}
             <HeroWrapper>
@@ -52,11 +46,11 @@ export default function AboutPage({ data }) {
 
               <HeroCopyWrapper>
                 <HeroCopySubHead>
-                  I'm a developer and currently a senior product manager at <a href="https://civitech.io/voter-registration/">Civitech</a>, building tools to power progressive social causes.{` `}
+                  I'm an artist, engineer, web developer and I currently work as a senior product manager at <a href="https://civitech.io/voter-registration/">Civitech</a>, building tools to power progressive social causes.{` `}
                 </HeroCopySubHead>
               </HeroCopyWrapper>
               <HeroCopyText>
-                I'm always interested in working with misfits, outcasts, and hell-raisers to create positive change and challenge the status quo.{` `}
+                I'm interested in accessibility, micro-interactions, D3, React.js, and working with misfits, outcasts, and hell-raisers to create positive change and challenge the status quo.{` `}
               </HeroCopyText>
 
             </HeroWrapper>
