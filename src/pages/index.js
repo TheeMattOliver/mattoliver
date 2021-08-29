@@ -48,7 +48,6 @@ export default function HomePage({ data }) {
 								</HeroCopySubHead>
 							</HeroCopyWrapper>
 							<Spacer axis='vertical' size={40} />
-
 						</HeroWrapper>
 						{/* Pic */}
 						<ImgWrapper>
@@ -59,6 +58,7 @@ export default function HomePage({ data }) {
 					</FlexWrapper>
 
 					<HeroButtonGroup />
+					<Spacer axis='vertical' size={80} />
 
 					{/* Recent projects */}
 					<RecentProjectList />
@@ -202,7 +202,7 @@ const ImgWrapper = styled.div`
   @media ${QUERIES.tabletAndUp} {
     display: block;
     width: 400px;
-    height: 400px;
+    height: 300px;
     margin-top: 50px;
     margin-right: 150px;
   }
