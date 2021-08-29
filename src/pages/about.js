@@ -222,6 +222,9 @@ const ImgWrapper = styled.div`
 
 const AboutImg = styled(GatsbyImage)`
   border-radius: 50%;
+  img {
+    border-radius: 50%;
+  }
 `;
 
 const ButtonWrapper = styled.div`

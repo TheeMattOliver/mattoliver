@@ -17,56 +17,56 @@ import HeroButtonGroup from "../components/HeroButtonGroup";
 import RecentProjectList from "../components/RecentProjectList";
 
 export default function HomePage({ data }) {
-	const intl = useIntl()
-	if (!data) return;
+  const intl = useIntl()
+  if (!data) return;
 
-	const { pageData } = data
+  const { pageData } = data
 
-	return (
-		<>
-			<SEO
-				title={`Home`}
-				lang={intl.locale}>
-			</SEO>
-			<MainLayout>
-				<PageWrapper>
-					<FlexWrapper>
-						{/* Hero */}
-						<HeroWrapper>
-							{/* Mobile Pic */}
-							<MobileImgWrapper>
-								<AboutImg
-									image={pageData?.content[0]?.image.asset.gatsbyImageData}
-									alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
-							</MobileImgWrapper>
-							<PageHero>
-								Hi, I'm Matt. <WavingHand />
-							</PageHero>
-							<HeroCopyWrapper>
-								<HeroCopySubHead>
-									I'm an artist, engineer, web developer, and I currently work as a senior product manager, building tools to power progressive social causes.{` `}
-								</HeroCopySubHead>
-							</HeroCopyWrapper>
-							<Spacer axis='vertical' size={40} />
-						</HeroWrapper>
-						{/* Pic */}
-						<ImgWrapper>
-							<AboutImg
-								image={pageData?.content[0]?.image.asset.gatsbyImageData}
-								alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
-						</ImgWrapper>
-					</FlexWrapper>
+  return (
+    <>
+      <SEO
+        title={`Home`}
+        lang={intl.locale}>
+      </SEO>
+      <MainLayout>
+        <PageWrapper>
+          <FlexWrapper>
+            {/* Hero */}
+            <HeroWrapper>
+              {/* Mobile Pic */}
+              <MobileImgWrapper>
+                <AboutImg
+                  image={pageData?.content[0]?.image.asset.gatsbyImageData}
+                  alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
+              </MobileImgWrapper>
+              <PageHero>
+                Hi, I'm Matt. <WavingHand />
+              </PageHero>
+              <HeroCopyWrapper>
+                <HeroCopySubHead>
+                  I'm an artist, engineer, web developer, and I currently work as a senior product manager, building tools to power progressive social causes.{` `}
+                </HeroCopySubHead>
+              </HeroCopyWrapper>
+              <Spacer axis='vertical' size={40} />
+            </HeroWrapper>
+            {/* Pic */}
+            <ImgWrapper>
+              <AboutImg
+                image={pageData?.content[0]?.image.asset.gatsbyImageData}
+                alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
+            </ImgWrapper>
+          </FlexWrapper>
 
-					<HeroButtonGroup />
-					<Spacer axis='vertical' size={80} />
+          <HeroButtonGroup />
+          <Spacer axis='vertical' size={80} />
 
-					{/* Recent projects */}
-					<RecentProjectList />
+          {/* Recent projects */}
+          <RecentProjectList />
 
-				</PageWrapper>
-			</MainLayout>
-		</>
-	);
+        </PageWrapper>
+      </MainLayout>
+    </>
+  );
 }
 export const query = graphql`
   query HomePage {
@@ -205,11 +205,15 @@ const ImgWrapper = styled.div`
     height: 300px;
     margin-top: 50px;
     margin-right: 150px;
+    border-radius: 50%;
   }
 `;
 
 const AboutImg = styled(GatsbyImage)`
   border-radius: 50%;
+  img {
+    border-radius: 50%;
+  }
 `;
 
 
