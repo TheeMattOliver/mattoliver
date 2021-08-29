@@ -15,6 +15,8 @@ import { QUERIES } from "../constants";
 import img from "../assets/images/matt.jpg"
 import HeroButtonGroup from "../components/HeroButtonGroup";
 import SecondaryHeroBtnLink from "../components/HeroButtonGroup/SecondaryHeroBtnLink";
+import PrimaryHeroBtnLink from "../components/HeroButtonGroup/PrimaryHeroBtnLink";
+import TertiaryHeroBtnLink from "../components/HeroButtonGroup/TertiaryHeroBtnLink";
 
 // const homeHeadline = 'Product-focused, creative engineer on a mission.'
 // const copyText = 'My focus is building political tech to power progressive social causes. Always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.'
@@ -70,8 +72,11 @@ export default function AboutPage({ data }) {
 
           {/* Button */}
           <ButtonWrapper>
-            <SecondaryHeroBtnLink to='/contact'>Get in touch</SecondaryHeroBtnLink>
+            <ButtonContainer>
+              <PrimaryHeroBtnLink to='/contact'>Get in touch</PrimaryHeroBtnLink>
+            </ButtonContainer>
           </ButtonWrapper>
+
         </PageWrapper>
       </MainLayout>
     </>
@@ -141,7 +146,6 @@ const HeroCopyWrapper = styled.div`
 
 const HeroCopySubHead = styled.h2`
   color: var(--color-textPrimary);
-  font-weight: bold;
   padding: 0 1rem;
   margin-top: 1rem;
   line-height: clamp(
@@ -158,12 +162,15 @@ const HeroCopySubHead = styled.h2`
   max-width: 100%;
   /* font-family: system-ui; */
   font-variation-settings: 'wght' 400;
+  font-weight: medium;
   a {
     color: var(--color-textLink);
     text-decoration: underline;
   }
 	@media ${QUERIES.tabletAndUp} {
 		padding: 0 1.5rem;
+    font-variation-settings: 'wght' 400;
+    font-weight: bold;
 	}
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
@@ -202,6 +209,7 @@ const MobileImgWrapper = styled.div`
   justify-self: center;
   align-self: center;
   margin-top: 1.5rem;
+  border-radius: 50%;
   @media ${QUERIES.tabletAndUp} {
     display: none;
   }
@@ -224,17 +232,28 @@ const AboutImg = styled(GatsbyImage)`
 
 const ButtonWrapper = styled.div`
   padding: 0 1rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 3rem;
-  /* flex: 1;
+  display: flex;
+  @media ${QUERIES.tabletAndUp} {
+    padding: 0 1.5rem;
+  }
+  @media ${QUERIES.laptopAndUp} {
+    /* max-width: 80rem; */
+  }
+  @media ${QUERIES.desktopAndUp} {
+    /* max-width: revert; */
+  }
+`;
+
+const ButtonContainer = styled.div`
+  flex: 1;
   justify-content: flex-start;
   align-items: stretch;
-  display: flex; */
+  display: flex;
   @media ${QUERIES.tabletAndUp} {
-		padding: 0 1.5rem;
-    margin-bottom: 1rem;
-	}
-  @media ${QUERIES.laptopAndUp} {
-    max-width: 80rem;
-    margin-bottom: 1rem;
+    flex: 0;
   }
 `;
