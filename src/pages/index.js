@@ -12,7 +12,7 @@ import Spacer from "../components/Spacer";
 import HeroButtonGroup from "../components/HeroButtonGroup";
 import RecentProjectList from "../components/RecentProjectList";
 
-const homeHeadline = 'Product-focused, creative engineer on a mission.'
+const homeHeadline = 'Product manager and engineer on a mission.'
 
 // const copyText = 'Product manager, developer, and maker with experience working across the entire product stack - from turning written business requirements into scoped user stories, to shipping production code and beyond. Currently building political tech to power progressive social causes and always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.'
 const copyText = 'Currently building political tech to power progressive social causes. Always interested in collaborating with teams of misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo.'
@@ -58,6 +58,10 @@ const HeroCopyWrapper = styled.div`
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
   }
+`;
+
+const HeroCopySubHead = styled.h2`
+
 `;
 
 const HeroCopyText = styled.p`
