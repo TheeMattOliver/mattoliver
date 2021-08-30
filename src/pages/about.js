@@ -12,9 +12,6 @@ import SEO from "../components/SEO";
 import Spacer from "../components/Spacer";
 import { QUERIES } from "../constants";
 
-import img from "../assets/images/matt.jpg"
-import HeroButtonGroup from "../components/HeroButtonGroup";
-import SecondaryHeroBtnLink from "../components/HeroButtonGroup/SecondaryHeroBtnLink";
 import PrimaryHeroBtnLink from "../components/HeroButtonGroup/PrimaryHeroBtnLink";
 
 export default function AboutPage({ data }) {
@@ -46,7 +43,7 @@ export default function AboutPage({ data }) {
 
               <HeroCopyWrapper>
                 <HeroCopySubHead>
-                  I'm an artist, engineer, web developer and I currently work as a senior product manager at <a href="https://civitech.io/voter-registration/">Civitech</a>, building tools to power progressive social causes.{` `}
+                  I'm an artist, engineer, web developer, and I currently work as a senior product manager at <a href="https://civitech.io/voter-registration/">Civitech</a>, building tools to power progressive social causes.{` `}
                 </HeroCopySubHead>
               </HeroCopyWrapper>
               <HeroCopyText>
