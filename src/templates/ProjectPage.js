@@ -535,8 +535,22 @@ const SectionCopyWrapper = styled.div`
     /* filter: drop-shadow(1px 2px 3px var(--color-gray300)); */
     flex: 1;
   }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  iframe {
+    max-width: 320px;  
+    margin-left: 10px;  
+  }
   @media ${QUERIES.tabletAndUp} {
     margin-top: 1.25rem;
+    div iframe {
+      display: flex;
+      margin-left: 120px; 
+      max-width: 90%;
+    }
   }
 `;
 

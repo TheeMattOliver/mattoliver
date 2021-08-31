@@ -38,16 +38,18 @@ export default function AboutPage({ data }) {
                   alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
               </MobileImgWrapper>
               <PageHero>
-                Hi, I'm Matt. <WavingHand />
+                A quick summary
               </PageHero>
-
-              <HeroCopyWrapper>
-                <HeroCopySubHead>
-                  I'm an artist, engineer, web developer, and I currently work as a senior product manager at <a href="https://civitech.io/voter-registration/">Civitech</a>, building tools to power progressive social causes.{` `}
-                </HeroCopySubHead>
-              </HeroCopyWrapper>
               <HeroCopyText>
-                I'm interested in accessibility, micro-interactions, D3, React.js, and working with misfits, outcasts, and hell-raisers to create positive change and challenge the status quo.{` `}
+                I was born in Houston and went to UT. And one of the things I learned from many years of touring in bands and running my own studio -- in the spirit of DIY -- was how to build websites in html.
+              </HeroCopyText>
+
+              <HeroCopyText>
+                In the last several years I've been lucky to have gotten to learn from some great engineers, designers, and developers.
+              </HeroCopyText>
+
+              <HeroCopyText>
+                I live in Austin with my family, cats, a dog, some bees, and a bunch of plants.
               </HeroCopyText>
 
             </HeroWrapper>

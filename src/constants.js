@@ -9,7 +9,7 @@ export const COLORS = {
   },
   textSecondary: {
     light: 'hsl(212deg, 9%, 38%)', // gry #586069
-    dark: 'hsl(212deg, 9%, 58%)' // light grey #8B949E
+    dark: 'hsl(212deg, 9%, 58%)', // light grey #8B949E
   },
   textTertiary: {
     light: 'hsl(212deg, 8%, 45%)', // grey #6A737D
@@ -25,7 +25,7 @@ export const COLORS = {
   },
   panelBackground: {
     light: 'hsl(0deg, 0%, 100%)', // white
-    dark: 'hsl(210deg, 12%, 16%)' // charcoal-black #24292E
+    dark: 'hsl(210deg, 12%, 16%)', // charcoal-black #24292E
   },
   panelBackgroundDark: {
     light: 'hsl(210deg, 13%, 12%)', // charcoal #1B1F23
@@ -84,7 +84,7 @@ export const COLORS = {
   },
   gray900: {
     light: 'hsl(0deg, 0%, 10%)',
-    dark: 'hsl(210deg, 38%, 95%)'
+    dark: 'hsl(210deg, 38%, 95%)',
   },
   // Blues, scaling from least-noticeable to darkest navy
   blue50: {
@@ -109,14 +109,13 @@ export const COLORS = {
   },
   blue900: {
     light: 'hsl(212deg, 97%, 25%)', // #023B7D
-    dark: 'hsl(212deg, 100%, 31%)' // #004A9E
+    dark: 'hsl(212deg, 100%, 31%)', // #004A9E
   },
   blue1000: {
     light: 'hsl(212deg, 97%, 16%)', // #012750
-    dark: 'hsl(212deg, 100%, 24%)' // #00397A
+    dark: 'hsl(212deg, 100%, 24%)', // #00397A
   },
 };
-
 
 // export const BREAKPOINTS = {
 //   phone: 600,

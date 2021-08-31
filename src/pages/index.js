@@ -44,8 +44,7 @@ export default function HomePage({ data }) {
               </PageHero>
               <HeroCopyWrapper>
                 <HeroCopySubHead>
-                  I'm an artist, engineer, web developer, and I currently work as a senior product manager, building tools to power progressive social causes.{` `}
-                </HeroCopySubHead>
+                  I'm an artist, front-end engineer, product designer, and I currently work as a senior product manager at <a href="https://civitech.io/voter-registration/">Civitech</a>, building tools to power progressive social causes.{` `}                </HeroCopySubHead>
               </HeroCopyWrapper>
               <Spacer axis='vertical' size={40} />
             </HeroWrapper>
