@@ -12,6 +12,7 @@ import { QUERIES, WEIGHTS } from "../constants";
 import Spacer from '../components/Spacer';
 import SectionHeader from '../components/SectionHeader';
 import PortableText from '../components/PortableText/PortableText';
+import TableOfContents from '../components/TableOfContents/TableOfContents';
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -61,22 +62,7 @@ export default function ProjectPage({ data }) {
 
           <StickySidebar>
             <h2>Table of Contents</h2>
-            <TableOfContents>
-              <ol>
-                {/* remove the lede */}
-                {content.slice(1).map(item => {
-                  return (
-                    <li key={item._key}>
-                      <a
-                        href={`#${item.anchor}`}
-                      >
-                        {item.heading}
-                      </a>
-                    </li>
-                  )
-                })}
-              </ol>
-            </TableOfContents>
+            <TableOfContents content={content} />
             <DesktopBackButton to='/work'>
               &larr; Back to Projects
             </DesktopBackButton>
@@ -97,7 +83,7 @@ export default function ProjectPage({ data }) {
           {/* todo: make this smooth scroll to anchor */}
           {content.slice(1).map(item => {
             return (
-              <Section key={item._key}>
+              <Section key={item._key} id={`${item.anchor}`}>
                 <SectionHeaderWrapper>
                   <SectionHeader key={item._key} id={`${item.anchor}`}>
                     <SectionHeaderAnchor href={`#${item.anchor}`} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
@@ -358,9 +344,6 @@ const Aside = styled.aside`
   }
 `;
 
-const TableOfContents = styled.nav`
-  margin-bottom: 4rem;
-`;
 const MobileBackButton = styled(Link)`
   margin-top: 4rem;
   margin-left: 1rem;
