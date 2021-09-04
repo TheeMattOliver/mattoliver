@@ -74,13 +74,13 @@ const GridWrapper = styled.div`
     repeat(auto-fill, minmax(var(--min-column-width), 1fr));
   grid-gap: 2rem;
   padding: 16px;
-  
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
   }
   @media ${QUERIES.desktopAndUp} {
     max-width: none;
-    grid-gap: 4rem;
+    grid-gap: 2rem;
+    margin-right: 2rem;
   }
 `;
 
@@ -91,6 +91,7 @@ const ProjectCardWrapper = styled.div`
   background: var(--color-background);
   border-radius: 5px;
   flex: 1;
+  
 
   @media ${QUERIES.tabletAndUp} {
     margin: 4rem 3.25rem 4rem 2rem;

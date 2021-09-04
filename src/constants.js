@@ -114,7 +114,7 @@ export const COLORS = {
   blue1000: {
     light: 'hsl(212deg, 97%, 16%)', // #012750
     dark: 'hsl(212deg, 100%, 24%)', // #00397A
-  },
+  }
 };
 
 // export const BREAKPOINTS = {

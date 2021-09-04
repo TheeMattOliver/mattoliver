@@ -107,6 +107,7 @@ const PageWrapper = styled.div`
 const FlexWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
   @media ${QUERIES.tabletAndUp} {
     flex-direction: row;
   }

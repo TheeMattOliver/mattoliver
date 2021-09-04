@@ -36,8 +36,8 @@ export default function RecentProjectList() {
   const { projects } = data
   const sortedSlicedProjects = projects.nodes.sort((a, b) => (b.startedAt > a.startedAt) ? 1 : -1).slice(0, 2)
 
-  console.log({ projects })
-  console.log({ sortedSlicedProjects })
+  // console.log({ projects })
+  // console.log({ sortedSlicedProjects })
   return (
     <Wrapper>
       <SectionTitle>Recent work:</SectionTitle>

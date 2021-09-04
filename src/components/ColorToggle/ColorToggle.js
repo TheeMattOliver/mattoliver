@@ -55,11 +55,10 @@ const ColorToggleBox = styled.div`
 `;
 
 const ColorBtn = styled.div`
-  height: 40px;
-  background-color: var(--color-textPrimary);
+  height: 20px;
+  background-color: var(--color-blue500);
   width: calc(1em * 1.5 + .75rem + 1px * 2);
   padding-right: 0;
   padding-left: 0;
-  border-radius: 50%;
 `;
 

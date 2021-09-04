@@ -41,11 +41,14 @@ export default function AboutPage({ data }) {
                 A quick summary
               </PageHero>
               <HeroCopyText>
-                I was born in Houston and went to UT. And one of the things I learned from many years of touring in bands and running my own studio -- in the spirit of DIY -- was how to build websites in html.
+                I was born in Houston, went to UT, and have played in bands, toured professionally, and run an analog recording studio for many years.
+              </HeroCopyText>
+              <HeroCopyText>
+                One of the things I learned to do over all those years -- in the spirit of DIY -- was how to build websites.
               </HeroCopyText>
 
               <HeroCopyText>
-                In the last several years I've been lucky to have gotten to learn from some great engineers, designers, and developers.
+                In the last several years, I've been doing more and more professional development, and I've been lucky to have gotten to learn from some great engineers, designers, and developers.
               </HeroCopyText>
 
               <HeroCopyText>

@@ -11,6 +11,7 @@ import MobileMenu from "../MobileMenu";
 import VisuallyHidden from "../VisuallyHidden";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
+import ColorToggle from "../ColorToggle/ColorToggle";
 
 const HEADER_HIDE_THRESHOLD = 400;
 
