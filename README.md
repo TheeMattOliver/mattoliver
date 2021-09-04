@@ -3,6 +3,7 @@
 
 Front-end: [Gatsby](https://gatsbyjs.org). Backend: [Sanity](https://sanity.io). Deployed with [Netlify](https://netlify.com).
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/44da42bc-8204-4758-8dbd-3e1c3f64cb35/deploy-status)](https://app.netlify.com/sites/adoring-bohr-7062c0/deploys)
 ---
 ## 📌 Design tokens:
 

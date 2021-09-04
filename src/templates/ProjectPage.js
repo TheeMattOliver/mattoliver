@@ -42,7 +42,6 @@ export default function ProjectPage({ data }) {
             <ul>
               {
                 technologies.map(item => {
-
                   return (
                     <TechListItem key={item._key}>
                       <GatsbyImage>
