@@ -102,8 +102,7 @@ const SectionTitle = styled.h3`
 const RecentProjectGrid = styled.div`
   --min-column-width: min(440px, 100%);
   display: grid;
-  grid-template-columns:
-    repeat(auto-fill, minmax(var(--min-column-width), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
   grid-gap: 2rem;
   padding: 16px 0;
   
@@ -112,7 +111,7 @@ const RecentProjectGrid = styled.div`
   }
   @media ${QUERIES.desktopAndUp} {
     max-width: none;
-    /* grid-gap: 4rem; */
+    grid-template-columns: repeat(2, minmax(var(--min-column-width), 1fr));
   }
 `;
 const ProjectCardWrapper = styled.div`
@@ -131,24 +130,6 @@ const ProjectCardWrapper = styled.div`
   }
   @media ${QUERIES.desktopAndUp} {
     /* margin: 1rem; */
-  }
-`;
-const ProjectCardHeader = styled.div`
-  display: block;
-  margin: 1rem 0;
-  h2 {
-    font-size: calc(1rem + 1vw);
-    display: inline-block;
-    margin-bottom: .5rem;
-    color: var(--color-textPrimary);
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  small, time {
-    color: var(--color-textSecondary);
-  }
-  @media ${QUERIES.tabletAndUp} {
   }
 `;
 
