@@ -69,4 +69,4 @@ yarn-error.log
 .yarn-integrity
 
 # misc
-./templates/DummyProjectPage
+/templates/DummyProjectPage.js
