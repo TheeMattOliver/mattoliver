@@ -10,7 +10,6 @@ const TechList = ({ technologies }) => {
     url: item.image?.asset?.gatsbyImageData.images.fallback.src,
     id: item.id,
   }));
-  console.log({ logosWithIds })
 
   return (
     <TechListWrapper>
