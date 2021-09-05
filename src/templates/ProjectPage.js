@@ -388,11 +388,18 @@ const SectionHeaderIconWrapper = styled.div`
 `;
 
 const SectionHeaderAnchor = styled.a`
-  &:hover ${SectionHeaderIconWrapper} {
-    svg {
-      opacity: 1
+  svg {
+    display: none
+  }
+  @media ${QUERIES.tabletAndUp} {
+    &:hover ${SectionHeaderIconWrapper} {
+      svg {
+        display: revert;
+        opacity: 1;
+      }
     }
   }
+  
 `;
 
 const SectionCopyWrapper = styled.div`
@@ -476,26 +483,35 @@ const SectionCopyWrapper = styled.div`
   
   iframe {
     max-width: 320px;  
-    margin-left: 10px; 
+    margin-left: 25px; 
     width:550px;
     height:339.16666666667px; 
   }
   @media ${QUERIES.tabletAndUp} {
     margin-top: 1.25rem;
     iframe {
-      margin-top: 1rem;
-      max-width: revert;  
-      margin-left: 40px;
+      margin-top: 1.5rem;
+      max-width: 500px;  
+      margin-left: 80px;
       width: 650px;
       height:400.83333333333px
     }
   }
   @media ${QUERIES.laptopAndUp} {
     iframe {
+      margin-left: 80px;
       width:800px;
       height:493.33333333333px;
     }
   }
+  @media ${QUERIES.desktopAndUp} {
+    iframe {
+      margin-left: 160px;
+      width:800px;
+      height:493.33333333333px;
+    }
+  }
+  
 `;
 
 const SectionCopyGraf = styled.p`
@@ -512,7 +528,6 @@ const SectionCopyGraf = styled.p`
     line-height: 1.75rem;
     padding: 0 1.5rem;
   }
-
   width: clamp(300px, 95%, 65ch);  
 `;
 
@@ -571,8 +586,8 @@ const SectionImageWrapper = styled.div`
 
 const SectionMainImage = styled(GatsbyImage)`
   /* object-fit: scale-down; */
-
 `;
+
 /* until aspect-ratio is supported*/
 const PaddingHack = styled.div`
   height: 0px;
