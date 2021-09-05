@@ -14,7 +14,6 @@ const NotFoundPage = ({ intl }) => {
           title={`404: ${intl.formatMessage({ id: "title" })}`}
         />
         <PageNotFound />
-
       </MainLayout>
     </>
   )
