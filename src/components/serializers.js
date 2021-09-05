@@ -5,6 +5,7 @@ import EmbedHTML from './EmbedHTML';
 import TwitterTweetEmbed from './TwitterTweetEmbed'
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { QUERIES } from "../constants";
 
 const serializers = {
   types: {
@@ -46,5 +47,8 @@ const serializers = {
 export default serializers;
 
 const Tweet = styled.div`
-  padding: 1rem;
+  padding: 0;
+  @media ${QUERIES.tabletAndUp} {
+    padding: 1rem;
+  }
 `;
