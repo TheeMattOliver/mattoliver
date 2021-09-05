@@ -34,7 +34,7 @@ const PageNotFound = () => {
   )
 }
 
-const Wrapper = styled.did`
+const Wrapper = styled.div`
   min-height: 100vh;
   padding-left: 1rem;
   padding-right: 1rem;
