@@ -13,6 +13,7 @@ import Spacer from '../components/Spacer';
 import SectionHeader from '../components/SectionHeader';
 import PortableText from '../components/PortableText/PortableText';
 import TableOfContents from '../components/TableOfContents';
+import TechList from '../components/TechList';
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -38,27 +39,8 @@ export default function ProjectPage({ data }) {
         </PageTitleWrapper>
 
         <Aside>
-          <TechListWrapper>
-            <h2>Technologies</h2>
-            <ul>
-              {
-                technologies.map(item => {
-                  return (
-                    <TechListItem key={item._key}>
-                      <GatsbyImage>
-                        {item.image?.asset?.gatsbyImageData}
-                      </GatsbyImage>
 
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {item.title}
-                    </TechListItem>
-                  )
-                })
-              }
-            </ul>
-          </TechListWrapper>
+          <TechList technologies={technologies} />
 
           <StickySidebar>
             <h2>Table of Contents</h2>
@@ -559,16 +541,6 @@ const StickySidebar = styled.div`
   position: sticky;
   /* position: -webkit-sticky; */
   top: 8rem;
-`;
-
-const TechListWrapper = styled.div`
-  margin-bottom: 1rem;
-  margin-top: .75rem;
-`;
-
-const TechListItem = styled.li`
-  display: flex;
-  align-items: center;
 `;
 
 const ImageWrapper = styled.div`

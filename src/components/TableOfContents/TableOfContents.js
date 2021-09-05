@@ -40,9 +40,7 @@ const useActiveHeading = (headings) => {
 
   React.useEffect(() => {
     const handleScroll = throttle(() => {
-      // If we're all the way at the top, there is no active heading.
-      // This is done because "Introduction", the first link in the TOC, will
-      // be active if `heading` is `null`.
+
       if (window.pageYOffset === 0) {
         return setActiveHeading(null);
       }
@@ -53,16 +51,13 @@ const useActiveHeading = (headings) => {
       //    the viewport? If so, pick the last one (most recently scrolled out
       //    of view)
       //
-      // If neither condition is met, I'll assume I'm still in the intro,
-      // although this would have to be a VERY long intro to ever be true.
-      console.log({ headings })
+
+      // If neither condition is met, we're still in the intro,
       let headingBoxes = headings.map((heading) => {
         const elem = document.querySelector(`#${heading.id}`)
         return { id: heading.id, box: elem.getBoundingClientRect() }
       })
       // The first heading within the viewport is the one we want to highlight.
-      // Because our heading obscures the top ~100px of the window, I'm
-      // considering that range out-of-viewport.
       const TOP_OFFSET = 120;
       let firstHeadingInViewport = headingBoxes.find(({ box }) => {
         return (
@@ -85,8 +80,8 @@ const useActiveHeading = (headings) => {
       } else if (firstHeadingInViewport.id !== activeHeadingId) {
         setActiveHeading(firstHeadingInViewport.id);
       }
-      console.log({ activeHeadingId })
-    }, 500);
+
+    }, 350);
 
     window.addEventListener('scroll', handleScroll);
 
@@ -108,7 +103,7 @@ const getStyles = (isActiveHeading) => {
     marginTop: 10,
     fontSize: 16,
     padding: 16,
-    borderRadius: 8
+    borderRadius: 4
   };
 };
 
