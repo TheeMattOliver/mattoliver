@@ -1,7 +1,7 @@
 import React from 'react';
-import { debounce } from '../lib/utils';
+import { debounce } from '../../lib/utils';
 
-export default function MouseTest() {
+export default function MousePosition() {
   const [mouseX, setMouseX] = React.useState(null);
   const handleMouseMove = React.useCallback(
     debounce((ev) => {
