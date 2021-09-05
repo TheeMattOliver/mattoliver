@@ -12,7 +12,7 @@ import { QUERIES, WEIGHTS } from "../constants";
 import Spacer from '../components/Spacer';
 import SectionHeader from '../components/SectionHeader';
 import PortableText from '../components/PortableText/PortableText';
-import TableOfContents from '../components/TableOfContents/TableOfContents';
+import TableOfContents from '../components/TableOfContents';
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
