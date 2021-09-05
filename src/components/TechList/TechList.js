@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from "gatsby-plugin-intl";
 
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-
 const TechList = ({ technologies }) => {
 
   // make an array of logo svgs and their id's

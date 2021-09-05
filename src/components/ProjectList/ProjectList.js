@@ -58,6 +58,7 @@ export default function ProjectList({ projects }) {
                     {project.excerpt.text[0]._rawChildren[0].text}
                   </p>
                 </OffsetProjectCardContentWrapper>
+                <LargeMonitorSpacer axis='vertical' size={100} />
               </Link>
             </ProjectCardWrapper>
           )
@@ -72,14 +73,14 @@ const GridWrapper = styled.div`
   display: grid;
   grid-template-columns:
     repeat(auto-fill, minmax(var(--min-column-width), 1fr));
-  grid-gap: 2rem;
+  gap: 2rem;
   padding: 16px;
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
   }
   @media ${QUERIES.desktopAndUp} {
     max-width: none;
-    grid-gap: 2rem;
+    gap: 2rem;
     margin-right: 2rem;
   }
 `;
@@ -241,6 +242,13 @@ const ProjectMainImage = styled(GatsbyImage)`
     top: 0;
     transition: opacity 150ms ${TRANSITIONS.normal};
     width: 100%;
+  }
+`;
+
+const LargeMonitorSpacer = styled(Spacer)`
+  display: none;
+  @media ${QUERIES.desktopAndUp} {
+    display: block;
   }
 `;
 

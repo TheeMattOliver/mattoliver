@@ -91,28 +91,7 @@ export default function ProjectPage({ data }) {
                 <SectionCopyWrapper>
                   {item._rawText && <PortableText blocks={item._rawText} />}
                 </SectionCopyWrapper>
-
-                {/* 
-                <SectionCopyWrapper key={item._key}>
-                  {item.text.map((graf, index) => {
-                    console.log({ graf })
-                    graf.markDefs = [];
-
-                    return (
-                      <>
-                        <SectionCopyGraf key={graf._key}>
-                          {graf._rawChildren[0]?.text}
-                          {graf._rawChildren[1]?.text}
-                          {graf._rawChildren[2]?.text}
-                          {graf._rawChildren[3]?.text}
-                        </SectionCopyGraf>
-                        <br />
-                      </>
-                    )
-                  })}
-                </SectionCopyWrapper> 
-                */}
-                <Spacer axis='vertical' size={80} />
+                <Spacer axis='vertical' size={40} />
               </Section>
             )
           })}
