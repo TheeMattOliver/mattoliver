@@ -120,7 +120,6 @@ export default function ContactFormComponent() {
           </p>
           <p>This form's submissions are forwarded to my inbox, but as an alternative you can always feel free to <a href="mailto:mattoliver.mattoliver@gmail.com" rel="noopener noreferrer" target="_blank">email me directly.</a></p>
 
-
           <SocialIconsList role="list" className="space-x-12">
             <li>
               <a href="https://observablehq.com/collection/@theemattoliver/census-data-states-and-counties"
