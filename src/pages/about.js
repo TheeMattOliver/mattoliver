@@ -7,7 +7,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 import MainLayout from "../components/MainLayout";
 import PageHero from "../components/PageHero";
-import WavingHand from "../components/WavingHand";
+import PortableText from "../components/PortableText";
 import SEO from "../components/SEO";
 import Spacer from "../components/Spacer";
 import { QUERIES } from "../constants";
@@ -18,7 +18,8 @@ export default function AboutPage({ data }) {
   const intl = useIntl();
 
   const { pageData } = data
-
+  const aboutPageCopy = pageData.content
+  console.log({ pageData })
   return (
     <>
       <SEO
@@ -35,12 +36,13 @@ export default function AboutPage({ data }) {
               <MobileImgWrapper>
                 <AboutImg
                   image={pageData?.content[0]?.image.asset.gatsbyImageData}
-                  alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
+                  alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX."
+                />
               </MobileImgWrapper>
               <PageHero>
                 A quick summary
               </PageHero>
-              <HeroCopyText>
+              {/* <HeroCopyText>
                 I was born in Houston and went to UT. For many years, I toured professionally and ran an analog recording studio in East Austin. After many years of continuous operation, the pandemic forced the permanent closure of the studio in March of 2020.
               </HeroCopyText>
               <HeroCopyText>
@@ -53,7 +55,15 @@ export default function AboutPage({ data }) {
 
               <HeroCopyText>
                 I live in Austin with my family, cats, a dog, some bees, and a bunch of plants.
-              </HeroCopyText>
+              </HeroCopyText> */}
+              {aboutPageCopy.map(item => {
+                console.log('item! -> ', item)
+                return (
+                  <HeroCopyText>
+                    {item.text && <PortableText blocks={item.text} />}
+                  </HeroCopyText>
+                )
+              })}
 
             </HeroWrapper>
             <Spacer axis='vertical' size={100} />
@@ -93,18 +103,19 @@ export const query = graphql`
       content {
         ...on SanityImageSection {
         _key
-          _type
-      text {
-        _key
-        _rawChildren
         _type
-        children {
-          text
-          marks
-          _type
+        _rawText
+        text {
           _key
+          _rawChildren  
+          _type
+          children {
+            text
+            marks
+            _type
+            _key
+          }
         }
-      }
       image {
         asset {
         gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
@@ -198,6 +209,10 @@ const HeroCopyText = styled.p`
   @media ${QUERIES.tabletAndUp} {
     padding: 0 1.5rem;
 	}
+`;
+
+const Section = styled.section`
+
 `;
 
 const MobileImgWrapper = styled.div`
