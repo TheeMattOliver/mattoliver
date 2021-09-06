@@ -118,24 +118,9 @@ export default function ContactFormComponent() {
           <p>
             I'd love to hear from you about working together or scheduling some time to talk.
           </p>
-          <p>This form's submissions are forwarded to my inbox, but as an alternative you can always feel free to email me directly: <a href="mailto:matt@mattoliver.xyz" rel="noopener noreferrer" target="_blank">matt@mattoliver.xyz</a></p>
+          <p>This form's submissions are forwarded to my inbox, but as an alternative you can always feel free to <a href="mailto:mattoliver.mattoliver@gmail.com" rel="noopener noreferrer" target="_blank">email me directly.</a></p>
 
-          {/* <dl className="space-y-6">
-            <dt>
-              <VisuallyHidden>Phone number</VisuallyHidden>
-            </dt>
-            <dd>
-              <Icon id={`phone`} size={24} width={24} color={`${COLORS.blue100.light}`} aria-hidden="true" />
-              <span className="ml-3">+1 (555) 123-4567</span>
-            </dd>
-            <dt>
-              <VisuallyHidden>Email</VisuallyHidden>
-            </dt>
-            <dd>
-              <Icon id={`email`} size={24} width={24} strokeWidth={2} color={`${COLORS.blue100.light}`} aria-hidden="true" />
-              <span>matt@mattoliver.xyz</span>
-            </dd>
-          </dl> */}
+
           <SocialIconsList role="list" className="space-x-12">
             <li>
               <a href="https://observablehq.com/collection/@theemattoliver/census-data-states-and-counties"

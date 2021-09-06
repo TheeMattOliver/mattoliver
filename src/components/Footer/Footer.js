@@ -26,7 +26,7 @@ const Footer = () => {
 			</FooterLeft>
 
 
-			<FooterLink href="mailto:matt@mattoliver.xyz">
+			<FooterLink href="mailto:mattoliver.mattoliver@gmail.com">
 				<VisuallyHidden>Email</VisuallyHidden>
 				<Icon id={`email`} size={24} width={24} strokeWidth={2} aria-hidden="true" />
 				{/* <svg className={`hover:text-blue-900 transition ease-in-out duration-150 h-10 w-10`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" stroke="currentColor">
