@@ -30,7 +30,7 @@ I'm always interested in working with misfits, outcasts, and hell-raisers who wa
 
 ![Portfolio live demo](https://media.giphy.com/media/VTOboMkw08z5BXfAaP/giphy.gif?cid=790b7611ba3c73f2aae15eb497c53abf76033ee28c8139d6&rid=giphy.gif&ct=g)
 
----
+
 ## Overview
 I built the project with Gatsby and used Sanity as the CMS. I wrote all the CSS from scratch, mainly using [styled-components](https://styled-components.com/).
 
@@ -45,7 +45,7 @@ All of the content is pulled from the backend CMS, which I built custom for this
 * Animations: [Framer Motion](https://www.framer.com/motion/)
 * Deployed with [Netlify](https://netlify.com)
 
----
+
 <!-- DESIGN -->
 ## 📌 Design
 I wanted to focus on the stories behind the projects, the technologies used, some of the challenges I faced while building them, and to keep things simple.
@@ -61,15 +61,15 @@ Wherever possible I believe in supporting indie type foundries, but for the port
 
 - `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`
 
----
-### 📈 Performance
 
-Lighthouse scores. This feels like pure vanity, but it's important!
+## 📈 Performance
+
+Lighthouse scores. 
 
 ![Lighthouse scores](https://media.giphy.com/media/xsFI8ZHYL3SbDxgMKo/giphy.gif)
 
----
-### 🚀 Usage:
+
+## 🚀 Usage:
 
 1.  **Install.**
 
