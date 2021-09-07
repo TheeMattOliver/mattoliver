@@ -13,7 +13,6 @@ Dev & Product Portfolio for Matt Oliver
     - [Figma](#figma)
     - [Design Tokens](#designtokens)
     - [Fonts](#fonts)
-    - [Dark Mode](#darkmode)
 - [Performance](#performance)
 - [Usage](#usage)
     - [What's inside](#whats-inside)
@@ -49,9 +48,7 @@ All of the content is pulled from the backend CMS, which I built custom for this
 ---
 <!-- DESIGN -->
 ## 📌 Design
-The reality of designing a personal website is that they're very rarely satisfying. There's just too much stuff to try -- some other combination of typefaces, or color scheme, or cool animation. 
-
-This time around, I figured I'd focus on the stories behind some of the projects and keep things simple.
+I wanted to focus on the stories behind the projects, the technologies used, some of the challenges I faced while building them, and to keep things simple.
 
 ### Figma
 
@@ -67,7 +64,7 @@ Wherever possible I believe in supporting indie type foundries, but for the port
 ---
 ### 📈 Performance
 
-Lighthouse scores:
+Lighthouse scores. This feels like pure vanity, but it's important!
 
 ![Lighthouse scores](https://media.giphy.com/media/xsFI8ZHYL3SbDxgMKo/giphy.gif)
 
