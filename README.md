@@ -23,7 +23,9 @@ Dev & Product Portfolio for Matt Oliver
 ---
 <!-- ABOUT THE PROJECT -->
 ## About the Project
-I've been building products for the web for many years, the last few professionally, but until nowm I've never tried to bring it all together. My hope is that it's a helpful example of some of the work I've done, and that by putting it all in one place, I can reason about where I should go next.
+I've been building websites and products for the last few years, but until now I've never tried to bring it all together. My hope is that it's a helpful example of some of the work I've done, and that by putting it all in one place, I can reason about where I should go next.
+
+The site is live at [mattoliver.xyz](https://mattoliver.xyz).
 
 I'm always interested in working with misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo. If you like what you see, please feel free to [get in touch](mailto:mattoliver.mattoliver@gmail.com).
 
@@ -32,6 +34,10 @@ I'm always interested in working with misfits, outcasts, and hell-raisers who wa
 ---
 ## Overview
 I built the project with Gatsby and used Sanity as the CMS. I wrote all the CSS from scratch, mainly using [styled-components](https://styled-components.com/).
+
+The responsive grid and table of contents component on the individual project pages took some doing! Please feel free to leave some feedback through the contact form.
+
+All of the content is pulled from the backend CMS, which I built custom for this project.
 
 #### Built With
 
