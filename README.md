@@ -1,23 +1,78 @@
 <!-- START -->
-# Matt Oliver
-
-Front-end: [Gatsby](https://gatsbyjs.org). Backend: [Sanity](https://sanity.io). Deployed with [Netlify](https://netlify.com).
+Dev & Product Portfolio for Matt Oliver
+=============================
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/44da42bc-8204-4758-8dbd-3e1c3f64cb35/deploy-status)](https://app.netlify.com/sites/adoring-bohr-7062c0/deploys)
+
+<!-- TABLE OF CONTENTS -->
+## Contents
+- [About the Project](#about-the-project)
+- [Overview](#overview)
+    - [Built with](#builtwith)
+- [Design](#design)
+    - [Figma](#figma)
+    - [Design Tokens](#designtokens)
+    - [Fonts](#fonts)
+    - [Dark Mode](#darkmode)
+- [Performance](#performance)
+- [Usage](#usage)
+    - [What's inside](#whats-inside)
+- [Contact](#contact)
+
+
 ---
-## 📌 Design tokens:
+<!-- ABOUT THE PROJECT -->
+## About the Project
+I've been building websites and products for the last few years, but until now I've never tried to bring it all together. My hope is that it's a helpful example of some of the work I've done, and that by putting it all in one place, I can reason about where I should go next.
 
-[Figma](https://www.figma.com/file/U7LRjFK3yqItc2eJe7cPdM/Oliver-Portfolio-2021?node-id=0%3A1)
+The site is live at [mattoliver.xyz](https://mattoliver.xyz).
 
-Fonts:
+I'm always interested in working with misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo. If you like what you see, please feel free to [get in touch](mailto:mattoliver.mattoliver@gmail.com).
+
+![Portfolio live demo](https://media.giphy.com/media/VTOboMkw08z5BXfAaP/giphy.gif?cid=790b7611ba3c73f2aae15eb497c53abf76033ee28c8139d6&rid=giphy.gif&ct=g)
+
+---
+## Overview
+I built the project with Gatsby and used Sanity as the CMS. I wrote all the CSS from scratch, mainly using [styled-components](https://styled-components.com/).
+
+The responsive grid and table of contents component on the individual project pages took some doing! Please feel free to leave some feedback through the contact form.
+
+All of the content is pulled from the backend CMS, which I built custom for this project.
+
+#### Built With
+
+* Front-end: [Gatsby](https://gatsbyjs.org)
+* Backend: [Sanity](https://sanity.io)
+* Animations: [Framer Motion](https://www.framer.com/motion/)
+* Deployed with [Netlify](https://netlify.com)
+
+---
+<!-- DESIGN -->
+## 📌 Design
+The reality of designing a personal website is that they're very rarely satisfying. There's just too much stuff to try -- some other combination of typefaces, or color scheme, or cool animation. 
+
+This time around, I figured I'd focus on the stories behind some of the projects and keep things simple.
+
+### Figma
+
+The [Figma](https://www.figma.com/file/U7LRjFK3yqItc2eJe7cPdM/Oliver-Portfolio-2021?node-id=0%3A1) project I worked from can be found here. It's a very simple and straightforward set of design tokens.
+
+
+### Fonts:
+
+Wherever possible I believe in supporting indie type foundries, but for the portfolio I'm just using the [system font stack](https://systemfontstack.com/). 
 
 - `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`
 
-## 📈 Performance
+---
+### 📈 Performance
+
+Lighthouse scores:
 
 ![Lighthouse scores](https://media.giphy.com/media/xsFI8ZHYL3SbDxgMKo/giphy.gif)
 
-## 🚀 Run locally:
+---
+### 🚀 Usage:
 
 1.  **Install.**
 
@@ -55,5 +110,14 @@ Fonts:
 ├── static
 └── tailwind.config.js
 ```
+
+<!-- CONTACT -->
+## Contact
+
+Live: [https://mattoliver.xyz](https://mattoliver.xyz)
+
+Matt Oliver - [mattoliver.mattoliver@gmail.com](mattoliver.mattoliver@gmail.com)
+
+Project Link: [https://github.com/theemattoliver/mgo_portfolio_web](https://github.com/theemattoliver/mgo_portfolio_web)
 
 <!-- END -->
