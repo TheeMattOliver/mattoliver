@@ -96,7 +96,7 @@ const useActiveHeading = (headings) => {
 const getStyles = (isActiveHeading) => {
   const baseStyles = {
     color: isActiveHeading ? 'var(--color-textPrimary)' : undefined,
-    background: isActiveHeading ? 'var(--color-gray100)' : undefined
+    background: isActiveHeading ? 'var(--color-gray300)' : undefined
   };
   return {
     ...baseStyles,

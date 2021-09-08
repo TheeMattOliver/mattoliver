@@ -22,7 +22,7 @@ Dev & Product Portfolio for Matt Oliver
 ---
 <!-- ABOUT THE PROJECT -->
 ## About the Project
-I've been building websites and products for the last few years, but until now I've never tried to bring it all together. My hope is that it's a helpful example of some of the most recent work I've done, and that by putting it all in one place, I can reason about where I should go next.
+I've been building websites and products for the last few years, but until now I've never tried to put the work in a single place. My hope is that this provides a helpful example of some of the most recent work I've done, and that by putting it all in one place, I can reason about where I'm going.
 
 The site is live at [mattoliver.xyz](https://mattoliver.xyz).
 
