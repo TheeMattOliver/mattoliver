@@ -38,24 +38,12 @@ export default function AboutPage({ data }) {
                   image={pageData?.content[0]?.image.asset.gatsbyImageData}
                   alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX."
                 />
+
               </MobileImgWrapper>
               <PageHero>
                 A quick summary
               </PageHero>
-              {/* <HeroCopyText>
-                I was born in Houston and went to UT. For many years, I toured professionally and ran an analog recording studio in East Austin. After many years of continuous operation, the pandemic forced the permanent closure of the studio in March of 2020.
-              </HeroCopyText>
-              <HeroCopyText>
-                One of the things I learned to do over all those years -- in the spirit of DIY -- was how to build websites.
-              </HeroCopyText>
 
-              <HeroCopyText>
-                For the last several years, I've been doing more and more professional development, both as a freelancer and on a full-time agile development team. I've been very lucky to have gotten to learn from some great engineers, designers, and developers.
-              </HeroCopyText>
-
-              <HeroCopyText>
-                I live in Austin with my family, cats, a dog, some bees, and a bunch of plants.
-              </HeroCopyText> */}
               {aboutPageCopy.map(item => {
                 console.log('item! -> ', item)
                 return (
@@ -70,9 +58,13 @@ export default function AboutPage({ data }) {
 
             {/* Pic */}
             <ImgWrapper>
+
+
               <AboutImg
                 image={pageData?.content[0]?.image.asset.gatsbyImageData}
                 alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
+
+
             </ImgWrapper>
           </FlexWrapper>
           <Spacer axis='vertical' size={40} />
@@ -231,6 +223,7 @@ const ImgWrapper = styled.div`
   display: none;
   @media ${QUERIES.tabletAndUp} {
     display: block;
+    position: relative;
     /* width: 400px;
     height: 400px; */
     margin-top: 50px;
@@ -238,10 +231,38 @@ const ImgWrapper = styled.div`
   }
 `;
 
+const Gradient = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    deeppink,
+    red,
+    coral,
+    gold,
+    white
+  );
+`;
+
+const Blurry = styled(Gradient)`
+  inset: 0;
+  position: absolute;
+  filter: blur(40px);
+  transform: scale(1.3) translateX(8%) translateY(20%) rotate(30deg);
+`;
+
+const Regular = styled(Gradient)`
+  filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3));
+`
+
 const AboutImg = styled(GatsbyImage)`
   border-radius: 50%;
+  position: relative;
+  filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3));
   img {
     border-radius: 50%;
+    
   }
 `;
 

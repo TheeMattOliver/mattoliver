@@ -213,6 +213,7 @@ const AboutImg = styled(GatsbyImage)`
   border-radius: 50%;
   img {
     border-radius: 50%;
+    filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3));
   }
 `;
 
