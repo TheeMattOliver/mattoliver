@@ -5,7 +5,7 @@ module.exports = {
     description: `Web and digital product portfolio for Matt Oliver, an artist and engineer based in Austin, Texas.`,
     author: `Matt Oliver`,
     siteUrl: `https://adoring-bohr-7062c0.netlify.app`,
-    image: "/egypt-desk.jpg",
+    image: "/social-share-card.png",
     twitterUsername: "@theemattoliver",
   },
   flags: {
