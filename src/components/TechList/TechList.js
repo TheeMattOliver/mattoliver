@@ -49,23 +49,31 @@ const TechListItem = styled.li`
   color: var(--color-gray800);
   text-decoration: none;
   transition: opacity 500ms, background-color 200ms ease 0s;
-
+  img {
+    filter: grayscale(1);
+    &:hover {
+      cursor: pointer;
+      filter: none;
+      -webkit-filter: grayscale(0%);
+    }
+  }
   &:hover,
   &:focus {
     opacity: 1;
     transition: opacity 0ms;
+    
   }
 `;
 
 const Logo = styled.img`
   display: block;
-  filter: grayscale(1);
   width: 10%;
   margin-right: 10px;
   &:hover,
   &:focus {
     opacity: 1;
     transition: opacity 0ms;
+   
   }
 `;
 
