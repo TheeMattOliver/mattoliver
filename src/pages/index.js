@@ -198,6 +198,7 @@ const MobileImgWrapper = styled.div`
   align-self: center;
   margin-top: 1.5rem;
   border-radius: 50%;
+  background: transparent;
   @media ${QUERIES.tabletAndUp} {
     display: none;
   }
@@ -219,7 +220,7 @@ const AboutImg = styled(GatsbyImage)`
   border-radius: 50%;
   img {
     border-radius: 50%;
-    filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3));
+    /* filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3)); */
   }
 `;
 
