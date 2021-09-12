@@ -10,6 +10,7 @@ import SEO from "../components/SEO";
 import MainLayout from '../components/MainLayout'
 import PageHero from "../components/PageHero";
 import WavingHand from "../components/WavingHand";
+import PortableText from "../components/PortableText";
 
 import { QUERIES } from "../constants";
 import Spacer from "../components/Spacer";
@@ -21,7 +22,9 @@ export default function HomePage({ data }) {
   if (!data) return;
 
   const { pageData } = data
+  const homePageCopy = pageData.content
 
+  console.log({ homePageCopy })
   return (
     <>
       <SEO
@@ -36,23 +39,29 @@ export default function HomePage({ data }) {
               {/* Mobile Pic */}
               <MobileImgWrapper>
                 <AboutImg
-                  image={pageData?.content[0]?.image.asset.gatsbyImageData}
+                  image={pageData?.openGraphImage?.asset.gatsbyImageData}
                   alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
               </MobileImgWrapper>
               <PageHero>
                 Hi, I'm Matt. <WavingHand />
               </PageHero>
-              <HeroCopyWrapper>
-                <HeroCopySubHead>
-                  I'm an artist, front-end engineer, product designer, currently working as a senior product manager, building tools to power progressive social causes.{` `}                </HeroCopySubHead>
-              </HeroCopyWrapper>
+              {homePageCopy.map(item => {
+                if (item.heading === 'Hero Copy Subhead')
+                  return (
+                    <HeroCopyWrapper>
+                      <HeroCopySubHead>
+                        {item.text && <PortableText blocks={item.text} />}{` `}
+                      </HeroCopySubHead>
+                    </HeroCopyWrapper>
+                  )
+              })}
               <Spacer axis='vertical' size={40} />
             </HeroWrapper>
             {/* Pic */}
             <ImgWrapper>
               <AboutImg
-                image={pageData?.content[0]?.image.asset.gatsbyImageData}
-                alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
+                image={pageData?.openGraphImage?.asset.gatsbyImageData}
+                alt="A photo of Matt Oliver, artist and engineer based in Austin, TX." />
             </ImgWrapper>
           </FlexWrapper>
 
@@ -69,7 +78,7 @@ export default function HomePage({ data }) {
 }
 export const query = graphql`
   query HomePage {
-    pageData: sanityPage(title: {eq: "About"}) {
+    pageData: sanityPage(title: {eq: "Home"}) {
       id
       openGraphImage {
         asset {
@@ -78,27 +87,24 @@ export const query = graphql`
         }
       }
       content {
-        ... on SanityImageSection {
+      ... on SanityTextSection {
+        _key
+        _type
+        text {
           _key
+          _rawChildren  
           _type
-          text {
-            _key
-            _rawChildren
+          children {
+            text
+            marks
             _type
-            children {
-              text
-              marks
-              _type
-              _key
-            }
-          }
-          image {
-            asset {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
-            }
+            _key
           }
         }
+        heading
+        _rawText
       }
+    }
     }
   }
 `;

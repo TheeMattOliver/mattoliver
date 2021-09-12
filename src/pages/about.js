@@ -45,7 +45,6 @@ export default function AboutPage({ data }) {
               </PageHero>
 
               {aboutPageCopy.map(item => {
-                console.log('item! -> ', item)
                 return (
                   <HeroCopyText>
                     {item.text && <PortableText blocks={item.text} />}
