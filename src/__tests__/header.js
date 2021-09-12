@@ -1,13 +1,14 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import { render, screen } from "@testing-library/react"
 
-import Header from "../components/MagicHeader"
+import MagicHeader from '../components/MagicHeader'
 
-describe("MagicHeader", () => {
-  it("renders correctly", () => {
-    const tree = renderer
-      .create(<MagicHeader siteTitle="Default Starter" />)
-      .toJSON()
-    expect(tree).toMatchSnapshot()
-  })
+// You have to write data-testid
+const TestTitle = () => <h1 data-testid="test-title">Testing is great!</h1>
+
+test("The dummy test displays the correct title", () => {
+  const { getByTestId } = render(<TestTitle />)
+  // Assertion
+  expect(getByTestId("test-title")).toHaveTextContent("Testing is great!")
+  // --> Test will pass
 })
