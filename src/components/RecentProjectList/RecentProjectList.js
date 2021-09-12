@@ -35,9 +35,6 @@ export default function RecentProjectList() {
   `)
   const { projects } = data
   const sortedSlicedProjects = projects.nodes.sort((a, b) => (b.startedAt > a.startedAt) ? 1 : -1).slice(0, 2)
-
-  // console.log({ projects })
-  // console.log({ sortedSlicedProjects })
   return (
     <Wrapper>
       <SectionTitle>Recent work:</SectionTitle>
@@ -71,7 +68,7 @@ export default function RecentProjectList() {
       </RecentProjectGrid>
       <NavBtnWrapper>
         <ProjectNavigationButton to='/work'>
-          Browse All Projects  &rarr;
+          Browse Projects  &rarr;
         </ProjectNavigationButton>
       </NavBtnWrapper>
     </Wrapper>
