@@ -28,7 +28,8 @@ The site is live at [mattoliver.xyz](https://mattoliver.xyz).
 
 I'm always interested in working with misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo. If you like what you see, please feel free to [get in touch](mailto:mattoliver.mattoliver@gmail.com).
 
-![Portfolio live demo](https://media.giphy.com/media/VTOboMkw08z5BXfAaP/giphy.gif?cid=790b7611ba3c73f2aae15eb497c53abf76033ee28c8139d6&rid=giphy.gif&ct=g)
+![Portfolio live demo](
+https://media.giphy.com/media/GXp44wPQoAWA1i8ASu/giphy.gif?cid=790b7611943300a96e839e6320e74b3e22d9568a914c0447&rid=giphy.gif&ct=g)
 
 
 ## Overview
