@@ -19,7 +19,6 @@ export default function AboutPage({ data }) {
 
   const { pageData } = data
   const aboutPageCopy = pageData.content
-  console.log({ pageData })
   return (
     <>
       <SEO

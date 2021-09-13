@@ -24,7 +24,6 @@ export default function HomePage({ data }) {
   const { pageData } = data
   const homePageCopy = pageData.content
 
-  console.log({ homePageCopy })
   return (
     <>
       <SEO
