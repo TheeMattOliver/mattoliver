@@ -113,8 +113,6 @@ const Wrapper = styled.div`
 `;
 
 const Badge = styled.span`
-/* inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium 
-    bg-gray-100 text-gray-800 */
   display: inline-flex;
   flex: 1;
   align-items: center;
@@ -126,9 +124,6 @@ const Badge = styled.span`
 `;
 
 const Count = styled.span`
-  /* flex-shrink-0 ml-0.5 h-4 w-4 rounded-full inline-flex items-center 
-  justify-center text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 
-  focus:outline-none focus:bg-indigo-500 focus:text-white */
   flex-shrink: 0;
   margin-left: 0.325rem;
   height: 1rem;

@@ -56,13 +56,9 @@ export default function AboutPage({ data }) {
 
             {/* Pic */}
             <ImgWrapper>
-
-
               <AboutImg
                 image={pageData?.content[0]?.image.asset.gatsbyImageData}
                 alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX." />
-
-
             </ImgWrapper>
           </FlexWrapper>
           <Spacer axis='vertical' size={40} />
