@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { Link } from "gatsby-plugin-intl"
 
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import debounce from '../../lib/utils'
+import debounce, { throttle } from '../../lib/utils'
 import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu";
 import VisuallyHidden from "../VisuallyHidden";
@@ -19,6 +19,7 @@ const MagicHeader = (siteTitle) => {
 	const { title } = siteTitle
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+	// TODO -- this needs to be debounced in a way that avoids memory leaks
 	useEffect(() => {
 		// to know which direction the user is scrolling
 		// keep track of whatever the value was in the previous iteration
@@ -26,6 +27,9 @@ const MagicHeader = (siteTitle) => {
 		function handleScroll(event) {
 			const currentScroll = window.scrollY;
 			// console.log({ currentScroll })
+
+			// if I have not yet scrolled, save this current value and
+			// the next time I scroll, where I am now will be the previous scroll
 			if (typeof previousScrollValue !== 'number') {
 				previousScrollValue = currentScroll
 				return;
