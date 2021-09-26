@@ -14,21 +14,24 @@ import UnstyledButton from "../UnstyledButton";
 import ColorToggle from "../ColorToggle/ColorToggle";
 
 const HEADER_HIDE_THRESHOLD = 400;
+// How this works:
+// 1. Track the scroll position
+// 2. See what it was last time
+// 3. Compare it to now 
+// 4. Do something based on that
 
-// track the scroll position
-// see what it was last time
-// compare it to now 
-// do something based on that
 const MagicHeader = (siteTitle) => {
 	const { title } = siteTitle
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	const [isHeaderVisible, setIsHeaderVisible] = useState(true)
-	// TODO -- this needs to be throttled in a way that avoids memory leaks
+
 	useEffect(() => {
 
 		// to know which direction the user is scrolling
 		// keep track of whatever the value was in the previous iteration
 		let previousScrollValue;
+
+		// don’t allow to our function to execute more than once every 350 milliseconds
 		const handleScroll = throttle((event) => {
 			const currentScroll = window.scrollY;
 			console.log({ currentScroll })
