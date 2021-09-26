@@ -5,13 +5,12 @@ import styled from "styled-components"
 import { Link } from "gatsby-plugin-intl"
 
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import debounce, { throttle } from '../../lib/utils'
+import { throttle } from '../../lib/utils'
 import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu";
 import VisuallyHidden from "../VisuallyHidden";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
-import ColorToggle from "../ColorToggle/ColorToggle";
 
 const HEADER_HIDE_THRESHOLD = 400;
 // How this works:
@@ -31,7 +30,7 @@ const MagicHeader = (siteTitle) => {
 		// keep track of whatever the value was in the previous iteration
 		let previousScrollValue;
 
-		// don’t allow to our function to execute more than once every 350 milliseconds
+		// don’t allow handleScroll to execute more than once every 350 ms
 		const handleScroll = throttle((event) => {
 			const currentScroll = window.scrollY;
 			console.log({ currentScroll })

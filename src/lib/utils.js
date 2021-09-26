@@ -8,6 +8,8 @@ export const debounce = (callback, wait) => {
   };
 }
 
+// Returns a function, that, when invoked, will only be triggered at most once
+// during a given window of time. 
 export const throttle = (func, limit) => {
   let lastFunc;
   let lastRan;
