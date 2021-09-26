@@ -33,7 +33,7 @@ const MagicHeader = (siteTitle) => {
 		// don’t allow handleScroll to execute more than once every 350 ms
 		const handleScroll = throttle((event) => {
 			const currentScroll = window.scrollY;
-			console.log({ currentScroll })
+			// console.log({ currentScroll })
 
 			// if I have not yet scrolled, save this current value and
 			// the next time I scroll, where I am now will be the previous scroll
