@@ -47,11 +47,13 @@ export default function HomePage({ data }) {
               {homePageCopy.map(item => {
                 if (item.heading === 'Hero Copy Subhead')
                   return (
-                    <HeroCopyWrapper>
-                      <HeroCopySubHead>
-                        {item.text && <PortableText blocks={item.text} />}{` `}
-                      </HeroCopySubHead>
-                    </HeroCopyWrapper>
+                    <React.Fragment key={item._key}>
+                      <HeroCopyWrapper>
+                        <HeroCopySubHead>
+                          {item.text && <PortableText blocks={item.text} />}{` `}
+                        </HeroCopySubHead>
+                      </HeroCopyWrapper>
+                    </React.Fragment>
                   )
               })}
               <Spacer axis='vertical' size={40} />

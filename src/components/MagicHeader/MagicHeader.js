@@ -5,28 +5,35 @@ import styled from "styled-components"
 import { Link } from "gatsby-plugin-intl"
 
 import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import debounce, { throttle } from '../../lib/utils'
+import { throttle } from '../../lib/utils'
 import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu";
 import VisuallyHidden from "../VisuallyHidden";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
-import ColorToggle from "../ColorToggle/ColorToggle";
 
 const HEADER_HIDE_THRESHOLD = 400;
+// How this works:
+// 1. Track the scroll position
+// 2. See what it was last time
+// 3. Compare it to now 
+// 4. Do something based on that
 
 const MagicHeader = (siteTitle) => {
 	const { title } = siteTitle
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	const [isHeaderVisible, setIsHeaderVisible] = useState(true)
-	// TODO -- this needs to be debounced in a way that avoids memory leaks
+
 	useEffect(() => {
+
 		// to know which direction the user is scrolling
 		// keep track of whatever the value was in the previous iteration
 		let previousScrollValue;
-		function handleScroll(event) {
+
+		// don’t allow handleScroll to execute more than once every 350 ms
+		const handleScroll = throttle((event) => {
 			const currentScroll = window.scrollY;
-			// console.log({ currentScroll })
+			console.log({ currentScroll })
 
 			// if I have not yet scrolled, save this current value and
 			// the next time I scroll, where I am now will be the previous scroll
@@ -36,8 +43,10 @@ const MagicHeader = (siteTitle) => {
 			}
 			// console.log({ previousScrollValue }, { currentScroll })
 			// console.log({ isHeaderVisible })
+
 			// determine scroll direction
 			const direction = currentScroll > previousScrollValue ? 'down' : 'up'
+		
 			// hide the header if we're scrolling down
 			// get below a certain point and hide the header
 			if (isHeaderVisible && direction === 'down' && currentScroll > HEADER_HIDE_THRESHOLD) {
@@ -46,10 +55,12 @@ const MagicHeader = (siteTitle) => {
 			} else if (!isHeaderVisible && direction === 'up') {
 				setIsHeaderVisible(true)
 			}
+
 			// whether we have a previous value or not, last thing to do
 			// is update the scroll value
 			previousScrollValue = currentScroll
-		}
+		}, 350)
+
 		window.addEventListener('scroll', handleScroll);
 		// clean up
 		return () => {

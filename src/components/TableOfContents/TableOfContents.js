@@ -57,6 +57,7 @@ const useActiveHeading = (headings) => {
         const elem = document.querySelector(`#${heading.id}`)
         return { id: heading.id, box: elem.getBoundingClientRect() }
       })
+      
       // The first heading within the viewport is the one we want to highlight.
       const TOP_OFFSET = 120;
       let firstHeadingInViewport = headingBoxes.find(({ box }) => {
