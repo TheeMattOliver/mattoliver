@@ -35,18 +35,19 @@ const MainLayout = ({ children, intl, ...props }) => {
         <Middle>
           <MotionMain
             initial={{
-              opacity: 0
+              opacity: 0,
             }}
             animate={{
-              opacity: 1
+              opacity: 1,
             }}
             exit={{
-              opacity: 0
+              opacity: 0,
             }}
             transition={{
               duration: 0.4,
-              ease: [0.17, 0.67, 0.83, 0.67]
-            }}>
+              ease: [0.17, 0.67, 0.83, 0.67],
+            }}
+          >
             {children}
           </MotionMain>
         </Middle>
@@ -60,15 +61,17 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  header, main, footer {
+  header,
+  main,
+  footer {
     flex-shrink: 0;
   }
-`;
+`
 const Middle = styled.section`
   flex-grow: 1;
   flex-shrink: 0;
   display: flex;
-`;
+`
 const Main = styled.main`
   background-color: var(--color-background);
   display: flex;
@@ -77,7 +80,7 @@ const Main = styled.main`
   @media ${QUERIES.tabletAndUp} {
     flex: 1;
   }
-`;
+`
 const MotionMain = styled(motion.main)`
   background-color: var(--color-background);
   display: flex;
@@ -86,10 +89,10 @@ const MotionMain = styled(motion.main)`
   @media ${QUERIES.tabletAndUp} {
     flex: 1;
   }
-`;
+`
 
 MainLayout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default MainLayout
