@@ -63,8 +63,6 @@ const DataToggleButton = styled(UnstyledButton)`
   user-select: none;
   touch-action: manipulation;
   position: relative;
-  display: inline-flex;
-  flex: 1;
   appearance: none;
   -webkit-box-align: center;
   align-items: center;
@@ -102,7 +100,11 @@ const DataToggleButton = styled(UnstyledButton)`
     background-color: #fff;
     border-color: #000;
   }
+  display: inline-flex;
+  flex: 1;
+
   @media ${QUERIES.tabletAndUp} {
     display: inline-block;
-  } ;
+    flex: 0;
+  }
 `
