@@ -91,7 +91,6 @@ const DataToggleButton = styled(UnstyledButton)`
   outline: none;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

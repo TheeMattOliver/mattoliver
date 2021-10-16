@@ -184,11 +184,4 @@ const SVG = styled.svg`
   display: "block";
   width: "100%";
 `
-// .full-height-percentage-wrapper {
-//   font-family: sans-serif;
-//   height: 100%;
-//   min-height: 100%;
-//   width: 100%;
-// }
-
 export default SimpleCurvedLineChart
