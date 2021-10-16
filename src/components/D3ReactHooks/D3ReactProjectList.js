@@ -5,53 +5,32 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import { BREAKPOINTS, TRANSITIONS } from "../../constants"
 
-export default function D3ReactProjectList({ charts }) {
+export default function D3ReactProjectList({ data }) {
+  const { charts } = data
+  console.log({ charts })
   return (
     <ProjectsWrapper>
       <ProjectsCollection>
         <ProjectsGrid>
-          <ProjectCard>
-            <ProjectMainImage
-              src="https://cdn.sanity.io/images/9ox83bxr/production/b65e642dd7b88330f5d020fed7d7c1b0901aa081-3363x2060.png?w=2560&h=1568&auto=format"
-              alt="testing"
-            />
-            <ProjectCardContent>Testing</ProjectCardContent>
-          </ProjectCard>
-          <ProjectCard>
-            <ProjectMainImage
-              src="https://cdn.sanity.io/images/9ox83bxr/production/b65e642dd7b88330f5d020fed7d7c1b0901aa081-3363x2060.png?w=2560&h=1568&auto=format"
-              alt="testing"
-            />
-            <ProjectCardContent>Testing</ProjectCardContent>
-          </ProjectCard>
-          <ProjectCard>
-            <ProjectMainImage
-              src="https://cdn.sanity.io/images/9ox83bxr/production/b65e642dd7b88330f5d020fed7d7c1b0901aa081-3363x2060.png?w=2560&h=1568&auto=format"
-              alt="testing"
-            />
-            <ProjectCardContent>Testing</ProjectCardContent>
-          </ProjectCard>
-          <ProjectCard>
-            <ProjectMainImage
-              src="https://cdn.sanity.io/images/9ox83bxr/production/b65e642dd7b88330f5d020fed7d7c1b0901aa081-3363x2060.png?w=2560&h=1568&auto=format"
-              alt="testing"
-            />
-            <ProjectCardContent>Testing</ProjectCardContent>
-          </ProjectCard>
-          <ProjectCard>
-            <ProjectMainImage
-              src="https://cdn.sanity.io/images/9ox83bxr/production/b65e642dd7b88330f5d020fed7d7c1b0901aa081-3363x2060.png?w=2560&h=1568&auto=format"
-              alt="testing"
-            />
-            <ProjectCardContent>Testing</ProjectCardContent>
-          </ProjectCard>
-          <ProjectCard>
-            <ProjectMainImage
-              src="https://cdn.sanity.io/images/9ox83bxr/production/b65e642dd7b88330f5d020fed7d7c1b0901aa081-3363x2060.png?w=2560&h=1568&auto=format"
-              alt="testing"
-            />
-            <ProjectCardContent>Testing</ProjectCardContent>
-          </ProjectCard>
+          {charts.edges.map(chart => {
+            return (
+              <ProjectCard key={chart.node.id}>
+                <Link to={`/d3-react-hooks/${chart.node.slug.current}`}>
+                  <CardContentWrapper>
+                    <ProjectImageWrapper>
+                      <ProjectMainImage
+                        image={chart.node.previewImage.asset.gatsbyImageData}
+                        alt={""}
+                      />
+                    </ProjectImageWrapper>
+                    <ProjectCardContentInfo>
+                      <ProjectCardContent>Testing</ProjectCardContent>
+                    </ProjectCardContentInfo>
+                  </CardContentWrapper>
+                </Link>
+              </ProjectCard>
+            )
+          })}
         </ProjectsGrid>
       </ProjectsCollection>
     </ProjectsWrapper>
@@ -112,57 +91,64 @@ const ProjectsGrid = styled.div`
   grid-template-columns: repeat(var(--columns), var(--project-width));
   gap: 1rem calc(var(--gutter) / 2);
 `
+const ProjectCardContentInfo = styled.div`
+  width: 100%;
+  padding: 1.5rem;
+  transition: opacity 0.6s ease;
+  opacity: 0;
+  bottom: 0;
+`
 
 const ProjectCard = styled.div`
-  height: 300px;
   width: var(--project-width);
   border: 1px solid deeppink;
   scroll-snap-align: start;
   margin: 1rem 0;
   --border-radius: 5px;
   border-radius: var(--border-radius);
+  &:hover {
+    ${ProjectCardContentInfo} {
+      opacity: 1;
+      color: var(--color-textPrimary);
+    }
+  }
+`
+/* to keep the image contained in its parent*/
+const CardContentWrapper = styled.div`
+  flex: 1;
+  position: relative;
 `
 const ProjectCardContent = styled.div`
   display: block;
-  padding: 0.5rem;
+  position: absolute;
+  /* padding: 0.5rem;
   margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin-top: 1rem; */
   p {
     margin-top: 0.5rem;
     color: var(--color-textSecondary);
   }
 `
 
-const ProjectCardImgWrapper = styled.div`
+/* separate trigger from effect to avoid doom flicker
+listen for hovers on parent, apply transformation to child */
+const ProjectImageWrapper = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
   border: solid 1px var(--color-borderPrimary);
   border-radius: 5px;
-  transition: opacity 100ms ${TRANSITIONS.normalOut};
+  transition: opacity 0.6s ease;
+`
+const ProjectMainImage = styled(GatsbyImage)`
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   &:hover {
     filter: grayscale(0.8);
     &::after {
       opacity: 0.5;
     }
   }
-  &::after {
-    /* background: linear-gradient(var(--color-blue50), var(--color-blue900)); */
-    background: linear-gradient(var(--color-gray50), var(--color-gray900));
-    content: "";
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 250ms ${TRANSITIONS.normal};
-    width: 100%;
-  }
-`
-const ProjectMainImage = styled(GatsbyImage)`
-  height: calc(100% + 1rem);
-  object-fit: cover;
-  object-position: top left;
-  flex: 1;
   &::after {
     background-image: linear-gradient(
       var(--color-blue50),
@@ -174,7 +160,7 @@ const ProjectMainImage = styled(GatsbyImage)`
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity 150ms ${TRANSITIONS.normal};
+    transition: opacity 0.6s ease;
     width: 100%;
   }
 `
