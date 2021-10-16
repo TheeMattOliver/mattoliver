@@ -15,7 +15,6 @@ import Spacer from "../components/Spacer"
 export default function WorkPage({ data, pageContext }) {
   const intl = useIntl()
   const projects = data.projects.nodes
-  console.log({ projects })
   return (
     <>
       <SEO title={`Work`} lang={intl.locale}></SEO>
@@ -35,10 +34,7 @@ export const query = graphql`
   query AllProjectsQuery($technology: [String]) {
     projects: allSanityProject(
       sort: { fields: startedAt, order: DESC }
-      filter: {
-        technologies: { elemMatch: { title: { in: $technology } } }
-        categories: { elemMatch: { title: { nin: "Data Visualization" } } }
-      }
+      filter: { technologies: { elemMatch: { title: { in: $technology } } } }
     ) {
       nodes {
         id

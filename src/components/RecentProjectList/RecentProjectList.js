@@ -11,11 +11,7 @@ import { QUERIES, TRANSITIONS } from "../../constants"
 export default function RecentProjectList() {
   const data = useStaticQuery(graphql`
     query {
-      projects: allSanityProject(
-        filter: {
-          categories: { elemMatch: { title: { nin: "Data Visualization" } } }
-        }
-      ) {
+      projects: allSanityProject {
         nodes {
           id
           title
