@@ -1,17 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { Link } from "gatsby-plugin-intl";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby-plugin-intl"
 
-import styled from "styled-components";
+import styled from "styled-components"
 
-import { QUERIES, TRANSITIONS } from "../../constants";
+import { QUERIES, TRANSITIONS } from "../../constants"
 
 export default function RecentProjectList() {
   const data = useStaticQuery(graphql`
     query {
-      projects: allSanityProject {
+      projects: allSanityProject(
+        filter: {
+          categories: { elemMatch: { title: { nin: "Data Visualization" } } }
+        }
+      ) {
         nodes {
           id
           title
@@ -34,75 +38,71 @@ export default function RecentProjectList() {
     }
   `)
   const { projects } = data
-  const sortedSlicedProjects = projects.nodes.sort((a, b) => (b.startedAt > a.startedAt) ? 1 : -1).slice(0, 2)
+  const sortedSlicedProjects = projects.nodes
+    .sort((a, b) => (b.startedAt > a.startedAt ? 1 : -1))
+    .slice(0, 2)
   return (
     <Wrapper>
       <SectionTitle>Recent work:</SectionTitle>
       <RecentProjectGrid>
-        {
-          sortedSlicedProjects.map(project => {
-            return (
-              <ProjectCardWrapper key={project.id}>
-                <Link to={`/work/${project.slug.current}`}>
-                  <ProjectImageWrapper>
-                    <PreviewImage
-                      image={project.previewImage?.asset.gatsbyImageData}
-                      alt={``}
-                    />
-                  </ProjectImageWrapper>
-                  <ProjectCardFooter>
-                    <h2>{project.title}</h2>
-                    <ProjectCategoryWrapper>
-                      {project.categories.slice(0, -2).map(category => {
-                        return (
-                          <p key={category.key}>{category.title}</p>
-                        )
-                      })}
-                    </ProjectCategoryWrapper>
-                  </ProjectCardFooter>
-                </Link>
-              </ProjectCardWrapper>
-            )
-          })
-        }
+        {sortedSlicedProjects.map(project => {
+          return (
+            <ProjectCardWrapper key={project.id}>
+              <Link to={`/work/${project.slug.current}`}>
+                <ProjectImageWrapper>
+                  <PreviewImage
+                    image={project.previewImage?.asset.gatsbyImageData}
+                    alt={``}
+                  />
+                </ProjectImageWrapper>
+                <ProjectCardFooter>
+                  <h2>{project.title}</h2>
+                  <ProjectCategoryWrapper>
+                    {project.categories.slice(0, -2).map(category => {
+                      return <p key={category.key}>{category.title}</p>
+                    })}
+                  </ProjectCategoryWrapper>
+                </ProjectCardFooter>
+              </Link>
+            </ProjectCardWrapper>
+          )
+        })}
       </RecentProjectGrid>
       <NavBtnWrapper>
-        <ProjectNavigationButton to='/work'>
-          Browse Projects  &rarr;
+        <ProjectNavigationButton to="/work">
+          Browse Projects &rarr;
         </ProjectNavigationButton>
       </NavBtnWrapper>
     </Wrapper>
-
   )
 }
 
 const Wrapper = styled.div`
   margin: 1.5rem;
   margin-top: 2rem;
-`;
+`
 
 const SectionTitle = styled.h3`
   color: var(--color-textPrimary);
-	padding: 0;
+  padding: 0;
   font-weight: bold;
-  font-size: clamp(
-    1.5rem,
-		2.25vw + .5rem,
-    2.5rem
-  );
+  font-size: clamp(1.5rem, 2.25vw + 0.5rem, 2.5rem);
   @media ${QUERIES.laptopAndUp} {
     line-height: 3rem;
     padding: 0rem;
   }
-`;
+`
 
 const RecentProjectGrid = styled.div`
   --min-column-width: min(440px, 100%);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--min-column-width), 1fr)
+  );
   grid-gap: 2rem;
   padding: 16px 0;
-  
+
   @media ${QUERIES.laptopAndUp} {
     max-width: 80rem;
   }
@@ -110,7 +110,7 @@ const RecentProjectGrid = styled.div`
     max-width: none;
     grid-template-columns: repeat(2, minmax(var(--min-column-width), 1fr));
   }
-`;
+`
 const ProjectCardWrapper = styled.div`
   position: relative;
   display: flex;
@@ -128,7 +128,7 @@ const ProjectCardWrapper = styled.div`
   @media ${QUERIES.desktopAndUp} {
     /* margin: 1rem; */
   }
-`;
+`
 
 const ProjectCardFooter = styled.div`
   display: block;
@@ -138,19 +138,19 @@ const ProjectCardFooter = styled.div`
   right: 0px;
   padding: 0.75rem;
   background: var(--color-background);
-  border: .1px solid var(--color-borderPrimary);
+  border: 0.1px solid var(--color-borderPrimary);
   border-top: none;
   border-radius: 0 0 5px 5px;
   h2 {
     font-size: 1rem;
     display: inline-block;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     color: var(--color-textPrimary);
   }
   p {
     color: var(--color-textTertiary);
     font-style: italic;
-    margin-top: .25rem;
+    margin-top: 0.25rem;
   }
   @media ${QUERIES.tabletAndUp} {
     padding: 1rem 1rem;
@@ -158,20 +158,20 @@ const ProjectCardFooter = styled.div`
       font-size: calc(1rem + 1vw);
     }
   }
-`;
+`
 
 const ProjectCategoryWrapper = styled.div`
   display: flex;
   gap: 16px;
   p {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
   @media ${QUERIES.tabletAndUp} {
     p {
       font-size: 1rem;
     }
   }
-`;
+`
 
 const ProjectImageWrapper = styled.div`
   flex: 1;
@@ -185,10 +185,10 @@ const ProjectImageWrapper = styled.div`
     &::after {
       opacity: 0.5;
     }
-  };
+  }
   &::after {
     background: linear-gradient(var(--color-gray50), var(--color-gray900));
-    content: '';
+    content: "";
     height: 100%;
     left: 0;
     opacity: 0;
@@ -197,16 +197,19 @@ const ProjectImageWrapper = styled.div`
     transition: opacity 250ms ${TRANSITIONS.normal};
     width: 100%;
   }
-`;
+`
 
 const PreviewImage = styled(GatsbyImage)`
-  height: calc(100% + 1rem); 
+  height: calc(100% + 1rem);
   object-fit: cover;
   object-position: top left;
   flex: 1;
   &::after {
-    background-image: linear-gradient(var(--color-blue50), var(--color-blue500));
-    content: '';
+    background-image: linear-gradient(
+      var(--color-blue50),
+      var(--color-blue500)
+    );
+    content: "";
     height: 100%;
     left: 0;
     opacity: 0;
@@ -215,7 +218,7 @@ const PreviewImage = styled(GatsbyImage)`
     transition: opacity 150ms ${TRANSITIONS.normal};
     width: 100%;
   }
-`;
+`
 
 const NavBtnWrapper = styled.div`
   display: flex;
@@ -223,29 +226,29 @@ const NavBtnWrapper = styled.div`
   justify-content: flex-end;
   margin-top: 2rem;
   color: var(--color-textPrimary);
-`;
+`
 
 const ProjectNavigationButton = styled(Link)`
   font-size: 1.25rem;
   text-decoration: none;
-	position: relative;
-	&::before {
-		content: "";
-		position: absolute;
-		display: block;
-		width: 99%;
-		height: 1px;
-		bottom: -.43rem;
-		left: 0;
-		background-color: var(--color-textPrimary);
-		transform: scaleX(0);
-		transform-origin: top left;
-		transition: transform 0.3s ease;	
-	}
-	&:hover::before {
-		transform: scaleX(1);
-	}
-	&:not(:last-of-type) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 99%;
+    height: 1px;
+    bottom: -0.43rem;
+    left: 0;
+    background-color: var(--color-textPrimary);
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+  &:hover::before {
+    transform: scaleX(1);
+  }
+  &:not(:last-of-type) {
     margin-left: 1rem;
-  };
-`;
+  }
+`
