@@ -39,6 +39,10 @@ export const COLORS = {
     light: "hsl(212deg, 97%, 43%)", // #0366D6
     dark: "hsl(212deg, 100%, 67%)", // #58A6FF
   },
+  hiddenPanelBackground: {
+    light: "hsl(214deg, 13%, 90%)", // grey #E1E4E8
+    dark: "hsl(212deg, 12%, 21%)", // charcoal-black #30363D
+  },
   // White
   white: {
     light: "hsl(0deg, 0%, 96%)", // #F2F2F2
@@ -155,10 +159,18 @@ export const QUERIES = {
     (max-width: ${(BREAKPOINTS.laptopMin - 1) / 16}rem)`,
   // new
   xs: `(max-width: ${BREAKPOINTS.xs / 16}rem)`,
-  sm: `(min-width: ${BREAKPOINTS.xs / 16}rem and max-width: ${BREAKPOINTS.sm / 16}rem)`,
-  md: `(min-width: ${BREAKPOINTS.sm / 16}rem and max-width: ${BREAKPOINTS.md / 16}rem)`,
-  lg: `(min-width: ${BREAKPOINTS.md / 16}rem and max-width: ${BREAKPOINTS.lg / 16}rem)`,
-  xl: `(min-width: ${BREAKPOINTS.lg / 16}rem and max-width: ${BREAKPOINTS.xl / 16}rem)`,
+  sm: `(min-width: ${BREAKPOINTS.xs / 16}rem and max-width: ${
+    BREAKPOINTS.sm / 16
+  }rem)`,
+  md: `(min-width: ${BREAKPOINTS.sm / 16}rem and max-width: ${
+    BREAKPOINTS.md / 16
+  }rem)`,
+  lg: `(min-width: ${BREAKPOINTS.md / 16}rem and max-width: ${
+    BREAKPOINTS.lg / 16
+  }rem)`,
+  xl: `(min-width: ${BREAKPOINTS.lg / 16}rem and max-width: ${
+    BREAKPOINTS.xl / 16
+  }rem)`,
   xsAndSmaller: `(max-width: ${BREAKPOINTS.xs / 16}rem)`,
   smAndSmaller: `(max-width: ${BREAKPOINTS.sm / 16}rem)`,
   mdAndSmaller: `(max-width: ${BREAKPOINTS.md / 16}rem)`,
@@ -166,8 +178,10 @@ export const QUERIES = {
   xlAndSmaller: `(max-width: ${BREAKPOINTS.xl / 16}rem)`,
   phoneLgAndSmaller: `(max-width: ${BREAKPOINTS.phoneLg / 16}rem)`,
   desktopAndSmaller: `(max-width: ${BREAKPOINTS.desktop / 16}rem)`,
-  ultraWideAndSmaller: `(max-width: ${BREAKPOINTS.ultraWideMin/ 16}rem)`,
-  ultraSuperWideAndSmaller: `(max-width: ${BREAKPOINTS.ultraSuperWide/ 16}rem)`,
+  ultraWideAndSmaller: `(max-width: ${BREAKPOINTS.ultraWideMin / 16}rem)`,
+  ultraSuperWideAndSmaller: `(max-width: ${
+    BREAKPOINTS.ultraSuperWide / 16
+  }rem)`,
   xsAndLarger: `(min-width: ${(BREAKPOINTS.xs + 1) / 16}rem)`,
   smAndLarger: `(min-width: ${(BREAKPOINTS.sm + 1) / 16}rem)`,
   mdAndLarger: `(min-width: ${(BREAKPOINTS.md + 1) / 16}rem)`,

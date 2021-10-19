@@ -57,6 +57,17 @@ export const query = graphql`
           slug {
             current
           }
+          excerpt {
+            text {
+              children {
+                text
+                marks
+                _type
+                _key
+              }
+              _rawChildren(resolveReferences: { maxDepth: 10 })
+            }
+          }
           previewImage {
             asset {
               altText

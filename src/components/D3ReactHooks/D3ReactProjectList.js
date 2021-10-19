@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { BREAKPOINTS, TRANSITIONS } from "../../constants"
+import { BREAKPOINTS, TRANSITIONS, WEIGHTS } from "../../constants"
 
 export default function D3ReactProjectList({ data }) {
   const { charts } = data
@@ -24,7 +24,11 @@ export default function D3ReactProjectList({ data }) {
                       />
                     </ProjectImageWrapper>
                     <ProjectCardContentInfo>
-                      <ProjectCardContent>Testing</ProjectCardContent>
+                      <ProjectCardContent>
+                        <p>
+                          {chart.node.title} {` `} <span>&rarr;</span>
+                        </p>
+                      </ProjectCardContent>
                     </ProjectCardContentInfo>
                   </CardContentWrapper>
                 </Link>
@@ -93,9 +97,17 @@ const ProjectsGrid = styled.div`
 `
 const ProjectCardContentInfo = styled.div`
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem 1rem 4.5rem 1rem;
+  p {
+    margin-bottom: 2rem;
+    color: var(--color-textPrimary);
+  }
+  color: var(--color-textPrimary);
+  font-weight: ${WEIGHTS.medium};
+  background: var(--color-hiddenPanelBackground);
   transition: opacity 0.6s ease;
   opacity: 0;
+  position: absolute;
   bottom: 0;
 `
 
@@ -109,7 +121,6 @@ const ProjectCard = styled.div`
   &:hover {
     ${ProjectCardContentInfo} {
       opacity: 1;
-      color: var(--color-textPrimary);
     }
   }
 `
@@ -121,13 +132,6 @@ const CardContentWrapper = styled.div`
 const ProjectCardContent = styled.div`
   display: block;
   position: absolute;
-  /* padding: 0.5rem;
-  margin-bottom: 2rem;
-  margin-top: 1rem; */
-  p {
-    margin-top: 0.5rem;
-    color: var(--color-textSecondary);
-  }
 `
 
 /* separate trigger from effect to avoid doom flicker
