@@ -46,7 +46,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 100%;
   margin: 2rem;
 `
@@ -113,7 +113,7 @@ const ProjectCardContentInfo = styled.div`
 
 const ProjectCard = styled.div`
   width: var(--project-width);
-  border: 1px solid deeppink;
+  border: 1px solid var(--color-borderPrimary);
   scroll-snap-align: start;
   margin: 1rem 0;
   --border-radius: 5px;
