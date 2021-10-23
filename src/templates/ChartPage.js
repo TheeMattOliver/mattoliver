@@ -77,8 +77,8 @@ const ChartCopy = styled.div`
 const ChartWrapper = styled.div`
   flex: 1;
   height: 100%;
-  margin-left: 2rem;
   @media ${QUERIES.tabletAndUp} {
+    margin-left: 2rem;
     flex-basis: 550px;
   }
 `

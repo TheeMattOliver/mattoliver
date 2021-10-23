@@ -3,22 +3,41 @@ import React, { useEffect, useState } from "react"
 import * as d3 from "d3"
 import styled from "styled-components"
 
-import BarLineChart from "../../components/D3ReactHooks/BarLineChart"
+import ScatterPlot from "../../components/D3ReactHooks/ScatterGlobalTemps"
 
-export default function TestingPage({ data, pageContext }) {
-  const [csvData, setCsvData] = useState("")
+export default function TestingPage() {
+  const [data, setData] = useState([])
 
   useEffect(() => {
-    d3.csv(
-      `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/new-passenger-cars.csv`
-    ).then(csvData => {
-      setCsvData(csvData)
+    return Promise.all([
+      d3.csv(
+        `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/GLB.Ts+dSST.csv`
+      ),
+      d3.csv(
+        `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/temperatures.csv`
+      ),
+    ]).then(([nasa, temperatures]) => {
+      let data = []
+      console.log("loadAndProcessData, nasa: ", nasa)
+      console.log("loadAndProcessData, temperatures: ", temperatures)
+
+      temperatures.forEach(d => {
+        for (let i = 1; i < 13; ++i) {
+          let columns = temperatures.columns
+
+          data.push({
+            date: new Date(Date.UTC(d.Year, i - 1, 1)),
+            value: +d[columns[i]],
+          })
+        }
+      })
+      setData(data)
     })
   }, [])
 
   return (
-    <div style={{ marginTop: "100px" }}>
-      <BarLineChart data={csvData} />
+    <div>
+      <ScatterPlot data={data} />
     </div>
   )
 }
