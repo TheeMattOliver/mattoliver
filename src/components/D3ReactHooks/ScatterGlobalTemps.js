@@ -18,12 +18,12 @@ function ScatterPlotGlobalTemps({ data }) {
   const dimensions = useResizeObserver(wrapperRef)
 
   // Define the div for the tooltip
-  const div = d3
-    .select("body")
-    .append("div")
-    .attr("class", "tooltip")
-    .attr("id", "tooltip")
-    .style("opacity", 0)
+  // const div = d3
+  //   .select("body")
+  //   .append("div")
+  //   .attr("class", "tooltip")
+  //   .attr("id", "tooltip")
+  //   .style("opacity", 0)
 
   useEffect(() => {
     if (!data) return
