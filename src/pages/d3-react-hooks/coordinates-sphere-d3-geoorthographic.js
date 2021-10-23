@@ -19,9 +19,9 @@ export default function LocationGlobePage() {
   return (
     <ChartPage title={`Location globe`} copy={copy}>
       <GlobeWrapper>
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Globe />
-        </React.Suspense>
+        {/* <React.Suspense fallback={<div>Loading...</div>}> */}
+        <Globe />
+        {/* </React.Suspense> */}
       </GlobeWrapper>
     </ChartPage>
   )
