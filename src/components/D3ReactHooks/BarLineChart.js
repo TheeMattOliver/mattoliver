@@ -268,4 +268,17 @@ const SVG = styled.svg`
     pointer-events: none;
     padding: 1.33rem;
   }
+
+  &.axis path,
+  .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+  }
+
+  &.axis text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-rendering: geometricPrecision;
+  }
 `
