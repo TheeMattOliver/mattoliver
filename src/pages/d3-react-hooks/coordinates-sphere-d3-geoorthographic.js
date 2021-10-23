@@ -4,11 +4,11 @@ import * as d3 from "d3"
 import { BREAKPOINTS, QUERIES } from "../../constants"
 import ChartPage from "../../templates/ChartPage"
 import DataToggleButton from "../../components/DataToggleButton"
-// import LocationGlobe from "../../components/D3ReactHooks/Globe"
+import Globe from "../../components/D3ReactHooks/Globe"
 
-const Globe = React.lazy(() =>
-  import(/*webpackPrefetch: true */ "../../components/D3ReactHooks/Globe")
-)
+// const Globe = React.lazy(() =>
+//   import(/*webpackPrefetch: true */ "../../components/D3ReactHooks/Globe")
+// )
 
 const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -19,9 +19,9 @@ export default function LocationGlobePage() {
   return (
     <ChartPage title={`Location globe`} copy={copy}>
       <GlobeWrapper>
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Globe />
-        </React.Suspense>
+        {/* <React.Suspense fallback={<div>Loading...</div>}> */}
+        <Globe />
+        {/* </React.Suspense> */}
       </GlobeWrapper>
     </ChartPage>
   )
