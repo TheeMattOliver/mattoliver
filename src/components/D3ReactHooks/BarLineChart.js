@@ -22,7 +22,7 @@ export default function BarLineChart({ data, children }) {
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()
 
-    const margin = { top: 20, right: 30, bottom: 30, left: 40 }
+    const margin = { top: -20, right: 30, bottom: -20, left: 40 }
     let innerWidth = width - margin.left - margin.right
     let innerHeight = height - margin.top - margin.bottom
 
@@ -49,21 +49,25 @@ export default function BarLineChart({ data, children }) {
       .scaleLinear()
       .domain(d3.extent(data, d => d.efficiency))
       .rangeRound([innerHeight, 0])
+
     // line
     const line = d3
       .line()
       .x(d => xScale(d.year) + xScale.bandwidth() / 2)
       .y(d => y2Scale(d.efficiency))
+
     // axes
     const xAxis = g =>
       g.attr("transform", `translate(0,${innerHeight})`).call(
         d3
           .axisBottom(xScale)
-          .tickValues(
-            d3
-              .ticks(...d3.extent(xScale.domain()), width / 40)
-              .filter(value => xScale(value) !== undefined)
-          )
+          .ticks(...d3.extent(xScale.domain()), width / 40)
+          // tickValues not working here:
+          // .tickValues(
+          //   d3
+          //     .ticks(...d3.extent(xScale.domain()), width / 40)
+          //     .filter(value => xScale(value) !== undefined)
+          // )
           .tickSizeOuter(0)
       )
 
@@ -99,38 +103,9 @@ export default function BarLineChart({ data, children }) {
         )
 
     svg.select(".x-axis").call(xAxis)
+
     svg.select(".y1-axis").call(y1Axis)
     svg.select(".y2-axis").call(y2Axis)
-    // y axes labels
-    svg
-      .selectAll(".y1-axis-label")
-      .data([data], (entry, index) => entry.sales)
-      .join(enter =>
-        enter.append("text").attr("y", (entry, index) => innerHeight)
-      )
-      .text(entry => `↑ New cars sold`)
-      .attr("class", "y1-axis-label")
-      .style("fill", "#4682b4")
-      .attr("x", 10)
-      .transition()
-      .attr("y", 10)
-
-    svg
-      .selectAll(".y2-axis-label")
-      // wrap our entire data array in another array bc we don't want
-      // D3 to generate a new path element for every value in the data array -
-      // that makes 31 of the axis labels at once
-      .data([data], (entry, index) => entry.sales)
-      .join(enter =>
-        enter.append("text").attr("y", (entry, index) => innerHeight)
-      )
-      .text(d => `Avg. fuel efficiency (mpg) ↑`)
-      .attr("class", "y2-axis-label")
-      .attr("x", innerWidth + 40)
-      .attr("text-anchor", "end")
-      .attr("fill", "orange")
-      .transition()
-      .attr("y", 10)
 
     // bars
     svg
@@ -182,6 +157,37 @@ export default function BarLineChart({ data, children }) {
       .attr("stroke-miterlimit", 1)
       .attr("stroke-width", 2)
       .attr("d", line(data))
+    // draw y axes labels after bars
+    svg
+      .selectAll(".y1-axis-label")
+      .data([data], (entry, index) => entry.sales)
+      .join(enter =>
+        enter.append("text").attr("y", (entry, index) => innerHeight)
+      )
+      .text(entry => `↑ New cars sold`)
+      .attr("class", "y1-axis-label")
+      // .style("fill", "#4682b4")
+      .style("fill", "#000000")
+      .attr("x", 10)
+      .transition()
+      .attr("y", 10)
+
+    svg
+      .selectAll(".y2-axis-label")
+      // wrap our entire data array in another array bc we don't want
+      // D3 to generate a new path element for every value in the data array -
+      // that makes 31 of the axis labels at once
+      .data([data], (entry, index) => entry.sales)
+      .join(enter =>
+        enter.append("text").attr("y", (entry, index) => innerHeight)
+      )
+      .text(d => `Avg. fuel efficiency (mpg) ↑`)
+      .attr("class", "y2-axis-label")
+      .attr("x", innerWidth + 40)
+      .attr("text-anchor", "end")
+      .attr("fill", "orange")
+      .transition()
+      .attr("y", 10)
   }, [data, dimensions])
 
   const svgStyles = {
@@ -208,23 +214,12 @@ const RefWrapper = styled.div`
   margin-bottom: 1rem;
   svg {
     flex: 1;
-    height: 300px;
-    &.axis path,
-    .axis line {
-      fill: none;
-      stroke: black;
-      shape-rendering: crispEdges;
-    }
-
-    &.axis text {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      text-rendering: geometricPrecision;
-    }
   }
   @media ${QUERIES.tabletAndUp} {
     width: 800px;
-    height: 500px;
+    height: 300px;
+    margin-top: 150px;
+    margin-bottom: 100px;
   }
 `
 
@@ -245,40 +240,5 @@ const SVG = styled.svg`
     fill: red;
     /* filter: grayscale(100%) sepia(100%); */
     filter: brightness(0.5);
-  }
-
-  div.tooltip {
-    color: white;
-    position: absolute;
-    text-align: center;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgba(0, 0, 0, 0.8);
-    pointer-events: none;
-    padding: 1.33rem;
-  }
-
-  div.lineTooltip {
-    color: black;
-    position: absolute;
-    text-align: center;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgba(255, 255, 204, 0.9);
-    pointer-events: none;
-    padding: 1.33rem;
-  }
-
-  &.axis path,
-  .axis line {
-    fill: none;
-    stroke: black;
-    shape-rendering: crispEdges;
-  }
-
-  &.axis text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    text-rendering: geometricPrecision;
   }
 `
