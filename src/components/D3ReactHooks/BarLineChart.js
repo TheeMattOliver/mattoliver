@@ -8,7 +8,6 @@ import { QUERIES } from "../../constants"
 export default function BarLineChart({ data, children }) {
   const parseYear = d3.timeFormat("%Y")
 
-  console.log("data: ", data)
   const { colorMode, setColorMode } = React.useContext(ThemeContext)
 
   const svgRef = useRef(null)
