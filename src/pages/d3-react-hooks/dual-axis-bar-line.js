@@ -4,7 +4,7 @@ import * as d3 from "d3"
 import { QUERIES } from "../../constants"
 import ChartPage from "../../templates/ChartPage"
 import DataToggleButton from "../../components/DataToggleButton"
-import BarLineChart from "../../components/D3ReactHooks/BarLineChart"
+import BarLineChartFuelCars from "../../components/D3ReactHooks/BarLineChartFuelCars"
 
 const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -22,7 +22,7 @@ export default function BarLineChartPage() {
   }, [])
   return (
     <ChartPage title={`Dual bar & line chart`} copy={copy}>
-      <BarLineChart data={csvData} />
+      <BarLineChartFuelCars data={csvData} />
     </ChartPage>
   )
 }

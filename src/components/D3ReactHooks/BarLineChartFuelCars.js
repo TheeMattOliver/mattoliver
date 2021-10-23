@@ -5,7 +5,7 @@ import useResizeObserver from "../../hooks/useResizeObserver"
 import { ThemeContext } from "../ThemeContext"
 import { QUERIES } from "../../constants"
 
-export default function BarLineChart({ data, children }) {
+export default function BarLineChartFuelCars({ data, children }) {
   const parseYear = d3.timeFormat("%Y")
 
   const { colorMode, setColorMode } = React.useContext(ThemeContext)
