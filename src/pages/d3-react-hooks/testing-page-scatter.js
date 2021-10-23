@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 import ScatterPlot from "../../components/D3ReactHooks/ScatterGlobalTemps"
 
-export default function TestingPage() {
+export default function FullScatterPage() {
   const [data, setData] = useState([])
 
   useEffect(() => {

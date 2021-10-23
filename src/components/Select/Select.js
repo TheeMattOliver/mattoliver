@@ -59,7 +59,7 @@ const PresentationalBit = styled.div`
   padding: 16px 16px;
   padding-right: 52px;
   transition: all 0.2s ease 0s;
-
+  cursor: pointer;
   border-radius: 5px;
 
   /* we need to set the focus ring bc we set the opacity to 0, so use the adjacent sibling combinator; 
