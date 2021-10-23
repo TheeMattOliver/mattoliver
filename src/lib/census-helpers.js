@@ -151,16 +151,4 @@ const ageVariables = {
   B01001_049E: "≥85",
 }
 
-const censusBaseUrl = `https://api.census.gov/data/2019/acs/acs5?get=${d3
-  .keys(ageVariables)
-  .join()}`
-
-export {
-  ageBands,
-  sumArray,
-  variables,
-  states,
-  ageVariables,
-  getByValue,
-  censusBaseUrl,
-}
+export { ageBands, sumArray, variables, states, ageVariables, getByValue }

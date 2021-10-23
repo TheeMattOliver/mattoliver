@@ -1,21 +1,21 @@
 import React, { useRef, useEffect } from "react"
 import * as d3 from "d3"
+import styled from "styled-components"
 import useResizeObserver from "../../hooks/useResizeObserver"
+import { QUERIES } from "../../constants"
 
 function BarChartPopulation({ data, property }) {
-  console.log("here is the data the chart wants: ", data)
   const svgRef = useRef()
   const wrapperRef = useRef()
   // get current dimensions of the element we give it
   const dimensions = useResizeObserver(wrapperRef)
 
   useEffect(() => {
-    console.log("Render, dimensions: ", dimensions)
     const svg = d3.select(svgRef.current)
     // use resized dimensions
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()
-    const margin = { top: 5, right: 5, bottom: 5, left: 5 }
+    const margin = { top: 5, right: 5, bottom: 25, left: 35 }
     const innerWidth = width - margin.left - margin.right
     const innerHeight = height - margin.top - margin.bottom
 
@@ -90,16 +90,32 @@ function BarChartPopulation({ data, property }) {
       .attr("x", d => xScale(d.value) - 4)
   }, [data, dimensions, property])
 
-  const svgStyles = {
-    height: "500px",
-    marginTop: "5px",
-  }
-
   return (
-    <div ref={wrapperRef} style={{ marginBottom: "2rem " }}>
-      <svg ref={svgRef} style={svgStyles}></svg>
-    </div>
+    <RefWrapper ref={wrapperRef} style={{ marginBottom: "2rem " }}>
+      <SVG ref={svgRef}></SVG>
+    </RefWrapper>
   )
 }
+
+const RefWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  svg {
+    flex: 1;
+    height: 150px;
+  }
+  @media ${QUERIES.tabletAndUp} {
+    width: 100%;
+    height: 688px;
+  }
+`
+
+const SVG = styled.svg`
+  display: "block";
+  width: "100%";
+`
 
 export default BarChartPopulation
