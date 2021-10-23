@@ -1,5 +1,3 @@
-import * as d3 from "d3"
-
 const variables = new Map(
   [
     ["<10", ["003", "004", "027", "028"]],
