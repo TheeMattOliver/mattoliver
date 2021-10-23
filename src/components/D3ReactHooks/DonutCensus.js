@@ -2,9 +2,13 @@ import React, { useEffect, useState, useRef } from "react"
 import * as d3 from "d3"
 import styled from "styled-components"
 import useResizeObserver from "../../hooks/useResizeObserver"
+import { ThemeContext } from "../ThemeContext"
+
 import { QUERIES } from "../../constants"
 
 const DonutCensus = ({ data, selectedValue }) => {
+  const { colorMode, setColorMode } = React.useContext(ThemeContext)
+
   const svgRef = useRef()
   const wrapperRef = useRef()
   // get current dimensions of the element we give it
@@ -41,13 +45,15 @@ const DonutCensus = ({ data, selectedValue }) => {
 
     pie.value(d => d[selectedValue])
 
-    const total = d3.sum(data.map(d => d[selectedValue])).toLocaleString()
+    const totalPopulation = d3
+      .sum(data.map(d => d[selectedValue]))
+      .toLocaleString()
 
     // Bind D3 data
     const update = svg.append("g").selectAll("text").data(data)
 
     // Center text
-    const centerText = svg.selectAll(".total").data([total])
+    const centerText = svg.selectAll(".totalPopulation").data([totalPopulation])
 
     centerText
       .enter()
@@ -62,8 +68,9 @@ const DonutCensus = ({ data, selectedValue }) => {
       .duration(1000)
       .style("opacity", 1)
       .attr("dy", "0.35em")
-      .attr("class", "total")
+      .attr("class", "totalPopulation")
       .text(d => d)
+      .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
 
     centerText.exit().remove()
 
@@ -161,13 +168,8 @@ const DonutCensus = ({ data, selectedValue }) => {
       .attr("y", "0.7em")
       .style("font-size", "13px")
       .text(d => (d.value ? d.value.toLocaleString() : ""))
-  }, [data, selectedValue, dimensions])
+  }, [data, selectedValue, dimensions, colorMode])
 
-  // const svgStyles = {
-  //   background: "#eee",
-  //   height: height,
-  //   width: "100%",
-  // }
   return (
     <RefWrapper ref={wrapperRef}>
       <SVG ref={svgRef}></SVG>
@@ -181,6 +183,8 @@ const RefWrapper = styled.div`
   align-items: stretch;
   flex-direction: column;
   /* margin-bottom: 2rem; */
+  height: 400px;
+  margin-top: -20px;
   svg {
     flex: 1;
   }
@@ -188,15 +192,21 @@ const RefWrapper = styled.div`
     width: 100%;
     height: 588px;
   }
+  @media ${QUERIES.smAndSmaller} {
+    margin-top: -80px;
+  }
 
   tspan {
     font: 16px sans-serif;
     text-anchor: middle;
   }
 
-  .total {
-    font-size: 3em;
+  .totalPopulation {
+    font-size: 1.5rem;
     text-anchor: middle;
+    @media ${QUERIES.tabletAndUp} {
+      font-size: 3rem;
+    }
   }
 
   .arc:hover {

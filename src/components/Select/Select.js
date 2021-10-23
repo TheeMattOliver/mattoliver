@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { QUERIES } from "../../constants"
 
 import Icon from "../Icon"
 import { getDisplayedValue } from "./Select.helpers"
@@ -39,6 +40,9 @@ const Wrapper = styled.div`
   position: relative;
   /* prevent line breaks with max-content*/
   width: max-content;
+  @media ${QUERIES.smAndSmaller} {
+    flex: 1;
+  }
 `
 
 const NativeSelect = styled.select`

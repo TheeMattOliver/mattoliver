@@ -41,6 +41,7 @@ export default function DonutCensusPage() {
   }
 
   let yearsArr = ["Off", "2009", "2016", "2019"].map(value => value)
+
   return (
     <ChartPage title={`Donut chart and Census data`} copy={copy}>
       {data ? (
@@ -66,7 +67,9 @@ export default function DonutCensusPage() {
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 1rem;
-  /* justify-content: space-between; */
   padding-right: 1.67rem;
   padding-bottom: 2rem;
+  @media ${QUERIES.smAndSmaller} {
+    margin-left: 1.5rem;
+  }
 `
