@@ -209,10 +209,22 @@ const RefWrapper = styled.div`
   svg {
     flex: 1;
     height: 300px;
+    &.axis path,
+    .axis line {
+      fill: none;
+      stroke: black;
+      shape-rendering: crispEdges;
+    }
+
+    &.axis text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      text-rendering: geometricPrecision;
+    }
   }
   @media ${QUERIES.tabletAndUp} {
     width: 800px;
-    height: 600px;
+    height: 500px;
   }
 `
 
