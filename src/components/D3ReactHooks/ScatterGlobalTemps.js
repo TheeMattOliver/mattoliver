@@ -153,28 +153,28 @@ function ScatterPlotGlobalTemps({ data }) {
             .attr("cy", d => yScale(d.value))
             .attr("fill", d => colorScale(d.value))
             .attr("r", 2.5)
-            .style("cursor", "pointer")
-            .on("mouseover", (event, d) => {
-              div
-                .transition()
-                .duration(200)
-                .style("opacity", 0.9)
-                .attr("data-date", parseYear(d.date))
+            .style("cursor", "pointer"),
+        // .on("mouseover", (event, d) => {
+        //   div
+        //     .transition()
+        //     .duration(200)
+        //     .style("opacity", 0.9)
+        //     .attr("data-date", parseYear(d.date))
 
-              div
-                .html(
-                  "<strong>Year:</strong> <span style='color:white'>" +
-                    parseYear(d.date) +
-                    "</span> <br /><strong>Anomaly:</strong> <span style='color:white'>" +
-                    d.value +
-                    "&#8451; </span> "
-                )
-                .style("left", event.pageX + 20 + "px")
-                .style("top", event.pageY - 28 + "px")
-            })
-            .on("mouseout", () => {
-              div.transition().duration(500).style("opacity", 0)
-            }),
+        //   div
+        //     .html(
+        //       "<strong>Year:</strong> <span style='color:white'>" +
+        //         parseYear(d.date) +
+        //         "</span> <br /><strong>Anomaly:</strong> <span style='color:white'>" +
+        //         d.value +
+        //         "&#8451; </span> "
+        //     )
+        //     .style("left", event.pageX + 20 + "px")
+        //     .style("top", event.pageY - 28 + "px")
+        // })
+        // .on("mouseout", () => {
+        //   div.transition().duration(500).style("opacity", 0)
+        // }),
         exit => exit.remove()
       )
       .join("circle")
