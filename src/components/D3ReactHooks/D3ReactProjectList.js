@@ -7,7 +7,6 @@ import { BREAKPOINTS, QUERIES, TRANSITIONS, WEIGHTS } from "../../constants"
 
 export default function D3ReactProjectList({ data }) {
   const { charts } = data
-  console.log({ charts })
   return (
     <ProjectsWrapper>
       <ProjectsGrid>
