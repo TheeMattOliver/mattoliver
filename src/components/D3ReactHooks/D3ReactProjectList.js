@@ -10,33 +10,31 @@ export default function D3ReactProjectList({ data }) {
   console.log({ charts })
   return (
     <ProjectsWrapper>
-      <ProjectsCollection>
-        <ProjectsGrid>
-          {charts.edges.map(chart => {
-            return (
-              <ProjectCard key={chart.node.id}>
-                <Link to={`/d3-react-hooks/${chart.node.slug.current}`}>
-                  <CardContentWrapper>
-                    <ProjectImageWrapper>
-                      <ProjectMainImage
-                        image={chart.node.previewImage.asset.gatsbyImageData}
-                        alt={""}
-                      />
-                    </ProjectImageWrapper>
-                    <ProjectCardContentInfo>
-                      <ProjectCardContent>
-                        <p>
-                          {chart.node.title} {` `} <span>&rarr;</span>
-                        </p>
-                      </ProjectCardContent>
-                    </ProjectCardContentInfo>
-                  </CardContentWrapper>
-                </Link>
-              </ProjectCard>
-            )
-          })}
-        </ProjectsGrid>
-      </ProjectsCollection>
+      <ProjectsGrid>
+        {charts.edges.map(chart => {
+          return (
+            <ProjectCard key={chart.node.id}>
+              <Link to={`/d3-react-hooks/${chart.node.slug.current}`}>
+                <CardContentWrapper>
+                  <ProjectImageWrapper>
+                    <ProjectMainImage
+                      image={chart.node.previewImage.asset.gatsbyImageData}
+                      alt={""}
+                    />
+                  </ProjectImageWrapper>
+                  <ProjectCardContentInfo>
+                    <ProjectCardContent>
+                      <p>
+                        {chart.node.title} {` `} <span>&rarr;</span>
+                      </p>
+                    </ProjectCardContent>
+                  </ProjectCardContentInfo>
+                </CardContentWrapper>
+              </Link>
+            </ProjectCard>
+          )
+        })}
+      </ProjectsGrid>
     </ProjectsWrapper>
   )
 }
@@ -51,50 +49,48 @@ const ProjectsWrapper = styled.div`
   margin: 2rem;
 `
 
-const ProjectsCollection = styled.div`
-  --content-horizontal-padding: 4.5rem;
+const ProjectsGrid = styled.div`
+  /* --project-width: 30vw; */
+  --columns: 3;
   --gutter: 3rem;
-  --project-width: 20rem;
-  /* max-width 2400px */
-  @media ${BREAKPOINTS.ultraSuperWideAndSmaller} {
-    --columns: 6;
-    --project-width: calc(
-      (
-          100vw - var(--content-horizontal-padding) - var(--columns) *
-            var(--gutter)
-        ) / (var(--columns) + 0.5)
-    );
-  }
-  /* max-width 2100 */
-  @media (max-width: 2100px) {
-    --columns: 5;
-  }
-  /* max-width 1800 */
-  @media ${BREAKPOINTS.ultraWideAndSmaller} {
-    --columns: 4;
-  }
-  /* max-width 1500 */
-  @media ${BREAKPOINTS.desktopAndSmaller} {
-    --columns: 3;
-  }
-  /* max-width 1200 */
-  @media (max-width: 1200px) {
-    --columns: 2;
-  }
-  @media (max-width: 768px) and (min-height: 600px) {
+  --content-horizontal-padding: 4.5rem;
+  --project-width: calc(100vw - var(--content-horizontal-padding) * 2);
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), var(--project-width));
+  gap: calc(var(--gutter) / 2);
+
+  @media ${BREAKPOINTS.smAndSmaller} {
     --columns: 1;
     --project-width: 80vw;
   }
-  /* @media ${BREAKPOINTS.phoneLgAndSmaller} {
-    --project-width: calc(100vw - var(--content-horizontal-padding) * 2);
-  } */
+  @media (min-width: 563px) {
+    --columns: 1;
+    --project-width: 80vw;
+  }
+
+  @media (min-width: 768px) {
+    --columns: 2;
+    --project-width: 40vw;
+  }
+  @media (min-width: 1024px) {
+    --columns: 3;
+    --project-width: 30vw;
+  }
+  @media (min-width: 1200px) {
+    --columns: 4;
+    --project-width: 22vw;
+  }
+  @media (min-width: 1500px) {
+    --columns: 5;
+    --project-width: 17vw;
+  }
+  @media (min-width: 2100px) {
+    --columns: 6;
+    --project-width: 15vw;
+  }
 `
 
-const ProjectsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(var(--columns), var(--project-width));
-  gap: 1rem calc(var(--gutter) / 2);
-`
 const ProjectCardContentInfo = styled.div`
   width: 100%;
   padding: 1rem 1rem 4.5rem 1rem;
@@ -110,13 +106,13 @@ const ProjectCardContentInfo = styled.div`
   position: absolute;
   bottom: 0;
 `
-
 const ProjectCard = styled.div`
+  --border-radius: 5px;
   width: var(--project-width);
   border: 1px solid var(--color-borderPrimary);
   scroll-snap-align: start;
   margin: 1rem 0;
-  --border-radius: 5px;
+
   border-radius: var(--border-radius);
   &:hover {
     ${ProjectCardContentInfo} {

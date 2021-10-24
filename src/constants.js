@@ -177,6 +177,7 @@ export const QUERIES = {
   lgAndSmaller: `(max-width: ${BREAKPOINTS.lg / 16}rem)`,
   xlAndSmaller: `(max-width: ${BREAKPOINTS.xl / 16}rem)`,
   phoneLgAndSmaller: `(max-width: ${BREAKPOINTS.phoneLg / 16}rem)`,
+  tabletAndSmaller: `(max-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
   desktopAndSmaller: `(max-width: ${BREAKPOINTS.desktop / 16}rem)`,
   ultraWideAndSmaller: `(max-width: ${BREAKPOINTS.ultraWideMin / 16}rem)`,
   ultraSuperWideAndSmaller: `(max-width: ${
@@ -187,6 +188,7 @@ export const QUERIES = {
   mdAndLarger: `(min-width: ${(BREAKPOINTS.md + 1) / 16}rem)`,
   lgAndLarger: `(min-width: ${(BREAKPOINTS.lg + 1) / 16}rem)`,
   xlAndLarger: `(min-width: ${(BREAKPOINTS.xl + 1) / 16}rem)`,
+  desktopAndLarger: `(min-width: ${BREAKPOINTS.desktop / 16}rem)`,
   mobile: `(max-width: ${BREAKPOINTS.md / 16}rem)`,
   desktop: `(min-width: ${(BREAKPOINTS.md + 1) / 16}rem)`,
 }
