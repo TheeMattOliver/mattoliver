@@ -47,14 +47,6 @@ export default function BarChartPopulationPage() {
 
   let statesArr = [...states].map(value => value[1])
 
-  if (!censusData) {
-    return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
-    )
-  }
-
   return (
     <ChartPage title={`Bar chart and the Census API`} copy={copy}>
       {censusData ? (
