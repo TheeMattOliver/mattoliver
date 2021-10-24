@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { BREAKPOINTS, TRANSITIONS, WEIGHTS } from "../../constants"
+import { BREAKPOINTS, QUERIES, TRANSITIONS, WEIGHTS } from "../../constants"
 
 export default function D3ReactProjectList({ data }) {
   const { charts } = data
@@ -60,7 +60,7 @@ const ProjectsGrid = styled.div`
   grid-template-columns: repeat(var(--columns), var(--project-width));
   gap: calc(var(--gutter) / 2);
 
-  @media ${BREAKPOINTS.smAndSmaller} {
+  @media ${QUERIES.smAndSmaller} {
     --columns: 1;
     --project-width: 80vw;
   }

@@ -34,9 +34,5 @@ export default function BarNormalizedCensusPage() {
         console.log("error: ", error)
       })
   }, [])
-  return (
-    <ChartPage title={`Normalized Bar chart and the Census API`} copy={copy}>
-      <BarNormalizedCensus data={censusData} />
-    </ChartPage>
-  )
+  return <BarNormalizedCensus data={censusData} />
 }
