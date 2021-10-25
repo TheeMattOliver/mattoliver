@@ -29,8 +29,7 @@ function ScatterPlotGlobalTemps({ data }) {
     if (!data) return
 
     const svg = d3.select(svgRef.current)
-    console.log("dimensions: ", dimensions)
-    console.log("data: ", data)
+
     if (!dimensions) return
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()
