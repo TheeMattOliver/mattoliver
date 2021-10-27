@@ -2,15 +2,16 @@ import React, { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
 import * as topojson from "topojson-client"
 import styled from "styled-components"
-import useResizeObserver from "../../hooks/useResizeObserver"
+import useResizeObserver from "../../../hooks/useResizeObserver"
 
-import { QUERIES } from "../../constants"
+import { QUERIES } from "../../../constants"
 
 const format = d3.format(",.0f")
 
-export default function MapBubbleUSPopulation2016({ data, us }) {
+export default function MapBubbleUSPopulation2016({ data, us, mutated }) {
   console.log({ data })
   console.log({ us })
+  console.log({ mutated })
   const svgRef = useRef(null)
   const wrapperRef = useRef(null)
   const dimensions = useResizeObserver(wrapperRef)
@@ -18,6 +19,7 @@ export default function MapBubbleUSPopulation2016({ data, us }) {
   useEffect(() => {
     if (!dimensions) return
     if (!us) return
+    if (!mutated) return
     // remove paths and groups in case a resize is triggered
     d3.selectAll("g").remove()
     d3.selectAll("d").remove()
@@ -31,7 +33,7 @@ export default function MapBubbleUSPopulation2016({ data, us }) {
     let innerWidth = width - margin.left - margin.right
     let innerHeight = height - margin.top - margin.bottom
 
-    const radius = d3.scaleSqrt([0, d3.max(data, d => d.value)], [0, 40])
+    const radius = d3.scaleSqrt([0, d3.max(mutated, d => d.value)], [0, 40])
 
     const path = d3.geoPath()
     const features = new Map(
@@ -83,19 +85,20 @@ export default function MapBubbleUSPopulation2016({ data, us }) {
       .attr("stroke-width", 0.5)
       .selectAll("circle")
       .data(
-        data
+        mutated
           .filter(d => d.position)
           .sort((a, b) => d3.descending(a.value, b.value))
       )
       .join("circle")
       .attr("transform", d => `translate(${d.position})`)
       .attr("r", d => radius(d.value))
+      .attr("class", "circle")
       .append("title")
       .text(
         d => `${d.title}
-${format(d.value)}`
+    ${format(d.value)}`
       )
-  }, [us, data, dimensions])
+  }, [us, data, mutated, dimensions])
 
   const svgStyles = { overflow: "visible" }
 
@@ -115,7 +118,11 @@ const RefWrapper = styled.div`
   height: 450px;
   svg {
     flex: 1;
-    path {
+    .circle:hover {
+      stroke: black;
+      stroke-width: 1px;
+      cursor: pointer;
+      filter: brightness(0.7);
     }
   }
   @media ${QUERIES.tabletAndUp} {

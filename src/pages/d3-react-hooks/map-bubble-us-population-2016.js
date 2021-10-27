@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import * as d3 from "d3"
 import * as topojson from "topojson-client"
 import styled from "styled-components"
-import MapBubbleUSPopulation2016 from "../../components/D3ReactHooks/MapBubbleUSPopulation2016"
+import MapBubbleComponent from "../../components/D3ReactHooks/MapBubbleCensus/MapBubbleComponent"
 import ChartPage from "../../templates/ChartPage"
 import { setHours } from "date-fns"
 
@@ -73,7 +73,7 @@ export default function MapBubbleUSPopulationPage() {
         title={`Albers projection bubble map for estimated population, 2016`}
       > */}
       {!us && <h1>Loading...</h1>}
-      <MapBubbleUSPopulation2016 data={data} us={us} />
+      <MapBubbleComponent data={data} us={us} />
       {/* </ChartPage> */}
     </>
   )
