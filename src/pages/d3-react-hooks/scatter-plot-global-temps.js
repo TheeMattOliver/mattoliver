@@ -24,8 +24,8 @@ export default function ScatterPlotGlobalTempsPage() {
       ),
     ]).then(([nasa, temperatures]) => {
       let data = []
-      console.log("loadAndProcessData, nasa: ", nasa)
-      console.log("loadAndProcessData, temperatures: ", temperatures)
+      // console.log("loadAndProcessData, nasa: ", nasa)
+      // console.log("loadAndProcessData, temperatures: ", temperatures)
 
       temperatures.forEach(d => {
         for (let i = 1; i < 13; ++i) {
