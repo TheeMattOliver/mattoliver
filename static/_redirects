@@ -1,9 +1,10 @@
 # Redirect default Netlify subdomain to primary domain
-http://adoring-bohr-7062c0.netlify.com/* http://mattoliver.xyz/:splat 301!
 
-# Password sharing
-https://mattoliver.xyz/Password=OliverPortfolio2021  https://mattoliver.xyz
-https://www.mattoliver.xyz/Password=OliverPortfolio2021  https://mattoliver.xyz
+http://adoring-bohr-7062c0.netlify.com/*  http://mattoliver.xyz/:splat 301!
 
-https://mattoliver.xyz/password=OliverPortfolio2021  https://mattoliver.xyz
-https://www.mattoliver.xyz/password=OliverPortfolio2021  https://mattoliver.xyz
+# Product resume
+
+https://mattoliver.xyz/resume-for-steve  https://storage.googleapis.com/public_bucket_102021/Oliver%20Product%20Resume%202021.pdf
+https://www.mattoliver.xyz/resume-for-steve  https://storage.googleapis.com/public_bucket_102021/Oliver%20Product%20Resume%202021.pdf
+
+
