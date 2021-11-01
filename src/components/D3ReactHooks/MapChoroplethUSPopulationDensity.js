@@ -108,9 +108,7 @@ export default function MapChoroplethUSPopulationDensity({
       .attr("d", path)
 
     // render legend
-
     const thresholds = d3.range(-3, 16).map(x => 2 ** x)
-
     const xScale = d3.scaleLog().base(2).domain(domain).rangeRound([0, 260])
 
     const legend = svg

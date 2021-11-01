@@ -23,8 +23,6 @@ export default function BarHorizontalLetterFrequency({ data }) {
     let innerWidth = width - margin.left - margin.right
     let innerHeight = height - margin.top - margin.bottom
 
-    console.log({ data })
-
     const xScale = d3
       .scaleLinear()
       .domain([0, d3.max(data, d => d.frequency)])

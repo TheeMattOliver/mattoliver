@@ -54,31 +54,31 @@ export default function MapRaceCountyPage() {
 
   return (
     <>
-      <ChartPage title={`2018 Census/ACS Race data by US County`} copy={copy}>
-        {!us && <h1>Loading...</h1>}
-        {variables && (
-          <ButtonWrapper>
-            <Select
-              value={variable}
-              onChange={ev => setVariable(ev.target.value)}
-            >
-              {Array.from(variables.values(), v => {
-                return (
-                  <option key={v.id} value={v.id}>
-                    {v.name} {d3.format(".2~s")(v.total)}
-                  </option>
-                )
-              })}
-            </Select>
-          </ButtonWrapper>
-        )}
-        <MapComponent
-          allData={allData}
-          us={us}
-          total={total}
-          variable={variable}
-        />
-      </ChartPage>
+      {/* <ChartPage title={`2018 Census/ACS Race data by US County`} copy={copy}> */}
+      {!us && <h1>Loading...</h1>}
+      {variables && (
+        <ButtonWrapper>
+          <Select
+            value={variable}
+            onChange={ev => setVariable(ev.target.value)}
+          >
+            {Array.from(variables.values(), v => {
+              return (
+                <option key={v.id} value={v.id}>
+                  {v.name} {d3.format(".2~s")(v.total)}
+                </option>
+              )
+            })}
+          </Select>
+        </ButtonWrapper>
+      )}
+      <MapComponent
+        allData={allData}
+        us={us}
+        total={total}
+        variable={variable}
+      />
+      {/* </ChartPage> */}
     </>
   )
 }
