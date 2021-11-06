@@ -11,6 +11,7 @@ import { BREAKPOINTS, TRANSITIONS } from "../../constants"
 import SEO from "../../components/SEO"
 import MainLayout from "../../components/MainLayout"
 import D3ReactProjectList from "../../components/D3ReactHooks/D3ReactProjectList"
+import ChartFilter from "../../components/ChartFilter"
 
 export default function D3ReactHooksProjectsHomePage({ data, pageContext }) {
   const intl = useIntl()
@@ -19,17 +20,21 @@ export default function D3ReactHooksProjectsHomePage({ data, pageContext }) {
     <>
       <SEO title={`D3 & React hooks`} lang={intl.locale}></SEO>
       <MainLayout>
-        <D3ReactProjectList data={data} />
+        <Wrapper>
+          <ChartFilter />
+          <D3ReactProjectList data={data} />
+        </Wrapper>
       </MainLayout>
     </>
   )
 }
 
 export const query = graphql`
-  query AllChartQuery($technology: [String]) {
+  query AllChartQuery($chartType: [String], $technology: [String]) {
     charts: allSanityChart(
       filter: {
         categories: { elemMatch: { title: { eq: "Data Visualization" } } }
+        chartTypes: { elemMatch: { title: { in: $chartType } } }
         technologies: { elemMatch: { title: { in: $technology } } }
       }
     ) {
@@ -86,4 +91,7 @@ export const query = graphql`
       }
     }
   }
+`
+const Wrapper = styled.div`
+  position: relative;
 `
