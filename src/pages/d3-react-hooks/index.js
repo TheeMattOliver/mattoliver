@@ -30,10 +30,11 @@ export default function D3ReactHooksProjectsHomePage({ data, pageContext }) {
 }
 
 export const query = graphql`
-  query AllChartQuery($technology: [String]) {
+  query AllChartQuery($chartType: [String], $technology: [String]) {
     charts: allSanityChart(
       filter: {
         categories: { elemMatch: { title: { eq: "Data Visualization" } } }
+        chartTypes: { elemMatch: { title: { in: $chartType } } }
         technologies: { elemMatch: { title: { in: $technology } } }
       }
     ) {

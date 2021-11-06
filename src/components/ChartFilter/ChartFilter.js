@@ -32,7 +32,7 @@ function countChartsInTypes(charts) {
   return sortedTypes
 }
 
-export default function ChartFilter() {
+export default function ChartFilter({ activeChart }) {
   // get a list of chart types
   // get a list of charts using these chart types
   const { charts, types } = useStaticQuery(graphql`
@@ -65,16 +65,23 @@ export default function ChartFilter() {
   `)
   // Count how many charts are in each type
   const typesWithCounts = countChartsInTypes(charts.nodes)
-  console.log({ typesWithCounts })
+  // console.log({ typesWithCounts })
 
   return (
     <>
       <Wrapper>
+        <Link to="/d3-react-hooks">
+          <Badge>
+            All
+            <Count>{charts.nodes.length}</Count>
+          </Badge>
+        </Link>
         {typesWithCounts.map(chartType => {
           return (
             <Link
               to={`/d3-react-hooks/chart-type/${slugify(chartType.title)}`}
               key={chartType.id}
+              className={chartType.title === activeChart ? "active" : ""}
             >
               <Badge>
                 {chartType.title}

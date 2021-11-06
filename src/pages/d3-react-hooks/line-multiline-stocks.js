@@ -45,12 +45,3 @@ export default function LineMultilineStocksPage() {
     </>
   )
 }
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  gap: 1rem;
-  /* justify-content: space-between; */
-  padding-right: 1.67rem;
-  padding-bottom: 2rem;
-  margin-top: 3rem;
-`
