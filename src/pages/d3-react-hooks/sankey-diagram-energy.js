@@ -10,15 +10,43 @@ export default function SankeyDiagramEnergyPage() {
   const [align, setAlign] = useState("justify")
   const [edgeColor, setEdgeColor] = useState("path")
 
+  let alignArr = [
+    { value: "left", name: "Left-aligned" },
+    { value: "right", name: "Right-aligned" },
+    { value: "center", name: "Centered" },
+    { value: "justify", name: "Justified" },
+  ].map(value => value)
+
+  let edgeColorArr = [
+    { value: "input", name: "Color by input" },
+    { value: "output", name: "Color by output" },
+    { value: "path", name: "Color by input-output" },
+    { value: "none", name: "No color" },
+  ].map(value => value)
+
   useEffect(() => {
     d3.csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/energy.csv`
     ).then(csvData => {
-      const links = [...csvData]
+      const links = []
+
+      csvData.forEach(row => {
+        links.push({
+          source: row.source,
+          target: row.target,
+          value: +row.value,
+        })
+      })
+
       const nodes = Array.from(
         new Set(links.flatMap(l => [l.source, l.target])),
         name => ({ name, category: name.replace(/ .*/, "") })
       )
+      // add id's
+      nodes.forEach((o, i) => (o.id = i + 1))
+      links.forEach((o, i) => (o.id = i + 1))
+      console.log("links: ", links)
+
       setData({ nodes, links, units: "TWh" })
     })
   }, [])
@@ -31,12 +59,11 @@ export default function SankeyDiagramEnergyPage() {
 
       <ButtonWrapper>
         <Select value={align} onChange={ev => setAlign(ev.target.value)}>
-          <option value="left">Left-aligned</option>
-          <option value="right">Right-aligned</option>
-          <option value="center">Centered</option>
-          <option value="justify" defaultValue>
-            Justified
-          </option>
+          {alignArr.map((option, index) => (
+            <option key={index} value={option.value}>
+              {option.name}{" "}
+            </option>
+          ))}
         </Select>
       </ButtonWrapper>
 
@@ -45,12 +72,11 @@ export default function SankeyDiagramEnergyPage() {
           value={edgeColor}
           onChange={ev => setEdgeColor(ev.target.value)}
         >
-          <option value="input">Color by input</option>
-          <option value="output">Color by output</option>
-          <option value="path" defaultValue>
-            Color by input-output
-          </option>
-          <option value="none">No color</option>
+          {edgeColorArr.map((option, index) => (
+            <option key={index} value={option.value}>
+              {option.name}{" "}
+            </option>
+          ))}
         </Select>
       </ButtonWrapper>
     </>

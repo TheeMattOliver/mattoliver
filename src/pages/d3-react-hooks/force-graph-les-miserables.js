@@ -4,7 +4,7 @@ import styled from "styled-components"
 import ForceGraphLesMis from "../../components/D3ReactHooks/ForceGraphLesMis"
 import ChartPage from "../../templates/ChartPage"
 
-export default function ScatterPlotEfficiencyPage() {
+export default function ForceGraphLesMisPage() {
   const [data, setData] = useState("")
 
   useEffect(() => {
