@@ -8,7 +8,7 @@ export default function ScatterFuelEfficiency({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  console.log({ data })
+  // console.log({ data })
 
   useEffect(() => {
     const svg = d3.select(svgRef.current)

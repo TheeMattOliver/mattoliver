@@ -10,7 +10,7 @@ export default function SankeyDiagramEnergy({ data, align, edgeColor }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  console.log({ data })
+  // console.log({ data })
   console.log({ edgeColor })
   useEffect(() => {
     if (!data) return

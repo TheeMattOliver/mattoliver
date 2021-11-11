@@ -8,7 +8,7 @@ export default function ForceGraphLesMis({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  console.log({ data })
+  // console.log({ data })
 
   const color = () => {
     const scale = d3.scaleOrdinal(d3.schemeTableau10)
