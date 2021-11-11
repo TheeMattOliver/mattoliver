@@ -44,7 +44,7 @@ const ProjectsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   /* border: 1px solid blue; */
-  width: 100%;
+  /* width: 100%; */
   margin: 2rem;
 `
 
