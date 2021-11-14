@@ -8,7 +8,7 @@ export default function LineTooltipStockPrice({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  console.log({ data })
+  // console.log({ data })
 
   const formatClose = d3.format("$.2f")
   const formatDate = d3.utcFormat("%b %-d, ’%y")
