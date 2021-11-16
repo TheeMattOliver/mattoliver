@@ -11,7 +11,15 @@ export default function LineChartInlineLabelsPage() {
     d3.csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/fruit.csv`
     ).then(csvData => {
-      setData(csvData)
+      let processedData = []
+      csvData.forEach(row => {
+        processedData.push({
+          Apples: +row.Apples,
+          Bananas: +row.Bananas,
+          date: new Date(row.date),
+        })
+      })
+      setData(processedData)
     })
   }, [])
 

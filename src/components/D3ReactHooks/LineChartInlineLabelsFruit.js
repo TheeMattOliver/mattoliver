@@ -8,7 +8,7 @@ export default function LineChartInlineLabelsFruit({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  // console.log({ data })
+  console.log({ data })
 
   useEffect(() => {
     if (!data) return
@@ -24,15 +24,15 @@ export default function LineChartInlineLabelsFruit({ data }) {
     d3.selectAll("g").remove()
 
     const colorScale = d3.scaleOrdinal(
-      data.columns.slice(1),
+      ["Bananas", "Apples"],
       d3.schemeCategory10
     )
 
     const labelPadding = 6
 
-    const series = data.columns
-      .slice(1)
-      .map(key => data.map(({ [key]: value, date }) => ({ key, date, value })))
+    const series = ["Bananas", "Apples"].map(key =>
+      data.map(({ [key]: value, date }) => ({ key, date, value }))
+    )
 
     const xScale = d3
       .scaleUtc()

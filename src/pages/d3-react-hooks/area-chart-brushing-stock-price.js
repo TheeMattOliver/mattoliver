@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import * as d3 from "d3"
 import styled from "styled-components"
-import AreaBrushStockParent from "../../components/D3ReactHooks/AreaChartBrushingStockPrice/AreaBrushStockParent"
+import AreaChartStockBrush from "../../components/D3ReactHooks/AreaChartBrushingStockPrice/AreaChartStockBrush"
 import ChartPage from "../../templates/ChartPage"
 
 export default function AreaChartBrushingStockPricePage() {
@@ -18,7 +18,7 @@ export default function AreaChartBrushingStockPricePage() {
           close: +row.close,
         })
       })
-      processedData.push({ y: "↑ Close $" })
+      // processedData.push({ y: "↑ Close $" })
       setData(processedData)
     })
   }, [])
@@ -27,7 +27,7 @@ export default function AreaChartBrushingStockPricePage() {
     <>
       {!data && <h1>Loading...</h1>}
 
-      <AreaBrushStockParent data={data} />
+      <AreaChartStockBrush data={data} />
     </>
   )
 }

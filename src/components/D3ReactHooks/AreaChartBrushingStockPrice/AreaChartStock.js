@@ -6,7 +6,7 @@ import useResizeObserver from "../../../hooks/useResizeObserver"
 import usePrevious from "../../../hooks/usePrevious"
 import { QUERIES } from "../../../constants"
 
-export default function AreaChartBrushingStockPrice({ data }) {
+export default function AreaChartStock({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
