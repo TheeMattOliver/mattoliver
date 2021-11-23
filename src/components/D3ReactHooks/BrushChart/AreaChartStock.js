@@ -10,7 +10,6 @@ export default function AreaChartStock({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  console.log({ data })
 
   useEffect(() => {
     if (!data) return
