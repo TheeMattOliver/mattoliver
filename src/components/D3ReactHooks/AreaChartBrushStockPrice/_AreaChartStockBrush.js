@@ -1,16 +1,20 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
 import styled from "styled-components"
 import uid from "../DOM/uid"
 import useResizeObserver from "../../../hooks/useResizeObserver"
 import usePrevious from "../../../hooks/usePrevious"
 import { QUERIES } from "../../../constants"
+import { sv } from "date-fns/locale"
 
-export default function AreaChartStockBrush({ data }) {
+export default function AreaChartStockBrush({ data, children }) {
+  // const [selection, setSelection] = useState([595.5782016348774, 734])
+  // const [selection, setSelection] = useState([703.6517711171662, 869])
+  const [selection, setSelection] = useState([693.2446866485013, 856])
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  console.log({ data })
+  const previousSelection = usePrevious(selection)
 
   useEffect(() => {
     if (!data) return
@@ -70,10 +74,22 @@ export default function AreaChartStockBrush({ data }) {
 
     const brush = d3
       .brushX()
+      // defines where the box can move
       .extent([
         [margin.left, 0.5],
-        [innerWidth - margin.right, focusHeight - margin.bottom + 0.5],
+        [width - margin.right, focusHeight - margin.bottom + 0.5],
       ])
+      // .on("start brush end", event => {
+      //   // clicking outside the brush once will throw an error, if null; so check here
+      //   if (event.selection) {
+      //     // convert every value back xScale.invert transforms pixel values back to index values
+      //     const indexSelection = event.selection
+      //       .map(xScale.invert, xScale)
+      //       .map(d3.utcDay.round)
+      //     setSelection(indexSelection)
+      //     console.log("indexSelection: ", indexSelection)
+      //   }
+      // })
       .on("brush", brushed)
       .on("end", brushended)
 
@@ -91,16 +107,30 @@ export default function AreaChartStockBrush({ data }) {
         "d",
         area(xScale, yScale.copy().range([focusHeight - margin.bottom, 4]))
       )
+    // svg.append("g").call(brush).call(brush.move, defaultSelection)
+
+    let previousIndexSelection = previousSelection
+      .map(xScale.invert, xScale)
+      .map(d3.utcDay.round)
+
+    console.log("previousIndexSelection: ", previousIndexSelection)
+
+    if (previousIndexSelection === selection) {
+      svg.append("g").call(brush).call(brush.move, defaultSelection)
+    }
 
     const gb = svg.append("g").call(brush).call(brush.move, defaultSelection)
 
     function brushed({ selection }) {
+      console.log("brushed is being called now")
       if (selection) {
         svg.property(
           "value",
+
           selection.map(xScale.invert, xScale).map(d3.utcDay.round)
         )
         svg.dispatch("input")
+        // setSelection(selection)
       }
     }
 
@@ -109,15 +139,18 @@ export default function AreaChartStockBrush({ data }) {
         gb.call(brush.move, defaultSelection)
       }
     }
-  }, [data, dimensions])
+  }, [data, dimensions, selection])
 
   const svgStyles = {
     overflow: "visible",
   }
   return (
     <>
+      {children(selection)}
       <RefWrapper ref={wrapperRef}>
-        <SVG ref={svgRef} style={svgStyles}></SVG>
+        <SVG ref={svgRef} style={svgStyles}>
+          <g className="brush" />
+        </SVG>
       </RefWrapper>
     </>
   )
@@ -127,7 +160,7 @@ const RefWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: stretch;
-  height: 450px;
+  /* height: 450px; */
   svg {
     flex: 1;
   }

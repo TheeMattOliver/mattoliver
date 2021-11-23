@@ -3,15 +3,14 @@ import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import * as d3 from "d3"
 
-import useResizeObserver from "../../hooks/useResizeObserver"
-import usePrevious from "../../hooks/usePrevious"
-import { BREAKPOINTS, QUERIES } from "../../constants"
-import { ThemeContext } from "../ThemeContext"
-import UnstyledButton from "../UnstyledButton"
+import useResizeObserver from "../../../hooks/useResizeObserver"
+import usePrevious from "../../../hooks/usePrevious"
+import { BREAKPOINTS, QUERIES } from "../../../constants"
+import { ThemeContext } from "../../ThemeContext"
+import UnstyledButton from "../../UnstyledButton"
 
-function SimpleBrushChartChild({ data, selection, id = "brushClipPath" }) {
+function AreaChartStockBrushChild({ data, selection, rectWidth }) {
   const { colorMode, setColorMode } = React.useContext(ThemeContext)
-
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
@@ -21,22 +20,23 @@ function SimpleBrushChartChild({ data, selection, id = "brushClipPath" }) {
 
     const svg = d3.select(svgRef.current)
     const content = svg.select(".content")
-
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()
 
-    const margin = { top: 10, right: 10, bottom: 50, left: 20 },
-      innerWidth = width - margin.left - margin.right,
-      innerHeight = height - margin.top - margin.bottom,
-      dotRadius = 2
+    const margin = { top: 20, right: 20, bottom: 30, left: 40 }
+    let innerWidth = width - margin.left - margin.right
+    let innerHeight = height - margin.top - margin.bottom
 
-    // scales + line generator
-    const xScale = d3.scaleLinear().domain(selection).range([0, width])
+    // map xScale domain to the selection
+    const xScale = d3
+      .scaleLinear()
+      .domain(selection)
+      .range([margin.left, width - margin.right])
 
     const yScale = d3
       .scaleLinear()
       .domain([0, d3.max(data)])
-      .range([height - 10, 10])
+      .range([innerHeight - margin.bottom, margin.top])
 
     const lineGenerator = d3
       .line()
@@ -71,9 +71,10 @@ function SimpleBrushChartChild({ data, selection, id = "brushClipPath" }) {
 
     // axes
     const xAxis = d3.axisBottom(xScale)
+
     svg
       .select(".x-axis")
-      .attr("transform", `translate(0, ${height - 5})`)
+      .attr("transform", `translate(0, ${innerHeight - margin.bottom})`)
       .call(xAxis)
       .call(g =>
         g
@@ -96,11 +97,11 @@ function SimpleBrushChartChild({ data, selection, id = "brushClipPath" }) {
       )
 
     const yAxis = d3.axisLeft(yScale)
+
     svg
       .select(".y-axis")
+      .attr("transform", `translate(${margin.left}, 0)`)
       .call(yAxis)
-      .attr("transform", `translate(${0},0)`)
-
       .call(g =>
         g
           .selectAll(".y-axis path")
@@ -120,7 +121,7 @@ function SimpleBrushChartChild({ data, selection, id = "brushClipPath" }) {
           .selectAll(".y-axis text")
           .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
       )
-  }, [data, selection, dimensions, colorMode])
+  }, [data, selection, rectWidth, colorMode])
 
   const svgStyles = {
     overflow: "visible",
@@ -131,24 +132,15 @@ function SimpleBrushChartChild({ data, selection, id = "brushClipPath" }) {
       <RefWrapper ref={wrapperRef}>
         <SVG style={svgStyles} ref={svgRef}>
           <defs>
-            <clipPath id={id}>
-              <rect x="0" y="0" width="800px" height="400px" />
+            <clipPath id="chartClipPath">
+              <rect x={40} y="0" width={rectWidth} height="400px"></rect>
             </clipPath>
           </defs>
-          <g className="content" clipPath="url(#brushClipPath)" />
+          <g className="content" clipPath="url(#chartClipPath)" />
           <g className="x-axis" />
           <g className="y-axis" />
         </SVG>
       </RefWrapper>
-      {/* <small>
-        Selected values: [
-        {data
-          .filter(
-            (value, index) => index >= selection[0] && index <= selection[1]
-          )
-          .join(", ")}
-        ]
-      </small> */}
     </>
   )
 }
@@ -157,15 +149,14 @@ const RefWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: stretch;
-  flex-direction: column;
-  margin-bottom: 2rem;
+  height: 450px;
   svg {
     flex: 1;
-    height: 150px;
   }
+
   @media ${QUERIES.tabletAndUp} {
-    width: 800px;
-    height: 150px;
+    flex-direction: column;
+    height: 450px;
   }
 `
 
@@ -173,4 +164,5 @@ const SVG = styled.svg`
   display: "block";
   width: "100%";
 `
-export default SimpleBrushChartChild
+
+export default AreaChartStockBrushChild
