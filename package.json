@@ -15,13 +15,16 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.3",
     "@reach/dialog": "^0.15.3",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/image-url": "^0.140.22",
+    "@storybook/addon-controls": "^6.3.12",
     "babel-plugin-styled-components": "^1.12.0",
     "d3": "^7.1.1",
     "d3-collection": "^1.0.7",
@@ -61,10 +64,18 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/builder-webpack5": "^6.3.12",
+    "@storybook/manager-webpack5": "^6.3.12",
+    "@storybook/react": "^6.3.12",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "autoprefixer": "^10.2.5",
     "babel-jest": "^27.1.1",
+    "babel-loader": "^8.2.3",
     "babel-preset-gatsby": "^1.13.0",
     "gatsby-plugin-postcss": "^4.0.0",
     "identity-obj-proxy": "^3.0.0",

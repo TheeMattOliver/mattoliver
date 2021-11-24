@@ -89,9 +89,6 @@ h1, h2, h3, h4, h5, h6, p {
   --button-horizontal-padding: .9em;
   --button-line-height: var(--form-field-line-height);
   --button-border-radius: .375em;
-
-	
-
 }
 
 /* Needed in order to prevent vertical scroll burglars */

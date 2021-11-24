@@ -7,6 +7,10 @@ export const COLORS = {
     light: "hsl(0deg, 0%, 96%)", // white
     dark: "hsl(0deg, 0%, 0%)", // black
   },
+  textBlack: {
+    light: "hsl(0deg, 0%, 0%)", // black
+    dark: "hsl(100, 100%, 100%)", // white
+  },
   textSecondary: {
     light: "hsl(212deg, 9%, 38%)", // gry #586069
     dark: "hsl(212deg, 9%, 58%)", // light grey #8B949E
