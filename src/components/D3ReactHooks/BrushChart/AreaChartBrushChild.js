@@ -23,7 +23,7 @@ function AreaChartStockBrushChild({ data, selection, rectWidth }) {
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()
 
-    const margin = { top: 20, right: 20, bottom: 30, left: 40 }
+    const margin = { top: 20, right: 20, bottom: 30, left: 60 }
     let innerWidth = width - margin.left - margin.right
     let innerHeight = height - margin.top - margin.bottom
 
@@ -73,6 +73,18 @@ function AreaChartStockBrushChild({ data, selection, rectWidth }) {
       .call(g => g.select(".domain").remove())
       .call(g =>
         g
+          .selectAll(".title")
+          .data(["↑ Close $"])
+          .join("text")
+          .attr("class", "title")
+          .attr("x", -margin.left + 10)
+          .attr("y", 10)
+          .attr("fill", "currentColor")
+          .attr("text-anchor", "start")
+          .text("↑ Close $")
+      )
+      .call(g =>
+        g
           .selectAll(".y-axis path")
           .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
           .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
@@ -117,7 +129,7 @@ function AreaChartStockBrushChild({ data, selection, rectWidth }) {
         <SVG style={svgStyles} ref={svgRef}>
           <defs>
             <clipPath id="chartClipPath">
-              <rect x={40} y="0" width={rectWidth} height="400px"></rect>
+              <rect x={60} y="0" width={rectWidth} height="400px"></rect>
             </clipPath>
           </defs>
           <g className="content" clipPath="url(#chartClipPath)" />
