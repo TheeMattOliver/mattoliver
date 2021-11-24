@@ -5,18 +5,6 @@ import { QUERIES } from "../../constants"
 import Icon from "../Icon"
 import { getDisplayedValue } from "./Select.helpers"
 
-const COLORS = {
-  white: "hsl(100deg 100% 100%)",
-  primary: "hsl(240deg 80% 60%)",
-  gray50: "hsl(0deg 0% 95%)",
-  gray300: "hsl(0deg 0% 75%)",
-  gray500: "hsl(0deg 0% 50%)",
-  gray700: "hsl(0deg 0% 40%)",
-  black: "hsl(0deg 0% 0%)",
-  transparentGray15: "hsl(0deg 0% 50% / 0.15)",
-  transparentGray35: "hsl(0deg 0% 50% / 0.35)",
-}
-
 const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children)
 
@@ -56,7 +44,7 @@ const NativeSelect = styled.select`
 
 const PresentationalBit = styled.div`
   color: var(--color-textWhite);
-  background-color: var(--color-textPrimary);
+  background-color: var(--color-panelBackgroundDark);
   border: 1px solid var(--color-textPrimary);
   font-size: ${16 / 16}rem;
   height: 50px;
@@ -75,9 +63,9 @@ const PresentationalBit = styled.div`
     outline: 5px auto -webkit-focus-ring-color;
   }
   ${NativeSelect}:hover + & {
-    color: #000;
-    background-color: #fff;
-    border-color: #000;
+    color: var(--color-textBlack);
+    background-color: var(--color-gray100);
+    border-color: var(--color-borderPrimary);
   }
 `
 const IconWrapper = styled.div`
