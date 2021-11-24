@@ -70,6 +70,7 @@ function AreaChartStockBrushChild({ data, selection, rectWidth }) {
       .select(".y-axis")
       .attr("transform", `translate(${margin.left}, 0)`)
       .call(yAxis)
+      .call(g => g.select(".domain").remove())
       .call(g =>
         g
           .selectAll(".y-axis path")

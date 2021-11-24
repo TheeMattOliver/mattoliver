@@ -17,15 +17,31 @@ function AreaChartStockBrush({ data, children }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  // todo: make this work; need to set default selection according to xScale
-  const [selection, setSelection] = useState([693.2446866485013, 856])
+
+  // This is a hack. Is there another way to set the defaultSelection?
+
+  const utcInvert = d3
+    .scaleUtc()
+    .domain([
+      new Date(`Sun Apr 22 2007 19:00:00 GMT-0500 (Central Daylight Time`),
+      new Date(`Mon Apr 30 2012 19:00:00 GMT-0500 (Central Daylight Time)`),
+    ])
+    .range([40, 918])
+
+  const [selection, setSelection] = useState([
+    utcInvert.invert(742.8784741144415),
+    utcInvert.invert(918),
+  ])
+  console.log("selection: ", selection)
 
   const previousSelection = usePrevious(selection)
+
   // to dynamically set the width of the clip path element
   const [rectWidth, setRectWidth] = useState()
 
   useEffect(() => {
     if (!dimensions) return
+    if (!data) return
 
     const svg = d3
       .select(svgRef.current)
@@ -38,6 +54,11 @@ function AreaChartStockBrush({ data, children }) {
     let innerWidth = width - margin.left - margin.right
     let innerHeight = height - margin.top - margin.bottom
     const focusHeight = 100
+
+    console.log("[margin.left, width - margin.right]: ", [
+      margin.left,
+      width - margin.right,
+    ])
 
     setRectWidth(innerWidth)
 
@@ -117,7 +138,6 @@ function AreaChartStockBrush({ data, children }) {
         // every value in the selection is passed to the xScale function and converted back to index values
         if (event.selection) {
           const indexSelection = event.selection.map(xScale.invert)
-          console.log({ indexSelection })
           setSelection(indexSelection)
         }
       })
