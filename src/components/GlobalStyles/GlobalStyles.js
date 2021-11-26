@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   html, body {
@@ -13,6 +13,6 @@ const GlobalStyles = createGlobalStyle`
     color: var(--color-secondary);
   }
  
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

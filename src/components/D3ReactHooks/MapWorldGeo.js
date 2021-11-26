@@ -123,7 +123,7 @@ const RefWrapper = styled.div`
   }
   @media ${QUERIES.tabletAndUp} {
     flex-direction: column;
-    height: 688px;
+    height: 488px;
   }
 `
 

@@ -50,5 +50,4 @@ const ButtonWrapper = styled.div`
   /* justify-content: space-between; */
   padding-right: 1.67rem;
   padding-bottom: 2rem;
-  margin-top: 3rem;
 `
