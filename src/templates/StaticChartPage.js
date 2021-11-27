@@ -24,7 +24,9 @@ export default function StaticChartPage({ data, children, pageContext }) {
               <ChartTitle>{data.chart.title}</ChartTitle>
             </ChartTitleWrapper>
             <ChartCopy>
-              <PortableText blocks={data.chart.excerpt._rawText} />
+              {data.chart.excerpt._rawText !== null && (
+                <PortableText blocks={data.chart.excerpt._rawText} />
+              )}
             </ChartCopy>
             <DesktopBackButtonWrapper>
               <BackButton to="/d3-react-hooks">
