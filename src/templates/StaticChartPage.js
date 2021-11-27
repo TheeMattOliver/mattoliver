@@ -24,7 +24,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
               <ChartTitle>{data.chart.title}</ChartTitle>
             </ChartTitleWrapper>
             <ChartCopy>
-              {data.chart.excerpt?._rawText !== null && (
+              {data.chart.excerpt?._rawText && (
                 <PortableText blocks={data.chart.excerpt._rawText} />
               )}
             </ChartCopy>

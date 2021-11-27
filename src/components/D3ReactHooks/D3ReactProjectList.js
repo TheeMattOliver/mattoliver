@@ -45,7 +45,7 @@ const ProjectsWrapper = styled.div`
   align-items: center;
   /* border: 1px solid blue; */
   /* width: 100%; */
-  margin: 2rem;
+  margin: 0 1.5rem;
 `
 
 const ProjectsGrid = styled.div`
