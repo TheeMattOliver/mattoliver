@@ -27,7 +27,7 @@ export default function BarStackedVerticalCensusPage() {
         .keys(data.columns.slice(1))(data)
         .map(d => (d.forEach(v => (v.key = d.key)), d))
 
-      console.log("series: ", series)
+      // console.log("series: ", series)
       setData(data)
       setSeries(series)
     })

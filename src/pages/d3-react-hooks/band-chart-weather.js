@@ -12,7 +12,7 @@ export default function BandChartWeatherPage() {
     d3.tsv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/sf-weather.tsv`
     ).then(tsvData => {
-      console.log("tsvData: ", tsvData)
+      // console.log("tsvData: ", tsvData)
       let processedData = Object.assign(
         tsvData.map(({ date, high, low }) => ({
           date: parseDate(date),

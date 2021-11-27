@@ -8,7 +8,7 @@ export default function BandChartWeather({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  console.log({ data })
+  // console.log({ data })
 
   useEffect(() => {
     if (!data) return

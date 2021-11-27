@@ -31,7 +31,8 @@ export default function BarNormalizedCensusPage() {
         )
       })
       .catch(error => {
-        console.log("error: ", error)
+        return error
+        // console.log("error: ", error)
       })
   }, [])
   return (

@@ -113,7 +113,7 @@ export default function AreaChartStockBrush({ data, children }) {
       .map(xScale.invert, xScale)
       .map(d3.utcDay.round)
 
-    console.log("previousIndexSelection: ", previousIndexSelection)
+    // console.log("previousIndexSelection: ", previousIndexSelection)
 
     if (previousIndexSelection === selection) {
       svg.append("g").call(brush).call(brush.move, defaultSelection)
@@ -122,7 +122,7 @@ export default function AreaChartStockBrush({ data, children }) {
     const gb = svg.append("g").call(brush).call(brush.move, defaultSelection)
 
     function brushed({ selection }) {
-      console.log("brushed is being called now")
+      // console.log("brushed is being called now")
       if (selection) {
         svg.property(
           "value",

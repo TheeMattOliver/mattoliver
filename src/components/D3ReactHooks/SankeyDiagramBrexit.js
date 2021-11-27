@@ -41,7 +41,7 @@ export default function SankeyDiagramBrexit({ data }) {
 
     const keys = data.columns.slice(0, -1)
 
-    console.log({ keys })
+    // console.log({ keys })
 
     const graph = () => {
       let index = -1
@@ -90,7 +90,7 @@ export default function SankeyDiagramBrexit({ data }) {
     }
 
     const graphObject = graph()
-    console.log({ graphObject })
+    // console.log({ graphObject })
     // const sankey = ({ nodes, links }) =>
     //   _sankey({
     //     nodes: graphObject.nodes.map(d => Object.assign({}, d)),

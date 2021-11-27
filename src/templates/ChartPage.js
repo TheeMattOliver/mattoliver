@@ -10,6 +10,7 @@ import MainLayout from "../components/MainLayout"
 import { QUERIES, WEIGHTS } from "../constants"
 
 export default function ChartPage({ data, title, copy, children }) {
+  console.log({ data })
   return (
     <>
       <SEO title={title}></SEO>
@@ -35,6 +36,53 @@ export default function ChartPage({ data, title, copy, children }) {
     </>
   )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    chart: sanityChart(slug: { current: { eq: $slug } }) {
+      id
+      tags {
+        value
+        label
+      }
+      technologies {
+        title
+        id
+      }
+      title
+      categories {
+        title
+      }
+      chartTypes {
+        title
+        id
+        image {
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          }
+        }
+      }
+      excerpt {
+        _key
+        _rawText
+        _type
+        text {
+          _key
+          _rawChildren
+          _type
+          children {
+            _key
+            _type
+            marks
+            text
+          }
+          list
+          style
+        }
+      }
+    }
+  }
+`
 
 const ChartPageWrapper = styled.div`
   position: relative;

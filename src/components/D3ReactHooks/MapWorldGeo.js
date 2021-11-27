@@ -5,7 +5,7 @@ import useResizeObserver from "../../hooks/useResizeObserver"
 import { QUERIES } from "../../constants"
 
 function MapWorldGeo({ data, property }) {
-  console.log("geo data: ", data)
+  // console.log("geo data: ", data)
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
@@ -68,7 +68,7 @@ function MapWorldGeo({ data, property }) {
         // curently clicking on, the I want the selected country to be null, otherwise
         // I want it to be the country I just clicked on
         setSelectedCountry(selectedCountry === feature ? null : feature)
-        console.log("selectedCountry: ", selectedCountry)
+        // console.log("selectedCountry: ", selectedCountry)
       })
       // attach the attribute 'class' = 'country' to these elements so they can update later on
       .attr("class", "country")

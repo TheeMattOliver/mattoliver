@@ -45,7 +45,7 @@ export default function SankeyDiagramEnergyPage() {
       // add id's
       nodes.forEach((o, i) => (o.id = i + 1))
       links.forEach((o, i) => (o.id = i + 1))
-      console.log("links: ", links)
+      // console.log("links: ", links)
 
       setData({ nodes, links, units: "TWh" })
     })
