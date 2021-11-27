@@ -43,6 +43,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   /* border: 1px solid blue; */
   /* width: 100%; */
   margin: 0 1.5rem;

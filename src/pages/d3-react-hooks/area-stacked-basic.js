@@ -31,7 +31,7 @@ const colors = {
 //   blue: "#3288bd"
 // }
 
-export default function BarStackedBasicPage() {
+export default function AreaStackedBasicPage() {
   const [data, setData] = useState([
     {
       year: 1980,

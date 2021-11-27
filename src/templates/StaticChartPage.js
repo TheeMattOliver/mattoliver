@@ -10,10 +10,19 @@ import MainLayout from "../components/MainLayout"
 import PortableText from "../components/PortableText"
 import { QUERIES, WEIGHTS } from "../constants"
 
+import { D3PageComponents } from "../pages/d3-react-hooks/components"
+
 export default function StaticChartPage({ data, children, pageContext }) {
   console.log({ data })
   const { title } = data
   console.log({ pageContext })
+
+  let PageComponent = D3PageComponents.filter(
+    item => item.id === pageContext.slug
+  )[0].Component
+
+  console.log("PageComponent: ", PageComponent)
+
   return (
     <>
       <SEO title={data.chart.title}></SEO>
@@ -36,7 +45,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
           </ChartCopySection>
 
           <ChartWrapper>
-            <h1>chart goes here</h1>
+            <PageComponent />
             {children}
           </ChartWrapper>
         </ChartPageWrapper>
