@@ -1,13 +1,6 @@
 import React, { useState } from "react"
-import * as d3 from "d3"
 import styled from "styled-components"
 import BarStackedBasic from "../../components/D3ReactHooks/BarStackedBasic"
-import ChartPage from "../../templates/ChartPage"
-
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 // each year has values that we want to stack on top of each other
 // the d3 stack function stacks all of our values together so we can
@@ -86,31 +79,29 @@ export default function BarStackedBasicPage() {
   const [keys, setKeys] = useState(allKeys)
   return (
     <>
-      <ChartPage title={`Scatter plot of global temperatures`} copy={copy}>
-        <BarStackedBasic data={data} keys={keys} colors={colors} />
+      <BarStackedBasic data={data} keys={keys} colors={colors} />
 
-        <FieldsWrapper>
-          {allKeys.map(key => (
-            <div key={key}>
-              <Checkbox
-                id={key}
-                type="checkbox"
-                checked={keys.includes(key)}
-                onChange={e => {
-                  if (e.target.checked) {
-                    setKeys(Array.from(new Set([...keys, key])))
-                  } else {
-                    setKeys(keys.filter(_key => _key !== key))
-                  }
-                }}
-              />
-              <label htmlFor={key} style={{ color: colors[key] }}>
-                {key}
-              </label>
-            </div>
-          ))}
-        </FieldsWrapper>
-      </ChartPage>
+      <FieldsWrapper>
+        {allKeys.map(key => (
+          <div key={key}>
+            <Checkbox
+              id={key}
+              type="checkbox"
+              checked={keys.includes(key)}
+              onChange={e => {
+                if (e.target.checked) {
+                  setKeys(Array.from(new Set([...keys, key])))
+                } else {
+                  setKeys(keys.filter(_key => _key !== key))
+                }
+              }}
+            />
+            <label htmlFor={key} style={{ color: colors[key] }}>
+              {key}
+            </label>
+          </div>
+        ))}
+      </FieldsWrapper>
     </>
   )
 }

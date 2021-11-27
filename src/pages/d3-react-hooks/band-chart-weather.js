@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
-import styled from "styled-components"
+import { tsv, timeParse } from "d3"
 import BandChartWeather from "../../components/D3ReactHooks/BandChartWeather"
-import ChartPage from "../../templates/ChartPage"
 
 export default function BandChartWeatherPage() {
   const [data, setData] = useState("")
-  const parseDate = d3.timeParse("%Y%m%d")
+  const parseDate = timeParse("%Y%m%d")
 
   useEffect(() => {
-    d3.tsv(
+    tsv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/sf-weather.tsv`
     ).then(tsvData => {
       // console.log("tsvData: ", tsvData)

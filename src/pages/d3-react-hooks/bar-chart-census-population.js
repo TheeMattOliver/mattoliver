@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import * as d3 from "d3"
+import { json, sum, transpose } from "d3"
 import { nest, key, rollup, entries, map } from "d3-collection"
 
-import { QUERIES } from "../../constants"
-import ChartPage from "../../templates/ChartPage"
-import DataToggleButton from "../../components/DataToggleButton"
 import Select from "../../components/Select"
 
 import BarChartPopulation from "../../components/D3ReactHooks/BarChartPopulation"
 import { ageVariables, states, getByValue } from "../../lib/census-helpers"
-
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 export default function BarChartPopulationPage() {
   const [selectedState, setSelectedState] = useState("All states")
@@ -28,15 +20,15 @@ export default function BarChartPopulationPage() {
   }
 
   useEffect(() => {
-    d3.json(
+    json(
       `https://api.census.gov/data/2019/acs/acs5?get=${Object.keys(
         ageVariables
       ).join()}&for=${geography}:${getByValue(states, selectedState)}`
     ).then(data => {
       let censusData = nest()
         .key(([code]) => ageVariables[code])
-        .rollup(values => d3.sum(values, ([code, value]) => +value))
-        .entries(d3.transpose(data).slice(0, -1))
+        .rollup(values => sum(values, ([code, value]) => +value))
+        .entries(transpose(data).slice(0, -1))
         .map(({ key, value }) => ({ name: key, value }))
       // console.log("selectedState: ", selectedState)
       // console.log("censusData: ", censusData)
@@ -48,7 +40,7 @@ export default function BarChartPopulationPage() {
   let statesArr = [...states].map(value => value[1])
 
   return (
-    <ChartPage title={`Bar chart and the Census API`} copy={copy}>
+    <>
       {censusData ? (
         <BarChartPopulation data={censusData} />
       ) : (
@@ -66,7 +58,7 @@ export default function BarChartPopulationPage() {
           ))}
         </StateSelect>
       </ButtonWrapper>
-    </ChartPage>
+    </>
   )
 }
 const ButtonWrapper = styled.div`

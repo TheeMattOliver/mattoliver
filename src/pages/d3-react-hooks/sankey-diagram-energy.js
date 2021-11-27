@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
+import { csv } from "d3"
 import styled from "styled-components"
 import SankeyDiagramEnergy from "../../components/D3ReactHooks/SankeyDiagramEnergy"
-import ChartPage from "../../templates/ChartPage"
 import Select from "../../components/Select"
 
 export default function SankeyDiagramEnergyPage() {
@@ -25,7 +24,7 @@ export default function SankeyDiagramEnergyPage() {
   ].map(value => value)
 
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/energy.csv`
     ).then(csvData => {
       const links = []

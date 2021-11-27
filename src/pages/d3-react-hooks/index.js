@@ -4,9 +4,6 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
-import { GatsbyImage } from "gatsby-plugin-image"
-
-import { BREAKPOINTS, TRANSITIONS } from "../../constants"
 
 import SEO from "../../components/SEO"
 import MainLayout from "../../components/MainLayout"

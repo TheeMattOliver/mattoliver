@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
-import styled from "styled-components"
+import { json, csv } from "d3"
 import MapWorldAirports from "../../components/D3ReactHooks/MapWorldAirports"
 import ChartPage from "../../templates/ChartPage"
 
@@ -12,7 +11,7 @@ nisi ut aliquip ex ea commodo consequat.`
 export default function MapAirportsPage() {
   const [world, setWorld] = useState("")
   useEffect(() => {
-    d3.json(
+    json(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/land-50m.json`
     ).then(topoJsonData => {
       setWorld(topoJsonData)
@@ -21,7 +20,7 @@ export default function MapAirportsPage() {
 
   const [data, setData] = useState("")
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/airports.csv`
     ).then(csvData => {
       setData(csvData)

@@ -7,20 +7,24 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"
+import PortableText from "../components/PortableText"
 import { QUERIES, WEIGHTS } from "../constants"
 
-export default function ChartPage({ data, title, copy, children }) {
+export default function StaticChartPage({ data, children, pageContext }) {
+  console.log({ data })
+  const { title } = data
+  console.log({ pageContext })
   return (
     <>
-      <SEO title={title}></SEO>
+      <SEO title={data.chart.title}></SEO>
       <MainLayout>
         <ChartPageWrapper>
           <ChartCopySection>
             <ChartTitleWrapper>
-              <ChartTitle>{title}</ChartTitle>
+              <ChartTitle>{data.chart.title}</ChartTitle>
             </ChartTitleWrapper>
             <ChartCopy>
-              <p>{copy}</p>
+              <PortableText blocks={data.chart.excerpt._rawText} />
             </ChartCopy>
             <DesktopBackButtonWrapper>
               <BackButton to="/d3-react-hooks">
@@ -29,7 +33,10 @@ export default function ChartPage({ data, title, copy, children }) {
             </DesktopBackButtonWrapper>
           </ChartCopySection>
 
-          <ChartWrapper>{children}</ChartWrapper>
+          <ChartWrapper>
+            <h1>chart goes here</h1>
+            {children}
+          </ChartWrapper>
         </ChartPageWrapper>
       </MainLayout>
     </>

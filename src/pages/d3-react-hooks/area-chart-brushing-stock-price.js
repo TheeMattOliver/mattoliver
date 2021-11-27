@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
-import styled from "styled-components"
+import { csv } from "d3"
 
 import AreaChartBrush from "../../components/D3ReactHooks/BrushChart/AreaChartBrush"
 import AreaChartBrushChild from "../../components/D3ReactHooks/BrushChart/AreaChartBrushChild"
-
-import ChartPage from "../../templates/ChartPage"
 
 export default function AreaChartBrushingStockPricePage() {
   const [data, setData] = useState("")
@@ -15,7 +12,7 @@ export default function AreaChartBrushingStockPricePage() {
   // )
 
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/aapl.csv`
     ).then(csvData => {
       let processedData = []

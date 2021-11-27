@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import * as d3 from "d3"
-import { nest, key, rollup, entries, map } from "d3-collection"
+import { csv } from "d3"
 
 import { QUERIES } from "../../constants"
-import ChartPage from "../../templates/ChartPage"
 import Select from "../../components/Select"
 
 import DonutCensus from "../../components/D3ReactHooks/DonutCensus"
-
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 export default function DonutCensusPage() {
   const [selectedValue, setSelectedValue] = useState("2019")
   const [data, setData] = useState("")
 
   useEffect(() => {
-    let dataArr = []
-
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/census-data-2019.csv`
     ).then(data => {
       setData(data)
@@ -43,7 +34,7 @@ export default function DonutCensusPage() {
   let yearsArr = ["Off", "2009", "2016", "2019"].map(value => value)
 
   return (
-    <ChartPage title={`Donut chart and Census data`} copy={copy}>
+    <>
       {data ? (
         <DonutCensus data={data} selectedValue={selectedValue} />
       ) : (
@@ -61,7 +52,7 @@ export default function DonutCensusPage() {
           ))}
         </Select>
       </ButtonWrapper>
-    </ChartPage>
+    </>
   )
 }
 const ButtonWrapper = styled.div`

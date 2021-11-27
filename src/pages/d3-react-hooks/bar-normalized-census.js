@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
-import * as d3 from "d3"
+import { csv, sum } from "d3"
 
-import { QUERIES } from "../../constants"
-import ChartPage from "../../templates/ChartPage"
 import BarNormalizedCensus from "../../components/D3ReactHooks/BarNormalizedCensus"
-
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 export default function BarNormalizedCensusPage() {
   const [censusData, setCensusData] = useState([])
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/us-population-state-age.csv`
     )
       .then(csvData => {
         csvData.forEach(d => {
           let columns = csvData.columns
 
-          d.total = d3.sum(columns, c => d[c])
+          d.total = sum(columns, c => d[c])
 
           censusData.push(d.total)
           censusData.push(columns)
@@ -35,9 +27,5 @@ export default function BarNormalizedCensusPage() {
         // console.log("error: ", error)
       })
   }, [])
-  return (
-    <ChartPage title={`Normalized Bar chart and the Census API`} copy={copy}>
-      <BarNormalizedCensus data={censusData} />
-    </ChartPage>
-  )
+  return <BarNormalizedCensus data={censusData} />
 }

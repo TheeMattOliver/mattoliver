@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
+import { json, csv } from "d3"
 import * as topojson from "topojson-client"
-import styled from "styled-components"
-import MapChoroplethUSPopulationDensity from "../../components/D3ReactHooks/MapChoroplethUSPopulationDensity"
-import ChartPage from "../../templates/ChartPage"
 
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
+import MapChoroplethUSPopulationDensity from "../../components/D3ReactHooks/MapChoroplethUSPopulationDensity"
 
 export default function MapChoroplethUSPopulationDensityPage() {
   const [data, setData] = useState("")
   useEffect(() => {
-    d3.json(
+    json(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/2016-clinton-trump-votes.json`
     ).then(electionData => {
       setData(electionData)
@@ -22,7 +16,7 @@ export default function MapChoroplethUSPopulationDensityPage() {
 
   const [votes, setVotes] = useState("")
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/tonmcg/County_Level_Election_Results_12-16/master/2016_US_County_Level_Presidential_Results.csv`
     ).then(votesData => {
       const votes = votesData
@@ -53,7 +47,7 @@ export default function MapChoroplethUSPopulationDensityPage() {
 
   const [us, setUS] = useState("")
   useEffect(() => {
-    d3.json(
+    json(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/counties-albers-10m-alt.json`
     ).then(us => {
       setUS(us)
@@ -62,7 +56,7 @@ export default function MapChoroplethUSPopulationDensityPage() {
 
   const [populations, setPopulations] = useState("")
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://gist.githubusercontent.com/jake-low/907af4cc717e4c289346c6b262d68a50/raw/4e9f4012d346ecff75aaeee751e7f1af3cd9c1d7/co-est2017-alldata.csv`
     ).then(populationData => {
       let population = populationData
