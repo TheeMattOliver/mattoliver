@@ -74,8 +74,10 @@ export default function RecentProjectList() {
 }
 
 const Wrapper = styled.div`
-  margin: 1.5rem;
-  margin-top: 2rem;
+  padding: 1rem;
+  @media ${QUERIES.tabletAndUp} {
+    padding: 2rem 2rem 1.5rem 2rem;
+  }
 `
 
 const SectionTitle = styled.h3`

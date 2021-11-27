@@ -13,15 +13,11 @@ import { QUERIES, WEIGHTS } from "../constants"
 import { D3PageComponents } from "../pages/d3-react-hooks/components"
 
 export default function StaticChartPage({ data, children, pageContext }) {
-  console.log({ data })
   const { title } = data
-  console.log({ pageContext })
 
   let PageComponent = D3PageComponents.filter(
     item => item.id === pageContext.slug
   )[0].Component
-
-  console.log("PageComponent: ", PageComponent)
 
   return (
     <>
@@ -106,9 +102,10 @@ const ChartPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 1rem;
+  padding: ${16 / 16}rem;
   @media ${QUERIES.tabletAndUp} {
     flex-direction: row;
+    padding: ${24 / 16}rem;
   }
 `
 const ChartTitleWrapper = styled.div`
@@ -123,8 +120,7 @@ const ChartTitle = styled.h2`
   font-weight: ${WEIGHTS.medium};
 `
 const ChartCopySection = styled.div`
-  margin-right: 1rem;
-  margin-left: 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   color: var(--color-textPrimary);

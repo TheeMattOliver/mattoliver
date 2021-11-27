@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import styled from "styled-components";
-import { Link } from "gatsby-plugin-intl";
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
+import React, { useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import styled from "styled-components"
+import { Link } from "gatsby-plugin-intl"
+import { COLORS, QUERIES, WEIGHTS } from "../../constants"
 
 function countProjectsInTechnologies(projects) {
   // return the count
   const counts = projects
-    .map((project) => project.technologies)
+    .map(project => project.technologies)
     .flat()
     .reduce((acc, technology) => {
       // check if this is an existing technology
@@ -27,8 +27,10 @@ function countProjectsInTechnologies(projects) {
       return acc
     }, {})
   // sort based on count
-  const sortedTechnologies = Object.values(counts).sort((a, b) => b.count - a.count)
-  return sortedTechnologies;
+  const sortedTechnologies = Object.values(counts).sort(
+    (a, b) => b.count - a.count
+  )
+  return sortedTechnologies
 }
 
 export default function TechnologyFilter({ activeTechnology }) {
@@ -52,7 +54,7 @@ export default function TechnologyFilter({ activeTechnology }) {
         }
       }
     }
-  `);
+  `)
   // console.log({ technologies, projects })
   // Count how many projects are in each technology
   const technologiesWithCounts = countProjectsInTechnologies(projects.nodes)
@@ -60,7 +62,7 @@ export default function TechnologyFilter({ activeTechnology }) {
   // Loop over and display the tag and the count of projects in that technology
   return (
     <Wrapper>
-      <Link to='/work'>
+      <Link to="/work">
         <Badge>
           All
           {/* <Count>
@@ -68,12 +70,12 @@ export default function TechnologyFilter({ activeTechnology }) {
           </Count> */}
         </Badge>
       </Link>
-      {technologiesWithCounts.map((technology) => {
+      {technologiesWithCounts.map(technology => {
         return (
           <Link
             to={`/technology/${technology.title}`}
             key={technology.id}
-            className={technology.title === activeTechnology ? 'active' : ''}
+            className={technology.title === activeTechnology ? "active" : ""}
           >
             <Badge>
               {technology.title}
@@ -88,8 +90,10 @@ export default function TechnologyFilter({ activeTechnology }) {
   )
 }
 const Wrapper = styled.div`
-  margin: 1rem;
-  gap: .5rem;
+  /* margin: 1rem; */
+  padding: 1rem;
+
+  gap: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   width: clamp(300px, 95%, 750px);
@@ -97,20 +101,23 @@ const Wrapper = styled.div`
     border-radius: 0.375rem;
     background-color: var(--color-gray100);
     color: var(--color-gray800);
-    
+
     &.active {
       background-color: var(--color-gray700);
       color: var(--color-gray50);
-    };
-    &[aria-current='page'] {
+    }
+    &[aria-current="page"] {
       background-color: var(--color-gray700);
       color: var(--color-gray50);
     }
   }
-  @media ${QUERIES.tabletAndUp} {
+  /* @media ${QUERIES.tabletAndUp} {
     margin: 1rem 1.5rem;
+  } */
+  @media ${QUERIES.tabletAndUp} {
+    padding: 1rem 2rem;
   }
-`;
+`
 
 const Badge = styled.span`
   display: inline-flex;
@@ -121,14 +128,14 @@ const Badge = styled.span`
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: ${WEIGHTS.normal};
-`;
+`
 
 const Count = styled.span`
   flex-shrink: 0;
   margin-left: 0.325rem;
   height: 1rem;
   width: 1rem;
-  font-size: .65rem;
+  font-size: 0.65rem;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
@@ -136,4 +143,4 @@ const Count = styled.span`
   background-color: ${COLORS.gray200.light};
   color: ${COLORS.gray900.light};
   font-weight: ${WEIGHTS.heavy};
-`;
+`
