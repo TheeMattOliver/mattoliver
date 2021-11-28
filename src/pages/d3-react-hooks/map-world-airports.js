@@ -29,11 +29,9 @@ export default function MapAirportsPage() {
 
   return (
     <>
-      <ChartPage copy={copy} title={`Geo projection and points on a map`}>
-        {!world && <h1>Loading...</h1>}
+      {!world && <h1>Loading...</h1>}
 
-        <MapWorldAirports data={data} world={world} />
-      </ChartPage>
+      <MapWorldAirports data={data} world={world} />
     </>
   )
 }
