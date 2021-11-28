@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { BREAKPOINTS, QUERIES, TRANSITIONS, WEIGHTS } from "../../constants"
+import { QUERIES, WEIGHTS } from "../../constants"
 
 export default function D3ReactProjectList({ data }) {
   const { charts } = data

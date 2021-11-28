@@ -4,7 +4,7 @@ import styled from "styled-components"
 import DataToggleButton from "../../components/DataToggleButton"
 
 import SimpleBrushChart from "../../components/D3ReactHooks/SimpleBrushChart"
-import SimpleBrushChartChild from "../../components/D3ReactHooks/SimpleBrushChartChild"
+import SimpleBrushChartChild from "../../components/D3ReactHooks//SimpleBrushChart/SimpleBrushChartChild"
 
 export default function SimpleBrushableLinePage() {
   const [data, setData] = useState(

@@ -37,7 +37,6 @@ export default function StaticChartPage({ data, children, pageContext }) {
               {data.chart.excerpt?._rawText && (
                 <PortableText blocks={data.chart.excerpt._rawText} />
               )}
-              <FullPageLink></FullPageLink>
             </ChartCopy>
             <Link to={`/d3-react-hooks/${data.chart.slug.current}`}>
               <SmallNavText>View full page &rarr; </SmallNavText>
@@ -174,7 +173,6 @@ const ChartCopy = styled.div`
   max-width: 450px;
   flex: 0 999999 200px;
 `
-const FullPageLink = styled.div``
 
 const ChartWrapper = styled.div`
   flex: 1;
