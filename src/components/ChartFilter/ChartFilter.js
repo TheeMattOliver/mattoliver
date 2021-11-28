@@ -96,7 +96,7 @@ export default function ChartFilter({ activeChart }) {
 }
 
 const Wrapper = styled.div`
-  margin: 1rem;
+  padding: 1rem;
   gap: 0.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -116,7 +116,7 @@ const Wrapper = styled.div`
     }
   }
   @media ${QUERIES.tabletAndUp} {
-    margin: 1rem 1.5rem;
+    padding: 1rem 2.5rem;
   }
 `
 

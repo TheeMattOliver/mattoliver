@@ -31,7 +31,7 @@ export default function AreaChartStockPrice({ data }) {
 
     // and find the max value from that array for yScale
     const maxYValue = d3.max([...prices])
-    console.log("maxYValue: ", maxYValue)
+    // console.log("maxYValue: ", maxYValue)
 
     const xScale = d3.scaleUtc(
       //domain

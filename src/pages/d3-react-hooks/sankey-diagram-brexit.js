@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
+import { csv } from "d3"
 import styled from "styled-components"
 import SankeyDiagramBrexit from "../../components/D3ReactHooks/SankeyDiagramBrexit"
 import ChartPage from "../../templates/ChartPage"
@@ -9,7 +9,7 @@ export default function SankeyDiagramBrexitPage() {
   const [data, setData] = useState("")
 
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/brexit.csv`
     ).then(csvData => {
       setData(csvData)

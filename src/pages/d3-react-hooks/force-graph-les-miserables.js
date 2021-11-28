@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
-import styled from "styled-components"
+import { json } from "d3"
 import ForceGraphLesMis from "../../components/D3ReactHooks/ForceGraphLesMis"
-import ChartPage from "../../templates/ChartPage"
 
 export default function ForceGraphLesMisPage() {
   const [data, setData] = useState("")
 
   useEffect(() => {
-    d3.json(
+    json(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/miserables.json`
     ).then(jsonData => {
       setData(jsonData)
@@ -18,7 +16,6 @@ export default function ForceGraphLesMisPage() {
   return (
     <>
       {!data && <h1>Loading...</h1>}
-
       <ForceGraphLesMis data={data} />
     </>
   )

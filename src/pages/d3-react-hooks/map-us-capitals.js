@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
-import styled from "styled-components"
+import { json, csv } from "d3"
 import MapUSCapitals from "../../components/D3ReactHooks/MapUSCapitals"
 import ChartPage from "../../templates/ChartPage"
 
@@ -12,7 +11,7 @@ nisi ut aliquip ex ea commodo consequat.`
 export default function MapCapitalsPage() {
   const [us, setUS] = useState("")
   useEffect(() => {
-    d3.json(
+    json(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/states-albers-10m.json`
     ).then(topoJsonData => {
       setUS(topoJsonData)
@@ -21,7 +20,7 @@ export default function MapCapitalsPage() {
 
   const [cities, setCities] = useState("")
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/us-state-capitals.csv`
     ).then(csvData => {
       setCities(csvData)

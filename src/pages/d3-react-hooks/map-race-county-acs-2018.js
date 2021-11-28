@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
+import { csv, json, sum, descending, format } from "d3"
 import * as topojson from "topojson-client"
 import styled from "styled-components"
 import ChartPage from "../../templates/ChartPage"
@@ -7,11 +7,6 @@ import ChartPage from "../../templates/ChartPage"
 import Select from "../../components/Select"
 import MapRaceCountyACS2018 from "../../components/D3ReactHooks/MapRaceCounty/MapRaceCountyACS2018"
 import MapComponent from "../../components/D3ReactHooks/MapRaceCounty/MapComponent"
-
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 let total = "B02001_001E"
 
@@ -21,7 +16,7 @@ export default function MapRaceCountyPage() {
 
   const [us, setUS] = useState("")
   useEffect(() => {
-    d3.json(
+    json(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/counties-albers-10m.json`
     ).then(us => {
       setUS(us)
@@ -30,7 +25,7 @@ export default function MapRaceCountyPage() {
 
   const [allData, setAllData] = useState("")
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/ACSDT5Y2018.B02001_data_with_overlays_2020-05-07T202926.csv`
     ).then(raceData => {
       const variables = new Map(
@@ -41,10 +36,10 @@ export default function MapRaceCountyPage() {
             {
               id: GEO_ID,
               name: id.split(/!!/g).pop(),
-              total: d3.sum(raceData.slice(1), d => d[GEO_ID]),
+              total: sum(raceData.slice(1), d => d[GEO_ID]),
             },
           ])
-          .sort(([, { total: a }], [, { total: b }]) => d3.descending(a, b))
+          .sort(([, { total: a }], [, { total: b }]) => descending(a, b))
       )
       setVariables(variables)
 
@@ -54,7 +49,6 @@ export default function MapRaceCountyPage() {
 
   return (
     <>
-      {/* <ChartPage title={`2018 Census/ACS Race data by US County`} copy={copy}> */}
       {!us && <h1>Loading...</h1>}
       {variables && (
         <ButtonWrapper>
@@ -65,7 +59,7 @@ export default function MapRaceCountyPage() {
             {Array.from(variables.values(), v => {
               return (
                 <option key={v.id} value={v.id}>
-                  {v.name} {d3.format(".2~s")(v.total)}
+                  {v.name} {format(".2~s")(v.total)}
                 </option>
               )
             })}
@@ -78,7 +72,6 @@ export default function MapRaceCountyPage() {
         total={total}
         variable={variable}
       />
-      {/* </ChartPage> */}
     </>
   )
 }

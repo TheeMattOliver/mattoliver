@@ -20,7 +20,9 @@ export default function WorkPage({ data, pageContext }) {
       <SEO title={`Work`} lang={intl.locale}></SEO>
       <MainLayout>
         <Wrapper>
-          <PageHero>Selected Work - {projects.length} Projects</PageHero>
+          <PageTitle>
+            <PageHero>Selected Work - {projects.length} Projects</PageHero>
+          </PageTitle>
           <TechnologyFilter activeTechnology={pageContext.technology} />
           <ProjectList projects={projects} />
           <Spacer axis="vertical" size={100} />
@@ -76,7 +78,12 @@ export const query = graphql`
     }
   }
 `
-
+const PageTitle = styled.div`
+  padding: 1rem;
+  @media ${QUERIES.tabletAndUp} {
+    padding: 0 2rem;
+  }
+`
 const Wrapper = styled.div`
   position: relative;
 `

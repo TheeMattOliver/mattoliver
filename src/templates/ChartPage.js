@@ -1,17 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Header from "../components/Header"
-import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"
 import { QUERIES, WEIGHTS } from "../constants"
-import Spacer from "../components/Spacer"
-import UnstyledButton from "../components/UnstyledButton"
 
 export default function ChartPage({ data, title, copy, children }) {
   return (
@@ -32,12 +28,60 @@ export default function ChartPage({ data, title, copy, children }) {
               </BackButton>
             </DesktopBackButtonWrapper>
           </ChartCopySection>
+
           <ChartWrapper>{children}</ChartWrapper>
         </ChartPageWrapper>
       </MainLayout>
     </>
   )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    chart: sanityChart(slug: { current: { eq: $slug } }) {
+      id
+      tags {
+        value
+        label
+      }
+      technologies {
+        title
+        id
+      }
+      title
+      categories {
+        title
+      }
+      chartTypes {
+        title
+        id
+        image {
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          }
+        }
+      }
+      excerpt {
+        _key
+        _rawText
+        _type
+        text {
+          _key
+          _rawChildren
+          _type
+          children {
+            _key
+            _type
+            marks
+            text
+          }
+          list
+          style
+        }
+      }
+    }
+  }
+`
 
 const ChartPageWrapper = styled.div`
   position: relative;

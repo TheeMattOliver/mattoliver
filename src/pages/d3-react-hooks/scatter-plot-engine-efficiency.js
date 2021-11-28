@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
-import styled from "styled-components"
+import { csv } from "d3"
 import ScatterFuelEfficiency from "../../components/D3ReactHooks/ScatterFuelEfficiency"
-import ChartPage from "../../templates/ChartPage"
 
 export default function ScatterPlotEfficiencyPage() {
   const [data, setData] = useState("")
 
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/mtcars.csv`
     ).then(csvData => {
       let processedArray = []

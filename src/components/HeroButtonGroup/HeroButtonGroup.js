@@ -1,19 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import { QUERIES } from '../../constants';
+import React from "react"
+import styled from "styled-components"
+import { QUERIES } from "../../constants"
 
-import PrimaryHeroBtnLink from './PrimaryHeroBtnLink';
-import SecondaryHeroBtnLink from './SecondaryHeroBtnLink';
+import PrimaryHeroBtnLink from "./PrimaryHeroBtnLink"
+import SecondaryHeroBtnLink from "./SecondaryHeroBtnLink"
 
 const HeroButtonGroup = () => {
   return (
     <Wrapper>
       <ButtonList>
         <ButtonContainer>
-          <PrimaryHeroBtnLink to='/work'>View Portfolio</PrimaryHeroBtnLink>
+          <PrimaryHeroBtnLink to="/work">View Portfolio</PrimaryHeroBtnLink>
         </ButtonContainer>
         <ButtonContainer>
-          <SecondaryHeroBtnLink to='/contact'>Contact</SecondaryHeroBtnLink>
+          <SecondaryHeroBtnLink to="/contact">Contact</SecondaryHeroBtnLink>
         </ButtonContainer>
       </ButtonList>
     </Wrapper>
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   margin-right: auto;
   display: flex;
   @media ${QUERIES.tabletAndUp} {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
   @media ${QUERIES.laptopAndUp} {
     /* max-width: 80rem; */
@@ -37,14 +37,14 @@ const Wrapper = styled.div`
   @media ${QUERIES.desktopAndUp} {
     /* max-width: revert; */
   }
-`;
+`
 
 const ButtonList = styled.div`
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   gap: 16px;
-`;
+`
 
 // const ButtonListItem = styled.div`
 //   flex-basis: 100%;
@@ -61,4 +61,4 @@ const ButtonContainer = styled.div`
   justify-content: flex-start;
   align-items: stretch;
   display: flex;
-`;
+`

@@ -1,17 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from "react"
 import styled from "styled-components"
-import * as d3 from "d3"
-import { QUERIES } from "../../constants"
-import ChartPage from "../../templates/ChartPage"
+
 import DataToggleButton from "../../components/DataToggleButton"
 
 import SimpleBrushChart from "../../components/D3ReactHooks/SimpleBrushChart"
 import SimpleBrushChartChild from "../../components/D3ReactHooks/SimpleBrushChartChild"
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 export default function SimpleBrushableLinePage() {
   const [data, setData] = useState(
@@ -21,7 +14,7 @@ export default function SimpleBrushableLinePage() {
     setData([...data, Math.round(Math.random() * 100)])
 
   return (
-    <ChartPage title={`Simple brushable line chart`} copy={copy}>
+    <>
       <SimpleBrushChart data={data}>
         {selection => (
           <SimpleBrushChartChild data={data} selection={selection} />
@@ -32,7 +25,7 @@ export default function SimpleBrushableLinePage() {
           Add data
         </DataToggleButton>
       </ButtonWrapper>
-    </ChartPage>
+    </>
   )
 }
 const ButtonWrapper = styled.div`

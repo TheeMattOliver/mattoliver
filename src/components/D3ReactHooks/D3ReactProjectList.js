@@ -13,7 +13,7 @@ export default function D3ReactProjectList({ data }) {
         {charts.edges.map(chart => {
           return (
             <ProjectCard key={chart.node.id}>
-              <Link to={`/d3-react-hooks/${chart.node.slug.current}`}>
+              <Link to={`/d3-react-hooks-pages/${chart.node.slug.current}`}>
                 <CardContentWrapper>
                   <ProjectImageWrapper>
                     <ProjectMainImage
@@ -43,9 +43,10 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   /* border: 1px solid blue; */
   /* width: 100%; */
-  margin: 2rem;
+  margin: 0 1.5rem;
 `
 
 const ProjectsGrid = styled.div`

@@ -32,7 +32,7 @@ function AreaChartStockBrush({ data, children }) {
     utcInvert.invert(742.8784741144415),
     utcInvert.invert(918),
   ])
-  console.log("selection: ", selection)
+  // console.log("selection: ", selection)
 
   const previousSelection = usePrevious(selection)
 
@@ -55,10 +55,10 @@ function AreaChartStockBrush({ data, children }) {
     let innerHeight = height - margin.top - margin.bottom
     const focusHeight = 100
 
-    console.log("[margin.left, width - margin.right]: ", [
-      margin.left,
-      width - margin.right,
-    ])
+    // console.log("[margin.left, width - margin.right]: ", [
+    //   margin.left,
+    //   width - margin.right,
+    // ])
 
     setRectWidth(innerWidth)
 

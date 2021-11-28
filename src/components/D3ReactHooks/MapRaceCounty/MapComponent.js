@@ -8,7 +8,7 @@ export default function MapComponent({ allData, us, total, variable }) {
     if (!allData) return
     if (!variable) return
 
-    console.log("variable: ", variable)
+    // console.log("variable: ", variable)
     let data = new Map(
       allData.slice(1).map(d => [d.GEO_ID.slice(-5), +d[variable] / +d[total]])
     )

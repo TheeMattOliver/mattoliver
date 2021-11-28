@@ -1,17 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react"
 import styled from "styled-components"
-import * as d3 from "d3"
-import { QUERIES } from "../../constants"
-import ChartPage from "../../templates/ChartPage"
 import DataToggleButton from "../../components/DataToggleButton"
 import Select from "../../components/Select"
 import SelectCurveLineChart from "../../components/D3ReactHooks/SelectCurveLineChart"
-
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 export default function LineChartCurveSelectPage() {
   const [value, setValue] = React.useState("curveCardinal")
@@ -22,7 +14,7 @@ export default function LineChartCurveSelectPage() {
     setData([...data, Math.round(Math.random() * 100)])
 
   return (
-    <ChartPage title={`Selectable curve with d3.curve`} copy={copy}>
+    <>
       <SelectCurveLineChart data={data} curve={value} />
 
       <ButtonWrapper>
@@ -41,7 +33,7 @@ export default function LineChartCurveSelectPage() {
           <option value="curveNatural">curveNatural</option>
         </Select>
       </ButtonWrapper>
-    </ChartPage>
+    </>
   )
 }
 const ButtonWrapper = styled.div`

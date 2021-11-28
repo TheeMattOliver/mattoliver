@@ -74,8 +74,10 @@ export default function RecentProjectList() {
 }
 
 const Wrapper = styled.div`
-  margin: 1.5rem;
-  margin-top: 2rem;
+  padding: 1rem;
+  @media ${QUERIES.tabletAndUp} {
+    padding: 2rem 2rem 1.5rem 2rem;
+  }
 `
 
 const SectionTitle = styled.h3`
@@ -220,8 +222,11 @@ const NavBtnWrapper = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  margin-top: 2rem;
+  padding: 2rem 1rem;
   color: var(--color-textPrimary);
+  @media ${QUERIES.tabletAndUp} {
+    padding: 2rem 2rem;
+  }
 `
 
 const ProjectNavigationButton = styled(Link)`

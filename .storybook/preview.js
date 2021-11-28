@@ -1,5 +1,22 @@
 import "../src/styles/global.css"
 
+import React from "react"
+
+import { ThemeProvider } from "../src/components/ThemeContext"
+import GlobalStyles from "../src/components/GlobalStyles"
+
+// Global decorator to apply the styles to all stories
+export const decorators = [
+  Story => (
+    <>
+      <ThemeProvider>
+        <GlobalStyles />
+        <Story />
+      </ThemeProvider>
+    </>
+  ),
+]
+
 import { action } from "@storybook/addon-actions"
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.

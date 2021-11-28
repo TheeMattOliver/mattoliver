@@ -24,7 +24,7 @@ function BarStackedBasic({ data, keys, colors }) {
     // we receive as a prop called keys
     const stackGenerator = d3.stack().keys(keys).order(d3.stackOrderAscending)
 
-    console.log("stackGenerator(data): ", stackGenerator(data))
+    // console.log("stackGenerator(data): ", stackGenerator(data))
     // returns an array which contains arrays for every key in our stack
     // ranges/sequences for every avocado in our data array, etc
 
@@ -38,7 +38,7 @@ function BarStackedBasic({ data, keys, colors }) {
       0,
       d3.max(layers, layer => d3.max(layer, sequence => sequence[1])),
     ]
-    console.log("extent: ", extent) // [0, 250]
+    // console.log("extent: ", extent) // [0, 250]
 
     // with scaleBand we are mapping these explicit
     // years to pixel values on our x axis
@@ -81,7 +81,7 @@ function BarStackedBasic({ data, keys, colors }) {
       .attr("class", "layer")
       // color here will influence fill color of each rect in current group
       .attr("fill", layer => {
-        console.log("layer: ", layer)
+        // console.log("layer: ", layer)
         return colors[layer.key]
       })
       // now we have to render 5 rectangles in each layer - 5 on each x-axis value for each item we're counting

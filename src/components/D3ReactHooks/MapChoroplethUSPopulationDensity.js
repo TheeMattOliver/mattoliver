@@ -70,7 +70,7 @@ export default function MapChoroplethUSPopulationDensity({
         }
       })
 
-    console.log(counties.map(county => county.properties.density))
+    // console.log(counties.map(county => county.properties.density))
     // render map
     const domain = [
       0.125,

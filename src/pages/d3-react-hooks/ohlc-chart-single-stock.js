@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react"
-import * as d3 from "d3"
-import styled from "styled-components"
+import { csv, timeParse } from "d3"
 import OpenHighLowCloseSingleStock from "../../components/D3ReactHooks/OpenHighLowCloseSingleStock"
-import ChartPage from "../../templates/ChartPage"
 
-const parseDate = d3.timeParse("%Y-%m-%d")
+const parseDate = timeParse("%Y-%m-%d")
 
 export default function OpenHighLowCloseSingleStockPage() {
   const [data, setData] = useState("")
 
   useEffect(() => {
-    d3.csv(
+    csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/aapl_three.csv`
     ).then(csvData => {
       let processedData = []

@@ -1,14 +1,8 @@
 import React, { useState } from "react"
-import * as d3 from "d3"
+import { csv } from "d3"
 import styled from "styled-components"
 import AreaStackedBasic from "../../components/D3ReactHooks/AreaStackedBasic"
-import ChartPage from "../../templates/ChartPage"
 import DataToggleButton from "../../components/DataToggleButton"
-
-const copy = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.`
 
 // each year has values that we want to stack on top of each other
 // the d3 stack function stacks all of our values together so we can
@@ -37,7 +31,7 @@ const colors = {
 //   blue: "#3288bd"
 // }
 
-export default function BarStackedBasicPage() {
+export default function AreaStackedBasicPage() {
   const [data, setData] = useState([
     {
       year: 1980,
@@ -98,38 +92,36 @@ export default function BarStackedBasicPage() {
   const [keys, setKeys] = useState(allKeys)
   return (
     <>
-      <ChartPage title={`Scatter plot of global temperatures`} copy={copy}>
-        <AreaStackedBasic data={data} keys={keys} colors={colors} />
+      <AreaStackedBasic data={data} keys={keys} colors={colors} />
 
-        <Actions>
-          <ButtonWrapper>
-            <DataToggleButton onClick={() => setData(onAddDataClick)}>
-              Add data
-            </DataToggleButton>
-          </ButtonWrapper>
-          <FieldsWrapper>
-            {allKeys.map(key => (
-              <div key={key}>
-                <Checkbox
-                  id={key}
-                  type="checkbox"
-                  checked={keys.includes(key)}
-                  onChange={e => {
-                    if (e.target.checked) {
-                      setKeys(Array.from(new Set([...keys, key])))
-                    } else {
-                      setKeys(keys.filter(_key => _key !== key))
-                    }
-                  }}
-                />
-                <label htmlFor={key} style={{ color: colors[key] }}>
-                  {key}
-                </label>
-              </div>
-            ))}
-          </FieldsWrapper>
-        </Actions>
-      </ChartPage>
+      <Actions>
+        <ButtonWrapper>
+          <DataToggleButton onClick={() => setData(onAddDataClick)}>
+            Add data
+          </DataToggleButton>
+        </ButtonWrapper>
+        <FieldsWrapper>
+          {allKeys.map(key => (
+            <div key={key}>
+              <Checkbox
+                id={key}
+                type="checkbox"
+                checked={keys.includes(key)}
+                onChange={e => {
+                  if (e.target.checked) {
+                    setKeys(Array.from(new Set([...keys, key])))
+                  } else {
+                    setKeys(keys.filter(_key => _key !== key))
+                  }
+                }}
+              />
+              <label htmlFor={key} style={{ color: colors[key] }}>
+                {key}
+              </label>
+            </div>
+          ))}
+        </FieldsWrapper>
+      </Actions>
     </>
   )
 }

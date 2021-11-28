@@ -86,6 +86,42 @@ async function turnChartTypesIntoPages({ graphql, actions }) {
   })
 }
 
+async function turnChartsIntoPages({ graphql, actions }) {
+  // 1. Get a template for this page
+  const chartPageTemplate = path.resolve("./src/templates/StaticChartPage.js")
+
+  // 2. Query all the charts in Sanity
+  const { data } = await graphql(`
+    query {
+      charts: allSanityChart {
+        nodes {
+          id
+          slug {
+            current
+          }
+          title
+        }
+      }
+    }
+  `)
+  // 3. Loop over each chart and create a page for that chart
+  data.charts.nodes.forEach(chart => {
+    // 2. Create a component context for the compoennt and pass directly in after build?
+    const chartComponent = path.resolve(
+      `./src/components/d3-react-hooks/${chart.slug.current}.js`
+    )
+
+    actions.createPage({
+      path: `d3-react-hooks-pages/${chart.slug.current}`,
+      component: chartPageTemplate,
+      context: {
+        slug: chart.slug.current,
+        chartComponent: chartComponent,
+      },
+    })
+  })
+}
+
 export async function createPages(params) {
   console.log("Creating pages!")
   // Create pages dynamically
@@ -93,5 +129,6 @@ export async function createPages(params) {
     turnProjectsIntoPages(params),
     turnTechnologiesIntoPages(params),
     turnChartTypesIntoPages(params),
+    turnChartsIntoPages(params),
   ])
 }
