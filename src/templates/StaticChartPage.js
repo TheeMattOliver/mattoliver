@@ -19,8 +19,6 @@ export default function StaticChartPage({ data, children, pageContext }) {
     item => item.id === pageContext.slug
   )[0].Component
 
-  console.log({ data })
-
   return (
     <>
       <SEO title={data.chart.title}></SEO>

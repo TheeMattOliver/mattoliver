@@ -106,17 +106,11 @@ async function turnChartsIntoPages({ graphql, actions }) {
   `)
   // 3. Loop over each chart and create a page for that chart
   data.charts.nodes.forEach(chart => {
-    // 2. Create a component context for the compoennt and pass directly in after build?
-    const chartComponent = path.resolve(
-      `./src/components/d3-react-hooks/${chart.slug.current}.js`
-    )
-
     actions.createPage({
       path: `d3-react-hooks-pages/${chart.slug.current}`,
       component: chartPageTemplate,
       context: {
         slug: chart.slug.current,
-        chartComponent: chartComponent,
       },
     })
   })
