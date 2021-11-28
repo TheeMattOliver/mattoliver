@@ -1,5 +1,4 @@
 import path from "path"
-import fs from "fs"
 import { slugify } from "./src/lib/utils"
 
 async function turnProjectsIntoPages({ graphql, actions }) {
