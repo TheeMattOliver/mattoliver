@@ -25,6 +25,7 @@ import MapChoroplethVoting2016 from '../../pages/d3-react-hooks/map-choropleth-v
 import MapWorldGeoPage from '../../pages/d3-react-hooks/map-world-d3-geo'
 import MapRaceCountyPage from "../../pages/d3-react-hooks/map-race-county-acs-2018"
 import MapCapitalsPage from '../../pages/d3-react-hooks/map-us-capitals'
+import MapAirportsPage from '../../pages/d3-react-hooks/map-world-airports'
 import OpenHighLowCloseSingleStockPage from '../../pages/d3-react-hooks/ohlc-chart-single-stock'
 import RadialAreaChartSFOPage from '../../pages/d3-react-hooks/radial-area-chart-sfo'
 import SankeyDiagramBrexitPage from '../../pages/d3-react-hooks/sankey-diagram-brexit'
@@ -62,6 +63,7 @@ export const D3PageComponents = [
   { id: "map-choropleth-us-population-density", Component: MapChoroplethUSPopulationDensityPage },
   { id: "map-choropleth-voting-2016", Component: MapChoroplethVoting2016 },
   { id: 'map-race-county-acs-2018', Component: MapRaceCountyPage },
+  { id: 'map-world-airports', Component: MapAirportsPage },
   { id: 'map-world-d3-geo', Component: MapWorldGeoPage },
   { id: 'map-us-capitals', Component: MapCapitalsPage },
   { id: 'ohlc-chart-single-stock', Component: OpenHighLowCloseSingleStockPage },
