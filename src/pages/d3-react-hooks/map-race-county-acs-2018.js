@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { csv, json, sum, descending, format } from "d3"
 import * as topojson from "topojson-client"
 import styled from "styled-components"
-import ChartPage from "../../templates/ChartPage"
 
 import Select from "../../components/Select"
 import MapRaceCountyACS2018 from "../../components/D3ReactHooks/MapRaceCounty/MapRaceCountyACS2018"

@@ -1,3 +1,5 @@
+const { githubApiQuery } = require("./github-api")
+
 module.exports = {
   siteMetadata: {
     title: `Matt Oliver`,
@@ -9,7 +11,7 @@ module.exports = {
     twitterUsername: "@theemattoliver",
   },
   flags: {
-    DEV_SSR: false
+    DEV_SSR: false,
   },
   plugins: [
     {
@@ -30,7 +32,7 @@ module.exports = {
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -43,11 +45,14 @@ module.exports = {
       resolve: `gatsby-source-sanity`,
       options: {
         projectId: `9ox83bxr`,
-        dataset: 'production',
+        dataset: "production",
         watchMode: true,
-        token: process.env.SANITY_TOKEN
-      }
+        token: process.env.SANITY_TOKEN,
+      },
     },
+    // TODO: source repo data from Github API V4 with
+    // gatsby-source-graphql;
+    // need to update to Gatsby V4 for that
     {
       resolve: `gatsby-plugin-intl`,
       options: {
@@ -55,7 +60,9 @@ module.exports = {
         languages: [`en`, `es`, `ko`, `de`],
         defaultLanguage: `en`,
         redirect: true,
-        redirectComponent: require.resolve(`${__dirname}/src/components/Redirect.js`),
+        redirectComponent: require.resolve(
+          `${__dirname}/src/components/Redirect.js`
+        ),
       },
     },
     {
@@ -93,12 +100,11 @@ module.exports = {
             src: `/maskable_icon_512x512.png`,
             sizes: `512x512`,
             type: `image/png`,
-            purpose: `any maskable`
-          }
-        ] // Add or remove icon sizes as desired
-
+            purpose: `any maskable`,
+          },
+        ], // Add or remove icon sizes as desired
       },
     },
-    `gatsby-plugin-offline`
-  ]
+    `gatsby-plugin-offline`,
+  ],
 }
