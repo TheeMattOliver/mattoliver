@@ -1,5 +1,3 @@
-const { githubApiQuery } = require("./github-api")
-
 module.exports = {
   siteMetadata: {
     title: `Matt Oliver`,
