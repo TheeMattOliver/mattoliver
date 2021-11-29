@@ -10,7 +10,6 @@ export default function LineTooltipStockPricePage() {
     ).then(csvData => {
       let processedData = []
       csvData.forEach(row => {
-        // console.log("new Date(row.date): ", new Date(row.date))
         processedData.push({
           date: new Date(row.date),
           close: +row.close,

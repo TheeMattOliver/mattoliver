@@ -21,7 +21,7 @@ export default function AreaChartStockPrice({ data }) {
     let innerHeight = height - margin.top - margin.bottom
 
     d3.selectAll("g").remove()
-    d3.selectAll("path").remove()
+
     // calculate dates for xScale
     const startDate = data[0].date
     const endDate = data[data.length - 1].date

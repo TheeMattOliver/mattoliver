@@ -10,7 +10,6 @@ export default function BubbleChartFlare({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  // console.log({ data })
 
   useEffect(() => {
     if (!data) return
@@ -23,7 +22,6 @@ export default function BubbleChartFlare({ data }) {
     let innerHeight = height - margin.top - margin.bottom
 
     d3.selectAll("g").remove()
-    d3.selectAll("path").remove()
 
     const colorScale = d3.scaleOrdinal(
       data.map(d => d.group),

@@ -18,7 +18,13 @@ function AreaChartStockBrush({ data, children }) {
   const dimensions = useResizeObserver(wrapperRef)
 
   // This is a hack. Is there another way to set the defaultSelection?
+  // we'd get it like this but we don't have access to scales until after the component renders
+  // const defaultSelection = [
+  //   xScale(d3.utcYear.offset(xScale.domain()[1], -1)),
+  //   xScale.range()[1],
+  // ]
 
+  // imperatively set the defaultSelection
   const utcInvert = d3
     .scaleUtc()
     .domain([
@@ -26,12 +32,11 @@ function AreaChartStockBrush({ data, children }) {
       new Date(`Mon Apr 30 2012 19:00:00 GMT-0500 (Central Daylight Time)`),
     ])
     .range([40, 918])
-
+  // invert
   const [selection, setSelection] = useState([
     utcInvert.invert(742.8784741144415),
     utcInvert.invert(918),
   ])
-  // console.log("selection: ", selection)
 
   const previousSelection = usePrevious(selection)
 
@@ -44,7 +49,7 @@ function AreaChartStockBrush({ data, children }) {
 
     const svg = d3
       .select(svgRef.current)
-      .attr("transform", `translate(0,${560})`)
+      .attr("transform", `translate(0,${520})`)
 
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()
@@ -53,11 +58,6 @@ function AreaChartStockBrush({ data, children }) {
     let innerWidth = width - margin.left - margin.right
     let innerHeight = height - margin.top - margin.bottom
     const focusHeight = 100
-
-    // console.log("[margin.left, width - margin.right]: ", [
-    //   margin.left,
-    //   width - margin.right,
-    // ])
 
     setRectWidth(innerWidth)
 
@@ -98,34 +98,32 @@ function AreaChartStockBrush({ data, children }) {
           .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
       )
 
-    const yAxis = d3.axisLeft(yScale)
-    svg
-      .select(".y-axis")
-      .call(yAxis)
-      .call(g =>
-        g
-          .selectAll(".y-axis path")
-          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
-          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
-          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
-      )
-      .call(g =>
-        g
-          .selectAll(".y-axis line")
-          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
-          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
-          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
-      )
-      .call(g =>
-        g
-          .selectAll(".y-axis text")
-          .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
-      )
+    // no y-axis for the mini chart
 
-    const defaultSelection = [
-      xScale(d3.utcYear.offset(xScale.domain()[1], -1)),
-      xScale.range()[1],
-    ]
+    // const yAxis = d3.axisLeft(yScale)
+    // svg
+    //   .select(".y-axis")
+    //   .call(yAxis)
+    //   .call(g =>
+    //     g
+    //       .selectAll(".y-axis path")
+    //       .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+    //       .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+    //       .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+    //   )
+    //   .call(g =>
+    //     g
+    //       .selectAll(".y-axis line")
+    //       .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+    //       .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+    //       .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+    //   )
+    //   .call(g =>
+    //     g
+    //       .selectAll(".y-axis text")
+    //       .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+    //   )
+
     // brush
     const brush = d3
       .brushX()
@@ -185,7 +183,6 @@ function AreaChartStockBrush({ data, children }) {
           <g className="brush" />
         </SVG>
       </RefWrapper>
-      {/* {children(selection, rectWidth)} */}
       <AreaChartStockBrushChild
         data={data}
         selection={selection}
