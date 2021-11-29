@@ -22,7 +22,7 @@ export default function BarStackedVerticalCensusPopulation({ data, series }) {
 
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()
-    const margin = { top: 20, right: 30, bottom: 40, left: 45 }
+    const margin = { top: 20, right: 16, bottom: 40, left: 32 }
     let innerWidth = width - margin.left - margin.right
     let innerHeight = height - margin.top - margin.bottom
 

@@ -15,8 +15,6 @@ export default function LineMultilineStocks({ data, property }) {
   useEffect(() => {
     if (!data) return
     d3.selectAll("g").remove()
-    d3.selectAll("d").remove()
-    d3.selectAll("path").remove()
 
     const svg = d3.select(svgRef.current)
     const { width, height } =

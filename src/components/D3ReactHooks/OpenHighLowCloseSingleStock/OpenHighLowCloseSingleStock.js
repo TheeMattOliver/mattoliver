@@ -8,7 +8,6 @@ export default function OpenHighLowCloseSingleStock({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
-  // console.log({ data })
 
   useEffect(() => {
     if (!data) return
@@ -21,7 +20,6 @@ export default function OpenHighLowCloseSingleStock({ data }) {
     let innerHeight = height - margin.top - margin.bottom
 
     d3.selectAll("g").remove()
-    d3.selectAll("path").remove()
 
     const formatFn = d3.format("+.2%")
     const formatChange = () => {
@@ -75,7 +73,7 @@ export default function OpenHighLowCloseSingleStock({ data }) {
           .range(data[0].date, +data[data.length - 1].date + 1)
           .filter(d => d.getDay() !== 0 && d.getDay() !== 6)
       )
-      .range([margin.left, width - margin.right])
+      .range([margin.left, innerWidth - margin.right])
       .padding(0.2)
 
     svg.append("g").call(xAxis)

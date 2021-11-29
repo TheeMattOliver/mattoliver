@@ -15,7 +15,6 @@ export default function MapUSCapitals({ data, world }) {
     if (!dimensions) return
     d3.selectAll("g").remove()
     d3.selectAll("d").remove()
-    d3.selectAll("path").remove()
     if (!world) return
     const svg = d3.select(svgRef.current)
 

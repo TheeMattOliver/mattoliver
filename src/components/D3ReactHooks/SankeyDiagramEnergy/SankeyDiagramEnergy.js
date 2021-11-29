@@ -24,7 +24,6 @@ export default function SankeyDiagramEnergy({ data, align, edgeColor }) {
     let innerHeight = height - margin.top - margin.bottom
 
     d3.selectAll("g").remove()
-    d3.selectAll("path").remove()
 
     const _sankey = sankeyGenerator()
       .nodeId(d => d.name)

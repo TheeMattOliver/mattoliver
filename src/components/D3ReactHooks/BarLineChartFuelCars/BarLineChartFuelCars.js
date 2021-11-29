@@ -16,6 +16,7 @@ export default function BarLineChartFuelCars({ data, children }) {
 
   useEffect(() => {
     if (!data) return
+    d3.selectAll(".chart-line").remove()
     const svg = d3.select(svgRef.current)
 
     const { width, height } =
@@ -145,12 +146,14 @@ export default function BarLineChartFuelCars({ data, children }) {
       })
       .transition()
       .attr("height", d => y1Scale(0) - y1Scale(d.sales))
+
     // line
     svg
-      .select(".plot-area")
+      // .select(".plot-area")
       .selectAll(".line")
       .data([data])
       .join("path")
+      .attr("class", "chart-line")
       .attr("fill", "none")
       .attr("stroke", "orange")
       .attr("stroke-miterlimit", 1)
@@ -215,10 +218,9 @@ const RefWrapper = styled.div`
     flex: 1;
   }
   @media ${QUERIES.tabletAndUp} {
-    width: 800px;
-    height: 300px;
+    height: 628px;
     margin-top: 150px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 `
 
@@ -238,6 +240,6 @@ const SVG = styled.svg`
     cursor: pointer;
     fill: red;
     /* filter: grayscale(100%) sepia(100%); */
-    filter: brightness(0.5);
+    filter: brightness(0.8);
   }
 `

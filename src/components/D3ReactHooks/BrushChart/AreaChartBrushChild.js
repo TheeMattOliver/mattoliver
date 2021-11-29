@@ -18,7 +18,9 @@ function AreaChartStockBrushChild({ data, selection, rectWidth }) {
   useEffect(() => {
     if (!dimensions) return
 
-    const svg = d3.select(svgRef.current)
+    const svg = d3
+      .select(svgRef.current)
+      .attr("transform", `translate(0,${-60})`)
     const content = svg.select(".content")
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect()

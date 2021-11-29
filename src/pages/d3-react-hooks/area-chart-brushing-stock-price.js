@@ -7,10 +7,6 @@ import AreaChartBrushChild from "../../components/D3ReactHooks/BrushChart/AreaCh
 export default function AreaChartBrushingStockPricePage() {
   const [data, setData] = useState("")
 
-  // const [data, setData] = useState(
-  //   Array.from({ length: 30 }).map(() => Math.round(Math.random() * 100))
-  // )
-
   useEffect(() => {
     csv(
       `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/aapl.csv`

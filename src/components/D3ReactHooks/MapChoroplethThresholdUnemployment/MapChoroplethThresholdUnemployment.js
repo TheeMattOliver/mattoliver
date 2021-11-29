@@ -20,7 +20,6 @@ export default function MapChoroplethUSPopulationDensity({ data, us }) {
     // remove paths and groups in case a resize is triggered
     d3.selectAll("g").remove()
     d3.selectAll("d").remove()
-    d3.selectAll("path").remove()
 
     const svg = d3.select(svgRef.current)
 

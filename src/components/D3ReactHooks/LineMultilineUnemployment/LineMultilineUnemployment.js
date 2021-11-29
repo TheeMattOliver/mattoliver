@@ -21,7 +21,6 @@ export default function LineMultilineUmemployment({ data }) {
     let innerHeight = height - margin.top - margin.bottom
 
     d3.selectAll("g").remove()
-    d3.selectAll("path").remove()
 
     const xScale = d3
       .scaleUtc()
