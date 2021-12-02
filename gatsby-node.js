@@ -60,7 +60,7 @@ async function turnTechnologiesIntoPages({ graphql, actions }) {
 }
 
 async function turnChartTypesIntoPages({ graphql, actions }) {
-  const chartTypeTemplate = path.resolve("./src/pages/d3-react-hooks/index.js")
+  const chartTypeTemplate = path.resolve("./src/pages/d3-reference/index.js")
 
   const { data } = await graphql(`
     query {
@@ -76,7 +76,7 @@ async function turnChartTypesIntoPages({ graphql, actions }) {
   data.chartTypes.nodes.forEach(chartType => {
     console.log(`Creating page for chart type: ` + chartType.title)
     actions.createPage({
-      path: `d3-react-hooks/chart-type/${slugify(chartType.title)}`,
+      path: `d3-reference/chart-type/${slugify(chartType.title)}`,
       component: chartTypeTemplate,
       context: {
         chartType: chartType.title,
@@ -107,7 +107,7 @@ async function turnChartsIntoPages({ graphql, actions }) {
   // 3. Loop over each chart and create a page for that chart
   data.charts.nodes.forEach(chart => {
     actions.createPage({
-      path: `d3-react-hooks-pages/${chart.slug.current}`,
+      path: `d3-reference-lib/${chart.slug.current}`,
       component: chartPageTemplate,
       context: {
         slug: chart.slug.current,

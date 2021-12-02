@@ -13,7 +13,7 @@ export default function D3ReactProjectList({ data }) {
         {charts.edges.map(chart => {
           return (
             <ProjectCard key={chart.node.id}>
-              <Link to={`/d3-react-hooks-pages/${chart.node.slug.current}`}>
+              <Link to={`/d3-reference-lib/${chart.node.slug.current}`}>
                 <CardContentWrapper>
                   <ProjectImageWrapper>
                     <ProjectMainImage
