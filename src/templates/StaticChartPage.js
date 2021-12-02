@@ -13,7 +13,9 @@ import { QUERIES, WEIGHTS } from "../constants"
 import { D3PageComponents } from "../components/D3ReactHooks/components"
 
 export default function StaticChartPage({ data, children, pageContext }) {
-  const { title, excerpt, content, slug } = data.chart
+  const { title, excerpt, content, relatedData, slug } = data.chart
+
+  console.log({ relatedData })
 
   data.chart.excerpt.text.map(i => {
     i.markDefs = []
@@ -30,7 +32,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
       <MainLayout>
         <ChartPageWrapper>
           <Aside>
-            <Link to={`/d3-react-hooks`}>
+            <Link to={`/d3-reference`}>
               <SmallText>&larr; Back</SmallText>
             </Link>
             <ChartTitleWrapper>
@@ -41,7 +43,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
                 content.map(item => <PortableText blocks={item._rawText} />)}
             </ChartCopy>
             <DesktopActions>
-              <Link to={`/d3-react-hooks/${slug.current}`}>
+              <Link to={`/d3-reference/${slug.current}`}>
                 <SmallText>View full page &rarr; </SmallText>
               </Link>
               <Spacer axis={`vertical`} size={32} />
@@ -109,10 +111,10 @@ export default function StaticChartPage({ data, children, pageContext }) {
               </ChartRepoInfoWrapper>
 
               <a
-                href={`${baseRepoURL}/src/pages/d3-react-hooks/${data.chart.slug.current}.js`}
+                href={`${baseRepoURL}/src/pages/d3-reference/${data.chart.slug.current}.js`}
               >
                 <SmallText>
-                  Fork the React implementation on Github &rarr;{" "}
+                  Fork this React implementation on Github &rarr;{" "}
                 </SmallText>
               </a>
               <Spacer axis={`vertical`} size={32} />
@@ -120,7 +122,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
               <Spacer axis={`vertical`} size={32} />
 
               <DesktopBackButtonWrapper>
-                <BackButton to="/d3-react-hooks">
+                <BackButton to="/d3-reference">
                   &larr; Back to Chart Gallery
                 </BackButton>
               </DesktopBackButtonWrapper>
@@ -135,7 +137,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
           <Aside>
             <MobileActions>
               <Spacer axis={`vertical`} size={32} />
-              <Link to={`/d3-react-hooks/${slug.current}`}>
+              <Link to={`/d3-reference/${slug.current}`}>
                 <SmallText>View full page &rarr; </SmallText>
               </Link>
               <Spacer axis={`vertical`} size={32} />
@@ -203,7 +205,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
               </ChartRepoInfoWrapper>
 
               <a
-                href={`${baseRepoURL}/src/pages/d3-react-hooks/${data.chart.slug.current}.js`}
+                href={`${baseRepoURL}/src/pages/d3-reference/${data.chart.slug.current}.js`}
               >
                 <SmallText>
                   Fork the React implementation on Github &rarr;{" "}
@@ -214,7 +216,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
               <Spacer axis={`vertical`} size={32} />
 
               <DesktopBackButtonWrapper>
-                <BackButton to="/d3-react-hooks">
+                <BackButton to="/d3-reference">
                   &larr; Back to Chart Gallery
                 </BackButton>
               </DesktopBackButtonWrapper>
@@ -272,6 +274,15 @@ export const query = graphql`
       slug {
         current
         _type
+        _key
+      }
+      relatedData {
+        heading
+        anchor
+        _type
+        _rawText
+        _rawImage
+        _rawCta
         _key
       }
       content {

@@ -70,7 +70,7 @@ export default function ChartFilter({ activeChart }) {
   return (
     <>
       <Wrapper>
-        <Link to="/d3-react-hooks">
+        <Link to="/d3-reference">
           <Badge>
             All
             <Count>{charts.nodes.length}</Count>
@@ -79,7 +79,7 @@ export default function ChartFilter({ activeChart }) {
         {typesWithCounts.map(chartType => {
           return (
             <Link
-              to={`/d3-react-hooks/chart-type/${slugify(chartType.title)}`}
+              to={`/d3-reference/chart-type/${slugify(chartType.title)}`}
               key={chartType.id}
               className={chartType.title === activeChart ? "active" : ""}
             >

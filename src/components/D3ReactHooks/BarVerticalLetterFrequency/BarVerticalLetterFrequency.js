@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import useResizeObserver from "../../../hooks/useResizeObserver"
+import { ThemeContext } from "../../ThemeContext"
 
 import * as d3 from "d3"
 import { QUERIES } from "../../../constants"
 
 export default function BarVerticalLetterFrequency({ data, order }) {
+  const { colorMode, setColorMode } = React.useContext(ThemeContext)
+
   const svgRef = useRef(null)
   const wrapperRef = useRef(null)
   const dimensions = useResizeObserver(wrapperRef)
@@ -48,6 +51,7 @@ export default function BarVerticalLetterFrequency({ data, order }) {
       .append("g")
       .attr("transform", `translate(${margin.left},0)`)
       .call(yAxis)
+      .attr("class", "y-axis")
       .call(g => g.select(".domain").remove())
       .call(g =>
         g
@@ -65,6 +69,17 @@ export default function BarVerticalLetterFrequency({ data, order }) {
           .attr("text-anchor", "start")
           .text("↑ Frequency")
       )
+      .call(g =>
+        g
+          .selectAll(".y-axis line")
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+      .call(g =>
+        g
+          .selectAll(".y-axis text")
+          .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+
     const bar = svg
       .append("g")
       .attr("fill", "steelblue")
@@ -76,8 +91,31 @@ export default function BarVerticalLetterFrequency({ data, order }) {
       .attr("height", d => yScale(0) - yScale(d.frequency))
       .attr("width", xScale.bandwidth())
 
-    svg.append("g").attr("transform", `translate(0,${innerHeight})`).call(xAxis)
-  }, [data, order, dimensions])
+    svg
+      .append("g")
+      .attr("transform", `translate(0,${innerHeight})`)
+      .attr("class", "x-axis")
+      .call(xAxis)
+      .call(g =>
+        g
+          .selectAll(".x-axis path")
+          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+      .call(g =>
+        g
+          .selectAll(".x-axis line")
+          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+      .call(g =>
+        g
+          .selectAll(".x-axis text")
+          .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+  }, [data, order, dimensions, colorMode])
   const svgStyles = { overflow: "visible" }
   return (
     <>
