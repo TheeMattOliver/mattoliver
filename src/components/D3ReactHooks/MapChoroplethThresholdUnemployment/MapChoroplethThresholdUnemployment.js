@@ -108,7 +108,7 @@ const RefWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: stretch;
-  height: 450px;
+  /* height: 450px; */
   svg {
     flex: 1;
   }
@@ -120,7 +120,7 @@ const RefWrapper = styled.div`
   }
   @media ${QUERIES.tabletAndUp} {
     flex-direction: column;
-    height: 688px;
+    /* height: 688px; */
   }
 `
 const SVG = styled.svg`

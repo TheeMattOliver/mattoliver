@@ -15,7 +15,7 @@ export default function D3ReactHooksProjectsHomePage({ data, pageContext }) {
 
   return (
     <>
-      <SEO title={`D3 & React hooks`} lang={intl.locale}></SEO>
+      <SEO title={`D3 Reference`} lang={intl.locale}></SEO>
       <MainLayout>
         <Wrapper>
           <ChartFilter />

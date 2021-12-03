@@ -120,6 +120,7 @@ const FlexWrapper = styled.div`
 const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
   @media ${QUERIES.tabletAndUp} {
     display: revert;
     padding: 0 1.75rem;

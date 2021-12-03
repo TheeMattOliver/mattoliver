@@ -3,8 +3,11 @@ import * as d3 from "d3"
 import styled from "styled-components"
 import useResizeObserver from "../../../hooks/useResizeObserver"
 import { QUERIES } from "../../../constants"
+import { ThemeContext } from "../../ThemeContext"
 
 export default function LineMultilineUmemployment({ data }) {
+  const { colorMode, setColorMode } = React.useContext(ThemeContext)
+
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
@@ -34,12 +37,34 @@ export default function LineMultilineUmemployment({ data }) {
       .range([height - margin.bottom, margin.top])
 
     const xAxis = g =>
-      g.attr("transform", `translate(0,${height - margin.bottom})`).call(
-        d3
-          .axisBottom(xScale)
-          .ticks(width / 80)
-          .tickSizeOuter(0)
-      )
+      g
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .attr("class", "x-axis")
+        .call(
+          d3
+            .axisBottom(xScale)
+            .ticks(width / 80)
+            .tickSizeOuter(0)
+        )
+        .call(g =>
+          g
+            .selectAll(".x-axis path")
+            .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+            .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+            .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+        )
+        .call(g =>
+          g
+            .selectAll(".x-axis line")
+            .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+            .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+            .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+        )
+        .call(g =>
+          g
+            .selectAll(".x-axis text")
+            .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+        )
 
     const yAxis = g =>
       g
@@ -54,6 +79,16 @@ export default function LineMultilineUmemployment({ data }) {
             .attr("text-anchor", "start")
             .attr("font-weight", "bold")
             .text(data.y)
+        )
+        .call(g =>
+          g
+            .selectAll(".tick line")
+            .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+        )
+        .call(g =>
+          g
+            .selectAll(".tick text")
+            .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
         )
 
     const line = d3
@@ -132,7 +167,7 @@ export default function LineMultilineUmemployment({ data }) {
       .attr("d", d => line(d.values))
 
     svg.call(hover, path)
-  }, [data, dimensions])
+  }, [data, dimensions, colorMode])
 
   const svgStyles = {
     overflow: "visible",

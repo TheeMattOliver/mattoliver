@@ -9,9 +9,6 @@ import { QUERIES } from "../../../constants"
 const format = d3.format(",.0f")
 
 export default function MapBubbleUSPopulation2016({ data, us, mutated }) {
-  // console.log({ data })
-  // console.log({ us })
-  // console.log({ mutated })
   const svgRef = useRef(null)
   const wrapperRef = useRef(null)
   const dimensions = useResizeObserver(wrapperRef)

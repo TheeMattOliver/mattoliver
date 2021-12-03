@@ -39,8 +39,8 @@ export default function MapChoroplethUSPopulationDensity({
     // new
     const projection = d3
       .geoAlbersUsa()
-      .scale(1300)
-      .translate([innerWidth / 2, innerHeight / 2])
+      .scale(1100)
+      .translate([innerWidth / 2 + 80, innerHeight / 2 - 100])
     const path = d3.geoPath().projection(projection)
 
     const counties = topojson
@@ -114,7 +114,7 @@ export default function MapChoroplethUSPopulationDensity({
       .append("g")
       .style("font-size", "0.8rem")
       .style("font-family", "sans-serif")
-      .attr("transform", "translate(600,40)")
+      .attr("transform", `translate(${600},${40})`)
 
     const label = legend
       .append("text")

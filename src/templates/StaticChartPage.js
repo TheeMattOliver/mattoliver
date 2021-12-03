@@ -113,9 +113,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
               <a
                 href={`${baseRepoURL}/src/pages/d3-reference/${data.chart.slug.current}.js`}
               >
-                <SmallText>
-                  Fork this React implementation on Github &rarr;{" "}
-                </SmallText>
+                <SmallText>Fork on Github &rarr; </SmallText>
               </a>
               <Spacer axis={`vertical`} size={32} />
               <Divider />
@@ -162,7 +160,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
                         fillRule="nonzero"
                       ></path>
                     </svg>
-                    <SmallTextStrong>theemattoliver/portfolio</SmallTextStrong>
+                    <SmallTextStrong>theemattoliver/mattoliver</SmallTextStrong>
                   </ChartRepoInfoRow>
                 </a>
                 <ChartRepoInfoRow>
