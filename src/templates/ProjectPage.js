@@ -428,6 +428,12 @@ const SectionCopyWrapper = styled.div`
       padding: 0 1.5rem;
     }
   }
+  p > strong {
+    text-decoration: underline;
+    &:hover {
+      color: var(--color-textLink);
+    }
+  }
   p > a {
     color: var(--color-textLink);
     text-decoration: underline;
