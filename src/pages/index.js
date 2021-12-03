@@ -36,7 +36,7 @@ export default function HomePage({ data }) {
               <MobileImgWrapper>
                 <AboutImg
                   image={pageData?.openGraphImage?.asset.gatsbyImageData}
-                  alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX."
+                  alt="A photo of Matt Oliver, artist and engineer based in Austin, TX."
                 />
               </MobileImgWrapper>
               <PageHero>
