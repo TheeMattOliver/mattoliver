@@ -3,9 +3,13 @@ import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import * as d3 from "d3"
 import useResizeObserver from "../../../hooks/useResizeObserver"
+import { ThemeContext } from "../../ThemeContext"
+
 import { QUERIES } from "../../../constants"
 
 export default function LineMultilineStocks({ data, property }) {
+  const { colorMode, setColorMode } = React.useContext(ThemeContext)
+
   const svgRef = useRef()
   const wrapperRef = useRef()
   // get current dimensions of the element we give it
@@ -51,6 +55,7 @@ export default function LineMultilineStocks({ data, property }) {
 
     const xGrid = g =>
       g
+        .attr("class", "grid-lines")
         .selectAll("line")
         .data(xScale.ticks())
         .join("line")
@@ -90,9 +95,23 @@ export default function LineMultilineStocks({ data, property }) {
 
     const yLabel = svg.append("g").call(yTitle)
 
-    const xgridlines = svg.append("g").call(xGrid)
+    const xgridlines = svg
+      .append("g")
+      .call(xGrid)
+      .call(g =>
+        g
+          .selectAll(".grid-lines line")
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : "black"}`)
+      )
 
-    const ygridlines = svg.append("g").call(yGrid)
+    const ygridlines = svg
+      .append("g")
+      .call(yGrid)
+      .call(g =>
+        g
+          .selectAll(".grid-lines line")
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : "black"}`)
+      )
 
     svg
       .selectAll("path")
@@ -109,12 +128,50 @@ export default function LineMultilineStocks({ data, property }) {
       .attr("class", "x-axis")
       .attr("transform", `translate(0,${height - margin.bottom})`)
       .call(xAxis)
+      .call(g =>
+        g
+          .selectAll(".x-axis path")
+          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+      .call(g =>
+        g
+          .selectAll(".x-axis line")
+          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+      .call(g =>
+        g
+          .selectAll(".x-axis text")
+          .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
 
     svg
       .append("g")
       .attr("class", "y-axis")
       .attr("transform", `translate(${margin.left},0)`)
       .call(yAxis)
+      .call(g =>
+        g
+          .selectAll(".y-axis path")
+          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+      .call(g =>
+        g
+          .selectAll(".y-axis line")
+          .attr("stroke-opacity", `${colorMode === "dark" ? 0.5 : ""}`)
+          .attr("stroke-dasharray", `${colorMode === "dark" ? "(2, 2)" : ""}`)
+          .style("stroke", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
+      .call(g =>
+        g
+          .selectAll(".y-axis text")
+          .style("color", `${colorMode === "dark" ? "#F2F2F2" : ""}`)
+      )
       .selectAll(".domain")
       .remove()
 
@@ -134,7 +191,7 @@ export default function LineMultilineStocks({ data, property }) {
       .style("font-family", "sans-serif")
       .style("font-size", 12)
       .text(d => d[0].name)
-  }, [data, dimensions, property])
+  }, [data, dimensions, property, colorMode])
 
   const svgStyles = { overflow: "visible" }
 

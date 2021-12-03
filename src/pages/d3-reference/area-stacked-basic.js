@@ -21,16 +21,6 @@ const colors = {
   "🫐": "#3288bd",
 }
 
-// {
-//   red: "#d53e4f"
-//   orange: "#fc8d59"
-//   yellow: "#fee08b"
-//   orange: "#ffffbf"
-//   lime: "#e6f598"
-//   green: "#99d594"
-//   blue: "#3288bd"
-// }
-
 export default function AreaStackedBasicPage() {
   const [data, setData] = useState([
     {
