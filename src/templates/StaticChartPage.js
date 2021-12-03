@@ -68,7 +68,7 @@ export default function StaticChartPage({ data, children, pageContext }) {
                         fillRule="nonzero"
                       ></path>
                     </svg>
-                    <SmallTextStrong>theemattoliver/portfolio</SmallTextStrong>
+                    <SmallTextStrong>theemattoliver/mattoliver</SmallTextStrong>
                   </ChartRepoInfoRow>
                 </a>
                 <ChartRepoInfoRow>

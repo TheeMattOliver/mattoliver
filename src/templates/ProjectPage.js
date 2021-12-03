@@ -24,6 +24,7 @@ export default function ProjectPage({ data }) {
   const { title, technologies, content, mainImage, _rawContent } = data.project
   const ledeRawText = content[0].text[0]._rawChildren[0].text
   const [hovered, setHovered] = useState(false)
+
   return (
     <>
       <SEO title={title}></SEO>
@@ -40,8 +41,15 @@ export default function ProjectPage({ data }) {
           <TechList technologies={technologies} />
 
           <StickySidebar>
-            <h2>Table of Contents</h2>
-            <TableOfContents content={content} />
+            {/* if there's only one section, we don't render a table of contents */}
+            {content.filter(item => item._type === "imageSection").length >
+            1 ? (
+              <div>
+                <h2>Table of Contents</h2>
+                <TableOfContents content={content} />
+              </div>
+            ) : null}
+
             <DesktopBackButton to="/work">
               &larr; Back to Projects
             </DesktopBackButton>
