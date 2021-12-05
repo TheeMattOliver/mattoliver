@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { tsv, utcParse } from "d3"
-import LineMultilineUnemployment from "../../components/D3ReactHooks/LineMultilineUnemployment"
+import LineMultilineUnemployment from "../../components/D3React/LineMultilineUnemployment"
 
 export default function LineMultilineUmemploymentPage() {
   const [data, setData] = useState("")

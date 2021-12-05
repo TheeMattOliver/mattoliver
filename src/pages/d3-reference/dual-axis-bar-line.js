@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import BarLineChartFuelCars from "../../components/D3ReactHooks/BarLineChartFuelCars"
+import BarLineChartFuelCars from "../../components/D3React/BarLineChartFuelCars"
 
 export default function BarLineChartPage() {
   const [csvData, setCsvData] = useState("")

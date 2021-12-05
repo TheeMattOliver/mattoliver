@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react"
 import * as d3 from "d3"
 
-import RadialAreaChartSFO from "../../components/D3ReactHooks/RadialAreaChartSFO"
+import RadialAreaChartSFO from "../../components/D3React/RadialAreaChartSFO"
 
 export default function RadialAreaChartSFOPage() {
   const [data, setData] = useState()

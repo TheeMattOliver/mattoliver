@@ -5,7 +5,7 @@ import { nest, key, rollup, entries, map } from "d3-collection"
 
 import Select from "../../components/Select"
 
-import BarChartPopulation from "../../components/D3ReactHooks/BarChartPopulation"
+import BarChartPopulation from "../../components/D3React/BarChartPopulation"
 import { ageVariables, states, getByValue } from "../../lib/census-helpers"
 
 export default function BarChartPopulationPage() {

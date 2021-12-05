@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
 
-import ScatterPlotGlobalTemps from "../../components/D3ReactHooks/ScatterGlobalTemps"
+import ScatterPlotGlobalTemps from "../../components/D3React/ScatterGlobalTemps"
 
 export default function ScatterPlotGlobalTempsPage() {
   const [data, setData] = useState([])

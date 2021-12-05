@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import DataToggleButton from "../../components/DataToggleButton"
 import Select from "../../components/Select"
-import SelectCurveLineChart from "../../components/D3ReactHooks/SelectCurveLineChart"
+import SelectCurveLineChart from "../../components/D3React/SelectCurveLineChart"
 
 export default function LineChartCurveSelectPage() {
   const [value, setValue] = React.useState("curveCardinal")

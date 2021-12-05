@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { BREAKPOINTS, QUERIES } from "../../constants"
-import Globe from "../../components/D3ReactHooks/Globe"
+import Globe from "../../components/D3React/Globe"
 
 // const Globe = React.lazy(() =>
-//   import(/*webpackPrefetch: true */ "../../components/D3ReactHooks/Globe")
+//   import(/*webpackPrefetch: true */ "../../components/D3React/Globe")
 // )
 
 export default function LocationGlobePage() {

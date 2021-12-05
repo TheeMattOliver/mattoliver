@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import LineChartInlineLabelsFruit from "../../components/D3ReactHooks/LineChartInlineLabelsFruit"
+import LineChartInlineLabelsFruit from "../../components/D3React/LineChartInlineLabelsFruit"
 
 export default function LineChartInlineLabelsPage() {
   const [data, setData] = useState("")

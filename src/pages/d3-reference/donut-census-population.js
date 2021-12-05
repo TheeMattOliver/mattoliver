@@ -5,7 +5,7 @@ import { csv } from "d3"
 import { QUERIES } from "../../constants"
 import Select from "../../components/Select"
 
-import DonutCensus from "../../components/D3ReactHooks/DonutCensus"
+import DonutCensus from "../../components/D3React/DonutCensus"
 
 export default function DonutCensusPage() {
   const [selectedValue, setSelectedValue] = useState("2019")

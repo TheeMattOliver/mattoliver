@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { json, csv } from "d3"
-import MapUSCapitals from "../../components/D3ReactHooks/MapUSCapitals"
+import MapUSCapitals from "../../components/D3React/MapUSCapitals"
 
 export default function MapCapitalsPage() {
   const [us, setUS] = useState("")

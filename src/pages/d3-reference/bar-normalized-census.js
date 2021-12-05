@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { csv, sum } from "d3"
 
-import BarNormalizedCensus from "../../components/D3ReactHooks/BarNormalizedCensus"
+import BarNormalizedCensus from "../../components/D3React/BarNormalizedCensus"
 
 export default function BarNormalizedCensusPage() {
   const [censusData, setCensusData] = useState([])

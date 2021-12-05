@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { csv, descending } from "d3"
 
-import BarHorizontalLetterFrequency from "../../components/D3ReactHooks/BarHorizontalLetterFrequency"
+import BarHorizontalLetterFrequency from "../../components/D3React/BarHorizontalLetterFrequency"
 
 export default function BarHorizontalLetterFrequencyPage() {
   const [data, setData] = useState("")

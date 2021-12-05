@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import ScatterPlotLineInequality from "../../components/D3ReactHooks/ScatterPlotLineInequality"
+import ScatterPlotLineInequality from "../../components/D3React/ScatterPlotLineInequality"
 
 export default function ScatterPlotLineInequalityPage() {
   const [data, setData] = useState("")

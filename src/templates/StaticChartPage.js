@@ -11,7 +11,7 @@ import Icon from "../components/Icon"
 import PortableText from "../components/PortableText"
 import { QUERIES, WEIGHTS } from "../constants"
 
-import { D3PageComponents } from "../components/D3ReactHooks/components"
+import { D3PageComponents } from "../components/D3React/components"
 
 export default function StaticChartPage({ data, children, pageContext }) {
   const { title, excerpt, content, relatedData, slug } = data.chart

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import ScatterFuelEfficiency from "../../components/D3ReactHooks/ScatterFuelEfficiency"
+import ScatterFuelEfficiency from "../../components/D3React/ScatterFuelEfficiency"
 
 export default function ScatterPlotEfficiencyPage() {
   const [data, setData] = useState("")

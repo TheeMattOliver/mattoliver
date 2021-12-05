@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv, timeParse } from "d3"
-import OpenHighLowCloseSingleStock from "../../components/D3ReactHooks/OpenHighLowCloseSingleStock"
+import OpenHighLowCloseSingleStock from "../../components/D3React/OpenHighLowCloseSingleStock"
 
 const parseDate = timeParse("%Y-%m-%d")
 

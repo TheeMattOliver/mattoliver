@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
 import { json } from "d3"
-import ForceGraphLesMis from "../../components/D3React/ForceGraphLesMis"
+import CirclePackingZoomable from "../../components/D3React/CirclePackingZoomable"
 
-export default function ForceGraphLesMisPage() {
+export default function CirclePackingZoomablePage() {
   const [data, setData] = useState("")
 
   useEffect(() => {
     json(
-      `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/miserables.json`
+      `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/flare-2.json`
     ).then(jsonData => {
       setData(jsonData)
     })
@@ -16,7 +16,8 @@ export default function ForceGraphLesMisPage() {
   return (
     <>
       {!data && <h1>Loading...</h1>}
-      <ForceGraphLesMis data={data} />
+
+      <CirclePackingZoomable data={data} />
     </>
   )
 }

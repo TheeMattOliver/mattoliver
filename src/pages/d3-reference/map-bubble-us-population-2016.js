@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { json } from "d3"
 import * as topojson from "topojson-client"
-import MapBubbleComponent from "../../components/D3ReactHooks/MapBubbleCensus/MapBubbleComponent"
+import MapBubbleComponent from "../../components/D3React/MapBubbleCensus/MapBubbleComponent"
 
 export default function MapBubbleUSPopulationPage() {
   const [us, setUS] = useState("")

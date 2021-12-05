@@ -3,7 +3,7 @@ import { csv } from "d3"
 
 import { QUERIES } from "../../constants"
 
-import BarVerticalLetterFrequency from "../../components/D3ReactHooks/BarVerticalLetterFrequency"
+import BarVerticalLetterFrequency from "../../components/D3React/BarVerticalLetterFrequency"
 
 export default function BarVerticalLetterFrequencyPage() {
   const [data, setData] = useState("")

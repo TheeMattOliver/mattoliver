@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import LineTooltipStockPrice from "../../components/D3ReactHooks/LineTooltipStockPrice"
+import LineTooltipStockPrice from "../../components/D3React/LineTooltipStockPrice"
 
 export default function LineTooltipStockPricePage() {
   const [data, setData] = useState("")

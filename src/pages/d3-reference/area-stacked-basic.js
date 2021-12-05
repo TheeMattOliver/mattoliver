@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { csv } from "d3"
 import styled from "styled-components"
-import AreaStackedBasic from "../../components/D3ReactHooks/AreaStackedBasic"
+import AreaStackedBasic from "../../components/D3React/AreaStackedBasic"
 import DataToggleButton from "../../components/DataToggleButton"
 
 // each year has values that we want to stack on top of each other

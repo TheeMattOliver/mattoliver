@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { csv, json } from "d3"
 import * as topojson from "topojson-client"
-import MapChoroplethThresholdUnemployment from "../../components/D3ReactHooks/MapChoroplethThresholdUnemployment"
+import MapChoroplethThresholdUnemployment from "../../components/D3React/MapChoroplethThresholdUnemployment"
 
 export default function MapChoroplethThresholdUnemploymentPage() {
   const [data, setData] = useState("")

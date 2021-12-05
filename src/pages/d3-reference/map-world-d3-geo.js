@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { json } from "d3"
 import styled from "styled-components"
 
-import MapWorldGeo from "../../components/D3ReactHooks/MapWorldGeo"
+import MapWorldGeo from "../../components/D3React/MapWorldGeo"
 import Select from "../../components/Select"
 
 export default function MapWorldGeoPage() {

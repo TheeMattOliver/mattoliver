@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import AreaChartStockPrice from "../../components/D3ReactHooks/AreaChartStockPrice"
+import AreaChartStockPrice from "../../components/D3React/AreaChartStockPrice"
 
 export default function AreaChartStockPricePage() {
   const [data, setData] = useState("")

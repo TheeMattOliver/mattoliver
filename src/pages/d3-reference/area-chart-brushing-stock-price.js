@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
 
-import AreaChartBrush from "../../components/D3ReactHooks/BrushChart/AreaChartBrush"
-import AreaChartBrushChild from "../../components/D3ReactHooks/BrushChart/AreaChartBrushChild"
+import AreaChartBrush from "../../components/D3React/BrushChart/AreaChartBrush"
+import AreaChartBrushChild from "../../components/D3React/BrushChart/AreaChartBrushChild"
 
 export default function AreaChartBrushingStockPricePage() {
   const [data, setData] = useState("")

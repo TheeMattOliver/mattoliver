@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { csv, stack, keys, sum } from "d3"
 
-import BarStackedVerticalCensusPopulation from "../../components/D3ReactHooks/BarStackedVerticalCensusPopulation"
+import BarStackedVerticalCensusPopulation from "../../components/D3React/BarStackedVerticalCensusPopulation"
 
 export default function BarStackedVerticalCensusPage() {
   const [data, setData] = useState("")

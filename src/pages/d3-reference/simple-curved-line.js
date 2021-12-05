@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { range, randomUniform } from "d3"
 import DataToggleButton from "../../components/DataToggleButton"
 
-import SimpleCurvedLineChart from "../../components/D3ReactHooks/SimpleCurvedLineChart"
+import SimpleCurvedLineChart from "../../components/D3React/SimpleCurvedLineChart"
 
 const numberOfDataPoints = 10,
   numberOfSeries = 3,

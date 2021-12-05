@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
 import styled from "styled-components"
-import SankeyDiagramEnergy from "../../components/D3ReactHooks/SankeyDiagramEnergy"
+import SankeyDiagramEnergy from "../../components/D3React/SankeyDiagramEnergy"
 import Select from "../../components/Select"
 
 export default function SankeyDiagramEnergyPage() {

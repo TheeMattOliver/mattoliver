@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { json, csv } from "d3"
 import * as topojson from "topojson-client"
-import MapChoropleth2016Election from "../../components/D3ReactHooks/MapChoropleth2016Election"
+import MapChoropleth2016Election from "../../components/D3React/MapChoropleth2016Election"
 
 export default function MapChoroplethVoting2016() {
   const [data, setData] = useState("")

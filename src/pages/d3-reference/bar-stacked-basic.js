@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import BarStackedBasic from "../../components/D3ReactHooks/BarStackedBasic"
+import BarStackedBasic from "../../components/D3React/BarStackedBasic"
 
 // each year has values that we want to stack on top of each other
 // the d3 stack function stacks all of our values together so we can

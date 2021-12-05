@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react"
 import { csv, timeParse } from "d3"
 import * as topojson from "topojson-client"
-import LineMultilineStocks from "../../components/D3ReactHooks/LineMultilineStocks"
+import LineMultilineStocks from "../../components/D3React/LineMultilineStocks"
 
 const parseDate = timeParse("%m/%d/%Y")
 

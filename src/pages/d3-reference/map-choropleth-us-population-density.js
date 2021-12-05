@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { json, csv } from "d3"
 import * as topojson from "topojson-client"
 
-import MapChoroplethUSPopulationDensity from "../../components/D3ReactHooks/MapChoroplethUSPopulationDensity"
+import MapChoroplethUSPopulationDensity from "../../components/D3React/MapChoroplethUSPopulationDensity"
 
 export default function MapChoroplethUSPopulationDensityPage() {
   const [data, setData] = useState("")

@@ -7,7 +7,7 @@ import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
 import SEO from "../../components/SEO"
 import MainLayout from "../../components/MainLayout"
-import D3ReactProjectList from "../../components/D3ReactHooks/D3ReactProjectList"
+import D3ReactProjectList from "../../components/D3React/D3ReactProjectList"
 import ChartFilter from "../../components/ChartFilter"
 
 export default function D3ReactHooksProjectsHomePage({ data, pageContext }) {

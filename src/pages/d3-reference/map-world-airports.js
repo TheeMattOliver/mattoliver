@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { json, csv } from "d3"
-import MapWorldAirports from "../../components/D3ReactHooks/MapWorldAirports"
+import MapWorldAirports from "../../components/D3React/MapWorldAirports"
 
 export default function MapAirportsPage() {
   const [world, setWorld] = useState("")

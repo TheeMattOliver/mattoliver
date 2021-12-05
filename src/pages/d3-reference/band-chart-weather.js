@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { tsv, timeParse } from "d3"
-import BandChartWeather from "../../components/D3ReactHooks/BandChartWeather"
+import BandChartWeather from "../../components/D3React/BandChartWeather"
 
 export default function BandChartWeatherPage() {
   const [data, setData] = useState("")

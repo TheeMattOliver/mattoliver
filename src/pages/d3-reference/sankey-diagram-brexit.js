@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import SankeyDiagramBrexit from "../../components/D3ReactHooks/SankeyDiagramBrexit"
+import SankeyDiagramBrexit from "../../components/D3React/SankeyDiagramBrexit"
 
 export default function SankeyDiagramBrexitPage() {
   const [data, setData] = useState("")

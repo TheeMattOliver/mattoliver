@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { csv } from "d3"
-import BubbleChartFlare from "../../components/D3ReactHooks/BubbleChartFlare"
+import BubbleChartFlare from "../../components/D3React/BubbleChartFlare"
 
 export default function BubbleChartFlarePage() {
   const [data, setData] = useState("")

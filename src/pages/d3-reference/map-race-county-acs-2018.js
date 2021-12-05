@@ -4,8 +4,8 @@ import * as topojson from "topojson-client"
 import styled from "styled-components"
 
 import Select from "../../components/Select"
-import MapRaceCountyACS2018 from "../../components/D3ReactHooks/MapRaceCounty/MapRaceCountyACS2018"
-import MapComponent from "../../components/D3ReactHooks/MapRaceCounty/MapComponent"
+import MapRaceCountyACS2018 from "../../components/D3React/MapRaceCounty/MapRaceCountyACS2018"
+import MapComponent from "../../components/D3React/MapRaceCounty/MapComponent"
 
 let total = "B02001_001E"
 
