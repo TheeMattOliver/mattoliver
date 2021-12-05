@@ -4,6 +4,7 @@ import styled from "styled-components"
 import useResizeObserver from "../../../hooks/useResizeObserver"
 import { QUERIES } from "../../../constants"
 
+// this is a WIP, 12/5
 export default function CirclePacking({ data }) {
   const svgRef = useRef()
   const wrapperRef = useRef()
@@ -47,9 +48,7 @@ export default function CirclePacking({ data }) {
           innerHeight * 1.5
         }`
       )
-      .style("background", colorScale(0))
       .style("cursor", "pointer")
-      .on("click", event => zoom(event, root))
 
     const node = svg
       .append("g")
@@ -64,10 +63,6 @@ export default function CirclePacking({ data }) {
       .on("mouseout", function () {
         d3.select(this).attr("stroke", null)
       })
-      .on(
-        "click",
-        (event, d) => focus !== d && (zoom(event, d), event.stopPropagation())
-      )
 
     const label = svg
       .append("g")
@@ -99,7 +94,6 @@ const RefWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
   height: 688px;
-  background-color: rgb(163, 245, 207);
   svg {
     flex: 1;
   }

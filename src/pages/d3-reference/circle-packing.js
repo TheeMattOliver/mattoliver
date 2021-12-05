@@ -7,7 +7,7 @@ export default function CirclePackingPage() {
 
   useEffect(() => {
     json(
-      `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/flare-2.json`
+      `https://raw.githubusercontent.com/TheeMattOliver/public-bucket/main/flare.json`
     ).then(jsonData => {
       setData(jsonData)
     })

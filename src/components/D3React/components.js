@@ -37,7 +37,18 @@ import LineChartCurveSelectPage from "../../pages/d3-reference/selectable-curve-
 import SimpleBrushableLinePage from "../../pages/d3-reference/simple-brushable-line"
 import SimpleCurvedLinePage from "../../pages/d3-reference/simple-curved-line"
 
+import CirclePackingZoomablePage from "../../pages/d3-reference/circle-packing-zoomable"
+import CirclePackingPage from "../../pages/d3-reference/circle-packing"
+
 export const D3PageComponents = [
+  {
+    id: "circle-packing",
+    Component: CirclePackingPage,
+  },
+  {
+    id: "circle-packing-zoomable",
+    Component: CirclePackingZoomablePage,
+  },
   {
     id: "area-chart-brushing-stock-price",
     Component: AreaChartBrushingStockPricePage,

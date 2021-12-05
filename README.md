@@ -1,6 +1,6 @@
 <!-- START -->
 
-# Dev & Product Portfolio for Matt Oliver
+# Matt Oliver website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/44da42bc-8204-4758-8dbd-3e1c3f64cb35/deploy-status)](https://app.netlify.com/sites/adoring-bohr-7062c0/deploys)
 
@@ -26,7 +26,7 @@
 
 ## About the Project
 
-My hope is that a website provides a helpful example of some of the most recent product and web development work I've done, and that by putting it in one place, I can reason about where I'm going.
+My hope is that a website provides a helpful example of some of the most recent work I've done, and that by putting as much it in one place as I can, it helps reason about where I'm going.
 
 The site is live at [mattoliver.xyz](https://mattoliver.xyz).
 
@@ -34,7 +34,7 @@ I'm always interested in working with misfits, outcasts, and hell-raisers who wa
 
 ## Overview
 
-I built the project with Gatsby. I used Sanity as the CMS. I wrote the CSS from scratch, mainly using [styled-components](https://styled-components.com/).
+I built the project with Gatsby and used Sanity as the CMS. I wrote the CSS from scratch, mainly using [styled-components](https://styled-components.com/).
 
 The responsive grid and table of contents component on the individual project pages took some doing! Please feel free to leave some feedback through the contact form.
 
