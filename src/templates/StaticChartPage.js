@@ -23,10 +23,11 @@ export default function StaticChartPage({ data, children, pageContext }) {
   })
 
   relatedData.map(item => {
-    item.text.map(block => {
-      block.markDefs = []
-      return block
-    })
+    item.text &&
+      item.text.map(block => {
+        block.markDefs = []
+        return block
+      })
   })
 
   console.log({ relatedData })
