@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-plugin-intl"
 
 import SEO from "../components/SEO"
@@ -15,17 +16,25 @@ import { D3PageComponents } from "../components/D3ReactHooks/components"
 export default function StaticChartPage({ data, children, pageContext }) {
   const { title, excerpt, content, relatedData, slug } = data.chart
 
-  console.log({ relatedData })
-
+  // this is terrible:
   data.chart.excerpt.text.map(i => {
     i.markDefs = []
     return i
   })
 
+  relatedData.map(item => {
+    item.text.map(block => {
+      block.markDefs = []
+      return block
+    })
+  })
+
+  console.log({ relatedData })
+
   let PageComponent = D3PageComponents.filter(
     item => item.id === pageContext.slug
   )[0].Component
-  const baseRepoURL = `https://github.com/theemattoliver/mgo-portfolio-web/tree/main`
+  const baseRepoURL = `https://github.com/theemattoliver/mattoliver/tree/main`
   return (
     <>
       <SEO title={title}></SEO>
@@ -40,8 +49,11 @@ export default function StaticChartPage({ data, children, pageContext }) {
             </ChartTitleWrapper>
             <ChartCopy>
               {content &&
-                content.map(item => <PortableText blocks={item._rawText} />)}
+                content.map(item => (
+                  <PortableText key={item.id} blocks={item._rawText} />
+                ))}
             </ChartCopy>
+
             <DesktopActions>
               <Link to={`/d3-reference/${slug.current}`}>
                 <SmallText>View full page &rarr; </SmallText>
@@ -117,6 +129,31 @@ export default function StaticChartPage({ data, children, pageContext }) {
               </a>
               <Spacer axis={`vertical`} size={32} />
               <Divider />
+              {/* <ChartRepoInfoWrapper>
+                <h6 style={{ textTransform: "uppercase", fontSize: "12px" }}>
+                  Resources
+                </h6>
+                <a href={relatedData[0].anchor}>
+                  <ChartRepoInfoRow>
+                    <GatsbyImage
+                      alt=""
+                      image={relatedData[0].image.asset.gatsbyImageData}
+                    />
+
+                    <SmallTextStrong>
+                      {relatedData[0].heading}/{relatedData[0].label}
+                    </SmallTextStrong>
+                  </ChartRepoInfoRow>
+                </a> */}
+              {/* <ChartRepoInfoRow>
+                  <ChartCopy>
+                    {relatedData &&
+                      relatedData.map(item => (
+                        <PortableText key={item.id} blocks={item.text} />
+                      ))}
+                  </ChartCopy>
+                </ChartRepoInfoRow> */}
+              {/* </ChartRepoInfoWrapper> */}
               <Spacer axis={`vertical`} size={32} />
 
               <DesktopBackButtonWrapper>
@@ -275,13 +312,29 @@ export const query = graphql`
         _key
       }
       relatedData {
+        image {
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+            label
+            id
+          }
+        }
+        text {
+          style
+          list
+          children {
+            _key
+            _type
+            marks
+            text
+          }
+          _type
+          _rawChildren
+          _key
+        }
         heading
+        label
         anchor
-        _type
-        _rawText
-        _rawImage
-        _rawCta
-        _key
       }
       content {
         ... on SanityImageSection {
@@ -417,7 +470,7 @@ const ChartRepoInfoWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 1rem 0;
 `
 const ChartRepoInfoRow = styled.div`
   display: flex;
