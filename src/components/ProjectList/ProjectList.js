@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import styled from 'styled-components';
-import { GatsbyImage } from "gatsby-plugin-image";
-import { Link } from "gatsby-plugin-intl";
-import { format } from 'date-fns';
+import React from "react"
+import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby-plugin-intl"
+import { format } from "date-fns"
 
-import { QUERIES, TRANSITIONS } from '../../constants';
-import Spacer from '../Spacer';
+import { QUERIES, TRANSITIONS } from "../../constants"
+import Spacer from "../Spacer"
 
 export default function ProjectList({ projects }) {
   return (
@@ -19,7 +19,7 @@ export default function ProjectList({ projects }) {
                 <ProjectCardHeader>
                   <small>
                     <time dateTime="">
-                      {format(new Date(project.startedAt), 'MMMM yyyy')}
+                      {format(new Date(project.startedAt), "MMMM yyyy")}
                     </time>
                   </small>
                   <h2>{project.title}</h2>
@@ -34,31 +34,27 @@ export default function ProjectList({ projects }) {
                   />
                 </ProjectImageWrapper>
                 <ProjectCardContent>
-                  <p>
-                    {project.excerpt.text[0]._rawChildren[0].text}
-                  </p>
+                  <p>{project.excerpt.text[0]._rawChildren[0].text}</p>
                 </ProjectCardContent>
                 <OffsetProjectCardContentWrapper>
                   <OffsetProjectCardHeader>
                     <small>
                       <time dateTime="">
-                        {format(new Date(project.startedAt), 'MMMM yyyy')}
+                        {format(new Date(project.startedAt), "MMMM yyyy")}
                       </time>
                       {` `}
                       <span>-</span>
                       {` `}
                       <time dateTime="">
-                        {format(new Date(project.endedAt), 'MMMM yyyy')}
+                        {format(new Date(project.endedAt), "MMMM yyyy")}
                       </time>
                     </small>
                     <h2>{project.title}</h2>
                   </OffsetProjectCardHeader>
 
-                  <p>
-                    {project.excerpt.text[0]._rawChildren[0].text}
-                  </p>
+                  <p>{project.excerpt.text[0]._rawChildren[0].text}</p>
                 </OffsetProjectCardContentWrapper>
-                <LargeMonitorSpacer axis='vertical' size={100} />
+                <LargeMonitorSpacer axis="vertical" size={100} />
               </Link>
             </ProjectCardWrapper>
           )
@@ -71,8 +67,10 @@ export default function ProjectList({ projects }) {
 const GridWrapper = styled.div`
   --min-column-width: min(440px, 100%);
   display: grid;
-  grid-template-columns:
-    repeat(auto-fill, minmax(var(--min-column-width), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--min-column-width), 1fr)
+  );
   gap: 2rem;
   padding: 16px;
   @media ${QUERIES.laptopAndUp} {
@@ -83,7 +81,7 @@ const GridWrapper = styled.div`
     gap: 2rem;
     margin-right: 2rem;
   }
-`;
+`
 
 const ProjectCardWrapper = styled.div`
   position: relative;
@@ -92,11 +90,10 @@ const ProjectCardWrapper = styled.div`
   background: var(--color-background);
   border-radius: 5px;
   flex: 1;
-  
 
   @media ${QUERIES.tabletAndUp} {
     margin: 4rem 3.25rem 4rem 2rem;
-    background: var(--color-panelBackground);
+    background: var(--color-backgroundOverlay);
   }
   @media ${QUERIES.laptopAndUp} {
     margin: 4rem 3.25rem 4rem 2rem;
@@ -104,40 +101,41 @@ const ProjectCardWrapper = styled.div`
   @media ${QUERIES.desktopAndUp} {
     margin: 1rem;
   }
-`;
+`
 
 const ProjectCardHeader = styled.div`
   /* display: block; */
   display: flex;
   flex-direction: column;
-  padding: .5rem;
+  padding: 0.5rem;
   margin: 1rem 0;
   h2 {
     font-size: calc(1rem + 1vw);
     display: inline-block;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     color: var(--color-textPrimary);
   }
-  small, time {
+  small,
+  time {
     color: var(--color-textSecondary);
   }
   @media ${QUERIES.tabletAndUp} {
     display: none;
   }
-`;
+`
 const ProjectCardContent = styled.div`
   display: block;
-  padding: .5rem;
+  padding: 0.5rem;
   margin-bottom: 2rem;
   margin-top: 1rem;
   p {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     color: var(--color-textSecondary);
   }
   @media ${QUERIES.tabletAndUp} {
     display: none;
   }
-`;
+`
 
 const OffsetProjectCardContentWrapper = styled.div`
   display: none;
@@ -145,7 +143,7 @@ const OffsetProjectCardContentWrapper = styled.div`
   h2 {
     font-size: calc(1rem + 1vw);
     display: inline-block;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     color: var(--color-textPrimary);
     text-decoration: none;
     &::before {
@@ -161,28 +159,30 @@ const OffsetProjectCardContentWrapper = styled.div`
       transition: transform 0.3s ease;
     }
   }
-  small, time {
+  small,
+  time {
     color: var(--color-textSecondary);
   }
   p {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     color: var(--color-textSecondary);
   }
   @media ${QUERIES.tabletAndUp} {
     display: block;
-    background: var(--color-panelBackground);
+    background: var(--color-backgroundOverlay);
     flex: 1;
     h2 {
       font-size: calc(1rem + 1vw);
       display: inline-block;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       color: var(--color-textPrimary);
     }
-    small, time {
+    small,
+    time {
       color: var(--color-textSecondary);
     }
     p {
-      margin-top: .5rem;
+      margin-top: 0.5rem;
       color: var(--color-textSecondary);
     }
     padding: 1rem 1.5rem 1.5rem;
@@ -193,13 +193,13 @@ const OffsetProjectCardContentWrapper = styled.div`
     margin-right: -2.5rem;
     margin-left: 2rem;
   }
-`;
+`
 
 const OffsetProjectCardHeader = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-`;
+`
 
 const ProjectImageWrapper = styled.div`
   flex: 1;
@@ -212,11 +212,11 @@ const ProjectImageWrapper = styled.div`
     &::after {
       opacity: 0.5;
     }
-  };
+  }
   &::after {
     /* background: linear-gradient(var(--color-blue50), var(--color-blue900)); */
     background: linear-gradient(var(--color-gray50), var(--color-gray900));
-    content: '';
+    content: "";
     height: 100%;
     left: 0;
     opacity: 0;
@@ -225,7 +225,7 @@ const ProjectImageWrapper = styled.div`
     transition: opacity 250ms ${TRANSITIONS.normal};
     width: 100%;
   }
-`;
+`
 
 const ProjectMainImage = styled(GatsbyImage)`
   height: calc(100% + 1rem);
@@ -233,8 +233,11 @@ const ProjectMainImage = styled(GatsbyImage)`
   object-position: top left;
   flex: 1;
   &::after {
-    background-image: linear-gradient(var(--color-blue50), var(--color-blue500));
-    content: '';
+    background-image: linear-gradient(
+      var(--color-blue50),
+      var(--color-blue500)
+    );
+    content: "";
     height: 100%;
     left: 0;
     opacity: 0;
@@ -243,20 +246,18 @@ const ProjectMainImage = styled(GatsbyImage)`
     transition: opacity 150ms ${TRANSITIONS.normal};
     width: 100%;
   }
-`;
+`
 
 const LargeMonitorSpacer = styled(Spacer)`
   display: none;
   @media ${QUERIES.desktopAndUp} {
     display: block;
   }
-`;
+`
 
 const ProjectTitleLink = styled(props => <Link {...props} />)`
   color: red;
   /* &:hover {
     text-decoration: underline;
   } */
-`;
-
-
+`

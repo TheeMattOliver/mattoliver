@@ -1,15 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import styled from 'styled-components';
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import VisuallyHidden from '../VisuallyHidden';
+import React from "react"
+import styled from "styled-components"
+import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import VisuallyHidden from "../VisuallyHidden"
 
 export default function ContactForm() {
   return (
     <ContactFormContainer>
-      <VisuallyHidden>
-        Contact form
-      </VisuallyHidden>
+      <VisuallyHidden>Contact form</VisuallyHidden>
 
       <Grid>
         {/* Contact information */}
@@ -115,9 +113,20 @@ export default function ContactForm() {
 
           <h3>Contact</h3>
           <p>
-            I'd love to hear from you about working together or scheduling some time to talk.
+            I'd love to hear from you about working together or scheduling some
+            time to talk.
           </p>
-          <p>This form's submissions are forwarded to my personal inbox, or as an alternative you can also feel free to email me directly: <a href="mailto:matt@mattoliver.xyz" rel="noopener noreferrer" target="_blank">matt@mattoliver.xyz</a></p>
+          <p>
+            This form's submissions are forwarded to my personal inbox, or as an
+            alternative you can also feel free to email me directly:{" "}
+            <a
+              href="mailto:matt@mattoliver.xyz"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              matt@mattoliver.xyz
+            </a>
+          </p>
 
           {/* <dl className="space-y-6">
             <dt>
@@ -137,9 +146,11 @@ export default function ContactForm() {
           </dl> */}
           <SocialIconsList role="list" className="space-x-12">
             <li>
-              <a href="https://observablehq.com/collection/@theemattoliver/census-data-states-and-counties"
+              <a
+                href="https://observablehq.com/collection/@theemattoliver/census-data-states-and-counties"
                 rel="noopener noreferrer"
-                target="_blank">
+                target="_blank"
+              >
                 <VisuallyHidden>Observable</VisuallyHidden>
                 <svg
                   role="img"
@@ -149,13 +160,18 @@ export default function ContactForm() {
                   aria-label="Observable logo"
                   aria-hidden="true"
                   fill="currentColor"
-                  style={{ "height": "24px", "width": "24px" }}>
-                  <path d="M12.5 22.6667C11.3458 22.6667 10.3458 22.4153 9.5 21.9127C8.65721 21.412 7.98339 20.7027 7.55521 19.8654C7.09997 18.9942 6.76672 18.0729 6.56354 17.1239C6.34796 16.0947 6.24294 15.0483 6.25 14C6.25 13.1699 6.30417 12.3764 6.41354 11.6176C6.52188 10.8598 6.72292 10.0894 7.01563 9.30748C7.30833 8.52555 7.68542 7.84763 8.14479 7.27274C8.62304 6.68378 9.24141 6.20438 9.95208 5.87163C10.6979 5.51244 11.5458 5.33333 12.5 5.33333C13.6542 5.33333 14.6542 5.58467 15.5 6.08733C16.3428 6.588 17.0166 7.29733 17.4448 8.13459C17.8969 8.99644 18.2271 9.9103 18.4365 10.8761C18.6448 11.841 18.75 12.883 18.75 14C18.75 14.8301 18.6958 15.6236 18.5865 16.3824C18.4699 17.1702 18.2639 17.9446 17.9719 18.6925C17.6698 19.4744 17.2948 20.1524 16.8427 20.7273C16.3906 21.3021 15.7927 21.7692 15.0479 22.1284C14.3031 22.4876 13.4542 22.6667 12.5 22.6667ZM14.7063 16.2945C15.304 15.6944 15.6365 14.864 15.625 14C15.625 13.1073 15.326 12.3425 14.7292 11.7055C14.1313 11.0685 13.3885 10.75 12.5 10.75C11.6115 10.75 10.8688 11.0685 10.2708 11.7055C9.68532 12.3123 9.36198 13.1405 9.375 14C9.375 14.8927 9.67396 15.6575 10.2708 16.2945C10.8688 16.9315 11.6115 17.25 12.5 17.25C13.3885 17.25 14.124 16.9315 14.7063 16.2945ZM12.5 27C19.4031 27 25 21.1792 25 14C25 6.82075 19.4031 1 12.5 1C5.59687 1 0 6.82075 0 14C0 21.1792 5.59687 27 12.5 27Z" fill="currentColor"></path>
+                  style={{ height: "24px", width: "24px" }}
+                >
+                  <path
+                    d="M12.5 22.6667C11.3458 22.6667 10.3458 22.4153 9.5 21.9127C8.65721 21.412 7.98339 20.7027 7.55521 19.8654C7.09997 18.9942 6.76672 18.0729 6.56354 17.1239C6.34796 16.0947 6.24294 15.0483 6.25 14C6.25 13.1699 6.30417 12.3764 6.41354 11.6176C6.52188 10.8598 6.72292 10.0894 7.01563 9.30748C7.30833 8.52555 7.68542 7.84763 8.14479 7.27274C8.62304 6.68378 9.24141 6.20438 9.95208 5.87163C10.6979 5.51244 11.5458 5.33333 12.5 5.33333C13.6542 5.33333 14.6542 5.58467 15.5 6.08733C16.3428 6.588 17.0166 7.29733 17.4448 8.13459C17.8969 8.99644 18.2271 9.9103 18.4365 10.8761C18.6448 11.841 18.75 12.883 18.75 14C18.75 14.8301 18.6958 15.6236 18.5865 16.3824C18.4699 17.1702 18.2639 17.9446 17.9719 18.6925C17.6698 19.4744 17.2948 20.1524 16.8427 20.7273C16.3906 21.3021 15.7927 21.7692 15.0479 22.1284C14.3031 22.4876 13.4542 22.6667 12.5 22.6667ZM14.7063 16.2945C15.304 15.6944 15.6365 14.864 15.625 14C15.625 13.1073 15.326 12.3425 14.7292 11.7055C14.1313 11.0685 13.3885 10.75 12.5 10.75C11.6115 10.75 10.8688 11.0685 10.2708 11.7055C9.68532 12.3123 9.36198 13.1405 9.375 14C9.375 14.8927 9.67396 15.6575 10.2708 16.2945C10.8688 16.9315 11.6115 17.25 12.5 17.25C13.3885 17.25 14.124 16.9315 14.7063 16.2945ZM12.5 27C19.4031 27 25 21.1792 25 14C25 6.82075 19.4031 1 12.5 1C5.59687 1 0 6.82075 0 14C0 21.1792 5.59687 27 12.5 27Z"
+                    fill="currentColor"
+                  ></path>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="https://github.com/TheeMattOliver"
+              <a
+                href="https://github.com/TheeMattOliver"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -166,7 +182,7 @@ export default function ContactForm() {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  style={{ "height": "24px", "width": "24px" }}
+                  style={{ height: "24px", width: "24px" }}
                   aria-label="Github"
                   aria-hidden="true"
                 >
@@ -178,7 +194,8 @@ export default function ContactForm() {
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/TheeMattOliver"
+              <a
+                href="https://twitter.com/TheeMattOliver"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -190,7 +207,7 @@ export default function ContactForm() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
-                  style={{ "height": "24px", "width": "24px" }}
+                  style={{ height: "24px", width: "24px" }}
                 >
                   <path
                     d="M7.548 22.501c9.056 0 14.01-7.503 14.01-14.01 0-.213 0-.425-.015-.636A10.02 10.02 0 0024 5.305a9.828 9.828 0 01-2.828.776 4.94 4.94 0 002.165-2.724 9.867 9.867 0 01-3.127 1.195 4.929 4.929 0 00-8.391 4.491A13.98 13.98 0 011.67 3.9a4.928 4.928 0 001.525 6.573A4.887 4.887 0 01.96 9.855v.063a4.926 4.926 0 003.95 4.827 4.917 4.917 0 01-2.223.084 4.93 4.93 0 004.6 3.42A9.88 9.88 0 010 20.289a13.941 13.941 0 007.548 2.209"
@@ -214,11 +231,13 @@ export default function ContactForm() {
             action="/thank-you"
           >
             <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="website-contact-form" />
+            <input
+              type="hidden"
+              name="form-name"
+              value="website-contact-form"
+            />
             <div>
-              <Label htmlFor="first-name">
-                First name
-              </Label>
+              <Label htmlFor="first-name">First name</Label>
               <InputWrapper>
                 <Input
                   type="text"
@@ -230,9 +249,7 @@ export default function ContactForm() {
               </InputWrapper>
             </div>
             <div>
-              <Label htmlFor="last-name">
-                Last name
-              </Label>
+              <Label htmlFor="last-name">Last name</Label>
               <InputWrapper>
                 <Input
                   type="text"
@@ -244,9 +261,7 @@ export default function ContactForm() {
               </InputWrapper>
             </div>
             <div>
-              <Label htmlFor="email">
-                Email
-              </Label>
+              <Label htmlFor="email">Email</Label>
               <InputWrapper>
                 <Input
                   id="email"
@@ -259,12 +274,8 @@ export default function ContactForm() {
             </div>
             <div>
               <div className="flex justify-between">
-                <Label htmlFor="phone">
-                  Phone
-                </Label>
-                <OptionalText id="phone-optional">
-                  Optional
-                </OptionalText>
+                <Label htmlFor="phone">Phone</Label>
+                <OptionalText id="phone-optional">Optional</OptionalText>
               </div>
               <InputWrapper>
                 <Input
@@ -278,9 +289,7 @@ export default function ContactForm() {
               </InputWrapper>
             </div>
             <div className="sm:col-span-2">
-              <Label htmlFor="subject">
-                Subject
-              </Label>
+              <Label htmlFor="subject">Subject</Label>
               <InputWrapper>
                 <Input
                   type="text"
@@ -292,9 +301,7 @@ export default function ContactForm() {
             </div>
             <div className="sm:col-span-2">
               <div className="flex justify-between">
-                <Label htmlFor="message">
-                  Message
-                </Label>
+                <Label htmlFor="message">Message</Label>
                 <OptionalText id="message-max">
                   Max. 500 characters please
                 </OptionalText>
@@ -306,7 +313,7 @@ export default function ContactForm() {
                   rows={4}
                   className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   aria-describedby="message-max"
-                  defaultValue={''}
+                  defaultValue={""}
                 />
               </InputWrapper>
             </div>
@@ -330,7 +337,7 @@ const ContactFormContainer = styled.div`
   /* relative bg-white shadow-xl */
   position: relative;
   background: var(--color-background);
-`;
+`
 
 const Grid = styled.div`
   /* grid grid-cols-1 lg:grid-cols-3 */
@@ -340,14 +347,14 @@ const Grid = styled.div`
   @media ${QUERIES.laptopAndUp} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-`;
+`
 
 const ContactInformation = styled.div`
   /* relative overflow-hidden py-10 px-6 bg-indigo-700 sm:px-10 xl:p-12 */
   position: relative;
   overflow: hidden;
   padding: 4rem 1rem;
-  background: var(--color-panelBackgroundDark);
+  background: var(--color-backgroundOverlayDark);
   /* text-lg font-medium text-white */
   h3 {
     font-size: 2rem;
@@ -360,12 +367,7 @@ const ContactInformation = styled.div`
     color: ${COLORS.gray100.light};
     max-width: 48rem;
     line-height: 1.5rem;
-    font-size: clamp(
-      1rem,
-      /* 1.3vw + .9rem, */
-      1.25vw + .5rem,
-      1.45rem
-    );
+    font-size: clamp(1rem, /* 1.3vw + .9rem, */ 1.25vw + 0.5rem, 1.45rem);
     width: clamp(300px, 95%, 750px);
   }
   /* mt-8 space-y-6 */
@@ -395,14 +397,13 @@ const ContactInformation = styled.div`
     padding: 4rem 1.5rem;
     padding: 3rem;
   }
-`;
-
+`
 
 const SocialIconsList = styled.ul`
   /* mt-8 flex space-x-12 */
   margin-top: 2rem;
   display: flex;
-`;
+`
 
 const FormWrapper = styled.div`
   /* py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 */
@@ -419,22 +420,24 @@ const FormWrapper = styled.div`
     grid-column: span 2 / span 2;
   }
   @media ${QUERIES.desktopAndUp} {
-    padding: 3rem; 
+    padding: 3rem;
   }
-`;
+`
 
 const Form = styled.form`
   /* mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 */
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     color: var(--color-textPrimary);
   }
   @media ${QUERIES.tabletAndUp} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-`;
+`
 
 const Label = styled.label`
   /* block text-sm font-medium text-gray-900 */
@@ -443,11 +446,11 @@ const Label = styled.label`
   line-height: 1.25rem;
   font-weight: ${WEIGHTS.medium};
   color: var(--color-textPrimary);
-`;
+`
 
 const InputWrapper = styled.div`
   margin: 0.25rem;
-`;
+`
 
 const Input = styled.input`
   /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md */
@@ -462,7 +465,7 @@ const Input = styled.input`
   @media ${QUERIES.tabletAndUp} {
     box-shadow: revert;
   }
-`;
+`
 
 const TextArea = styled.textarea`
   /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md */
@@ -473,14 +476,14 @@ const TextArea = styled.textarea`
   color: ${COLORS.gray900.light};
   border: 1px solid var(--color-borderPrimary);
   border-radius: 0.375rem;
-`;
+`
 
 const OptionalText = styled.span`
   /* text-sm text-gray-500 */
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--color-textSecondary);
-`;
+`
 
 const Button = styled.button`
   /* mt-2 w-full inline-flex items-center justify-center px-6 py-3 border 
@@ -502,9 +505,9 @@ const Button = styled.button`
   color: var(--color-white);
   background: var(--color-buttonPrimary);
   &:hover {
-    background: ${COLORS.blue700.light}
+    background: ${COLORS.blue700.light};
   }
   @media ${QUERIES.tabletAndUp} {
     width: auto;
   }
-`;
+`

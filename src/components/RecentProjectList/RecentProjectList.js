@@ -113,7 +113,7 @@ const ProjectCardWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--color-panelBackground);
+  background: var(--color-backgroundOverlay);
   border-radius: 5px;
   flex: 1;
 
