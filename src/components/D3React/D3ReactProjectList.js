@@ -100,7 +100,7 @@ const ProjectCardContentInfo = styled.div`
   }
   color: var(--color-textPrimary);
   font-weight: ${WEIGHTS.medium};
-  background: var(--color-hiddenPanelBackground);
+  background: var(--color-hiddenBackgroundOverlay);
   transition: opacity 0.6s ease;
   opacity: 0;
   position: absolute;

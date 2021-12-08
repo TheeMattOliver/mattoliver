@@ -1,44 +1,46 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { useFormik, Form, Formik, Field } from 'formik';
-import * as Yup from 'yup';
+import React, { useState } from "react"
+import styled from "styled-components"
+import { useFormik, Form, Formik, Field } from "formik"
+import * as Yup from "yup"
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import VisuallyHidden from '../VisuallyHidden';
-import FormSubmitThankYou from '../FormSubmitThankYou/';
+import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import VisuallyHidden from "../VisuallyHidden"
+import FormSubmitThankYou from "../FormSubmitThankYou/"
 
-const encode = (data) => {
+const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+    .join("&")
 }
 
 const ContactFormik = () => {
-  const [submissionMessage, setSubmissionMessage] = useState(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState(null)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   return (
     <Formik
       initialValues={{
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
       }}
       validationSchema={Yup.object({
         firstName: Yup.string()
-          .max(25, 'Must be 25 characters or less')
-          .required('First name is a required field.'),
+          .max(25, "Must be 25 characters or less")
+          .required("First name is a required field."),
         lastName: Yup.string()
-          .max(40, 'Must be 40 characters or less')
-          .required('Last name is a required field.'),
+          .max(40, "Must be 40 characters or less")
+          .required("Last name is a required field."),
         email: Yup.string()
-          .email('Invalid email address')
-          .required('Email is a required field.'),
-        message: Yup.string()
-          .max(500, 'Uh oh, your message is too long. Please keep your message to 500 characters or less.')
+          .email("Invalid email address")
+          .required("Email is a required field."),
+        message: Yup.string().max(
+          500,
+          "Uh oh, your message is too long. Please keep your message to 500 characters or less."
+        ),
       })}
       onSubmit={(values, actions) => {
         fetch("/", {
@@ -46,21 +48,23 @@ const ContactFormik = () => {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encode({
             "form-name": "website-contact-form",
-            ...values
-          })
+            ...values,
+          }),
         })
           .then(() => {
-            setSubmissionMessage("Success!");
+            setSubmissionMessage("Success!")
             setIsSubmitted(true)
             actions.resetForm()
           })
           .catch(() => {
-            setSubmissionMessage("Sorry, looks like something's going wrong on my end. If you wouldn't mind, please email me at matt@mattoliver.xyz so I can get it fixed.");
+            setSubmissionMessage(
+              "Sorry, looks like something's going wrong on my end. If you wouldn't mind, please email me at matt@mattoliver.xyz so I can get it fixed."
+            )
           })
           .finally(() => actions.setSubmitting(false))
       }}
     >
-      {formik => (
+      {formik =>
         !isSubmitted ? (
           <StyledForm
             method="POST"
@@ -71,11 +75,13 @@ const ContactFormik = () => {
             onSubmit={formik.handleSubmit}
           >
             <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="website-contact-form" />
+            <input
+              type="hidden"
+              name="form-name"
+              value="website-contact-form"
+            />
             <div>
-              <Label htmlFor="firstName">
-                First name
-              </Label>
+              <Label htmlFor="firstName">First name</Label>
               <InputWrapper>
                 <Input
                   type="text"
@@ -83,21 +89,17 @@ const ContactFormik = () => {
                   id="firstName"
                   autoComplete="given-name"
                   className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  {...formik.getFieldProps('firstName')}
+                  {...formik.getFieldProps("firstName")}
                 />
               </InputWrapper>
               {formik.touched.firstName && formik.errors.firstName ? (
                 <ErrorMessageWrapper>
-                  <ErrorMessage>
-                    {formik.errors.firstName}
-                  </ErrorMessage>
+                  <ErrorMessage>{formik.errors.firstName}</ErrorMessage>
                 </ErrorMessageWrapper>
               ) : null}
             </div>
             <div>
-              <Label htmlFor="lastName">
-                Last name
-              </Label>
+              <Label htmlFor="lastName">Last name</Label>
               <InputWrapper>
                 <Input
                   type="text"
@@ -105,21 +107,17 @@ const ContactFormik = () => {
                   id="lastName"
                   autoComplete="family-name"
                   className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  {...formik.getFieldProps('lastName')}
+                  {...formik.getFieldProps("lastName")}
                 />
               </InputWrapper>
               {formik.touched.lastName && formik.errors.lastName ? (
                 <ErrorMessageWrapper>
-                  <ErrorMessage>
-                    {formik.errors.lastName}
-                  </ErrorMessage>
+                  <ErrorMessage>{formik.errors.lastName}</ErrorMessage>
                 </ErrorMessageWrapper>
               ) : null}
             </div>
             <div>
-              <Label htmlFor="email">
-                Email
-              </Label>
+              <Label htmlFor="email">Email</Label>
               <InputWrapper>
                 <Input
                   id="email"
@@ -127,25 +125,19 @@ const ContactFormik = () => {
                   type="email"
                   autoComplete="email"
                   className={`shadow-sm focus:ring-blue-500 focus:border-blue-500`}
-                  {...formik.getFieldProps('email')}
+                  {...formik.getFieldProps("email")}
                 />
               </InputWrapper>
               {formik.touched.email && formik.errors.email ? (
                 <ErrorMessageWrapper>
-                  <ErrorMessage>
-                    {formik.errors.email}
-                  </ErrorMessage>
+                  <ErrorMessage>{formik.errors.email}</ErrorMessage>
                 </ErrorMessageWrapper>
               ) : null}
             </div>
             <div>
               <div className="flex justify-between">
-                <Label htmlFor="phone">
-                  Phone
-                </Label>
-                <OptionalText id="phone-optional">
-                  Optional
-                </OptionalText>
+                <Label htmlFor="phone">Phone</Label>
+                <OptionalText id="phone-optional">Optional</OptionalText>
               </div>
               <InputWrapper>
                 <Input
@@ -155,29 +147,25 @@ const ContactFormik = () => {
                   autoComplete="tel"
                   className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   aria-describedby="phone-optional"
-                  {...formik.getFieldProps('phone')}
+                  {...formik.getFieldProps("phone")}
                 />
               </InputWrapper>
             </div>
             <div className="sm:col-span-2">
-              <Label htmlFor="subject">
-                Subject
-              </Label>
+              <Label htmlFor="subject">Subject</Label>
               <InputWrapper>
                 <Input
                   type="text"
                   name="subject"
                   id="subject"
                   className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  {...formik.getFieldProps('subject')}
+                  {...formik.getFieldProps("subject")}
                 />
               </InputWrapper>
             </div>
             <div className="sm:col-span-2">
               <div className="flex justify-between">
-                <Label htmlFor="message">
-                  Message
-                </Label>
+                <Label htmlFor="message">Message</Label>
                 <OptionalText id="message-max">
                   Max. 500 characters please
                 </OptionalText>
@@ -190,14 +178,12 @@ const ContactFormik = () => {
                   className="shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   aria-describedby="message-max"
                   // defaultValue={''}
-                  {...formik.getFieldProps('message')}
+                  {...formik.getFieldProps("message")}
                 />
               </InputWrapper>
               {formik.touched.firstName && formik.errors.firstName ? (
                 <ErrorMessageWrapper>
-                  <ErrorMessage>
-                    {formik.errors.message}
-                  </ErrorMessage>
+                  <ErrorMessage>{formik.errors.message}</ErrorMessage>
                 </ErrorMessageWrapper>
               ) : null}
             </div>
@@ -209,12 +195,12 @@ const ContactFormik = () => {
                 Submit
               </Button>
             </div>
-            {submissionMessage && (<p>{submissionMessage}</p>)}
+            {submissionMessage && <p>{submissionMessage}</p>}
           </StyledForm>
         ) : (
           <FormSubmitThankYou />
         )
-      )}
+      }
     </Formik>
   )
 }
@@ -226,7 +212,7 @@ const ContactFormContainer = styled.div`
   /* relative bg-white shadow-xl */
   position: relative;
   background: var(--color-background);
-`;
+`
 
 const Grid = styled.div`
   /* grid grid-cols-1 lg:grid-cols-3 */
@@ -236,14 +222,14 @@ const Grid = styled.div`
   @media ${QUERIES.laptopAndUp} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-`;
+`
 
 const ContactInformation = styled.div`
   /* relative overflow-hidden py-10 px-6 bg-indigo-700 sm:px-10 xl:p-12 */
   position: relative;
   overflow: hidden;
   padding: 4rem 1rem;
-  background: var(--color-panelBackgroundDark);
+  background: var(--color-backgroundOverlayDark);
   /* text-lg font-medium text-white */
   h3 {
     font-size: 2rem;
@@ -256,12 +242,7 @@ const ContactInformation = styled.div`
     color: ${COLORS.gray100.light};
     max-width: 48rem;
     line-height: 1.5rem;
-    font-size: clamp(
-      1rem,
-      /* 1.3vw + .9rem, */
-      1.25vw + .5rem,
-      1.45rem
-    );
+    font-size: clamp(1rem, /* 1.3vw + .9rem, */ 1.25vw + 0.5rem, 1.45rem);
     width: clamp(300px, 95%, 750px);
   }
   /* mt-8 space-y-6 */
@@ -288,13 +269,13 @@ const ContactInformation = styled.div`
     padding: 4rem 1.5rem;
     padding: 3rem;
   }
-`;
+`
 
 const SocialIconsList = styled.ul`
   /* mt-8 flex space-x-12 */
   margin-top: 2rem;
   display: flex;
-`;
+`
 
 const FormWrapper = styled.div`
   /* py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 */
@@ -311,22 +292,24 @@ const FormWrapper = styled.div`
     grid-column: span 2 / span 2;
   }
   @media ${QUERIES.desktopAndUp} {
-    padding: 3rem; 
+    padding: 3rem;
   }
-`;
+`
 
 const StyledForm = styled(Form)`
   /* mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 */
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     color: var(--color-textPrimary);
   }
   @media ${QUERIES.tabletAndUp} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-`;
+`
 
 const Label = styled.label`
   /* block text-sm font-medium text-gray-900 */
@@ -335,11 +318,11 @@ const Label = styled.label`
   line-height: 1.25rem;
   font-weight: ${WEIGHTS.medium};
   color: var(--color-textPrimary);
-`;
+`
 
 const InputWrapper = styled.div`
   margin: 0.25rem;
-`;
+`
 
 const Input = styled.input`
   /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md */
@@ -354,7 +337,7 @@ const Input = styled.input`
   @media ${QUERIES.tabletAndUp} {
     box-shadow: revert;
   }
-`;
+`
 
 const TextArea = styled.textarea`
   /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md */
@@ -365,25 +348,25 @@ const TextArea = styled.textarea`
   color: ${COLORS.gray900.light};
   border: 1px solid var(--color-borderPrimary);
   border-radius: 0.375rem;
-`;
+`
 
 const OptionalText = styled.span`
   /* text-sm text-gray-500 */
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--color-textSecondary);
-`;
+`
 
 const ErrorMessageWrapper = styled.div`
-  margin-top: .375rem;
+  margin-top: 0.375rem;
   margin-bottom: 1rem;
-  margin-left: .25rem;
-`;
+  margin-left: 0.25rem;
+`
 
 const ErrorMessage = styled.p`
   color: red;
-  font-size: .85rem;
-`;
+  font-size: 0.85rem;
+`
 
 const Button = styled.button`
   /* mt-2 w-full inline-flex items-center justify-center px-6 py-3 border 
@@ -405,9 +388,9 @@ const Button = styled.button`
   color: var(--color-white);
   background: var(--color-buttonPrimary);
   &:hover {
-    background: ${COLORS.blue700.light}
+    background: ${COLORS.blue700.light};
   }
   @media ${QUERIES.tabletAndUp} {
     width: auto;
   }
-`;
+`

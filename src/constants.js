@@ -27,11 +27,11 @@ export const COLORS = {
     light: "hsl(0deg, 0%, 100%)", // white
     dark: "hsl(216deg, 28%, 7%)", // near-black #0D1117
   },
-  panelBackground: {
+  backgroundOverlay: {
     light: "hsl(0deg, 0%, 100%)", // white
     dark: "hsl(210deg, 12%, 16%)", // charcoal-black #24292E
   },
-  panelBackgroundDark: {
+  backgroundOverlayDark: {
     light: "hsl(210deg, 13%, 12%)", // charcoal #1B1F23
     dark: "hsl(0deg, 0%, 4%)", // near-black #0A0A0A
   },
@@ -43,7 +43,7 @@ export const COLORS = {
     light: "hsl(212deg, 97%, 43%)", // #0366D6
     dark: "hsl(212deg, 100%, 67%)", // #58A6FF
   },
-  hiddenPanelBackground: {
+  hiddenBackgroundOverlay: {
     light: "hsl(214deg, 13%, 90%)", // grey #E1E4E8
     dark: "hsl(212deg, 12%, 21%)", // charcoal-black #30363D
   },
@@ -118,10 +118,6 @@ export const COLORS = {
   blue900: {
     light: "hsl(212deg, 97%, 25%)", // #023B7D
     dark: "hsl(212deg, 100%, 31%)", // #004A9E
-  },
-  blue1000: {
-    light: "hsl(212deg, 97%, 16%)", // #012750
-    dark: "hsl(212deg, 100%, 24%)", // #00397A
   },
 }
 

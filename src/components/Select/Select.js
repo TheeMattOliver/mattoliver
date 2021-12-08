@@ -44,7 +44,7 @@ const NativeSelect = styled.select`
 
 const PresentationalBit = styled.div`
   color: var(--color-textWhite);
-  background-color: var(--color-panelBackgroundDark);
+  background-color: var(--color-backgroundOverlayDark);
   border: 1px solid var(--color-textPrimary);
   font-size: ${16 / 16}rem;
   height: 50px;
