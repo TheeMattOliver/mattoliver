@@ -19,6 +19,14 @@ export default function AboutPage({ data }) {
 
   const { pageData } = data
   const aboutPageCopy = pageData.content
+
+  // this is terrible:
+  pageData &&
+    pageData.content[0].text.map(i => {
+      i.markDefs = []
+      return i
+    })
+
   return (
     <>
       <SEO title={`About`} lang={intl.locale}></SEO>

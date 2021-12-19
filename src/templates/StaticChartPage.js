@@ -30,8 +30,6 @@ export default function StaticChartPage({ data, children, pageContext }) {
       })
   })
 
-  console.log({ relatedData })
-
   let PageComponent = D3PageComponents.filter(
     item => item.id === pageContext.slug
   )[0].Component
