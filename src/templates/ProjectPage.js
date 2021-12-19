@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import styled, { css } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-react-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Header from "../components/Header"

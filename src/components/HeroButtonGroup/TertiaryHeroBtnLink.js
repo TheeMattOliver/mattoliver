@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'gatsby-plugin-intl'
+import styled from "styled-components"
+import { Link } from "gatsby-plugin-react-intl"
 
 const TertiaryHeroBtnLink = styled(Link)`
   flex: 1;
@@ -16,7 +16,8 @@ const TertiaryHeroBtnLink = styled(Link)`
   line-height: 38px;
   white-space: nowrap;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   min-width: 200px;
   height: 50px;
   padding: 0px 25px;
@@ -39,6 +40,6 @@ const TertiaryHeroBtnLink = styled(Link)`
     background-color: var(--color-background);
     border: 1px solid var(--color-textPrimary);
   }
-`;
+`
 
 export default TertiaryHeroBtnLink

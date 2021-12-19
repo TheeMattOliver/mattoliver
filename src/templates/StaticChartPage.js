@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-react-intl"
 
 import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"

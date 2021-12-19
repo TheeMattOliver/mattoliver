@@ -1,25 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby-plugin-intl';
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import VisuallyHidden from '../VisuallyHidden';
+import React from "react"
+import styled from "styled-components"
+import { Link } from "gatsby-plugin-react-intl"
+import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import VisuallyHidden from "../VisuallyHidden"
 
 export default function FormSubmitThankYou() {
   return (
     <>
-      <VisuallyHidden>
-        Form submitted successfully
-      </VisuallyHidden>
+      <VisuallyHidden>Form submitted successfully</VisuallyHidden>
 
       <MessageWrapper>
         <h3>Success!</h3>
         <p>Thanks for your note.</p>
-        <p>I'll be in touch very soon, and until then feel free to keep poking around the site.</p>
+        <p>
+          I'll be in touch very soon, and until then feel free to keep poking
+          around the site.
+        </p>
         <NavigationLinksWrapper>
-          <NavigationLink to='/'>
-            &larr; Back to Home
-          </NavigationLink>
+          <NavigationLink to="/">&larr; Back to Home</NavigationLink>
         </NavigationLinksWrapper>
       </MessageWrapper>
     </>
@@ -41,12 +40,7 @@ const MessageWrapper = styled.div`
     color: var(--color-gray700);
     max-width: 48rem;
     line-height: 1.5rem;
-    font-size: clamp(
-      1rem,
-      /* 1.3vw + .9rem, */
-      1.25vw + .5rem,
-      1.45rem
-    );
+    font-size: clamp(1rem, /* 1.3vw + .9rem, */ 1.25vw + 0.5rem, 1.45rem);
     width: clamp(300px, 95%, 750px);
   }
   @media ${QUERIES.tabletAndUp} {
@@ -54,15 +48,15 @@ const MessageWrapper = styled.div`
     grid-column: span 2 / span 2;
   }
   @media ${QUERIES.desktopAndUp} {
-    padding: 4rem; 
+    padding: 4rem;
   }
-`;
+`
 
 const NavigationLinksWrapper = styled.div`
   display: flex;
   margin-top: 4rem;
   width: 85%;
-`;
+`
 
 const NavigationLink = styled(Link)`
   margin-top: 4rem;
@@ -71,4 +65,4 @@ const NavigationLink = styled(Link)`
   margin-top: 0.5rem;
   color: var(--color-gray700);
   font-weight: ${WEIGHTS.normal};
-`;
+`

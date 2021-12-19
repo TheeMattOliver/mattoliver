@@ -1,11 +1,11 @@
 import React from "react"
-import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+import { IntlContextConsumer, changeLocale } from "gatsby-plugin-react-intl"
 
 const languageName = {
   en: "English",
   ko: "한국어",
   de: "Deutsch",
-  es: "Español"
+  es: "Español",
 }
 
 const LanguageList = () => {
@@ -22,15 +22,16 @@ const LanguageList = () => {
               role="button"
               tabIndex={0}
               style={{
-                color: currentLocale === language ? `var(--color-textPrimary)` : `var(--color-textSecondary)`,
+                color:
+                  currentLocale === language
+                    ? `var(--color-textPrimary)`
+                    : `var(--color-textSecondary)`,
                 margin: 10,
                 textDecoration: `underline`,
-                cursor: `pointer`
+                cursor: `pointer`,
               }}
             >
-              <p className="text-base font-medium">
-                {languageName[language]}
-              </p>
+              <p className="text-base font-medium">{languageName[language]}</p>
             </a>
           ))
         }
@@ -40,9 +41,3 @@ const LanguageList = () => {
 }
 
 export default LanguageList
-
-
-
-
-
-

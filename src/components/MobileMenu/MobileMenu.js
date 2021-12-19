@@ -1,37 +1,37 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect } from 'react';
-import styled from 'styled-components/macro';
-import { DialogOverlay, DialogContent } from '@reach/dialog';
-import { Link } from 'gatsby-plugin-intl';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useContext, useEffect } from "react"
+import styled from "styled-components/macro"
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import { Link } from "gatsby-plugin-react-intl"
+import { AnimatePresence, motion } from "framer-motion"
 
-import { QUERIES, COLORS, WEIGHTS } from '../../constants';
+import { QUERIES, COLORS, WEIGHTS } from "../../constants"
 
-import UnstyledButton from '../UnstyledButton';
-import Icon from '../Icon';
-import VisuallyHidden from '../VisuallyHidden';
-import { ThemeContext } from '../ThemeContext';
+import UnstyledButton from "../UnstyledButton"
+import Icon from "../Icon"
+import VisuallyHidden from "../VisuallyHidden"
+import { ThemeContext } from "../ThemeContext"
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
-  const { colorMode, setColorMode } = useContext(ThemeContext);
+  const { colorMode, setColorMode } = useContext(ThemeContext)
 
-  const MotionDialogOverlay = motion(Overlay);
-  const MotionDialogContent = motion(Content);
+  const MotionDialogOverlay = motion(Overlay)
+  const MotionDialogContent = motion(Content)
 
   // Close on "Escape"
   useEffect(() => {
     function handleKeydown(ev) {
-      if (ev.key === 'Escape') {
-        onDismiss();
+      if (ev.key === "Escape") {
+        onDismiss()
       }
     }
 
-    window.addEventListener('keydown', handleKeydown);
+    window.addEventListener("keydown", handleKeydown)
 
     return () => {
-      window.removeEventListener('keydown', handleKeydown);
-    };
-  });
+      window.removeEventListener("keydown", handleKeydown)
+    }
+  })
 
   return (
     <MotionDialogOverlay
@@ -42,9 +42,9 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
       onDismiss={onDismiss}
     >
       <MotionDialogContent
-        initial={{ x: '100%' }}
-        animate={{ x: '0%' }}
-        exit={{ x: '100%' }}
+        initial={{ x: "100%" }}
+        animate={{ x: "0%" }}
+        exit={{ x: "100%" }}
         transition={{ min: 0, max: 100, bounceDamping: 9 }}
         aria-label="Mobile menu"
       >
@@ -53,12 +53,14 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
             id="close"
             strokeWidth={2}
             size={24}
-            color={`${colorMode === 'light' ? COLORS.textPrimary.light : COLORS.textPrimary.dark}`}
-            width={24} />
-          <VisuallyHidden>
-            Close menu
-          </VisuallyHidden>
-
+            color={`${
+              colorMode === "light"
+                ? COLORS.textPrimary.light
+                : COLORS.textPrimary.dark
+            }`}
+            width={24}
+          />
+          <VisuallyHidden>Close menu</VisuallyHidden>
         </CloseButton>
         <Nav>
           <NavLink to="/">Home</NavLink>
@@ -69,10 +71,10 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
         <Filler />
       </MotionDialogContent>
     </MotionDialogOverlay>
-  );
-};
+  )
+}
 
-export default MobileMenu;
+export default MobileMenu
 
 const Overlay = styled(DialogOverlay)`
   position: fixed;
@@ -84,7 +86,7 @@ const Overlay = styled(DialogOverlay)`
   display: flex;
   justify-content: flex-end;
   z-index: 2;
-`;
+`
 
 const Content = styled(DialogContent)`
   background: var(--color-background);
@@ -94,7 +96,7 @@ const Content = styled(DialogContent)`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-`;
+`
 
 const CloseButton = styled(UnstyledButton)`
   position: absolute;
@@ -102,13 +104,13 @@ const CloseButton = styled(UnstyledButton)`
   top: 10px;
   right: 0;
   padding: 16px;
-`;
+`
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 16px;
-`;
+`
 const NavLink = styled(Link)`
   color: var(--color-textPrimary);
   text-decoration: none;
@@ -117,8 +119,8 @@ const NavLink = styled(Link)`
   &:first-of-type {
     color: var(--color-textSecondary);
   }
-`;
+`
 
 const Filler = styled.div`
-  flex: 1
-`;
+  flex: 1;
+`
