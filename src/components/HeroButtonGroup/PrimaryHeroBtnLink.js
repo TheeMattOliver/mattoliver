@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'gatsby-plugin-intl'
+import styled from "styled-components"
+import { Link } from "gatsby-plugin-react-intl"
 
 const PrimaryHeroBtnLink = styled(Link)`
   flex: 1;
@@ -16,7 +16,8 @@ const PrimaryHeroBtnLink = styled(Link)`
   line-height: 38px;
   white-space: nowrap;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   min-width: 200px;
   height: 50px;
   padding: 0px 25px;
@@ -34,12 +35,12 @@ const PrimaryHeroBtnLink = styled(Link)`
   outline: none;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-  
+
   &:hover {
     color: #000;
-    background-color: #FFF;
+    background-color: #fff;
     border-color: #000;
   }
-`;
+`
 
 export default PrimaryHeroBtnLink

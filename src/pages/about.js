@@ -2,7 +2,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
+import { FormattedMessage, Link, useIntl } from "gatsby-plugin-react-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import MainLayout from "../components/MainLayout"
@@ -19,6 +19,14 @@ export default function AboutPage({ data }) {
 
   const { pageData } = data
   const aboutPageCopy = pageData.content
+
+  // this is terrible:
+  pageData &&
+    pageData.content[0].text.map(i => {
+      i.markDefs = []
+      return i
+    })
+
   return (
     <>
       <SEO title={`About`} lang={intl.locale}></SEO>

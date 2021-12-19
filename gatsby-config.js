@@ -52,7 +52,7 @@ module.exports = {
     // gatsby-source-graphql;
     // need to update to Gatsby V4 for that
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-react-intl`,
       options: {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `es`, `ko`, `de`],

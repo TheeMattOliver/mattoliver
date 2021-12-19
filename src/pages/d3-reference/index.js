@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
+import { FormattedMessage, Link, useIntl } from "gatsby-plugin-react-intl"
 
 import SEO from "../../components/SEO"
 import MainLayout from "../../components/MainLayout"

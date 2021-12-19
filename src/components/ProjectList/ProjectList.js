@@ -2,7 +2,7 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-react-intl"
 import { format } from "date-fns"
 
 import { QUERIES, TRANSITIONS } from "../../constants"

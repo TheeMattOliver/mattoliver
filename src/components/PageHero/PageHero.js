@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-react-intl"
 import { QUERIES } from "../../constants"
 
 const PageHero = ({ children }) => {

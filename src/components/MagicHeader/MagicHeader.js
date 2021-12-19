@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-react-intl"
 
 import { COLORS, QUERIES, WEIGHTS } from "../../constants"
 import { throttle } from "../../lib/utils"

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-react-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import { QUERIES, WEIGHTS } from "../../constants"
