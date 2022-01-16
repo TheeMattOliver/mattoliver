@@ -1,6 +1,6 @@
 <!-- START -->
 
-# Matt Oliver website
+# Oliver website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/44da42bc-8204-4758-8dbd-3e1c3f64cb35/deploy-status)](https://app.netlify.com/sites/adoring-bohr-7062c0/deploys)
 
@@ -26,17 +26,19 @@
 
 ## About the Project
 
-My hope is that a website provides a helpful example of some of the most recent work I've done, and that by putting as much it in one place as I can, it helps reason about where I'm going.
+I really need to rebuild this thing.
 
-The site is live at [mattoliver.xyz](https://mattoliver.xyz).
+I built it super fast in the hopes that building a website would help make sense some of the most recent work I've done, and that by putting as much it in one place as I can, it could help reason about where I'm going.
+
+It's live at [mattoliver.xyz](https://mattoliver.xyz).
 
 I'm always interested in working with misfits, outcasts, and hell-raisers who want to create positive change and challenge the status quo. If you like what you see, please feel free to [get in touch](mailto:mattoliver.mattoliver@gmail.com).
 
 ## Overview
 
-I built the project with Gatsby and used Sanity as the CMS. I wrote the CSS from scratch, mainly using [styled-components](https://styled-components.com/).
+The site's built with Gatsby and there's a crazily over-engineered instance of Sanity as the CMS. I wrote all the CSS from scratch with [styled-components](https://styled-components.com/); it is pretty obvious that it is in bad need of a systematic redesign.
 
-The responsive grid and table of contents component on the individual project pages took some doing! Please feel free to leave some feedback through the contact form.
+The responsive grid and table of contents component on the individual project pages took some doing though. Please feel free to leave some feedback through the contact form.
 
 #### Built With
 
@@ -53,19 +55,15 @@ I wanted to focus on the stories behind the projects, the technologies used, som
 
 ### Figma
 
-The [Figma](https://www.figma.com/file/U7LRjFK3yqItc2eJe7cPdM/Oliver-Portfolio-2021?node-id=0%3A1) project I worked from can be found here. It's a very simple and straightforward set of design tokens while I build a proper design system.
+I used a super boring and straightforward set of tokens initially.
+
+I'm in the process of re-working a color system, typography, and spacing scale variables for the project and you can follow along at this [Figma file](https://www.figma.com/file/pNeLyhXpKIgWPZkPoJjUhL/Oliver-Site-Tokens?node-id=12%3A230) if interested.
 
 ### Fonts:
 
 Wherever possible I believe in supporting indie type foundries, but truth be told, I'm broke at the moment, and I needed to get this thing off the ground so I'm just using the [system font stack](https://systemfontstack.com/) for now.
 
 - `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`
-
-## 📈 Performance
-
-Lighthouse scores. Pure vanity.
-
-![Lighthouse scores](https://media.giphy.com/media/xsFI8ZHYL3SbDxgMKo/giphy.gif)
 
 ## 🚀 Usage:
 
