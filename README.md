@@ -112,6 +112,4 @@ Live: [https://mattoliver.xyz](https://mattoliver.xyz)
 
 Matt Oliver - [mattoliver.mattoliver@gmail.com](mattoliver.mattoliver@gmail.com)
 
-Project Link: [https://github.com/theemattoliver/mgo_portfolio_web](https://github.com/theemattoliver/mgo_portfolio_web)
-
 <!-- END -->
