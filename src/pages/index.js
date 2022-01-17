@@ -134,9 +134,9 @@ const HeroCopyWrapper = styled.div`
 
 const HeroCopySubHead = styled.h2`
   color: var(--color-textPrimary);
-  margin-top: 1rem;
-  line-height: clamp(1.5rem, 2vw + 1.25rem, 2.5rem);
-  font-size: clamp(1.5rem, 2vw + 1.25rem, 2.5rem);
+  padding-top: 16px;
+  line-height: clamp(1.625rem, 2vw + 1.25rem, 2.625rem);
+  font-size: clamp(1.625rem, 2vw + 1.25rem, 2.625rem);
   width: clamp(500px, 95%, 800px);
   max-width: 100%;
   /* font-family: system-ui; */
@@ -176,7 +176,7 @@ const MobileImgWrapper = styled.div`
   height: 100px;
   justify-self: center;
   align-self: center;
-  margin-top: 1.5rem;
+  margin-top: 24px;
   border-radius: 50%;
   background: transparent;
   @media ${QUERIES.tabletAndUp} {

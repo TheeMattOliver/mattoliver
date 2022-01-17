@@ -182,7 +182,7 @@ const RefWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
   flex-direction: column;
-  /* margin-bottom: 2rem; */
+  /* margin-bottom: 32px; */
   height: 400px;
   margin-top: -20px;
   svg {

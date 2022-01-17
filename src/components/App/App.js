@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react"
 
-import { ThemeProvider } from '../ThemeContext';
-import GlobalStyles from '../GlobalStyles';
+import { ThemeProvider } from "../ThemeContext"
+import GlobalStyle from "../GlobalStyle"
 
 function App({ children }) {
   return (
     <ThemeProvider>
-      <GlobalStyles />
+      <GlobalStyle />
       {children}
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -112,7 +112,7 @@ const FieldsWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 `
 
 const Checkbox = styled.input`

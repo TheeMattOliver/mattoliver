@@ -240,12 +240,12 @@ const ContactInformation = styled.div`
   /* text-lg font-medium text-white */
   h3 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     color: ${COLORS.gray50.light};
   }
   /* mt-6 text-base text-indigo-50 max-w-3xl */
   p {
-    margin-top: 1.5rem;
+    margin-top: 24px;
     color: ${COLORS.gray100.light};
     max-width: 48rem;
     line-height: 1.5rem;
@@ -254,7 +254,7 @@ const ContactInformation = styled.div`
   }
   /* mt-8 space-y-6 */
   dl {
-    margin-top: 2rem;
+    margin-top: 32px;
   }
   /* flex text-base text-indigo-50 */
   dd {
@@ -263,7 +263,7 @@ const ContactInformation = styled.div`
     line-height: 1.5rem;
   }
   dd span {
-    margin-left: 0.75rem;
+    margin-left: 12px;
   }
   li a {
     /* text-indigo-200 hover:text-indigo-100 */
@@ -280,7 +280,7 @@ const ContactInformation = styled.div`
 
 const SocialIconsList = styled.ul`
   /* mt-8 flex space-x-12 */
-  margin-top: 2rem;
+  margin-top: 32px;
   display: flex;
 `
 
@@ -305,7 +305,7 @@ const FormWrapper = styled.div`
 
 const Form = styled.form`
   /* mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 */
-  margin-top: 1.5rem;
+  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   input,
@@ -328,7 +328,7 @@ const Label = styled.label`
 `
 
 const InputWrapper = styled.div`
-  margin: 0.25rem;
+  margin: 4px;
 `
 
 const Input = styled.input`
@@ -369,7 +369,7 @@ const Button = styled.button`
   border-transparent rounded-md shadow-sm text-base font-medium text-white 
   bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 
   focus:ring-offset-2 focus:ring-blue-500 sm:w-auto */
-  margin-top: 0.5rem;
+  margin-top: 8px;
   width: 100%;
   display: inline-flex;
   align-items: center;

@@ -355,36 +355,33 @@ const ContactInformation = styled.div`
   overflow: hidden;
   padding: 4rem 1rem;
   background: var(--color-backgroundOverlayDark);
-  /* text-lg font-medium text-white */
+
   h3 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     color: ${COLORS.gray50.light};
   }
-  /* mt-6 text-base text-indigo-50 max-w-3xl */
   p {
-    margin-top: 1.5rem;
     color: ${COLORS.gray100.light};
     max-width: 48rem;
     line-height: 1.5rem;
     font-size: clamp(1rem, /* 1.3vw + .9rem, */ 1.25vw + 0.5rem, 1.45rem);
     width: clamp(300px, 95%, 750px);
   }
-  /* mt-8 space-y-6 */
+
   dl {
-    margin-top: 2rem;
+    margin-top: 32px;
   }
-  /* flex text-base text-indigo-50 */
+
   dd {
     display: flex;
     color: ${COLORS.blue50.light};
     line-height: 1.5rem;
   }
   dd span {
-    margin-left: 0.75rem;
+    margin-left: 12px;
   }
   li a {
-    /* text-indigo-200 hover:text-indigo-100 */
     color: ${COLORS.blue100.light};
     &:hover {
       color: ${COLORS.blue500.light};
@@ -400,17 +397,14 @@ const ContactInformation = styled.div`
 `
 
 const SocialIconsList = styled.ul`
-  /* mt-8 flex space-x-12 */
-  margin-top: 2rem;
+  margin-top: 32px;
   display: flex;
 `
 
 const FormWrapper = styled.div`
-  /* py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 */
   padding-top: 2.5rem;
   padding: 1rem;
   h3 {
-    /* text-lg font-medium text-gray-900 */
     font-size: 1.125rem;
     line-height: 1.75rem;
     color: var(--color-textPrimary);
@@ -425,8 +419,7 @@ const FormWrapper = styled.div`
 `
 
 const Form = styled.form`
-  /* mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 */
-  margin-top: 1.5rem;
+  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   input,
@@ -440,7 +433,6 @@ const Form = styled.form`
 `
 
 const Label = styled.label`
-  /* block text-sm font-medium text-gray-900 */
   display: block;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -449,11 +441,10 @@ const Label = styled.label`
 `
 
 const InputWrapper = styled.div`
-  margin: 0.25rem;
+  margin: 4px;
 `
 
 const Input = styled.input`
-  /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md */
   padding: 0.75rem 1rem;
   display: block;
   width: 100%;
@@ -468,7 +459,6 @@ const Input = styled.input`
 `
 
 const TextArea = styled.textarea`
-  /* py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md */
   padding: 0.75rem 1rem;
   display: block;
   width: 100%;
@@ -486,11 +476,7 @@ const OptionalText = styled.span`
 `
 
 const Button = styled.button`
-  /* mt-2 w-full inline-flex items-center justify-center px-6 py-3 border 
-  border-transparent rounded-md shadow-sm text-base font-medium text-white 
-  bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 
-  focus:ring-offset-2 focus:ring-blue-500 sm:w-auto */
-  margin-top: 0.5rem;
+  margin-top: 8px;
   width: 100%;
   display: inline-flex;
   align-items: center;

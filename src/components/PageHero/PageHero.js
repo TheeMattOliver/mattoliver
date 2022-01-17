@@ -31,12 +31,12 @@ const Wrapper = styled.div`
 const HeroTitle = styled.h1`
   color: var(--color-textPrimary);
   font-weight: bold;
-  font-size: clamp(2.2rem, 3.3vw + 1.25rem, 3.5rem);
+  font-size: clamp(2.625rem, 3.3vw + 1.25rem, 3.5rem);
   width: clamp(500px, 65%, 800px);
   max-width: 100%;
   /* font-family: system-ui; */
   font-variation-settings: "wght" 750;
 `
 const HeroBox = styled.div`
-  margin-top: 2rem;
+  margin-top: 32px;
 `

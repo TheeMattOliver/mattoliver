@@ -1,61 +1,60 @@
-import './src/styles/global.css';
-import React from 'react';
-import App from './src/components/App';
+import React from "react"
+import App from "./src/components/App"
 
-import Terser from 'terser';
-import { AnimatePresence } from 'framer-motion';
+import Terser from "terser"
+import { AnimatePresence } from "framer-motion"
 
 import {
   COLOR_MODE_KEY,
   COLORS,
   INITIAL_COLOR_MODE_CSS_PROP,
-} from './src/constants';
+} from "./src/constants"
 
 // credit to Josh W Comeau for this wonderful implementation, see:
 // https://www.joshwcomeau.com/react/dark-mode/
 function setColorsByTheme() {
-  const colors = '🌈';
-  const colorModeKey = '🔑';
-  const colorModeCssProp = '⚡️';
+  const colors = "🌈"
+  const colorModeKey = "🔑"
+  const colorModeCssProp = "⚡️"
 
-  const mql = window.matchMedia('(prefers-color-scheme: dark)');
-  const prefersDarkFromMQ = mql.matches;
-  const persistedPreference = localStorage.getItem(colorModeKey);
+  const mql = window.matchMedia("(prefers-color-scheme: dark)")
+  const prefersDarkFromMQ = mql.matches
+  const persistedPreference = localStorage.getItem(colorModeKey)
 
-  let colorMode = 'light';
+  let colorMode = "light"
 
-  const hasUsedToggle = typeof persistedPreference === 'string';
+  const hasUsedToggle = typeof persistedPreference === "string"
 
   if (hasUsedToggle) {
-    colorMode = persistedPreference;
+    colorMode = persistedPreference
   } else {
-    colorMode = prefersDarkFromMQ ? 'dark' : 'light';
+    colorMode = prefersDarkFromMQ ? "dark" : "light"
   }
 
-  let root = document.documentElement;
+  let root = document.documentElement
 
-  root.style.setProperty(colorModeCssProp, colorMode);
+  root.style.setProperty(colorModeCssProp, colorMode)
 
   Object.entries(colors).forEach(([name, colorByTheme]) => {
-    const cssVarName = `--color-${name}`;
+    const cssVarName = `--color-${name}`
 
-    root.style.setProperty(cssVarName, colorByTheme[colorMode]);
-  });
+    root.style.setProperty(cssVarName, colorByTheme[colorMode])
+  })
 }
 
 const MagicScriptTag = () => {
   const boundFn = String(setColorsByTheme)
     .replace("'🌈'", JSON.stringify(COLORS))
-    .replace('🔑', COLOR_MODE_KEY)
-    .replace('⚡️', INITIAL_COLOR_MODE_CSS_PROP);
+    .replace("🔑", COLOR_MODE_KEY)
+    .replace("⚡️", INITIAL_COLOR_MODE_CSS_PROP)
 
-  let calledFunction = `(${boundFn})()`;
+  let calledFunction = `(${boundFn})()`
 
-  calledFunction = Terser.minify(calledFunction).code;
+  calledFunction = Terser.minify(calledFunction).code
 
   // eslint-disable-next-line react/no-danger
-  return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />;
-};
+  return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
+}
 
 /**
  * If the user has JS disabled, the injected script will never fire!
@@ -74,21 +73,25 @@ const FallbackStyles = () => {
 
   const cssVariableString = Object.entries(COLORS).reduce(
     (acc, [name, colorByTheme]) => {
-      return `${acc}\n--color-${name}: ${colorByTheme.light};`;
+      return `${acc}\n--color-${name}: ${colorByTheme.light};`
     },
-    ''
-  );
+    ""
+  )
 
-  const wrappedInSelector = `html { ${cssVariableString} }`;
+  const wrappedInSelector = `html { ${cssVariableString} }`
 
-  return <style>{wrappedInSelector}</style>;
-};
+  return <style>{wrappedInSelector}</style>
+}
 
 export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
-  setHeadComponents(<FallbackStyles key={`123456789`} />);
-  setPreBodyComponents(<MagicScriptTag key={`987654321`} />);
-};
+  setHeadComponents(<FallbackStyles key={`123456789`} />)
+  setPreBodyComponents(<MagicScriptTag key={`987654321`} />)
+}
 
 export const wrapPageElement = ({ element }) => {
-  return <App><AnimatePresence exitBeforeEnter>{element}</AnimatePresence></App>;
-};
+  return (
+    <App>
+      <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+    </App>
+  )
+}

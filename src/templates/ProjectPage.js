@@ -306,7 +306,7 @@ const Aside = styled.aside`
     /* border: solid 1px tomato; */
     margin-left: 16px;
     /* table of contents */
-    margin-top: 1rem;
+    margin-top: 16px;
     text-align: left;
     h2 {
       font-size: 1.45rem;
@@ -316,7 +316,7 @@ const Aside = styled.aside`
       font-size: 1.125;
       /* filter: saturate(0); */
       margin-top: 1.25rem;
-      margin-left: 0.25rem;
+      margin-left: 4px;
       font-weight: ${WEIGHTS.normal};
     }
   }
@@ -324,10 +324,10 @@ const Aside = styled.aside`
 
 const MobileBackButton = styled(Link)`
   margin-top: 4rem;
-  margin-left: 1rem;
+  margin-left: 16px;
   font-size: 1.125;
   filter: saturate(0);
-  margin-top: 0.5rem;
+  margin-top: 8px;
   font-weight: ${WEIGHTS.normal};
   @media ${QUERIES.laptopAndUp} {
     display: none;
@@ -371,7 +371,7 @@ const Section = styled.section`
       minmax(250px, 3fr);
     margin-top: 1.25rem;
     &:last-of-type {
-      margin-bottom: 3.5rem;
+      margin-bottom: 56px;
     }
   }
 `
@@ -380,7 +380,7 @@ const SectionHeaderWrapper = styled.div`
   grid-area: header;
   @media ${QUERIES.tabletAndUp} {
     line-height: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
     position: sticky;
     top: 8rem;
     align-self: flex-start;
@@ -504,7 +504,7 @@ const SectionCopyWrapper = styled.div`
   @media ${QUERIES.tabletAndUp} {
     margin-top: 1.25rem;
     iframe {
-      margin-top: 1.5rem;
+      margin-top: 24px;
       max-width: 500px;
       margin-left: 80px;
       width: 650px;

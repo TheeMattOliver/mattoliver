@@ -33,7 +33,7 @@ const TechList = ({ technologies }) => {
 }
 
 const TechListWrapper = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   margin-top: 0.75rem;
 `
 

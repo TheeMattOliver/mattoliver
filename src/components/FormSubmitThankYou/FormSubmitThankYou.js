@@ -31,12 +31,12 @@ const MessageWrapper = styled.div`
   padding: 1rem;
   h3 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     color: var(--color-gray900);
   }
   /* mt-6 text-base text-indigo-50 max-w-3xl */
   p {
-    margin-top: 1.5rem;
+    margin-top: 24px;
     color: var(--color-gray700);
     max-width: 48rem;
     line-height: 1.5rem;
@@ -62,7 +62,7 @@ const NavigationLink = styled(Link)`
   margin-top: 4rem;
   font-size: 1.125;
   filter: saturate(0);
-  margin-top: 0.5rem;
+  margin-top: 8px;
   color: var(--color-gray700);
   font-weight: ${WEIGHTS.normal};
 `

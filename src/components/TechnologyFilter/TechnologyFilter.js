@@ -90,7 +90,7 @@ export default function TechnologyFilter({ activeTechnology }) {
   )
 }
 const Wrapper = styled.div`
-  /* margin: 1rem; */
+  /* margin: 16px; */
   padding: 1rem;
 
   gap: 0.5rem;
@@ -132,7 +132,7 @@ const Badge = styled.span`
 
 const Count = styled.span`
   flex-shrink: 0;
-  margin-left: 0.325rem;
+  margin-left: 5px;
   height: 1rem;
   width: 1rem;
   font-size: 0.65rem;
