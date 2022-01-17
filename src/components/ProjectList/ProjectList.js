@@ -79,7 +79,7 @@ const GridWrapper = styled.div`
   @media ${QUERIES.desktopAndUp} {
     max-width: none;
     gap: 2rem;
-    margin-right: 2rem;
+    margin-right: 32px;
   }
 `
 
@@ -92,11 +92,11 @@ const ProjectCardWrapper = styled.div`
   flex: 1;
 
   @media ${QUERIES.tabletAndUp} {
-    margin: 4rem 3.25rem 4rem 2rem;
+    margin: 64px 52px 64px 32px;
     background: var(--color-backgroundOverlay);
   }
   @media ${QUERIES.laptopAndUp} {
-    margin: 4rem 3.25rem 4rem 2rem;
+    margin: 64px 52px 64px 32px;
   }
   @media ${QUERIES.desktopAndUp} {
     margin: 1rem;
@@ -108,7 +108,7 @@ const ProjectCardHeader = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  margin: 1rem 0;
+  margin: 16px 0;
   h2 {
     font-size: calc(1rem + 1vw);
     display: inline-block;
@@ -126,10 +126,10 @@ const ProjectCardHeader = styled.div`
 const ProjectCardContent = styled.div`
   display: block;
   padding: 0.5rem;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin-bottom: 32px;
+  margin-top: 16px;
   p {
-    margin-top: 0.5rem;
+    margin-top: 8px;
     color: var(--color-textSecondary);
   }
   @media ${QUERIES.tabletAndUp} {
@@ -164,7 +164,7 @@ const OffsetProjectCardContentWrapper = styled.div`
     color: var(--color-textSecondary);
   }
   p {
-    margin-top: 0.5rem;
+    margin-top: 8px;
     color: var(--color-textSecondary);
   }
   @media ${QUERIES.tabletAndUp} {
@@ -182,7 +182,7 @@ const OffsetProjectCardContentWrapper = styled.div`
       color: var(--color-textSecondary);
     }
     p {
-      margin-top: 0.5rem;
+      margin-top: 8px;
       color: var(--color-textSecondary);
     }
     padding: 1rem 1.5rem 1.5rem;

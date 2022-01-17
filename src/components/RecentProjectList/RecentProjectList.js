@@ -118,13 +118,13 @@ const ProjectCardWrapper = styled.div`
   flex: 1;
 
   @media ${QUERIES.tabletAndUp} {
-    /* margin: 4rem 3.25rem 4rem 2rem; */
+    /* margin: 64px 52px 64px 32px; */
   }
   @media ${QUERIES.laptopAndUp} {
-    /* margin: 4rem 3.25rem 4rem 2rem; */
+    /* margin: 64px 52px 64px 32px; */
   }
   @media ${QUERIES.desktopAndUp} {
-    /* margin: 1rem; */
+    /* margin: 16px; */
   }
 `
 
@@ -250,6 +250,6 @@ const ProjectNavigationButton = styled(Link)`
     transform: scaleX(1);
   }
   &:not(:last-of-type) {
-    margin-left: 1rem;
+    margin-left: 16px;
   }
 `

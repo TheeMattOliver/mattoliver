@@ -117,7 +117,7 @@ const NavLink = styled(Link)`
     transform: scaleX(1);
   }
   &:not(:last-of-type) {
-    margin-left: 1rem;
+    margin-left: 16px;
   }
   &.active {
     text-decoration: underline;

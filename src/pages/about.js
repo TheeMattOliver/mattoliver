@@ -152,7 +152,7 @@ const HeroCopyWrapper = styled.div`
 const HeroCopySubHead = styled.h2`
   color: var(--color-textPrimary);
   padding: 0 1rem;
-  margin-top: 1rem;
+  margin-top: 16px;
   line-height: clamp(1.5rem, 2vw + 1.25rem, 2.5rem);
   font-size: clamp(1.5rem, 2vw + 1.25rem, 2.5rem);
   width: clamp(500px, 95%, 800px);
@@ -197,7 +197,7 @@ const MobileImgWrapper = styled.div`
   height: 150px;
   justify-self: center;
   align-self: center;
-  margin-top: 1.5rem;
+  margin-top: 24px;
   border-radius: 50%;
   @media ${QUERIES.tabletAndUp} {
     display: none;
@@ -246,7 +246,7 @@ const AboutImg = styled(GatsbyImage)`
 
 const ButtonWrapper = styled.div`
   padding: 0 1rem;
-  margin-top: 1rem;
+  margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3rem;

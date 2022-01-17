@@ -117,7 +117,7 @@ const RefWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
 
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   height: 450px;
   svg {
     flex: 1;

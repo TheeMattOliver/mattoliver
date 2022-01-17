@@ -408,7 +408,7 @@ const ChartCopy = styled.div`
   flex: 0 999999 64px;
   p {
     font-weight: ${WEIGHTS.light};
-    margin-top: 1rem;
+    margin-top: 16px;
   }
   a {
     color: var(--color-textLink);
@@ -438,7 +438,7 @@ const DesktopBackButtonWrapper = styled.div`
   @media ${QUERIES.tabletAndUp} {
     display: block;
     margin-top: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
   }
 `
 const BackButton = styled(Link)`
@@ -473,7 +473,7 @@ const ChartRepoInfoWrapper = styled.div`
 `
 const ChartRepoInfoRow = styled.div`
   display: flex;
-  margin-top: 0.5rem;
+  margin-top: 8px;
   gap: 0.5rem;
   align-items: center;
 `

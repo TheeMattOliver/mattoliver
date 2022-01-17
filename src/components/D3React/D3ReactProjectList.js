@@ -46,7 +46,7 @@ const ProjectsWrapper = styled.div`
   justify-content: space-between;
   /* border: 1px solid blue; */
   /* width: 100%; */
-  margin: 0 1.5rem;
+  margin: 0 24px;
 `
 
 const ProjectsGrid = styled.div`
@@ -95,7 +95,7 @@ const ProjectCardContentInfo = styled.div`
   width: 100%;
   padding: 1rem 1rem 4.5rem 1rem;
   p {
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
     color: var(--color-textPrimary);
   }
   color: var(--color-textPrimary);
@@ -111,7 +111,7 @@ const ProjectCard = styled.div`
   width: var(--project-width);
   border: 1px solid var(--color-borderPrimary);
   scroll-snap-align: start;
-  margin: 1rem 0;
+  margin: 16px 0;
 
   border-radius: var(--border-radius);
   &:hover {

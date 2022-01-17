@@ -213,7 +213,7 @@ const RefWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   svg {
     flex: 1;
   }

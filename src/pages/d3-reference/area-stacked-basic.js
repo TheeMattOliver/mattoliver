@@ -122,14 +122,14 @@ const FieldsWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
   label {
     font-size: 2rem;
   }
 `
 const Actions = styled.div`
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   align-items: center;
   padding-left: 2rem;
   padding-right: 2rem;

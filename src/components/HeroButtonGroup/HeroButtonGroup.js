@@ -24,7 +24,7 @@ export default HeroButtonGroup
 
 const Wrapper = styled.div`
   padding: 0 1rem;
-  margin-top: 1rem;
+  margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
   display: flex;

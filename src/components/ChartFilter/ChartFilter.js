@@ -133,7 +133,7 @@ const Badge = styled.span`
 
 const Count = styled.span`
   flex-shrink: 0;
-  margin-left: 0.325rem;
+  margin-left: 5px;
   height: 1rem;
   width: 1rem;
   font-size: 0.65rem;
