@@ -8,7 +8,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
-import { QUERIES, WEIGHTS } from "../constants"
+import { QUERIES, FONT_WEIGHTS } from "../constants"
 import Spacer from "../components/Spacer"
 import SectionHeader from "../components/SectionHeader"
 import PortableText from "../components/PortableText/PortableText"
@@ -281,7 +281,7 @@ const PageTitleBackground = styled.div`
 
 const PageTitle = styled.h1`
   color: var(--color-textPrimary);
-  font-weight: ${WEIGHTS.ultrabold};
+  font-weight: ${FONT_WEIGHTS.ultrabold};
   font-size: clamp(2.2rem, 3.3vw + 1.25rem, 3.5rem);
 `
 
@@ -310,14 +310,14 @@ const Aside = styled.aside`
     text-align: left;
     h2 {
       font-size: 1.45rem;
-      font-weight: ${WEIGHTS.semibold};
+      font-weight: ${FONT_WEIGHTS.semibold};
     }
     li {
       font-size: 1.125;
       /* filter: saturate(0); */
       margin-top: 1.25rem;
       margin-left: 4px;
-      font-weight: ${WEIGHTS.normal};
+      font-weight: ${FONT_WEIGHTS.normal};
     }
   }
 `
@@ -328,7 +328,7 @@ const MobileBackButton = styled(Link)`
   font-size: 1.125;
   filter: saturate(0);
   margin-top: 8px;
-  font-weight: ${WEIGHTS.normal};
+  font-weight: ${FONT_WEIGHTS.normal};
   @media ${QUERIES.laptopAndUp} {
     display: none;
   }
@@ -416,7 +416,7 @@ const SectionCopyWrapper = styled.div`
   grid-area: copy;
   font-size: 1.125rem;
   line-height: 1.5rem;
-  font-weight: ${WEIGHTS.light};
+  font-weight: ${FONT_WEIGHTS.light};
   p {
     color: var(--color-textPrimary);
     margin-top: 0.75rem;
@@ -480,7 +480,7 @@ const SectionCopyWrapper = styled.div`
     -webkit-box-decoration-break: revert;
   }
   strong {
-    font-weight: ${WEIGHTS.semibold};
+    font-weight: ${FONT_WEIGHTS.semibold};
   }
   em {
     font-style: italic;

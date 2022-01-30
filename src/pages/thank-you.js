@@ -7,7 +7,7 @@ import MainLayout from "../components/MainLayout"
 import FormSubmitThankYou from "../components/FormSubmitThankYou"
 import SEO from "../components/SEO"
 
-import { QUERIES, WEIGHTS } from "../constants"
+import { QUERIES, FONT_WEIGHTS } from "../constants"
 
 export default function ContactPage() {
   return (

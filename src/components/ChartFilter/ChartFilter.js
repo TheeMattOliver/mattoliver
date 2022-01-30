@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { Link } from "gatsby-plugin-react-intl"
 
-import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import { COLORS, QUERIES, FONT_WEIGHTS } from "../../constants"
 import { slugify } from "../../lib/utils"
 
 function countChartsInTypes(charts) {
@@ -128,7 +128,7 @@ const Badge = styled.span`
   border-radius: 0.375rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  font-weight: ${WEIGHTS.normal};
+  font-weight: ${FONT_WEIGHTS.normal};
 `
 
 const Count = styled.span`
@@ -143,5 +143,5 @@ const Count = styled.span`
   justify-content: center;
   background-color: ${COLORS.gray200.light};
   color: ${COLORS.gray900.light};
-  font-weight: ${WEIGHTS.bold};
+  font-weight: ${FONT_WEIGHTS.bold};
 `

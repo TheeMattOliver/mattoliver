@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby-plugin-react-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { QUERIES, WEIGHTS } from "../../constants"
+import { QUERIES, FONT_WEIGHTS } from "../../constants"
 
 export default function D3ReactProjectList({ data }) {
   const { charts } = data
@@ -99,7 +99,7 @@ const ProjectCardContentInfo = styled.div`
     color: var(--color-textPrimary);
   }
   color: var(--color-textPrimary);
-  font-weight: ${WEIGHTS.semibold};
+  font-weight: ${FONT_WEIGHTS.semibold};
   background: var(--color-hiddenBackgroundOverlay);
   transition: opacity 0.6s ease;
   opacity: 0;

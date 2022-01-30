@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby-plugin-react-intl"
 
-import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import { COLORS, QUERIES, FONT_WEIGHTS } from "../../constants"
 import { throttle } from "../../lib/utils"
 import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu"

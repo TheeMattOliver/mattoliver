@@ -2,7 +2,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby-plugin-react-intl"
-import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import { COLORS, QUERIES, FONT_WEIGHTS } from "../../constants"
 import VisuallyHidden from "../VisuallyHidden"
 
 export default function FormSubmitThankYou() {
@@ -64,5 +64,5 @@ const NavigationLink = styled(Link)`
   filter: saturate(0);
   margin-top: 8px;
   color: var(--color-gray700);
-  font-weight: ${WEIGHTS.normal};
+  font-weight: ${FONT_WEIGHTS.normal};
 `

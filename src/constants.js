@@ -122,20 +122,23 @@ export const COLORS = {
 }
 
 export const FONT_SIZES = [
-  "10px",
-  "12px",
-  "16px",
-  "18px",
-  "20px",
-  "24px",
-  "36px",
-  "48px",
-  "72px",
-  "96px",
+  "14px", // h6
+  "16px", // h5
+  "18px", // h4
+  "24px", // h3
+  "36px", // h2
+  "48px", // h1
+  "72px", // h0
+  "96px", // h00
 ]
-export const LINE_HEIGHTS = [1, 1.25, 1.5, 1.75]
+export const LINE_HEIGHTS = {
+  condensedUltra: 1,
+  condensed: 1.25,
+  default: 1.5,
+  relaxed: 1.75,
+}
 
-export const WEIGHTS = {
+export const FONT_WEIGHTS = {
   light: 300,
   normal: 500,
   semibold: 600,

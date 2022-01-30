@@ -9,7 +9,7 @@ import MainLayout from "../components/MainLayout"
 import Spacer from "../components/Spacer"
 import Icon from "../components/Icon"
 import PortableText from "../components/PortableText"
-import { QUERIES, WEIGHTS } from "../constants"
+import { QUERIES, FONT_WEIGHTS } from "../constants"
 
 import { D3PageComponents } from "../components/D3React/components"
 
@@ -379,7 +379,7 @@ const ChartTitleWrapper = styled.div`
 const ChartTitle = styled.h2`
   color: var(--color-textPrimary);
   font-size: 1.45rem;
-  font-weight: ${WEIGHTS.normal};
+  font-weight: ${FONT_WEIGHTS.normal};
 `
 const Aside = styled.aside`
   padding: 0 1rem;
@@ -407,7 +407,7 @@ const ChartCopy = styled.div`
   max-width: 450px;
   flex: 0 999999 64px;
   p {
-    font-weight: ${WEIGHTS.light};
+    font-weight: ${FONT_WEIGHTS.light};
     margin-top: 16px;
   }
   a {
@@ -415,7 +415,7 @@ const ChartCopy = styled.div`
     text-decoration: underline;
   }
   strong {
-    font-weight: ${WEIGHTS.semibold};
+    font-weight: ${FONT_WEIGHTS.semibold};
   }
   em {
     font-style: italic;
@@ -444,17 +444,17 @@ const DesktopBackButtonWrapper = styled.div`
 const BackButton = styled(Link)`
   font-size: 1.125rem;
   filter: saturate(0);
-  font-weight: ${WEIGHTS.light};
+  font-weight: ${FONT_WEIGHTS.light};
   /* @media ${QUERIES.laptopAndUp} {
     display: none;
   } */
 `
 const SmallText = styled.p`
   font-size: 0.875rem;
-  font-weight: ${WEIGHTS.light};
+  font-weight: ${FONT_WEIGHTS.light};
 `
 const SmallTextStrong = styled(SmallText)`
-  font-weight: ${WEIGHTS.semibold};
+  font-weight: ${FONT_WEIGHTS.semibold};
 `
 
 const Divider = styled.hr`

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react"
 import styled from "styled-components"
-import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import { COLORS, QUERIES, FONT_WEIGHTS } from "../../constants"
 import VisuallyHidden from "../VisuallyHidden"
 import ContactFormik from "./ContactFormik"
 
@@ -323,7 +323,7 @@ const Label = styled.label`
   display: block;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  font-weight: ${WEIGHTS.semibold};
+  font-weight: ${FONT_WEIGHTS.semibold};
   color: var(--color-textPrimary);
 `
 
@@ -380,7 +380,7 @@ const Button = styled.button`
   border-radius: 0.375rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-weight: ${WEIGHTS.semibold};
+  font-weight: ${FONT_WEIGHTS.semibold};
   color: var(--color-white);
   background: var(--color-buttonPrimary);
   &:hover {
