@@ -36,7 +36,7 @@ I'm always interested in working with misfits, outcasts, and hell-raisers who wa
 
 ## Overview
 
-The site's built with Gatsby and there's a crazily over-engineered instance of Sanity as the CMS. I wrote all the CSS from scratch with [styled-components](https://styled-components.com/); it is pretty obvious that it is in bad need of a systematic redesign.
+The site's built with Gatsby and there's a crazily over-engineered instance of Sanity as the CMS. I wrote all the CSS from scratch with [styled-components](https://styled-components.com/); it is pretty obvious that it is in bad need of a systematic redesign, which is under way now! Follow along [here](https://www.figma.com/file/U7LRjFK3yqItc2eJe7cPdM/Matt-Oliver---Workshop?node-id=412%3A113) if interested.
 
 The responsive grid and table of contents component on the individual project pages took some doing though. Please feel free to leave some feedback through the contact form.
 
@@ -57,7 +57,7 @@ I wanted to focus on the stories behind the projects, the technologies used, som
 
 I used a super boring and straightforward set of tokens initially.
 
-I'm in the process of re-working a color system, typography, and spacing scale variables for the project and you can follow along at this [Figma file](https://www.figma.com/file/pNeLyhXpKIgWPZkPoJjUhL/Oliver-Site-Tokens?node-id=12%3A230) if interested.
+I'm in the process of re-working a color system, typography, and spacing scale variables for the project and you can follow along at this [Figma file](https://www.figma.com/file/U7LRjFK3yqItc2eJe7cPdM/Matt-Oliver---Workshop?node-id=412%3A113) if interested.
 
 ### Fonts:
 
