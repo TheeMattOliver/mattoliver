@@ -415,7 +415,7 @@ const ChartCopy = styled.div`
     text-decoration: underline;
   }
   strong {
-    font-weight: ${WEIGHTS.medium};
+    font-weight: ${WEIGHTS.semibold};
   }
   em {
     font-style: italic;
@@ -454,7 +454,7 @@ const SmallText = styled.p`
   font-weight: ${WEIGHTS.light};
 `
 const SmallTextStrong = styled(SmallText)`
-  font-weight: ${WEIGHTS.medium};
+  font-weight: ${WEIGHTS.semibold};
 `
 
 const Divider = styled.hr`

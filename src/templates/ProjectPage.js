@@ -310,7 +310,7 @@ const Aside = styled.aside`
     text-align: left;
     h2 {
       font-size: 1.45rem;
-      font-weight: ${WEIGHTS.medium};
+      font-weight: ${WEIGHTS.semibold};
     }
     li {
       font-size: 1.125;
@@ -480,7 +480,7 @@ const SectionCopyWrapper = styled.div`
     -webkit-box-decoration-break: revert;
   }
   strong {
-    font-weight: ${WEIGHTS.medium};
+    font-weight: ${WEIGHTS.semibold};
   }
   em {
     font-style: italic;

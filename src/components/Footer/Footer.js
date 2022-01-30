@@ -78,7 +78,7 @@ const FooterCredit = styled.p`
 `
 const FooterLink = styled.a`
   color: var(--color-textSecondary);
-  font-weight: ${WEIGHTS.medium};
+  font-weight: ${WEIGHTS.semibold};
   & > svg {
     display: block;
   }
