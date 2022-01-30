@@ -121,6 +121,20 @@ export const COLORS = {
   },
 }
 
+export const FONT_SIZES = [
+  "10px",
+  "12px",
+  "16px",
+  "18px",
+  "20px",
+  "24px",
+  "36px",
+  "48px",
+  "72px",
+  "96px",
+]
+export const LINE_HEIGHTS = [1, 1.25, 1.5, 1.75]
+
 export const WEIGHTS = {
   light: 300,
   normal: 500,
