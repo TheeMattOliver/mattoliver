@@ -127,7 +127,7 @@ export const WEIGHTS = {
   normal: 500,
   medium: 600,
   heavy: 700,
-  bold: 800,
+  ultrabold: 800,
 }
 
 // Mobile first

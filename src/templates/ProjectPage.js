@@ -281,7 +281,7 @@ const PageTitleBackground = styled.div`
 
 const PageTitle = styled.h1`
   color: var(--color-textPrimary);
-  font-weight: ${WEIGHTS.bold};
+  font-weight: ${WEIGHTS.ultrabold};
   font-size: clamp(2.2rem, 3.3vw + 1.25rem, 3.5rem);
 `
 
