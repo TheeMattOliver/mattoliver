@@ -143,5 +143,5 @@ const Count = styled.span`
   justify-content: center;
   background-color: ${COLORS.gray200.light};
   color: ${COLORS.gray900.light};
-  font-weight: ${WEIGHTS.heavy};
+  font-weight: ${WEIGHTS.bold};
 `
