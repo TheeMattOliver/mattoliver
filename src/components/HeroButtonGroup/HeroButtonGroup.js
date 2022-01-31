@@ -28,13 +28,13 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 2rem;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     /* max-width: 80rem; */
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     /* max-width: revert; */
   }
 `
@@ -51,7 +51,7 @@ const ButtonList = styled.div`
 //   padding: 12px;
 //   min-width: 0px;
 //   gap: 16px;
-//   @media ${QUERIES.tabletAndUp} {
+//   @media ${QUERIES.smAndUp} {
 //     flex-basis: 50%;
 //   }
 // `;

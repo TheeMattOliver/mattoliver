@@ -31,9 +31,7 @@ const GridLayout = ({ children, ...props }) => {
       <Wrapper>
         <MagicHeader title={data.site.siteMetadata.title} />
         <Middle>
-          <Main>
-            {children}
-          </Main>
+          <Main>{children}</Main>
         </Middle>
         <Footer data={data.site.siteMetadata} />
       </Wrapper>
@@ -43,16 +41,16 @@ const GridLayout = ({ children, ...props }) => {
 
 const Wrapper = styled.div`
   display: grid;
-`;
+`
 const Middle = styled.section`
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
   }
-`;
+`
 const Main = styled.main`
   background-color: var(--color-background);
   display: grid;
-`;
+`
 
 GridLayout.propTypes = {
   children: PropTypes.node.isRequired,

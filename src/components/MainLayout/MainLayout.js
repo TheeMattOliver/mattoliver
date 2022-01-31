@@ -77,7 +77,7 @@ const Main = styled.main`
   display: flex;
   flex: 1;
   width: 100%;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex: 1;
   }
 `
@@ -86,7 +86,7 @@ const MotionMain = styled(motion.main)`
   display: flex;
   flex: 1;
   width: 100%;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex: 1;
   }
 `

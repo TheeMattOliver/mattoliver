@@ -218,11 +218,11 @@ const RefWrapper = styled.div`
     font-weight: bold;
     text-anchor: start;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     width: 100%;
     height: 688px;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     height: 1300px;
   }
 `

@@ -53,18 +53,18 @@ const Wrapper = styled.div`
   padding-right: 1rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  @media ${QUERIES.phoneMinAndUp} {
+  @media ${QUERIES.xsAndUp} {
     display: grid;
     place-items: center;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
   }
 `

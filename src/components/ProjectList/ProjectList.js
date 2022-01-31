@@ -73,10 +73,10 @@ const GridWrapper = styled.div`
   );
   gap: 2rem;
   padding: 16px;
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     max-width: none;
     gap: 2rem;
     margin-right: 32px;
@@ -91,14 +91,14 @@ const ProjectCardWrapper = styled.div`
   border-radius: 5px;
   flex: 1;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     margin: 64px 52px 64px 32px;
     background: var(--color-backgroundOverlay);
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     margin: 64px 52px 64px 32px;
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     margin: 1rem;
   }
 `
@@ -119,7 +119,7 @@ const ProjectCardHeader = styled.div`
   time {
     color: var(--color-textSecondary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: none;
   }
 `
@@ -132,7 +132,7 @@ const ProjectCardContent = styled.div`
     margin-top: 8px;
     color: var(--color-textSecondary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: none;
   }
 `
@@ -167,7 +167,7 @@ const OffsetProjectCardContentWrapper = styled.div`
     margin-top: 8px;
     color: var(--color-textSecondary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: block;
     background: var(--color-backgroundOverlay);
     flex: 1;
@@ -250,7 +250,7 @@ const ProjectMainImage = styled(GatsbyImage)`
 
 const LargeMonitorSpacer = styled(Spacer)`
   display: none;
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     display: block;
   }
 `

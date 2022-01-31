@@ -50,7 +50,7 @@ export default styled(UnstyledButton)`
   display: inline-flex;
   flex: 1;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: inline-block;
     flex: 0;
   }

@@ -121,7 +121,7 @@ const RefWrapper = styled.div`
       filter: brightness(0.7);
     }
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex-direction: column;
     height: 488px;
   }

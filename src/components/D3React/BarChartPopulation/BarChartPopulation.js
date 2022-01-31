@@ -107,7 +107,7 @@ const RefWrapper = styled.div`
     flex: 1;
     height: 150px;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     width: 100%;
     height: 688px;
   }

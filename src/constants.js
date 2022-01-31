@@ -148,14 +148,11 @@ export const FONT_WEIGHTS = {
 
 // Mobile first
 export const BREAKPOINTS = {
-  xs: 320,
-  phoneLg: 375,
-  phoneMin: 450,
-  tabletMin: 550,
-  sm: 563,
+  xxs: 320,
+  xs: 450,
+  sm: 544,
   md: 768,
   lg: 1024,
-  laptopMin: 1100,
   xl: 1440,
   desktopMin: 1500,
   ultraWideMin: 1918,
@@ -165,48 +162,15 @@ export const BREAKPOINTS = {
 
 // mobile first
 export const QUERIES = {
-  phoneMinAndUp: `(min-width: ${BREAKPOINTS.phoneMin / 16}rem})`,
-  tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
-  laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
-  desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
-  ultraWideAndUp: `(min-width: ${BREAKPOINTS.ultraWideAndUp / 16}rem)`,
-  tabletOnly: `
-    (min-width: ${BREAKPOINTS.tabletMin / 16}rem) and
-    (max-width: ${(BREAKPOINTS.laptopMin - 1) / 16}rem)`,
-  // new
-  xs: `(max-width: ${BREAKPOINTS.xs / 16}rem)`,
-  sm: `(min-width: ${BREAKPOINTS.xs / 16}rem and max-width: ${
-    BREAKPOINTS.sm / 16
-  }rem)`,
-  md: `(min-width: ${BREAKPOINTS.sm / 16}rem and max-width: ${
-    BREAKPOINTS.md / 16
-  }rem)`,
-  lg: `(min-width: ${BREAKPOINTS.md / 16}rem and max-width: ${
-    BREAKPOINTS.lg / 16
-  }rem)`,
-  xl: `(min-width: ${BREAKPOINTS.lg / 16}rem and max-width: ${
-    BREAKPOINTS.xl / 16
-  }rem)`,
-  xsAndSmaller: `(max-width: ${BREAKPOINTS.xs / 16}rem)`,
-  smAndSmaller: `(max-width: ${BREAKPOINTS.sm / 16}rem)`,
-  mdAndSmaller: `(max-width: ${BREAKPOINTS.md / 16}rem)`,
-  lgAndSmaller: `(max-width: ${BREAKPOINTS.lg / 16}rem)`,
-  xlAndSmaller: `(max-width: ${BREAKPOINTS.xl / 16}rem)`,
-  phoneLgAndSmaller: `(max-width: ${BREAKPOINTS.phoneLg / 16}rem)`,
-  tabletAndSmaller: `(max-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
-  desktopAndSmaller: `(max-width: ${BREAKPOINTS.desktop / 16}rem)`,
-  ultraWideAndSmaller: `(max-width: ${BREAKPOINTS.ultraWideMin / 16}rem)`,
-  ultraSuperWideAndSmaller: `(max-width: ${
-    BREAKPOINTS.ultraSuperWide / 16
-  }rem)`,
-  xsAndLarger: `(min-width: ${(BREAKPOINTS.xs + 1) / 16}rem)`,
-  smAndLarger: `(min-width: ${(BREAKPOINTS.sm + 1) / 16}rem)`,
-  mdAndLarger: `(min-width: ${(BREAKPOINTS.md + 1) / 16}rem)`,
-  lgAndLarger: `(min-width: ${(BREAKPOINTS.lg + 1) / 16}rem)`,
+  xxsAndUp: `(min-width: ${BREAKPOINTS.xxs / 16}rem})`, // (min-width: 320px)
+  xsAndUp: `(min-width: ${BREAKPOINTS.xs / 16}rem})`, // (min-width: 450px)
+  smAndUp: `(min-width: ${BREAKPOINTS.sm / 16}rem)`, // (min-width: 544px)
+  mdAndUp: `(min-width: ${BREAKPOINTS.md / 16}rem)`, // (min-width: 768px)
+  lgAndUp: `(min-width: ${BREAKPOINTS.lg / 16}rem)`, // (min-width: 1024px)
+  xlAndUp: `(min-width: ${BREAKPOINTS.xl / 16}rem)`, // (min-width: 1440px)
+  ultraWideAndUp: `(min-width: ${BREAKPOINTS.ultraWideMin / 16}rem)`, // (min-width: 1918px)
+
   xlAndLarger: `(min-width: ${(BREAKPOINTS.xl + 1) / 16}rem)`,
-  desktopAndLarger: `(min-width: ${BREAKPOINTS.desktop / 16}rem)`,
-  mobile: `(max-width: ${BREAKPOINTS.md / 16}rem)`,
-  desktop: `(min-width: ${(BREAKPOINTS.md + 1) / 16}rem)`,
 }
 
 export const TRANSITIONS = {

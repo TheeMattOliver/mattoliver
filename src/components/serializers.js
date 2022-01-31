@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import Figure from "./Figure";
-import EmbedHTML from './EmbedHTML';
-import TwitterTweetEmbed from './TwitterTweetEmbed'
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { QUERIES } from "../constants";
+import React from "react"
+import styled from "styled-components"
+import Figure from "./Figure"
+import EmbedHTML from "./EmbedHTML"
+import TwitterTweetEmbed from "./TwitterTweetEmbed"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism"
+import { QUERIES } from "../constants"
 
 const serializers = {
   types: {
@@ -14,41 +14,43 @@ const serializers = {
     mainImage: Figure,
     embedHTML: EmbedHTML,
     code: ({ node = {} }) => {
-      const { code, language } = node;
-      if (!code) return null;
+      const { code, language } = node
+      if (!code) return null
       return (
-        <SyntaxHighlighter
-          language={language || 'text'}
-          style={vscDarkPlus}
-        >
+        <SyntaxHighlighter language={language || "text"} style={vscDarkPlus}>
           {code}
         </SyntaxHighlighter>
       )
     },
     // twitter: ({ node }) => `<div id="${node.id}" class="tweet"></div>`
-    twitter: ({ node }) => <Tweet><TwitterTweetEmbed tweetId={node.id} options={{ conversation: "none" }} /></Tweet>
+    twitter: ({ node }) => (
+      <Tweet>
+        <TwitterTweetEmbed
+          tweetId={node.id}
+          options={{ conversation: "none" }}
+        />
+      </Tweet>
+    ),
   },
   marks: {
     link: ({ children, mark }) =>
       mark.blank ? (
-        <a href={mark.href}
-          target="_blank"
-          rel="noopener noreferrer">
+        <a href={mark.href} target="_blank" rel="noopener noreferrer">
           {children}
         </a>
       ) : (
         <a href={mark.href}>{children}</a>
       ),
-    strong: (props) => <strong>{props.children}</strong>,
-    em: (props) => <em>{props.children}</em>,
-  }
-};
+    strong: props => <strong>{props.children}</strong>,
+    em: props => <em>{props.children}</em>,
+  },
+}
 
-export default serializers;
+export default serializers
 
 const Tweet = styled.div`
   padding: 0;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 1rem;
   }
-`;
+`

@@ -33,7 +33,7 @@ const GridWrapper = styled.div`
   );
   gap: 16px;
   padding: 16px;
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
   }
 `

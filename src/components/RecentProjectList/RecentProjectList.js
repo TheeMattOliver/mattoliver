@@ -75,7 +75,7 @@ export default function RecentProjectList() {
 
 const Wrapper = styled.div`
   padding: 1rem;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 2rem 2rem 1.5rem 2rem;
   }
 `
@@ -85,7 +85,7 @@ const SectionTitle = styled.h3`
   padding: 0;
   font-weight: bold;
   font-size: clamp(1.5rem, 2.25vw + 0.5rem, 2.5rem);
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     line-height: 3rem;
     padding: 0rem;
   }
@@ -101,10 +101,10 @@ const RecentProjectGrid = styled.div`
   grid-gap: 2rem;
   padding: 16px 0;
 
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     max-width: none;
     grid-template-columns: repeat(2, minmax(var(--min-column-width), 1fr));
   }
@@ -117,13 +117,13 @@ const ProjectCardWrapper = styled.div`
   border-radius: 5px;
   flex: 1;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     /* margin: 64px 52px 64px 32px; */
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     /* margin: 64px 52px 64px 32px; */
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     /* margin: 16px; */
   }
 `
@@ -150,7 +150,7 @@ const ProjectCardFooter = styled.div`
     font-style: italic;
     margin-top: 0.25rem;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 1rem 1rem;
     h2 {
       font-size: calc(1rem + 1vw);
@@ -164,7 +164,7 @@ const ProjectCategoryWrapper = styled.div`
   p {
     font-size: 0.75rem;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     p {
       font-size: 1rem;
     }
@@ -224,7 +224,7 @@ const NavBtnWrapper = styled.div`
   justify-content: flex-end;
   padding: 2rem 1rem;
   color: var(--color-textPrimary);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 2rem 2rem;
   }
 `

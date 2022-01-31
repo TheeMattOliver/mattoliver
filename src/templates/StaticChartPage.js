@@ -372,7 +372,7 @@ const ChartPageWrapper = styled.div`
 `
 const ChartTitleWrapper = styled.div`
   display: flex;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 1rem 0;
   }
 `
@@ -386,7 +386,7 @@ const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   color: var(--color-textPrimary);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
   }
 `
 const DesktopActions = styled.div`
@@ -435,7 +435,7 @@ const ChartWrapper = styled.div`
 `
 const DesktopBackButtonWrapper = styled.div`
   display: none;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: block;
     margin-top: auto;
     margin-bottom: 32px;
@@ -445,7 +445,7 @@ const BackButton = styled(Link)`
   font-size: 1.125rem;
   filter: saturate(0);
   font-weight: ${FONT_WEIGHTS.light};
-  /* @media ${QUERIES.laptopAndUp} {
+  /* @media ${QUERIES.lgAndUp} {
     display: none;
   } */
 `

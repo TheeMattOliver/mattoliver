@@ -94,7 +94,7 @@ const RefWrapper = styled.div`
     path {
     }
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex-direction: column;
     height: 688px;
   }

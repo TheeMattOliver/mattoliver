@@ -111,10 +111,10 @@ const Wrapper = styled.div`
       color: var(--color-gray50);
     }
   }
-  /* @media ${QUERIES.tabletAndUp} {
+  /* @media ${QUERIES.smAndUp} {
     margin: 1rem 1.5rem;
   } */
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 1rem 2rem;
   }
 `

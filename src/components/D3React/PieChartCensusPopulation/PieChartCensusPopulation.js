@@ -113,7 +113,7 @@ const RefWrapper = styled.div`
     flex: 1;
   }
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex-direction: column;
     height: 588px;
   }

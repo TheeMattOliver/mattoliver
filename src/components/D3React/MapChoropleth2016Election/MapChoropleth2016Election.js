@@ -187,7 +187,7 @@ const RefWrapper = styled.div`
     cursor: pointer;
     filter: brightness(0.7);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex-direction: column;
     height: 688px;
   }

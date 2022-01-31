@@ -174,7 +174,7 @@ const RefWrapper = styled.div`
       stroke: red;
     }
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     width: 800px;
     height: 488px;
   }

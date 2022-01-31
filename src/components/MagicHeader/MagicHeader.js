@@ -126,7 +126,7 @@ const Logo = styled(Link)`
 const DesktopNav = styled.nav`
   display: none;
 
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
@@ -199,10 +199,10 @@ const MobileActions = styled.div`
 	display: flex;
 	align-items: center;
 	 */
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     gap: 32px;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     display: none;
   }
 `

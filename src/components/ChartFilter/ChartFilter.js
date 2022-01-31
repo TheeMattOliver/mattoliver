@@ -115,7 +115,7 @@ const Wrapper = styled.div`
       color: var(--color-gray50);
     }
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 1rem 2.5rem;
   }
 `
