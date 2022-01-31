@@ -49,8 +49,8 @@ export const COLORS = {
   },
   // White
   white: {
-    light: "hsl(0deg, 0%, 96%)", // #F2F2F2
-    dark: "hsl(0deg, 0%, 95%)", // #F2F2F2
+    light: "hsl(0deg, 0%, 100%)", // #FFFFFF
+    dark: "hsl(0deg, 0%, 100%)", // #FFFFFF
   },
   // Black
   black: {

@@ -89,8 +89,9 @@ const GlobalStyles = createGlobalStyle`
     --button-horizontal-padding: 0.9em;
     --button-line-height: var(--form-field-line-height);
     --button-border-radius: 0.375em;
-
-    /* Typography variables */
+  }
+  :root {
+     /* Typography variables */
     // Font stacks
     --body-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
@@ -112,7 +113,7 @@ const GlobalStyles = createGlobalStyle`
     --font-weight-light: ${FONT_WEIGHTS.light};
 
     /* Heading utilities */
-    --h00-size: ${FONT_SIZES[8]};
+    --hxl-size: ${FONT_SIZES[8]};
     --h0-size: ${FONT_SIZES[7]};
     --h1-size: ${FONT_SIZES[6]};
     --h2-size: ${FONT_SIZES[5]};
@@ -123,19 +124,18 @@ const GlobalStyles = createGlobalStyle`
 
     /* Base body font size */
     --body-font-size: 16px;
-    --body-line-height: var(--lh-default)
+    --body-line-height: var(--lh-default);
 
     /* Text styles */
     /* Set the font weight to normal */
-    --text-normal: var(--font-weight-normal)
+    --text-normal: var(--font-weight-normal);
     /* Set the font weight to bold */
-    --text-ultrabold: var(--font-weight-ultrabold)
-    --text-bold: var(--font-weight-bold)
-    --text-semibold: var(--font-weight-semibold)
-    --text-light: var(--font-weight-light)
+    --text-ultrabold: var(--font-weight-ultrabold);
+    --text-bold: var(--font-weight-bold);
+    --text-semibold: var(--font-weight-semibold);
+    --text-light: var(--font-weight-light);
     /* Set to monospace font */
-    --text-mono: var(--mono-font)
-
+    --text-mono: var(--mono-font);
   }
 
   body {
