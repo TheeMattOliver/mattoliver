@@ -151,7 +151,7 @@ export const BREAKPOINTS = {
   xs: 320,
   phoneLg: 375,
   phoneMin: 450,
-  tabletMin: 550,
+  tabletMin: 544,
   sm: 563,
   md: 768,
   lg: 1024,
@@ -193,7 +193,6 @@ export const QUERIES = {
   lgAndSmaller: `(max-width: ${BREAKPOINTS.lg / 16}rem)`,
   xlAndSmaller: `(max-width: ${BREAKPOINTS.xl / 16}rem)`,
   phoneLgAndSmaller: `(max-width: ${BREAKPOINTS.phoneLg / 16}rem)`,
-  tabletAndSmaller: `(max-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
   desktopAndSmaller: `(max-width: ${BREAKPOINTS.desktop / 16}rem)`,
   ultraWideAndSmaller: `(max-width: ${BREAKPOINTS.ultraWideMin / 16}rem)`,
   ultraSuperWideAndSmaller: `(max-width: ${
