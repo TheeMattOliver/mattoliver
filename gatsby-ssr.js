@@ -73,7 +73,6 @@ const FallbackStyles = () => {
 
   const cssVariableString = Object.entries(COLORS).reduce(
     (acc, [name, colorByTheme]) => {
-      console.log("generating color: ", name)
       return `${acc}\n--color-${name}: ${colorByTheme.light};`
     },
     ""
