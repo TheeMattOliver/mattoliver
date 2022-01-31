@@ -153,7 +153,6 @@ export const BREAKPOINTS = {
   sm: 544,
   md: 768,
   lg: 1024,
-  laptopMin: 1100,
   xl: 1440,
   desktopMin: 1500,
   ultraWideMin: 1918,
@@ -168,8 +167,7 @@ export const QUERIES = {
   smAndUp: `(min-width: ${BREAKPOINTS.sm / 16}rem)`, // (min-width: 544px)
   mdAndUp: `(min-width: ${BREAKPOINTS.md / 16}rem)`, // (min-width: 768px)
   lgAndUp: `(min-width: ${BREAKPOINTS.lg / 16}rem)`, // (min-width: 1024px)
-  laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`, // (min-width: 1100px)
-  desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`, // (min-width: 1500px)
+  xlAndUp: `(min-width: ${BREAKPOINTS.xl / 16}rem)`, // (min-width: 1440px)
   ultraWideAndUp: `(min-width: ${BREAKPOINTS.ultraWideMin / 16}rem)`, // (min-width: 1918px)
 
   xlAndLarger: `(min-width: ${(BREAKPOINTS.xl + 1) / 16}rem)`,

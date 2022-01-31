@@ -219,7 +219,7 @@ const Grid = styled.div`
   min-height: 100%;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 `
@@ -265,7 +265,7 @@ const ContactInformation = styled.div`
       color: ${COLORS.blue500.light};
     }
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     padding: 4rem 1.5rem;
     padding: 3rem;
   }
@@ -291,7 +291,7 @@ const FormWrapper = styled.div`
     padding: 2.5rem;
     grid-column: span 2 / span 2;
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     padding: 3rem;
   }
 `

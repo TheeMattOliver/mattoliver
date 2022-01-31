@@ -144,7 +144,7 @@ const HeroWrapper = styled.div`
 `
 
 const HeroCopyWrapper = styled.div`
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
   }
 `
@@ -169,7 +169,7 @@ const HeroCopySubHead = styled.h2`
     font-variation-settings: "wght" 400;
     font-weight: bold;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
   }
 `
@@ -254,10 +254,10 @@ const ButtonWrapper = styled.div`
   @media ${QUERIES.smAndUp} {
     padding: 0 1.5rem;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     /* max-width: 80rem; */
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     /* max-width: revert; */
   }
 `

@@ -222,7 +222,7 @@ const RefWrapper = styled.div`
     width: 100%;
     height: 688px;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     height: 1300px;
   }
 `

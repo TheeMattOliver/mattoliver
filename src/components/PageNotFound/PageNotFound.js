@@ -61,10 +61,10 @@ const Wrapper = styled.div`
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
   }
 `

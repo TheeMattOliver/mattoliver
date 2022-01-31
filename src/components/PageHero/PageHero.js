@@ -21,10 +21,10 @@ const Wrapper = styled.div`
   margin-right: auto; */
   @media ${QUERIES.smAndUp} {
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     /* max-width: 80rem; */
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     /* max-width: revert; */
   }
 `

@@ -445,7 +445,7 @@ const BackButton = styled(Link)`
   font-size: 1.125rem;
   filter: saturate(0);
   font-weight: ${FONT_WEIGHTS.light};
-  /* @media ${QUERIES.laptopAndUp} {
+  /* @media ${QUERIES.lgAndUp} {
     display: none;
   } */
 `

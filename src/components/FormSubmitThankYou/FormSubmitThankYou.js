@@ -47,7 +47,7 @@ const MessageWrapper = styled.div`
     padding: 1rem;
     grid-column: span 2 / span 2;
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     padding: 4rem;
   }
 `

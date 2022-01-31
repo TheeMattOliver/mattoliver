@@ -31,10 +31,10 @@ const Wrapper = styled.div`
   @media ${QUERIES.smAndUp} {
     padding: 0 2rem;
   }
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.lgAndUp} {
     /* max-width: 80rem; */
   }
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.xlAndUp} {
     /* max-width: revert; */
   }
 `
