@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     /* max-width: revert; */
   }
 `
-const HeroTitle = styled.h1`
+const HeroTitle = styled.h2`
   color: var(--color-textPrimary);
   font-weight: bold;
   font-size: clamp(2.625rem, 3.3vw + 1.25rem, 3.5rem);

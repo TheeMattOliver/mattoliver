@@ -1,8 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-export default styled.h1`
+export default styled.h2`
   color: var(--color-textPrimary);
-  font-size: 64px;
-  font-weight: bold;
-  /* font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; */
-`;
+  font-size: var(--h0-size);
+  font-weight: var(--text-semibold);
+`

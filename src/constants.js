@@ -49,8 +49,8 @@ export const COLORS = {
   },
   // White
   white: {
-    light: "hsl(0deg, 0%, 96%)", // #F2F2F2
-    dark: "hsl(0deg, 0%, 95%)", // #F2F2F2
+    light: "hsl(0deg, 0%, 100%)", // #FFFFFF
+    dark: "hsl(0deg, 0%, 100%)", // #FFFFFF
   },
   // Black
   black: {
@@ -121,13 +121,29 @@ export const COLORS = {
   },
 }
 
-export const WEIGHTS = {
+export const FONT_SIZES = [
+  "14px", // h6
+  "16px", // h5
+  "18px", // h4
+  "24px", // h3
+  "36px", // h2
+  "48px", // h1
+  "72px", // h0
+  "96px", // h00
+]
+export const LINE_HEIGHTS = {
+  condensedUltra: 1,
+  condensed: 1.25,
+  default: 1.5,
+  relaxed: 1.75,
+}
+
+export const FONT_WEIGHTS = {
   light: 300,
-  thin: 400,
   normal: 500,
-  medium: 600,
-  heavy: 700,
-  bold: 800,
+  semibold: 600,
+  bold: 700,
+  ultrabold: 800,
 }
 
 // Mobile first

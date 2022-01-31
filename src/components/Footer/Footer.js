@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import VisuallyHidden from "../VisuallyHidden"
 import Icon from "../Icon"
-import { COLORS, WEIGHTS } from "../../constants"
+import { COLORS, FONT_WEIGHTS } from "../../constants"
 
 const Footer = () => {
   return (
@@ -78,7 +78,7 @@ const FooterCredit = styled.p`
 `
 const FooterLink = styled.a`
   color: var(--color-textSecondary);
-  font-weight: ${WEIGHTS.medium};
+  font-weight: ${FONT_WEIGHTS.semibold};
   & > svg {
     display: block;
   }

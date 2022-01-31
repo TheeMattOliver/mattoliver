@@ -15,7 +15,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "release": "yarn build && changeset publish"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.3",

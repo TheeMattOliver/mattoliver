@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { useFormik, Form, Formik, Field } from "formik"
 import * as Yup from "yup"
 
-import { COLORS, QUERIES, WEIGHTS } from "../../constants"
+import { COLORS, QUERIES, FONT_WEIGHTS } from "../../constants"
 import VisuallyHidden from "../VisuallyHidden"
 import FormSubmitThankYou from "../FormSubmitThankYou/"
 
@@ -316,7 +316,7 @@ const Label = styled.label`
   display: block;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  font-weight: ${WEIGHTS.medium};
+  font-weight: ${FONT_WEIGHTS.semibold};
   color: var(--color-textPrimary);
 `
 
@@ -384,7 +384,7 @@ const Button = styled.button`
   border-radius: 0.375rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-weight: ${WEIGHTS.medium};
+  font-weight: ${FONT_WEIGHTS.semibold};
   color: var(--color-white);
   background: var(--color-buttonPrimary);
   &:hover {
