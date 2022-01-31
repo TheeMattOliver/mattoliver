@@ -205,7 +205,7 @@ const RefWrapper = styled.div`
   svg {
     flex: 1;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex-direction: column;
     height: 688px;
   }

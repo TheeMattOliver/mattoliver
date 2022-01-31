@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 2rem;
   }
   @media ${QUERIES.laptopAndUp} {
@@ -51,7 +51,7 @@ const ButtonList = styled.div`
 //   padding: 12px;
 //   min-width: 0px;
 //   gap: 16px;
-//   @media ${QUERIES.tabletAndUp} {
+//   @media ${QUERIES.smAndUp} {
 //     flex-basis: 50%;
 //   }
 // `;

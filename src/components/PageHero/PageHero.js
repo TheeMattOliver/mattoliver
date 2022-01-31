@@ -19,7 +19,7 @@ export default PageHero
 const Wrapper = styled.div`
   /* margin-left: auto;
   margin-right: auto; */
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
   }
   @media ${QUERIES.laptopAndUp} {
     /* max-width: 80rem; */

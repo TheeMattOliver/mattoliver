@@ -43,7 +43,7 @@ const MessageWrapper = styled.div`
     font-size: clamp(1rem, /* 1.3vw + .9rem, */ 1.25vw + 0.5rem, 1.45rem);
     width: clamp(300px, 95%, 750px);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 1rem;
     grid-column: span 2 / span 2;
   }

@@ -75,7 +75,7 @@ export default function RecentProjectList() {
 
 const Wrapper = styled.div`
   padding: 1rem;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 2rem 2rem 1.5rem 2rem;
   }
 `
@@ -117,7 +117,7 @@ const ProjectCardWrapper = styled.div`
   border-radius: 5px;
   flex: 1;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     /* margin: 64px 52px 64px 32px; */
   }
   @media ${QUERIES.laptopAndUp} {
@@ -150,7 +150,7 @@ const ProjectCardFooter = styled.div`
     font-style: italic;
     margin-top: 0.25rem;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 1rem 1rem;
     h2 {
       font-size: calc(1rem + 1vw);
@@ -164,7 +164,7 @@ const ProjectCategoryWrapper = styled.div`
   p {
     font-size: 0.75rem;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     p {
       font-size: 1rem;
     }
@@ -224,7 +224,7 @@ const NavBtnWrapper = styled.div`
   justify-content: flex-end;
   padding: 2rem 1rem;
   color: var(--color-textPrimary);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 2rem 2rem;
   }
 `

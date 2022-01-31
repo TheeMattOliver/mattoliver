@@ -183,7 +183,7 @@ const RefWrapper = styled.div`
   justify-content: center;
   align-items: stretch;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex-direction: column;
     height: 688px;
   }

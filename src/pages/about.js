@@ -120,7 +120,7 @@ export const query = graphql`
 
 const PageTitle = styled.div`
   padding: 1rem;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 2rem;
   }
 `
@@ -130,7 +130,7 @@ const PageWrapper = styled.div``
 const FlexWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex-direction: row;
   }
 `
@@ -138,7 +138,7 @@ const FlexWrapper = styled.div`
 const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: revert;
   }
 `
@@ -164,7 +164,7 @@ const HeroCopySubHead = styled.h2`
     color: var(--color-textLink);
     text-decoration: underline;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 1.5rem;
     font-variation-settings: "wght" 400;
     font-weight: bold;
@@ -185,7 +185,7 @@ const HeroCopyText = styled.p`
     text-decoration: underline;
   }
   width: clamp(300px, 95%, 750px);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 2rem;
   }
 `
@@ -199,14 +199,14 @@ const MobileImgWrapper = styled.div`
   align-self: center;
   margin-top: 24px;
   border-radius: 50%;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: none;
   }
 `
 
 const ImgWrapper = styled.div`
   display: none;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: block;
     position: relative;
     /* width: 400px;
@@ -251,7 +251,7 @@ const ButtonWrapper = styled.div`
   margin-right: auto;
   margin-bottom: 3rem;
   display: flex;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 1.5rem;
   }
   @media ${QUERIES.laptopAndUp} {
@@ -267,7 +267,7 @@ const ButtonContainer = styled.div`
   justify-content: flex-start;
   align-items: stretch;
   display: flex;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     flex: 0;
   }
 `

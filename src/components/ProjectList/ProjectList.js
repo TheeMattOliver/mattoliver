@@ -91,7 +91,7 @@ const ProjectCardWrapper = styled.div`
   border-radius: 5px;
   flex: 1;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     margin: 64px 52px 64px 32px;
     background: var(--color-backgroundOverlay);
   }
@@ -119,7 +119,7 @@ const ProjectCardHeader = styled.div`
   time {
     color: var(--color-textSecondary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: none;
   }
 `
@@ -132,7 +132,7 @@ const ProjectCardContent = styled.div`
     margin-top: 8px;
     color: var(--color-textSecondary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: none;
   }
 `
@@ -167,7 +167,7 @@ const OffsetProjectCardContentWrapper = styled.div`
     margin-top: 8px;
     color: var(--color-textSecondary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     display: block;
     background: var(--color-backgroundOverlay);
     flex: 1;

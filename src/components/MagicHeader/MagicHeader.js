@@ -199,7 +199,7 @@ const MobileActions = styled.div`
 	display: flex;
 	align-items: center;
 	 */
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     gap: 32px;
   }
   @media ${QUERIES.laptopAndUp} {

@@ -294,7 +294,7 @@ const FormWrapper = styled.div`
     line-height: 1.75rem;
     color: var(--color-textPrimary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 2.5rem;
     grid-column: span 2 / span 2;
   }
@@ -313,7 +313,7 @@ const Form = styled.form`
   textarea {
     color: var(--color-textPrimary);
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `
@@ -341,7 +341,7 @@ const Input = styled.input`
   border: 1px solid var(--color-borderPrimary);
   border-radius: 0.375rem;
   box-shadow: none;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     box-shadow: revert;
   }
 `
@@ -386,7 +386,7 @@ const Button = styled.button`
   &:hover {
     background: ${COLORS.blue700.light};
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     width: auto;
   }
 `

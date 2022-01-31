@@ -261,7 +261,7 @@ const PageTitleWrapper = styled.div`
   padding: 0 1rem;
   gap: 16px;
   display: flex;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 5rem 0;
   }
 `
@@ -290,7 +290,7 @@ const Main = styled.main`
   background-color: var(--color-background);
   display: grid;
   /* border: solid 1px tomato; */
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     margin: 1rem 1rem 0 1rem;
   }
   @media ${QUERIES.laptopAndUp} {
@@ -347,7 +347,7 @@ const LedeText = styled.p`
   padding: 0 1rem;
   font-size: clamp(1rem, /* 1.3vw + .9rem, */ 1.25vw + 0.5rem, 1.45rem);
   width: clamp(300px, 95%, 65ch);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 1.5rem;
     margin-bottom: 1.5rem;
   }
@@ -362,7 +362,7 @@ const Section = styled.section`
     "copy";
   grid-template-columns: 1fr;
   gap: 16px;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     grid-template-areas:
       "header image"
       "header copy";
@@ -378,7 +378,7 @@ const Section = styled.section`
 
 const SectionHeaderWrapper = styled.div`
   grid-area: header;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     line-height: 2rem;
     margin-bottom: 32px;
     position: sticky;
@@ -402,7 +402,7 @@ const SectionHeaderAnchor = styled.a`
   svg {
     display: none;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     &:hover ${SectionHeaderIconWrapper} {
       svg {
         display: revert;
@@ -423,7 +423,7 @@ const SectionCopyWrapper = styled.div`
     line-height: 1.25rem;
     padding: 0 1rem;
     font-size: clamp(1rem, 1.25vw + 0.5rem, 1.45rem);
-    @media ${QUERIES.tabletAndUp} {
+    @media ${QUERIES.smAndUp} {
       line-height: 1.75rem;
       padding: 0 1.5rem;
     }
@@ -442,7 +442,7 @@ const SectionCopyWrapper = styled.div`
     max-width: 340px;
     padding: 1.375rem !important;
     margin: 2rem 1rem !important;
-    @media ${QUERIES.tabletAndUp} {
+    @media ${QUERIES.smAndUp} {
       margin: 2rem 1.5rem !important;
       max-width: 90%;
     }
@@ -501,7 +501,7 @@ const SectionCopyWrapper = styled.div`
     width: 550px;
     height: 339.16666666667px;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     margin-top: 1.25rem;
     iframe {
       margin-top: 24px;
@@ -533,7 +533,7 @@ const SectionCopyGraf = styled.p`
   line-height: 1.25rem;
   padding: 0 1rem;
   font-size: clamp(1rem, 1.25vw + 0.5rem, 1.45rem);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     line-height: 1.75rem;
     padding: 0 1.5rem;
   }
@@ -577,7 +577,7 @@ const SectionImageContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     margin: 0 1rem 1rem 1rem;
   }
 `

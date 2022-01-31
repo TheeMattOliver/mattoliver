@@ -80,7 +80,7 @@ export const query = graphql`
 `
 const PageTitle = styled.div`
   padding: 1rem;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     padding: 0 2rem;
   }
 `

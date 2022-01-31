@@ -188,7 +188,7 @@ const RefWrapper = styled.div`
   svg {
     flex: 1;
   }
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.smAndUp} {
     width: 100%;
     height: 588px;
   }
@@ -204,7 +204,7 @@ const RefWrapper = styled.div`
   .totalPopulation {
     font-size: 1.5rem;
     text-anchor: middle;
-    @media ${QUERIES.tabletAndUp} {
+    @media ${QUERIES.smAndUp} {
       font-size: 3rem;
     }
   }
