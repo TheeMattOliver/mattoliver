@@ -154,7 +154,6 @@ export const BREAKPOINTS = {
   md: 768,
   lg: 1024,
   xl: 1440,
-  desktopMin: 1500,
   ultraWideMin: 1918,
   ultraSuperWide: 2400,
   ridiculous: 4000,

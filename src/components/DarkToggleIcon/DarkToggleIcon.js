@@ -3,10 +3,7 @@ import React from "react"
 import { ThemeContext } from "../ThemeContext"
 import styled from "styled-components"
 import UnstyledButton from "../UnstyledButton"
-// import {
-//   MoonIcon,
-//   SunIcon
-// } from '@heroicons/react/solid'
+// import { MoonIcon, SunIcon } from "@heroicons/react/solid"
 
 const DarkToggleIcon = () => {
   const { colorMode, setColorMode } = React.useContext(ThemeContext)
@@ -29,7 +26,7 @@ const DarkToggleIcon = () => {
             title="Activate dark mode"
           >
             <MoonIcon
-              className="h-8 w-8 pl-2 pr-2 -m-2 inline-block rounded-md hover:text-blue-500 transition ease-in-out duration-150"
+              className="h-8 w-8 pl-2 pr-2 inline-block rounded-md hover:text-blue-500 transition ease-in-out duration-150"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -44,7 +41,7 @@ const DarkToggleIcon = () => {
             title="Activate light mode"
           >
             <SunIcon
-              className="h-8 w-8 pl-2 pr-2 -m-2 inline-block rounded-md hover:text-blue-300 transition ease-in-out duration-150"
+              className="h-8 w-8 pl-2 pr-2 inline-block rounded-md hover:text-blue-300 transition ease-in-out duration-150"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -68,9 +65,7 @@ export default DarkToggleIcon
 
 const Toggle = styled.div`
   cursor: pointer;
-  svg {
-    /* margin-top: -0.75rem; */
-  }
+
   button {
     transition: transform 250ms;
   }

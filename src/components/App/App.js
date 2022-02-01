@@ -1,12 +1,12 @@
 import React from "react"
 
 import { ThemeProvider } from "../ThemeContext"
-import GlobalStyle from "../GlobalStyle"
+import GlobalStyles from "../GlobalStyles"
 
 function App({ children }) {
   return (
     <ThemeProvider>
-      <GlobalStyle />
+      <GlobalStyles />
       {children}
     </ThemeProvider>
   )

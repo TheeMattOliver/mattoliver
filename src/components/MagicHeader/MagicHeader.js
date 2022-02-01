@@ -12,6 +12,8 @@ import VisuallyHidden from "../VisuallyHidden"
 import Icon from "../Icon"
 import UnstyledButton from "../UnstyledButton"
 
+import { MoonIcon, SunIcon } from "@heroicons/react/solid"
+
 const HEADER_HIDE_THRESHOLD = 400
 // How this works:
 // 1. Track the scroll position
