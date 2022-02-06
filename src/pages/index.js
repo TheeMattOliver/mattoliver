@@ -29,6 +29,8 @@ export default function HomePage({ data }) {
   const imgAltText = cmsPageData.openGraphImage?.alt
 
   const homeHeroTitle = "Hi, I'm Matt."
+  const subheadingText =
+    "This is fallback text. We only want this to render if there's no data from the CMS to render."
 
   return (
     <>
@@ -41,7 +43,11 @@ export default function HomePage({ data }) {
               <AboutImg image={imgUrl} alt={imgAltText} />
             </MobileImgWrapper>
             {/* Hero */}
-            <PageHero heading={homeHeroTitle} cmsData={cmsHomePageCopy} />
+            <PageHero
+              heading={homeHeroTitle}
+              subheading={subheadingText}
+              cmsData={cmsHomePageCopy}
+            />
 
             {/* Pic */}
             <ImgWrapper>

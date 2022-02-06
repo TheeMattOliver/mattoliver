@@ -11,13 +11,15 @@ import PortableText from "../PortableText"
 import { QUERIES } from "../../constants"
 
 const PageHero = ({ heading, subheading, cmsData, ...props }) => {
+  console.log("cmsData: ", cmsData)
+  console.log("subheading test: ", subheading)
   return (
     <HeroWrapper>
       <PageHeroTitle>
         {heading} <WavingHand />
       </PageHeroTitle>
 
-      {subheading && (
+      {cmsData ?? (
         <PageHeroCopyWrapper>
           <HeroCopySubheading>
             {subheading}
