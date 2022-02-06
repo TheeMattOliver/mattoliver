@@ -22,20 +22,20 @@ const FancyEmoji = ({ size = "xl", emoji = "👋" }) => {
   let Component
   if (emoji === "👋") {
     return (
-      <AnimatedHand role="img" aria-label="waving hand" style={styles}>
-        👋
+      <AnimatedHand role="img" aria-label="waving hand">
+        <EmojiContents style={styles}>👋</EmojiContents>
       </AnimatedHand>
     )
   } else if (emoji === "👾") {
     return (
-      <AnimatedAlien role="img" aria-label="alien invader" style={styles}>
-        👾
+      <AnimatedAlien role="img" aria-label="alien invader">
+        <EmojiContents style={styles}>👾</EmojiContents>
       </AnimatedAlien>
     )
   } else if (emoji === "👻") {
     return (
-      <AnimatedGhost role="img" aria-label="ghost" style={styles}>
-        👻
+      <AnimatedGhost role="img" aria-label="ghost">
+        <EmojiContents style={styles}>👻</EmojiContents>
       </AnimatedGhost>
     )
   } else {
@@ -43,8 +43,15 @@ const FancyEmoji = ({ size = "xl", emoji = "👋" }) => {
   }
 }
 
-const AnimatedHand = styled.span`
+const EmojiContents = styled.span`
   font-size: var(--fontSize);
+  height: 100%;
+  width: 100%;
+  display: block;
+`
+
+const AnimatedHand = styled.span`
+  background: transparent;
   @keyframes wave {
     from {
       transform: rotate(-10deg);
@@ -54,44 +61,55 @@ const AnimatedHand = styled.span`
     }
   }
   display: inline-block;
-  &:hover {
+
+  &:hover ${EmojiContents} {
     cursor: pointer;
+
     animation: wave 250ms infinite alternate ease-in-out;
     transform-origin: 75% 80%;
   }
 `
 const AnimatedGhost = styled.span`
   font-size: var(--fontSize);
-  @keyframes wave {
-    from {
-      transform: rotate(-10deg);
+  @keyframes zoomOutRight {
+    40% {
+      opacity: 1;
+      transform: scale3d(0.675, 0.675, 0.675) translate3d(-92px, 0, 0);
     }
+
     to {
-      transform: rotate(30deg);
+      opacity: 0;
+      transform: scale(0.04) translate3d(2000px, 0, 0);
     }
   }
+
   display: inline-block;
-  &:hover {
+  &:hover ${EmojiContents} {
     cursor: pointer;
-    animation: wave 250ms infinite alternate ease-in-out;
-    transform-origin: 75% 80%;
+    animation: zoomOutRight 750ms linear forwards;
+    transform-origin: right center;
   }
 `
 const AnimatedAlien = styled.span`
   font-size: var(--fontSize);
-  @keyframes wave {
-    from {
-      transform: rotate(-10deg);
+  @keyframes zoomOutUp {
+    40% {
+      opacity: 1;
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
+
     to {
-      transform: rotate(30deg);
+      opacity: 0;
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
     }
   }
   display: inline-block;
-  &:hover {
+  &:hover ${EmojiContents} {
     cursor: pointer;
-    animation: wave 250ms infinite alternate ease-in-out;
-    transform-origin: 75% 80%;
+    animation: zoomOutUp 750ms linear forwards;
+    transform-origin: center bottom;
   }
 `
 
