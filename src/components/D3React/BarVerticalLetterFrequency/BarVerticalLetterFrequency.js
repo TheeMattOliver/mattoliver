@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import useResizeObserver from "../../../hooks/useResizeObserver"
-import { ThemeContext } from "../../ThemeContext"
+import { ThemeContext } from "../../ThemeProvider"
 
 import * as d3 from "d3"
 import { QUERIES } from "../../../constants"

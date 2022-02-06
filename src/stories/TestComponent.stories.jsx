@@ -1,4 +1,6 @@
 import React from "react"
+import GlobalStyles from "../components/GlobalStyles"
+import { ThemeProvider } from "../components/ThemeProvider"
 
 import TestComponent from "../components/TestComponent"
 export default {
@@ -16,8 +18,9 @@ export default {
 
 export const testComponent = args => {
   return (
-    <TestComponent className="bg-red-100" {...args}>
-      Hello world
-    </TestComponent>
+    <ThemeProvider>
+      <GlobalStyles />
+      <TestComponent {...args}>Hello world</TestComponent>
+    </ThemeProvider>
   )
 }

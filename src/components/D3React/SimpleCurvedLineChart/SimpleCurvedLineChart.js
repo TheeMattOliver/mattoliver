@@ -5,7 +5,7 @@ import * as d3 from "d3"
 
 import useResizeObserver from "../../../hooks/useResizeObserver"
 import { QUERIES } from "../../../constants"
-import { ThemeContext } from "../../ThemeContext"
+import { ThemeContext } from "../../ThemeProvider"
 
 function SimpleCurvedLineChart({ data, maxY, numberOfDataPoints }) {
   const { colorMode, setColorMode } = React.useContext(ThemeContext)
