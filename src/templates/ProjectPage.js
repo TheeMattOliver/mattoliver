@@ -542,7 +542,6 @@ const SectionCopyGraf = styled.p`
 
 const StickySidebar = styled.div`
   position: sticky;
-  /* position: -webkit-sticky; */
   top: 8rem;
 `
 
@@ -552,7 +551,6 @@ const ImageWrapper = styled.div`
   padding: 16px;
   margin: 0 1rem 1rem 1rem;
   object-fit: cover;
-  /* filter: drop-shadow(1px 2px 3px var(--color-gray300)); */
   flex: 1;
 `
 
