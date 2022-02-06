@@ -8,21 +8,27 @@ import { QUERIES } from "../constants"
 import ProjectList from "../components/ProjectList"
 import MainLayout from "../components/MainLayout"
 import SEO from "../components/SEO"
-import { PageHero } from "../components/PageHero"
+import { PageTitle } from "../components/PageHero"
 import TechnologyFilter from "../components/TechnologyFilter"
 import Spacer from "../components/Spacer"
 
 export default function WorkPage({ data, pageContext }) {
   const intl = useIntl()
   const projects = data.projects.nodes
+  let numberProjects = projects.length
   return (
     <>
       <SEO title={`Work`} lang={intl.locale}></SEO>
       <MainLayout>
         <Wrapper>
-          <PageTitle>
-            <PageHero>Selected Work - {projects.length} Projects</PageHero>
-          </PageTitle>
+          <Spacer axis="vertical" size={32} />
+
+          <PageTitleWrapper>
+            <PageTitle>
+              Selected Work - <span>{projects.length}</span> Projects
+            </PageTitle>
+          </PageTitleWrapper>
+
           <TechnologyFilter activeTechnology={pageContext.technology} />
           <ProjectList projects={projects} />
           <Spacer axis="vertical" size={100} />
@@ -78,12 +84,16 @@ export const query = graphql`
     }
   }
 `
-const PageTitle = styled.div`
-  padding: 1rem;
-  @media ${QUERIES.smAndUp} {
-    padding: 0 2rem;
-  }
-`
+
 const Wrapper = styled.div`
   position: relative;
+`
+const PageTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  @media ${QUERIES.smAndUp} {
+    display: revert;
+    padding: 0 1.75rem;
+  }
 `

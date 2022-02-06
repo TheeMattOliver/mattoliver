@@ -3,15 +3,15 @@ import GlobalStyles from "../components/GlobalStyles"
 import { ThemeProvider } from "../components/ThemeProvider"
 
 import {
-  HeroCopySubheading,
-  PageHeroTitle,
+  HeroSubheading,
+  PageTitle,
   HeroTitleText,
   HeroCopyText,
 } from "../components/PageHero"
 
 export default {
   title: "Components/Page Hero",
-  component: PageHeroTitle,
+  component: PageTitle,
   decorators: [
     Story => {
       // Since portal roots are registered globally, we need this line so that each storybook
@@ -22,7 +22,7 @@ export default {
   argTypes: {},
 }
 
-export const pageHeroTitle = args => {
+export const pageTitle = args => {
   return (
     <ThemeProvider>
       <GlobalStyles />
@@ -30,11 +30,11 @@ export const pageHeroTitle = args => {
     </ThemeProvider>
   )
 }
-export const heroCopySubheading = args => {
+export const heroSubheading = args => {
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <HeroCopySubheading {...args} />
+      <HeroSubheading {...args} />
     </ThemeProvider>
   )
 }
@@ -47,12 +47,12 @@ export const heroCopyText = args => {
   )
 }
 
-pageHeroTitle.args = { children: "Hello there, friend." }
+pageTitle.args = { children: "Hello there, friend." }
 heroCopyText.args = {
   children:
     "I have a very wide variety of creative and technical experience. In addition to a background in music performance and production, I have experience building large-scale data tools that power progressive social causes. I'm currently working as a design systems engineer.",
 }
-heroCopySubheading.args = {
+heroSubheading.args = {
   children:
     "I'm Matt. I'm an artist, musician, and inter-disciplinary engineer.",
 }

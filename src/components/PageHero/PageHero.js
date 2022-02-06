@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { PageHeroTitle, HeroCopySubheading } from "."
+import { PageTitle, HeroSubheading, HeroCopyText } from "."
 import WavingHand from "../WavingHand"
 
 import Spacer from "../Spacer"
@@ -10,38 +10,52 @@ import PortableText from "../PortableText"
 
 import { QUERIES } from "../../constants"
 
-const PageHero = ({ heading, subheading, cmsData, ...props }) => {
-  console.log("cmsData: ", cmsData)
-  console.log("subheading test: ", subheading)
+const PageHero = ({ heading, subheading, cmsData, hasEmoji, ...props }) => {
   return (
     <HeroWrapper>
-      <PageHeroTitle>
-        {heading} <WavingHand />
-      </PageHeroTitle>
+      {hasEmoji ? (
+        <PageTitle>
+          {heading} <WavingHand />
+        </PageTitle>
+      ) : (
+        <PageTitle>{heading}</PageTitle>
+      )}
 
       {!cmsData && (
         <PageHeroCopyWrapper>
-          <HeroCopySubheading>
+          <HeroSubheading>
             {subheading}
             {` `}
-          </HeroCopySubheading>
+          </HeroSubheading>
         </PageHeroCopyWrapper>
       )}
       {/* are we getting our copy from CMS? */}
       {cmsData &&
         cmsData.map(cmsItem => {
           // sanity has a "heading", which we confusingly assign to  subheading text
-          if (cmsItem.heading === "Hero Copy Subheading")
+          if (cmsItem.heading === "Hero Copy Subheading") {
             return (
               <React.Fragment key={cmsItem._key}>
                 <PageHeroCopyWrapper>
-                  <HeroCopySubheading>
+                  <HeroSubheading>
                     {cmsItem.text && <PortableText blocks={cmsItem.text} />}
                     {` `}
-                  </HeroCopySubheading>
+                  </HeroSubheading>
                 </PageHeroCopyWrapper>
               </React.Fragment>
             )
+          } else if (cmsItem.heading === "Hero Copy Text") {
+            return (
+              <React.Fragment key={cmsItem._key}>
+                <PageHeroCopyWrapper>
+                  <HeroCopyText>
+                    {cmsItem.text && <PortableText blocks={cmsItem.text} />}
+                    {` `}
+                  </HeroCopyText>
+                </PageHeroCopyWrapper>
+              </React.Fragment>
+            )
+          }
         })}
 
       <Spacer axis="vertical" size={40} />

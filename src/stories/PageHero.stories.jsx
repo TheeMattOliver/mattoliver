@@ -24,6 +24,12 @@ export default {
         type: "text",
       },
     },
+    hasEmoji: {
+      options: [true, false],
+      control: {
+        type: "radio",
+      },
+    },
   },
 }
 
@@ -39,4 +45,5 @@ export const composedPageHero = args => {
 composedPageHero.args = {
   heading: "Hi, I'm Matt.",
   subheading: "I'm an artist, musician, and inter-disciplinary engineer.",
+  hasEmoji: true,
 }

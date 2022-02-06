@@ -1,4 +1,4 @@
 export { default as PageHero } from "./PageHero"
-export { default as PageHeroTitle, HeroTitleText } from "./PageHeroTitle"
+export { default as PageTitle, HeroTitleText } from "./PageTitle"
 export { HeroCopyText } from "./HeroCopyText"
-export { HeroCopySubheading } from "./HeroCopySubheading"
+export { HeroSubheading } from "./HeroSubheading"
