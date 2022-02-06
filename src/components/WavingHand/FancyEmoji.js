@@ -52,64 +52,71 @@ const EmojiContents = styled.span`
 
 const AnimatedHand = styled.span`
   background: transparent;
-  @keyframes wave {
-    from {
-      transform: rotate(-10deg);
-    }
-    to {
-      transform: rotate(30deg);
-    }
-  }
   display: inline-block;
+  @media screen and (prefers-reduced-motion: no-preference) {
+    @keyframes wave {
+      from {
+        transform: rotate(-10deg);
+      }
+      to {
+        transform: rotate(30deg);
+      }
+    }
 
-  &:hover ${EmojiContents} {
-    cursor: pointer;
+    &:hover ${EmojiContents} {
+      cursor: pointer;
 
-    animation: wave 250ms infinite alternate ease-in-out;
-    transform-origin: 75% 80%;
+      animation: wave 250ms infinite alternate ease-in-out;
+      transform-origin: 75% 80%;
+    }
   }
 `
 const AnimatedGhost = styled.span`
   font-size: var(--fontSize);
-  @keyframes zoomOutRight {
-    40% {
-      opacity: 1;
-      transform: scale3d(0.675, 0.675, 0.675) translate3d(-92px, 0, 0);
-    }
-
-    to {
-      opacity: 0;
-      transform: scale(0.04) translate3d(2000px, 0, 0);
-    }
-  }
-
   display: inline-block;
-  &:hover ${EmojiContents} {
-    cursor: pointer;
-    animation: zoomOutRight 750ms linear forwards;
-    transform-origin: right center;
+  @media screen and (prefers-reduced-motion: no-preference) {
+    @keyframes zoomOutRight {
+      40% {
+        opacity: 1;
+        transform: scale3d(0.675, 0.675, 0.675) translate3d(-92px, 0, 0);
+      }
+
+      to {
+        opacity: 0;
+        transform: scale(0.04) translate3d(2000px, 0, 0);
+      }
+    }
+
+    &:hover ${EmojiContents} {
+      cursor: pointer;
+      animation: zoomOutRight 750ms linear forwards;
+      transform-origin: right center;
+    }
   }
 `
 const AnimatedAlien = styled.span`
   font-size: var(--fontSize);
-  @keyframes zoomOutUp {
-    40% {
-      opacity: 1;
-      transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
-      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  display: inline-block;
+  @media screen and (prefers-reduced-motion: no-preference) {
+    @keyframes zoomOutUp {
+      40% {
+        opacity: 1;
+        transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+
+      to {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+      }
     }
 
-    to {
-      opacity: 0;
-      transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
-      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    &:hover ${EmojiContents} {
+      cursor: pointer;
+      animation: zoomOutUp 750ms linear forwards;
+      transform-origin: center bottom;
     }
-  }
-  display: inline-block;
-  &:hover ${EmojiContents} {
-    cursor: pointer;
-    animation: zoomOutUp 750ms linear forwards;
-    transform-origin: center bottom;
   }
 `
 
