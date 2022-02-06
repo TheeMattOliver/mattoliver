@@ -19,7 +19,7 @@ const PageHero = ({ heading, subheading, cmsData, ...props }) => {
         {heading} <WavingHand />
       </PageHeroTitle>
 
-      {cmsData ?? (
+      {!cmsData && (
         <PageHeroCopyWrapper>
           <HeroCopySubheading>
             {subheading}
