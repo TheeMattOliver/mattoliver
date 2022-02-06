@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import { PageTitle, HeroSubheading, HeroCopyText } from "."
-import WavingHand from "../WavingHand"
+
+import { FancyEmoji } from "../FancyEmoji"
 
 import Spacer from "../Spacer"
 import PortableText from "../PortableText"
@@ -15,7 +16,7 @@ const PageHero = ({ heading, subheading, cmsData, hasEmoji, ...props }) => {
     <HeroWrapper>
       {hasEmoji ? (
         <PageTitle>
-          {heading} <WavingHand />
+          {heading} <FancyEmoji emoji={"👋"} />
         </PageTitle>
       ) : (
         <PageTitle>{heading}</PageTitle>

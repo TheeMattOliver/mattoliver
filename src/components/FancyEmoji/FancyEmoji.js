@@ -16,7 +16,7 @@ const SIZES = {
   },
 }
 
-const FancyEmoji = ({ size = "xl", emoji = "👋" }) => {
+const FancyEmoji = ({ size, emoji = "👋" }) => {
   const styles = SIZES[size]
 
   let Component
