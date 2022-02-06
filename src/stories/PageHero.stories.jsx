@@ -2,15 +2,10 @@ import React from "react"
 import GlobalStyles from "../components/GlobalStyles"
 import { ThemeProvider } from "../components/ThemeProvider"
 
-import {
-  HeroCopySubheading,
-  HeroTitle,
-  HeroCopyText,
-} from "../components/PageHero"
-
+import { PageHero } from "../components/PageHero"
 export default {
   title: "Components/Page Hero",
-  component: HeroTitle,
+  component: PageHero,
   decorators: [
     Story => {
       // Since portal roots are registered globally, we need this line so that each storybook
@@ -18,42 +13,30 @@ export default {
       return Story()
     },
   ],
-  argTypes: {},
+  argTypes: {
+    heading: {
+      control: {
+        type: "text",
+      },
+    },
+    subheading: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 }
 
-export const heroTitle = args => {
+export const pageHero = args => {
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <HeroTitle {...args} />
+      <PageHero {...args} />
     </ThemeProvider>
   )
 }
 
-export const heroCopyText = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <HeroCopyText {...args} />
-    </ThemeProvider>
-  )
-}
-
-export const heroCopySubheading = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <HeroCopySubheading {...args} />
-    </ThemeProvider>
-  )
-}
-
-heroTitle.args = { children: "Hello there" }
-heroCopyText.args = {
-  children:
-    "In addition to a background in music, I have experience building large scale data tools that power progressive social causes. I'm currently working as a design systems engineer.",
-}
-heroCopySubheading.args = {
-  children:
-    "In addition to a background in music, I have experience building large scale data tools that power progressive social causes. I'm currently working as a design systems engineer.",
+pageHero.args = {
+  heading: "Hi, I'm Matt.",
+  subheading: "I'm an artist, musician, and inter-disciplinary engineer.",
 }

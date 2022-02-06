@@ -8,7 +8,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"
-import { PageHero, HeroCopySubheading } from "../components/PageHero"
+import { PageHeroTitle, HeroCopySubheading } from "../components/PageHero"
 import WavingHand from "../components/WavingHand"
 import PortableText from "../components/PortableText"
 
@@ -21,8 +21,10 @@ export default function HomePage({ data }) {
   const intl = useIntl()
   if (!data) return
 
-  const { pageData } = data
-  const homePageCopy = pageData.content
+  const { cmsPageData } = data
+  const homePageCopy = cmsPageData.content
+  const imgUrl = cmsPageData.openGraphImage?.asset.gatsbyImageData
+  const imgAltText = cmsPageData.openGraphImage?.alt
 
   return (
     <>
@@ -34,16 +36,13 @@ export default function HomePage({ data }) {
             <HeroWrapper>
               {/* Mobile Pic */}
               <MobileImgWrapper>
-                <AboutImg
-                  image={pageData?.openGraphImage?.asset.gatsbyImageData}
-                  alt="A photo of Matt Oliver, artist and engineer based in Austin, TX."
-                />
+                <AboutImg image={imgUrl} alt={imgAltText} />
               </MobileImgWrapper>
-              <PageHero>
+              <PageHeroTitle>
                 Hi, I'm Matt. <WavingHand />
-              </PageHero>
+              </PageHeroTitle>
               {homePageCopy.map(item => {
-                if (item.heading === "Hero Copy Subhead")
+                if (item.heading === "Hero Copy Subheading")
                   return (
                     <React.Fragment key={item._key}>
                       <HeroCopyWrapper>
@@ -59,10 +58,7 @@ export default function HomePage({ data }) {
             </HeroWrapper>
             {/* Pic */}
             <ImgWrapper>
-              <AboutImg
-                image={pageData?.openGraphImage?.asset.gatsbyImageData}
-                alt="A photo of Matt Oliver, artist and engineer based in Austin, TX."
-              />
+              <AboutImg image={imgUrl} alt={imgAltText} />
             </ImgWrapper>
           </FlexWrapper>
 
@@ -78,9 +74,10 @@ export default function HomePage({ data }) {
 }
 export const query = graphql`
   query HomePage {
-    pageData: sanityPage(title: { eq: "Home" }) {
+    cmsPageData: sanityPage(title: { eq: "Home" }) {
       id
       openGraphImage {
+        alt
         asset {
           gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
           title
@@ -127,46 +124,9 @@ const HeroWrapper = styled.div`
   }
 `
 const HeroCopyWrapper = styled.div`
-  @media ${QUERIES.lgAndUp} {
-    max-width: 80rem;
-  }
-`
-
-const HeroCopySubHead = styled.h2`
-  color: var(--color-textPrimary);
   padding-top: 16px;
-  line-height: clamp(1.625rem, 2vw + 1.25rem, 2.625rem);
-  font-size: clamp(1.625rem, 2vw + 1.25rem, 2.625rem);
-  width: clamp(500px, 95%, 800px);
-  max-width: 100%;
-  /* font-family: system-ui; */
-  font-variation-settings: "wght" 400;
-  font-weight: medium;
-  a {
-    color: var(--color-textLink);
-    text-decoration: underline;
-  }
-  @media ${QUERIES.smAndUp} {
-    font-variation-settings: "wght" 400;
-  }
   @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
-  }
-`
-
-const HeroCopyText = styled.p`
-  color: var(--color-textPrimary);
-  margin-top: 2.75rem;
-  padding: 0 1rem;
-  line-height: clamp(1.5rem, /* 1.3vw + .9rem, */ 1.75vw + 0.5rem, 1.95rem);
-  font-size: clamp(1.5rem, /* 1.3vw + .9rem, */ 1.75vw + 0.5rem, 1.95rem);
-  a {
-    color: var(--color-textLink);
-    text-decoration: underline;
-  }
-  width: clamp(300px, 95%, 750px);
-  @media ${QUERIES.smAndUp} {
-    padding: 0 1.5rem;
   }
 `
 

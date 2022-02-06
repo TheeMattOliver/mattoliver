@@ -4,15 +4,18 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import { PageHeroTitle, HeroCopySubheading } from "."
 import WavingHand from "../WavingHand"
-
+// import PortableText from "../PortableText"
 import Spacer from "../Spacer"
 
 import { QUERIES } from "../../constants"
 
-const PageHero = ({ heading, subheading }) => {
+export const PageHero = ({ heading, subheading, ...props }) => {
+  const { cmsPageData } = props.data || {}
+  const homePageCMSCopy = cmsPageData?.content
+  // const imgUrl = pageData?.openGraphImage?.asset.gatsbyImageData
   let imgUrl =
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-  const imgAltText = "test"
+  const imgAltText = pageData?.openGraphImage?.alt
 
   return (
     <HeroWrapper>
@@ -23,7 +26,23 @@ const PageHero = ({ heading, subheading }) => {
       <PageHeroTitle>
         {heading} <WavingHand />
       </PageHeroTitle>
-
+      {/* are we getting our copy from CMS? */}
+      {/* {homePageCMSCopy &&
+        homePageCMSCopy.map(cmsItem => {
+          // sanity has a "heading", which we confusingly want to be
+          // the subheading text
+          if (cmsItem.heading === "Hero Copy Subheading")
+            return (
+              <React.Fragment key={cmsItem._key}>
+                <PageHeroCopyWrapper>
+                  <HeroCopySubheading>
+                    {cmsItem.text && <PortableText blocks={cmsItem.text} />}
+                    {` `}
+                  </HeroCopySubheading>
+                </PageHeroCopyWrapper>
+              </React.Fragment>
+            )
+        })} */}
       {subheading && (
         <PageHeroCopyWrapper>
           <HeroCopySubheading>
@@ -85,4 +104,3 @@ const AboutImg = styled(GatsbyImage)`
     /* filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3)); */
   }
 `
-export default PageHero
