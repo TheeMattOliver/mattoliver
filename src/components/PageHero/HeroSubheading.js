@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { QUERIES } from "../../constants"
 
-export const HeroCopySubheading = styled.h3`
+export const HeroSubheading = styled.h3`
   color: var(--color-textPrimary);
   /* padding-top: 16px; */
   line-height: clamp(1.625rem, 2vw + 1.25rem, 2.625rem);

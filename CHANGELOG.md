@@ -1,5 +1,11 @@
 # mgo-portfolio-web
 
+## 0.13.0
+
+### Minor Changes
+
+- Updates to new page hero api: boolean emoji, fancy emoji, fallback values for non-cms-content.
+
 ## 0.12.0
 
 ### Minor Changes

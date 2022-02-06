@@ -8,9 +8,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"
-import { PageHeroTitle, HeroCopySubheading } from "../components/PageHero"
-import WavingHand from "../components/WavingHand"
-import PortableText from "../components/PortableText"
 
 import { PageHero } from "../components/PageHero"
 
@@ -42,11 +39,13 @@ export default function HomePage({ data }) {
             <MobileImgWrapper>
               <AboutImg image={imgUrl} alt={imgAltText} />
             </MobileImgWrapper>
+
             {/* Hero */}
             <PageHero
               heading={homeHeroTitle}
               subheading={subheadingText}
               cmsData={cmsHomePageCopy}
+              hasEmoji={true}
             />
 
             {/* Pic */}
@@ -55,6 +54,7 @@ export default function HomePage({ data }) {
             </ImgWrapper>
           </FlexWrapper>
 
+          {/* HeroButtonGroup */}
           <HeroButtonGroup />
           <Spacer axis="vertical" size={80} />
 

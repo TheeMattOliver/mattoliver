@@ -5,7 +5,7 @@ import Spacer from "../Spacer"
 import { Link } from "gatsby-plugin-react-intl"
 import { FONT_WEIGHTS, QUERIES } from "../../constants"
 
-const PageHeroTitle = ({ children }) => {
+const PageTitle = ({ children }) => {
   return (
     <TitleWrapper>
       <HeroSpacer axis="vertical" size={32} />
@@ -14,18 +14,14 @@ const PageHeroTitle = ({ children }) => {
   )
 }
 
-export default PageHeroTitle
+export default PageTitle
 
 const TitleWrapper = styled.div`
-  /* margin-left: auto;
-  margin-right: auto; */
   @media ${QUERIES.smAndUp} {
   }
   @media ${QUERIES.lgAndUp} {
-    /* max-width: 80rem; */
   }
   @media ${QUERIES.xlAndUp} {
-    /* max-width: revert; */
   }
 `
 export const HeroTitleText = styled.h2`

@@ -7,7 +7,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import MainLayout from "../components/MainLayout"
 import { PageHero } from "../components/PageHero"
-import PortableText from "../components/PortableText"
 import SEO from "../components/SEO"
 import Spacer from "../components/Spacer"
 import { QUERIES } from "../constants"
@@ -17,12 +16,19 @@ import PrimaryHeroBtnLink from "../components/HeroButtonGroup/PrimaryHeroBtnLink
 export default function AboutPage({ data }) {
   const intl = useIntl()
 
-  const { pageData } = data
-  const aboutPageCopy = pageData.content
+  const { cmsPageData } = data
+  const cmsAboutPageCopy = cmsPageData.content
+  const imgUrl = cmsPageData.openGraphImage?.asset.gatsbyImageData
+  const imgAltText = cmsPageData.openGraphImage?.alt
 
   // this is terrible:
-  pageData &&
-    pageData.content[0].text.map(i => {
+  cmsPageData &&
+    cmsPageData.content[0].text.map(i => {
+      i.markDefs = []
+      return i
+    })
+  cmsPageData &&
+    cmsPageData.content[1].text.map(i => {
       i.markDefs = []
       return i
     })
@@ -33,34 +39,25 @@ export default function AboutPage({ data }) {
       <MainLayout>
         <PageWrapper>
           <FlexWrapper>
+            {/* Pic */}
+            <MobileImgWrapper>
+              <AboutImg image={imgUrl} alt={imgAltText} />
+            </MobileImgWrapper>
             {/* Hero */}
-            <HeroWrapper>
-              {/* Pic */}
-              <MobileImgWrapper>
-                <AboutImg
-                  image={pageData?.content[0]?.image.asset.gatsbyImageData}
-                  alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX."
-                />
-              </MobileImgWrapper>
-              <PageTitleWrapper>
-                <PageHero>A quick summary</PageHero>
-              </PageTitleWrapper>
 
-              {aboutPageCopy.map(item => {
-                return (
-                  <HeroCopyText>
-                    {item.text && <PortableText blocks={item.text} />}
-                  </HeroCopyText>
-                )
-              })}
-            </HeroWrapper>
+            <PageHero
+              heading={"A quick summary"}
+              hasEmoji={false}
+              cmsData={cmsAboutPageCopy}
+            />
+
             <Spacer axis="vertical" size={100} />
 
             {/* Pic */}
             <ImgWrapper>
               <AboutImg
-                image={pageData?.content[0]?.image.asset.gatsbyImageData}
-                alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX."
+                image={cmsPageData?.content[0]?.image.asset.gatsbyImageData}
+                alt={imgAltText}
               />
             </ImgWrapper>
           </FlexWrapper>
@@ -83,9 +80,10 @@ export default function AboutPage({ data }) {
 
 export const query = graphql`
   query AboutPage {
-    pageData: sanityPage(title: { eq: "About" }) {
+    cmsPageData: sanityPage(title: { eq: "About" }) {
       id
       openGraphImage {
+        alt
         asset {
           gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
           title
@@ -113,15 +111,25 @@ export const query = graphql`
             }
           }
         }
+        ... on SanityTextSection {
+          _key
+          _type
+          text {
+            _key
+            _rawChildren
+            _type
+            children {
+              text
+              marks
+              _type
+              _key
+            }
+          }
+          heading
+          _rawText
+        }
       }
     }
-  }
-`
-
-const PageTitleWrapper = styled.div`
-  padding: 1rem;
-  @media ${QUERIES.smAndUp} {
-    padding: 0 2rem;
   }
 `
 
@@ -130,62 +138,9 @@ const PageWrapper = styled.div``
 const FlexWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 2rem 0;
   @media ${QUERIES.smAndUp} {
     flex-direction: row;
-  }
-`
-
-const HeroWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media ${QUERIES.smAndUp} {
-    display: revert;
-  }
-`
-
-const HeroCopyWrapper = styled.div`
-  @media ${QUERIES.lgAndUp} {
-    max-width: 80rem;
-  }
-`
-
-const HeroCopySubHead = styled.h2`
-  color: var(--color-textPrimary);
-  padding: 0 1rem;
-  margin-top: 16px;
-  line-height: clamp(1.5rem, 2vw + 1.25rem, 2.5rem);
-  font-size: clamp(1.5rem, 2vw + 1.25rem, 2.5rem);
-  width: clamp(500px, 95%, 800px);
-  max-width: 100%;
-  /* font-family: system-ui; */
-  font-variation-settings: "wght" 400;
-  font-weight: medium;
-  a {
-    color: var(--color-textLink);
-    text-decoration: underline;
-  }
-  @media ${QUERIES.smAndUp} {
-    padding: 0 1.5rem;
-    font-variation-settings: "wght" 400;
-  }
-  @media ${QUERIES.lgAndUp} {
-    max-width: 80rem;
-  }
-`
-
-const HeroCopyText = styled.p`
-  color: var(--color-textPrimary);
-  margin-top: 2.75rem;
-  padding: 0 1rem;
-  line-height: clamp(2.15rem, /* 1.3vw + .9rem, */ 1.75vw + 0.5rem, 1.95rem);
-  font-size: clamp(1.5rem, /* 1.3vw + .9rem, */ 1.75vw + 0.5rem, 1.95rem);
-  a {
-    color: var(--color-textLink);
-    text-decoration: underline;
-  }
-  width: clamp(300px, 95%, 750px);
-  @media ${QUERIES.smAndUp} {
-    padding: 0 2rem;
   }
 `
 
@@ -208,8 +163,8 @@ const ImgWrapper = styled.div`
   @media ${QUERIES.smAndUp} {
     display: block;
     position: relative;
-    /* width: 400px;
-    height: 400px; */
+    width: 400px;
+    height: 400px;
     margin-top: 50px;
     margin-right: 150px;
   }

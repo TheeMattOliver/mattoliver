@@ -2,11 +2,10 @@ import React from "react"
 import GlobalStyles from "../components/GlobalStyles"
 import { ThemeProvider } from "../components/ThemeProvider"
 
-import WavingHand from "../components/WavingHand"
 import FancyEmoji from "../components/WavingHand/FancyEmoji"
 export default {
   title: "Components/Page Hero",
-  component: WavingHand,
+  component: FancyEmoji,
   decorators: [
     Story => {
       // Since portal roots are registered globally, we need this line so that each storybook
@@ -30,15 +29,6 @@ export default {
   },
 }
 
-export const wavingHand = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <WavingHand {...args}></WavingHand>
-    </ThemeProvider>
-  )
-}
-
 export const fancyEmoji = args => {
   return (
     <ThemeProvider>
@@ -47,5 +37,4 @@ export const fancyEmoji = args => {
     </ThemeProvider>
   )
 }
-wavingHand.args = { size: "xl" }
 fancyEmoji.args = { size: "xl", emoji: "👋" }
