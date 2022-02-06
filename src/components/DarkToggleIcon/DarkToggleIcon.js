@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react"
-import { ThemeContext } from "../ThemeContext"
+import { ThemeContext } from "../ThemeProvider"
 import styled from "styled-components"
 import UnstyledButton from "../UnstyledButton"
 // import { MoonIcon, SunIcon } from "@heroicons/react/solid"

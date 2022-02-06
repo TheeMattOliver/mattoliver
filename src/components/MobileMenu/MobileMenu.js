@@ -10,7 +10,7 @@ import { QUERIES, COLORS, WEIGHTS } from "../../constants"
 import UnstyledButton from "../UnstyledButton"
 import Icon from "../Icon"
 import VisuallyHidden from "../VisuallyHidden"
-import { ThemeContext } from "../ThemeContext"
+import { ThemeContext } from "../ThemeProvider"
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext)

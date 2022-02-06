@@ -3,7 +3,7 @@ import * as d3 from "d3"
 import styled from "styled-components"
 import useResizeObserver from "../../../hooks/useResizeObserver"
 import { QUERIES } from "../../../constants"
-import { ThemeContext } from "../../ThemeContext"
+import { ThemeContext } from "../../ThemeProvider"
 
 export default function LineMultilineUmemployment({ data }) {
   const { colorMode, setColorMode } = React.useContext(ThemeContext)

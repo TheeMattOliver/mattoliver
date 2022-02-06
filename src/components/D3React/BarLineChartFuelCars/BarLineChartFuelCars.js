@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
 import * as d3 from "d3"
 import useResizeObserver from "../../../hooks/useResizeObserver"
-import { ThemeContext } from "../../ThemeContext"
+import { ThemeContext } from "../../ThemeProvider"
 import { QUERIES } from "../../../constants"
 
 export default function BarLineChartFuelCars({ data, children }) {

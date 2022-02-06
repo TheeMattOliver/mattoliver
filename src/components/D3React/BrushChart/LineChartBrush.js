@@ -6,7 +6,7 @@ import * as d3 from "d3"
 import useResizeObserver from "../../../hooks/useResizeObserver"
 import usePrevious from "../../../hooks/usePrevious"
 import { BREAKPOINTS, QUERIES } from "../../../constants"
-import { ThemeContext } from "../../ThemeContext"
+import { ThemeContext } from "../../ThemeProvider"
 import UnstyledButton from "../../UnstyledButton"
 
 import AreaChartStockBrushChild from "./LineChartBrushChild"
