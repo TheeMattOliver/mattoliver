@@ -30,21 +30,19 @@ export const pageHeroTitle = args => {
     </ThemeProvider>
   )
 }
-
-export const heroCopyText = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <HeroCopyText {...args} />
-    </ThemeProvider>
-  )
-}
-
 export const heroCopySubheading = args => {
   return (
     <ThemeProvider>
       <GlobalStyles />
       <HeroCopySubheading {...args} />
+    </ThemeProvider>
+  )
+}
+export const heroCopyText = args => {
+  return (
+    <ThemeProvider>
+      <GlobalStyles />
+      <HeroCopyText {...args} />
     </ThemeProvider>
   )
 }

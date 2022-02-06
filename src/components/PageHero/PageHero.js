@@ -6,22 +6,13 @@ import { PageHeroTitle, HeroCopySubheading } from "."
 import WavingHand from "../WavingHand"
 
 import Spacer from "../Spacer"
+import PortableText from "../PortableText"
 
 import { QUERIES } from "../../constants"
 
-const PageHero = ({ heading, subheading, ...props }) => {
-  const { cmsPageData } = props.data || {}
-  const homePageCMSCopy = cmsPageData?.content
-
-  const imgUrl = cmsPageData?.openGraphImage?.asset.gatsbyImageData
-  const imgAltText = cmsPageData?.openGraphImage?.alt
-
+const PageHero = ({ heading, subheading, cmsData, ...props }) => {
   return (
     <HeroWrapper>
-      {/* Mobile Pic */}
-      <MobileImgWrapper>
-        <AvatarImg image={imgUrl} alt={imgAltText} />
-      </MobileImgWrapper>
       <PageHeroTitle>
         {heading} <WavingHand />
       </PageHeroTitle>
@@ -34,6 +25,23 @@ const PageHero = ({ heading, subheading, ...props }) => {
           </HeroCopySubheading>
         </PageHeroCopyWrapper>
       )}
+      {/* are we getting our copy from CMS? */}
+      {cmsData &&
+        cmsData.map(cmsItem => {
+          // sanity has a "heading", which we confusingly assign to  subheading text
+          if (cmsItem.heading === "Hero Copy Subheading")
+            return (
+              <React.Fragment key={cmsItem._key}>
+                <PageHeroCopyWrapper>
+                  <HeroCopySubheading>
+                    {cmsItem.text && <PortableText blocks={cmsItem.text} />}
+                    {` `}
+                  </HeroCopySubheading>
+                </PageHeroCopyWrapper>
+              </React.Fragment>
+            )
+        })}
+
       <Spacer axis="vertical" size={40} />
     </HeroWrapper>
   )

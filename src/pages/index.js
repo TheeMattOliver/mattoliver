@@ -12,6 +12,8 @@ import { PageHeroTitle, HeroCopySubheading } from "../components/PageHero"
 import WavingHand from "../components/WavingHand"
 import PortableText from "../components/PortableText"
 
+import { PageHero } from "../components/PageHero"
+
 import { QUERIES } from "../constants"
 import Spacer from "../components/Spacer"
 import HeroButtonGroup from "../components/HeroButtonGroup"
@@ -22,9 +24,11 @@ export default function HomePage({ data }) {
   if (!data) return
 
   const { cmsPageData } = data
-  const homePageCopy = cmsPageData.content
+  const cmsHomePageCopy = cmsPageData.content
   const imgUrl = cmsPageData.openGraphImage?.asset.gatsbyImageData
   const imgAltText = cmsPageData.openGraphImage?.alt
+
+  const homeHeroTitle = "Hi, I'm Matt."
 
   return (
     <>
@@ -32,30 +36,13 @@ export default function HomePage({ data }) {
       <MainLayout>
         <PageWrapper>
           <FlexWrapper>
+            {/* Mobile Pic */}
+            <MobileImgWrapper>
+              <AboutImg image={imgUrl} alt={imgAltText} />
+            </MobileImgWrapper>
             {/* Hero */}
-            <HeroWrapper>
-              {/* Mobile Pic */}
-              <MobileImgWrapper>
-                <AboutImg image={imgUrl} alt={imgAltText} />
-              </MobileImgWrapper>
-              <PageHeroTitle>
-                Hi, I'm Matt. <WavingHand />
-              </PageHeroTitle>
-              {homePageCopy.map(item => {
-                if (item.heading === "Hero Copy Subheading")
-                  return (
-                    <React.Fragment key={item._key}>
-                      <HeroCopyWrapper>
-                        <HeroCopySubheading>
-                          {item.text && <PortableText blocks={item.text} />}
-                          {` `}
-                        </HeroCopySubheading>
-                      </HeroCopyWrapper>
-                    </React.Fragment>
-                  )
-              })}
-              <Spacer axis="vertical" size={40} />
-            </HeroWrapper>
+            <PageHero heading={homeHeroTitle} cmsData={cmsHomePageCopy} />
+
             {/* Pic */}
             <ImgWrapper>
               <AboutImg image={imgUrl} alt={imgAltText} />
