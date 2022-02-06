@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-
 import { ThemeProvider } from "./ThemeProvider"
 
 const TestComponent = props => {
@@ -12,9 +11,9 @@ const TestComponent = props => {
 }
 
 const Wrapper = styled.div`
-  border: 2px dashed var("--color-text");
+  border: 2px dashed var("--color-textPrimary");
   padding: 16px 32px;
   width: fit-content;
-  color: var("--color-text");
+  color: var("--color-textPrimary");
 `
 export default TestComponent

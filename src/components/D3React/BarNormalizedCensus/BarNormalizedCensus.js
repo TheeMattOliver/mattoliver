@@ -3,7 +3,7 @@ import * as d3 from "d3"
 import styled from "styled-components"
 
 import useResizeObserver from "../../../hooks/useResizeObserver"
-import { QUERIES } from "../../../constants"
+import { FONT_WEIGHTS, QUERIES } from "../../../constants"
 
 const formatPercent = d3.format(".1%")
 
@@ -215,7 +215,7 @@ const RefWrapper = styled.div`
   }
   .legend-title {
     font-size: 11px;
-    font-weight: bold;
+    font-weight: var(--font-weight-bold)
     text-anchor: start;
   }
   @media ${QUERIES.smAndUp} {

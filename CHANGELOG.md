@@ -1,5 +1,11 @@
 # mgo-portfolio-web
 
+## 0.12.0
+
+### Minor Changes
+
+- Implements new composable hero api
+
 ## 0.11.0
 
 ### Minor Changes

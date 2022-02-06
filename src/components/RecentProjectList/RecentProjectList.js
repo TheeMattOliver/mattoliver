@@ -83,7 +83,6 @@ const Wrapper = styled.div`
 const SectionTitle = styled.h3`
   color: var(--color-textPrimary);
   padding: 0;
-  font-weight: bold;
   font-size: clamp(1.5rem, 2.25vw + 0.5rem, 2.5rem);
   @media ${QUERIES.lgAndUp} {
     line-height: 3rem;
