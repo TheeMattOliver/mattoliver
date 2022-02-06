@@ -3,6 +3,7 @@ import GlobalStyles from "../components/GlobalStyles"
 import { ThemeProvider } from "../components/ThemeProvider"
 
 import WavingHand from "../components/WavingHand"
+import FancyEmoji from "../components/WavingHand/FancyEmoji"
 export default {
   title: "Components/Page Hero",
   component: WavingHand,
@@ -17,7 +18,13 @@ export default {
     size: {
       control: {
         type: "radio",
-        options: ["small", "medium", "large"],
+        options: ["small", "medium", "large", "xl"],
+      },
+    },
+    emoji: {
+      control: {
+        type: "radio",
+        options: ["👋", "👻", "👾"],
       },
     },
   },
@@ -31,4 +38,14 @@ export const wavingHand = args => {
     </ThemeProvider>
   )
 }
-wavingHand.args = { size: "large" }
+
+export const fancyEmoji = args => {
+  return (
+    <ThemeProvider>
+      <GlobalStyles />
+      <FancyEmoji {...args}></FancyEmoji>
+    </ThemeProvider>
+  )
+}
+wavingHand.args = { size: "xl" }
+fancyEmoji.args = { size: "xl", emoji: "👋" }

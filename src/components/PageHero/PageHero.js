@@ -9,16 +9,18 @@ import Spacer from "../Spacer"
 
 import { QUERIES } from "../../constants"
 
-const PageHero = ({ heading, subheading }) => {
-  let imgUrl =
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-  const imgAltText = "test"
+const PageHero = ({ heading, subheading, ...props }) => {
+  const { cmsPageData } = props.data || {}
+  const homePageCMSCopy = cmsPageData?.content
+
+  const imgUrl = cmsPageData?.openGraphImage?.asset.gatsbyImageData
+  const imgAltText = cmsPageData?.openGraphImage?.alt
 
   return (
     <HeroWrapper>
       {/* Mobile Pic */}
       <MobileImgWrapper>
-        <AboutImg image={imgUrl} alt={imgAltText} />
+        <AvatarImg image={imgUrl} alt={imgAltText} />
       </MobileImgWrapper>
       <PageHeroTitle>
         {heading} <WavingHand />
@@ -77,7 +79,7 @@ const ImgWrapper = styled.div`
   }
 `
 
-const AboutImg = styled(GatsbyImage)`
+const AvatarImg = styled(GatsbyImage)`
   border-radius: 50%;
   filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3));
   img {

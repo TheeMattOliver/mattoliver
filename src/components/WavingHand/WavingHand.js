@@ -11,6 +11,9 @@ const SIZES = {
   large: {
     "--fontSize": 36 / 16 + "rem",
   },
+  xl: {
+    "--fontSize": 72 / 16 + "rem",
+  },
 }
 
 const WavingHand = ({ size }) => {

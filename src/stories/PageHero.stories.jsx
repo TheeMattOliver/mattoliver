@@ -27,7 +27,7 @@ export default {
   },
 }
 
-export const pageHero = args => {
+export const composedPageHero = args => {
   return (
     <ThemeProvider>
       <GlobalStyles />
@@ -36,7 +36,7 @@ export const pageHero = args => {
   )
 }
 
-pageHero.args = {
+composedPageHero.args = {
   heading: "Hi, I'm Matt.",
   subheading: "I'm an artist, musician, and inter-disciplinary engineer.",
 }

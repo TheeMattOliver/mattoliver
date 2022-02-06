@@ -5,6 +5,7 @@ import { ThemeProvider } from "../components/ThemeProvider"
 import {
   HeroCopySubheading,
   PageHeroTitle,
+  HeroTitleText,
   HeroCopyText,
 } from "../components/PageHero"
 
@@ -25,7 +26,7 @@ export const pageHeroTitle = args => {
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <PageHeroTitle {...args} />
+      <HeroTitleText {...args} />
     </ThemeProvider>
   )
 }
@@ -48,7 +49,7 @@ export const heroCopySubheading = args => {
   )
 }
 
-pageHeroTitle.args = { children: "Hello there" }
+pageHeroTitle.args = { children: "Hello there, friend." }
 heroCopyText.args = {
   children:
     "I have a very wide variety of creative and technical experience. In addition to a background in music performance and production, I have experience building large-scale data tools that power progressive social causes. I'm currently working as a design systems engineer.",
