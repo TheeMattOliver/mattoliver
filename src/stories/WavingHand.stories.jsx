@@ -2,7 +2,7 @@ import React from "react"
 import GlobalStyles from "../components/GlobalStyles"
 import { ThemeProvider } from "../components/ThemeProvider"
 
-import FancyEmoji from "../components/WavingHand/FancyEmoji"
+import { FancyEmoji } from "../components/FancyEmoji"
 export default {
   title: "Components/Page Hero",
   component: FancyEmoji,

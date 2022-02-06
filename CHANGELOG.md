@@ -1,5 +1,11 @@
 # mgo-portfolio-web
 
+## 0.14.0
+
+### Minor Changes
+
+- Adds a new api for animated emoji in page headers. Fixes doom flicker on hover. Adds reduced motion query for keyframe animations.
+
 ## 0.13.0
 
 ### Minor Changes
