@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from "react"
 import styled from "styled-components"
+import Spacer from "../Spacer"
 import { Link } from "gatsby-plugin-react-intl"
-import { QUERIES } from "../../constants"
+import { FONT_WEIGHTS, QUERIES } from "../../constants"
 
 const PageHero = ({ children }) => {
   return (
     <Wrapper>
-      <HeroBox>
-        <HeroTitle>{children}</HeroTitle>
-      </HeroBox>
+      <HeroSpacer axis="vertical" size={32} />
+      <HeroTitle>{children}</HeroTitle>
     </Wrapper>
   )
 }
@@ -28,15 +28,12 @@ const Wrapper = styled.div`
     /* max-width: revert; */
   }
 `
-const HeroTitle = styled.h2`
+export const HeroTitle = styled.h2`
   color: var(--color-textPrimary);
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   font-size: clamp(2.625rem, 3.3vw + 1.25rem, 3.5rem);
   width: clamp(500px, 65%, 800px);
   max-width: 100%;
-  /* font-family: system-ui; */
   font-variation-settings: "wght" 750;
 `
-const HeroBox = styled.div`
-  margin-top: 32px;
-`
+const HeroSpacer = styled(Spacer)``

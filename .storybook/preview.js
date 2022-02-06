@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     // temporary theme values
     background-color: var(--color-background);
-    color: var(--color-text);
+    color: var(--color-textPrimary)
   }
   input, button, textarea, select {
     font: inherit;
@@ -61,7 +61,7 @@ const Wrapper = styled.div`
 // instead of global theme, only theme wrapper for each story
 const ThemedSectionStyle = styled.div`
   background-color: var(--color-background);
-  color: var(--color-text);
+  color: var(--color-textPrimary)
   padding: 1rem;
 `
 export const globalTypes = {

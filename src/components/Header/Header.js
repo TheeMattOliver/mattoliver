@@ -92,7 +92,6 @@ const DesktopNav = styled.nav`
 		display: flex;
 		gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem); */
     margin: 0px 48px;
-    /* margin-left:auto; */
   }
 `
 

@@ -140,8 +140,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     background: var(--color-background);
-    color: var(--color-text);
-    font-family: var(--body-font)
+    color: var(--color-textPrimary);
+    font-family: var(--body-font);
   }
 
   a {

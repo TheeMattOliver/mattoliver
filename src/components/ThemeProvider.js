@@ -52,7 +52,6 @@ export const ThemeProvider = ({ children, ...props }) => {
     }
   }, [colorMode, rawSetColorMode])
 
-  console.log("contextValue: ", contextValue)
   return (
     <ThemeContext.Provider value={contextValue}>
       <SCThemeProvider theme={contextValue}>{children}</SCThemeProvider>{" "}

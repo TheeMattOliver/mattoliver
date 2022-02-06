@@ -2,10 +2,11 @@ import React from "react"
 import GlobalStyles from "../components/GlobalStyles"
 import { ThemeProvider } from "../components/ThemeProvider"
 
-import TestComponent from "../components/TestComponent"
+import Spacer from "../components/Spacer"
+
 export default {
-  title: "Components/TestComponent",
-  component: TestComponent,
+  title: "Components/Spacer",
+  component: Spacer,
   decorators: [
     Story => {
       // Since portal roots are registered globally, we need this line so that each storybook
@@ -16,11 +17,13 @@ export default {
   argTypes: {},
 }
 
-export const testComponent = args => {
+export const spacer = args => {
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <TestComponent {...args}>Hello world</TestComponent>
+      <Spacer {...args} />
     </ThemeProvider>
   )
 }
+
+spacer.args = { axis: "vertical", size: 32 }

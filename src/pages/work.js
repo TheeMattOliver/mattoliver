@@ -8,7 +8,7 @@ import { QUERIES } from "../constants"
 import ProjectList from "../components/ProjectList"
 import MainLayout from "../components/MainLayout"
 import SEO from "../components/SEO"
-import PageHero from "../components/PageHero"
+import { PageHero } from "../components/PageHero"
 import TechnologyFilter from "../components/TechnologyFilter"
 import Spacer from "../components/Spacer"
 

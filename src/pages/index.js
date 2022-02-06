@@ -8,7 +8,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"
-import PageHero from "../components/PageHero"
+import { PageHero, HeroCopySubheading } from "../components/PageHero"
 import WavingHand from "../components/WavingHand"
 import PortableText from "../components/PortableText"
 
@@ -47,10 +47,10 @@ export default function HomePage({ data }) {
                   return (
                     <React.Fragment key={item._key}>
                       <HeroCopyWrapper>
-                        <HeroCopySubHead>
+                        <HeroCopySubheading>
                           {item.text && <PortableText blocks={item.text} />}
                           {` `}
-                        </HeroCopySubHead>
+                        </HeroCopySubheading>
                       </HeroCopyWrapper>
                     </React.Fragment>
                   )
@@ -148,7 +148,6 @@ const HeroCopySubHead = styled.h2`
   }
   @media ${QUERIES.smAndUp} {
     font-variation-settings: "wght" 400;
-    font-weight: bold;
   }
   @media ${QUERIES.lgAndUp} {
     max-width: 80rem;

@@ -6,7 +6,7 @@ import { FormattedMessage, Link, useIntl } from "gatsby-plugin-react-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import MainLayout from "../components/MainLayout"
-import PageHero from "../components/PageHero"
+import { PageHero } from "../components/PageHero"
 import PortableText from "../components/PortableText"
 import SEO from "../components/SEO"
 import Spacer from "../components/Spacer"
@@ -42,9 +42,9 @@ export default function AboutPage({ data }) {
                   alt="A photo of Matt Oliver, developer, product manager and engineer based in Austin, TX."
                 />
               </MobileImgWrapper>
-              <PageTitle>
+              <PageTitleWrapper>
                 <PageHero>A quick summary</PageHero>
-              </PageTitle>
+              </PageTitleWrapper>
 
               {aboutPageCopy.map(item => {
                 return (
@@ -118,7 +118,7 @@ export const query = graphql`
   }
 `
 
-const PageTitle = styled.div`
+const PageTitleWrapper = styled.div`
   padding: 1rem;
   @media ${QUERIES.smAndUp} {
     padding: 0 2rem;
@@ -167,7 +167,6 @@ const HeroCopySubHead = styled.h2`
   @media ${QUERIES.smAndUp} {
     padding: 0 1.5rem;
     font-variation-settings: "wght" 400;
-    font-weight: bold;
   }
   @media ${QUERIES.lgAndUp} {
     max-width: 80rem;
