@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 import VisuallyHidden from "../VisuallyHidden"
-import Icon from "../Icon"
+import { Icon } from "../Icon"
 import { COLORS, FONT_WEIGHTS } from "../../constants"
 
 const Footer = () => {

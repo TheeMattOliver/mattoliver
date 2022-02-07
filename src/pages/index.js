@@ -5,13 +5,10 @@ import { graphql } from "gatsby"
 
 import { useIntl } from "gatsby-plugin-react-intl"
 import { GatsbyImage } from "gatsby-plugin-image"
-
+import { QUERIES } from "../constants"
 import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"
-
 import { PageHero } from "../components/PageHero"
-
-import { QUERIES } from "../constants"
 import Spacer from "../components/Spacer"
 import HeroButtonGroup from "../components/HeroButtonGroup"
 import RecentProjectList from "../components/RecentProjectList"
@@ -48,7 +45,7 @@ export default function HomePage({ data }) {
               hasEmoji={true}
             />
 
-            {/* Pic */}
+            {/* Desktop Pic */}
             <ImgWrapper>
               <AboutImg image={imgUrl} alt={imgAltText} />
             </ImgWrapper>
@@ -122,7 +119,6 @@ const HeroCopyWrapper = styled.div`
     max-width: 80rem;
   }
 `
-
 const MobileImgWrapper = styled.div`
   width: 100px;
   height: 100px;

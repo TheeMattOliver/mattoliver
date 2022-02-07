@@ -172,7 +172,6 @@ export const QUERIES = {
   lgAndUp: `(min-width: ${BREAKPOINTS.lg / 16}rem)`, // (min-width: 1024px)
   xlAndUp: `(min-width: ${BREAKPOINTS.xl / 16}rem)`, // (min-width: 1440px)
   ultraWideAndUp: `(min-width: ${BREAKPOINTS.ultraWideMin / 16}rem)`, // (min-width: 1918px)
-
   xlAndLarger: `(min-width: ${(BREAKPOINTS.xl + 1) / 16}rem)`,
 }
 

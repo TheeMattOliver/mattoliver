@@ -5,6 +5,7 @@ import {
   MenuIcon,
   XIcon,
   ChevronDownIcon,
+  UserIcon,
 } from "@heroicons/react/solid"
 
 import { PhoneIcon, MailIcon } from "@heroicons/react/outline"
@@ -16,6 +17,7 @@ const icons = {
   email: MailIcon,
   phone: PhoneIcon,
   chevronDown: ChevronDownIcon,
+  user: UserIcon,
 }
 
 const Icon = ({ id, color, size, strokeWidth, ...delegated }) => {

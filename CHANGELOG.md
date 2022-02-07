@@ -1,5 +1,11 @@
 # mgo-portfolio-web
 
+## 0.15.0
+
+### Minor Changes
+
+- Implements a new avatar component API
+
 ## 0.14.0
 
 ### Minor Changes
