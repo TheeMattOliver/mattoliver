@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { QUERIES, COLORS, WEIGHTS } from "../../constants"
 
 import UnstyledButton from "../UnstyledButton"
-import Icon from "../Icon"
+import { Icon } from "../Icon"
 import VisuallyHidden from "../VisuallyHidden"
 import { ThemeContext } from "../ThemeProvider"
 

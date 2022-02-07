@@ -9,7 +9,7 @@ import debounce from "../../lib/utils"
 import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu"
 import VisuallyHidden from "../VisuallyHidden"
-import Icon from "../Icon"
+import { Icon } from "../Icon"
 import UnstyledButton from "../UnstyledButton"
 
 const Header = siteTitle => {
