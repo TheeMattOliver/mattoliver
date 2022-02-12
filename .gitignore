@@ -73,3 +73,5 @@ DummyProjectPage.js
 gcp-cors-config.json
 
 github-api.js
+
+package-lock.json
