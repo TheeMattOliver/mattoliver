@@ -6,7 +6,6 @@ const SecondaryHeroBtnLink = styled(Link)`
   appearance: none;
   position: relative;
   display: inline-flex;
-  -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
