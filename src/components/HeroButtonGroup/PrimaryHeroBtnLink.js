@@ -13,7 +13,7 @@ const PrimaryHeroBtnLink = styled(Link)`
   z-index: 0;
   text-align: center;
   text-decoration: none;
-  line-height: 38px;
+
   white-space: nowrap;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -23,6 +23,7 @@ const PrimaryHeroBtnLink = styled(Link)`
   padding: 0px 25px;
   border-radius: 5px;
   font-size: 1rem;
+  line-height: 38px;
   flex-shrink: 0;
   margin: 0px;
   color: var(--color-textWhite);
