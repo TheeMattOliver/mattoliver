@@ -4,10 +4,11 @@ import {
   SearchIcon,
   MenuIcon,
   XIcon,
-  ChevronDownIcon,
   UserIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/solid"
 
+import ChevronDown from "./ChevronDown"
 import { PhoneIcon, MailIcon } from "@heroicons/react/outline"
 
 const icons = {

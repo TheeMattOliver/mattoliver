@@ -10,7 +10,12 @@ export default {
     Story => {
       // Since portal roots are registered globally, we need this line so that each storybook
       // story works on its own.
-      return Story()
+      return (
+        <ThemeProvider>
+          <GlobalStyles />
+          {Story()}
+        </ThemeProvider>
+      )
     },
   ],
   argTypes: {
@@ -30,12 +35,7 @@ export default {
 }
 
 export const defaultButton = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <Button {...args} />
-    </ThemeProvider>
-  )
+  return <Button {...args} />
 }
 defaultButton.args = {
   size: "medium",
@@ -44,12 +44,7 @@ defaultButton.args = {
 }
 
 export const primaryButton = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <Button {...args} />
-    </ThemeProvider>
-  )
+  return <Button {...args} />
 }
 primaryButton.args = {
   size: "medium",
@@ -58,12 +53,7 @@ primaryButton.args = {
 }
 
 export const outlineButton = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <Button {...args} />
-    </ThemeProvider>
-  )
+  return <Button {...args} />
 }
 outlineButton.args = {
   size: "medium",
@@ -71,12 +61,7 @@ outlineButton.args = {
   variant: "outline",
 }
 export const secondaryButton = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <Button {...args} />
-    </ThemeProvider>
-  )
+  return <Button {...args} />
 }
 secondaryButton.args = {
   size: "medium",
@@ -85,12 +70,7 @@ secondaryButton.args = {
 }
 
 export const invisibleButton = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <Button {...args} />
-    </ThemeProvider>
-  )
+  return <Button {...args} />
 }
 invisibleButton.args = {
   size: "medium",
