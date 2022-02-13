@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { navigate } from "gatsby"
 import { QUERIES } from "../../constants"
 
 import PrimaryHeroBtnLink from "./PrimaryHeroBtnLink"
@@ -11,10 +12,27 @@ const HeroButtonGroup = () => {
     <Wrapper>
       <ButtonList>
         <ButtonContainer>
-          <PrimaryHeroBtnLink to="/work">View Portfolio</PrimaryHeroBtnLink>
+          <Button
+            variant="secondary"
+            size="large"
+            onClick={() => {
+              navigate("/work")
+            }}
+          >
+            See some projects
+          </Button>
+          {/* <PrimaryHeroBtnLink to="/work">View Portfolio</PrimaryHeroBtnLink> */}
         </ButtonContainer>
         <ButtonContainer>
-          <SecondaryHeroBtnLink to="/contact">Contact</SecondaryHeroBtnLink>
+          <Button
+            variant="outline"
+            size="large"
+            onClick={() => {
+              navigate("/work")
+            }}
+          >
+            See some dogs
+          </Button>
         </ButtonContainer>
       </ButtonList>
     </Wrapper>

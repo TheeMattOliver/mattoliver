@@ -23,7 +23,7 @@ export const COLORS = {
     light: "hsl(212deg, 97%, 43%)", // blue #0366D6
     dark: "hsl(212deg, 100%, 67%)", // light blue #58A6FF
   },
-  backgroundDefault: {
+  background: {
     light: "hsl(0deg, 0%, 100%)", // white
     dark: "hsl(216deg, 28%, 7%)", // near-black #0D1117
   },
