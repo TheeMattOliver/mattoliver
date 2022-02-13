@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react"
 import styled from "styled-components"
-import DataToggleButton from "../../components/DataToggleButton"
+import { Button } from "../../components/Button"
 import Select from "../../components/Select"
 import SelectCurveLineChart from "../../components/D3React/SelectCurveLineChart"
 
@@ -18,9 +18,13 @@ export default function LineChartCurveSelectPage() {
       <SelectCurveLineChart data={data} curve={value} />
 
       <ButtonWrapper>
-        <DataToggleButton onClick={() => setData(onAddDataClick)}>
+        <Button
+          variant="primary"
+          size="medium"
+          onClick={() => setData(onAddDataClick)}
+        >
           Add data
-        </DataToggleButton>
+        </Button>
         <Select
           label="Choose curve"
           value={value}

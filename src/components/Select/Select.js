@@ -48,7 +48,7 @@ const NativeSelect = styled.select`
 const Presentational = styled.div`
   color: var(--color-textWhite);
   background-color: var(--color-backgroundOverlayDark);
-  border: 1px solid var(--color-textPrimary);
+  border: 1px solid var(--color-text);
   font-size: ${16 / 16}rem;
   height: 38px;
   padding: 16px 16px;
@@ -79,7 +79,7 @@ const IconWrapper = styled.div`
   right: 10px;
   margin: auto;
   width: var(--size);
-  height: 22px;
+  height: 26px;
   /* to avoid having to use z-index, use this to ignore clicks on the caret to be able to use it*/
   pointer-events: none;
 `

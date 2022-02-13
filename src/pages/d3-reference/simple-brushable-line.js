@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 
-import DataToggleButton from "../../components/DataToggleButton"
+import { Button } from "../../components/Button"
 
 import SimpleBrushChart from "../../components/D3React/SimpleBrushChart"
 import SimpleBrushChartChild from "../../components/D3React//SimpleBrushChart/SimpleBrushChartChild"
@@ -21,9 +21,13 @@ export default function SimpleBrushableLinePage() {
         )}
       </SimpleBrushChart>
       <ButtonWrapper>
-        <DataToggleButton onClick={() => setData(onAddDataClick)}>
+        <Button
+          variant="primary"
+          size="medium"
+          onClick={() => setData(onAddDataClick)}
+        >
           Add data
-        </DataToggleButton>
+        </Button>
       </ButtonWrapper>
     </>
   )

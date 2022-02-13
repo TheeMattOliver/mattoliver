@@ -8,7 +8,7 @@ const LanguagesPanelDiv = styled.div`
 `
 
 const LanguagesPanelButton = styled.button`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
 `
 
 const LanguageFlyoutMenu = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { range, randomUniform } from "d3"
-import DataToggleButton from "../../components/DataToggleButton"
+import { Button } from "../../components/Button"
 
 import SimpleCurvedLineChart from "../../components/D3React/SimpleCurvedLineChart"
 
@@ -31,9 +31,13 @@ export default function SimpleCurvedLinePage() {
         numberOfDataPoints={numberOfDataPoints}
       />
       <ButtonWrapper>
-        <DataToggleButton onClick={() => setData(generateData())}>
+        <Button
+          variant="primary"
+          size="medium"
+          onClick={() => setData(generateData())}
+        >
           Update data
-        </DataToggleButton>
+        </Button>
       </ButtonWrapper>
     </>
   )

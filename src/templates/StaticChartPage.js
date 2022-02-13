@@ -377,7 +377,7 @@ const ChartTitleWrapper = styled.div`
   }
 `
 const ChartTitle = styled.h2`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   font-size: 1.45rem;
   font-weight: ${FONT_WEIGHTS.normal};
 `
@@ -385,7 +385,7 @@ const Aside = styled.aside`
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   @media ${QUERIES.smAndUp} {
   }
 `

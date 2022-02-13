@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
-import { throttle } from '../../lib/utils'
+import { throttle } from "../../lib/utils"
 
 const TableOfContents = ({ content }) => {
   // make an array of headings and their id's
-  const headingsWithIds = content.slice(1).map((item) => ({
+  const headingsWithIds = content.slice(1).map(item => ({
     heading: item.heading,
     id: item.anchor,
-  }));
+  }))
 
-  const activeHeadingId = useActiveHeading(headingsWithIds);
+  const activeHeadingId = useActiveHeading(headingsWithIds)
 
   return (
     <Wrapper>
@@ -20,13 +20,9 @@ const TableOfContents = ({ content }) => {
           return (
             <ContentLinkHeading
               key={item._key}
-              style={getStyles(
-                activeHeadingId === item.anchor
-              )}
+              style={getStyles(activeHeadingId === item.anchor)}
             >
-              <a href={`#${item.anchor}`}>
-                {item.heading}
-              </a>
+              <a href={`#${item.anchor}`}>{item.heading}</a>
             </ContentLinkHeading>
           )
         })}
@@ -35,14 +31,13 @@ const TableOfContents = ({ content }) => {
   )
 }
 
-const useActiveHeading = (headings) => {
-  const [activeHeadingId, setActiveHeading] = React.useState(null);
+const useActiveHeading = headings => {
+  const [activeHeadingId, setActiveHeading] = React.useState(null)
 
   React.useEffect(() => {
     const handleScroll = throttle(() => {
-
       if (window.pageYOffset === 0) {
-        return setActiveHeading(null);
+        return setActiveHeading(null)
       }
 
       // 1. Are there any headings in the viewport right now? If so, pick the
@@ -53,64 +48,61 @@ const useActiveHeading = (headings) => {
       //
 
       // If neither condition is met, we're still in the intro,
-      let headingBoxes = headings.map((heading) => {
+      let headingBoxes = headings.map(heading => {
         const elem = document.querySelector(`#${heading.id}`)
         return { id: heading.id, box: elem.getBoundingClientRect() }
       })
-      
+
       // The first heading within the viewport is the one we want to highlight.
-      const TOP_OFFSET = 120;
+      const TOP_OFFSET = 120
       let firstHeadingInViewport = headingBoxes.find(({ box }) => {
-        return (
-          box.bottom > TOP_OFFSET && box.top < window.innerHeight
-        );
-      });
+        return box.bottom > TOP_OFFSET && box.top < window.innerHeight
+      })
 
       // If there is no heading in the viewport, check and see if there are any
       // above the viewport.
       if (!firstHeadingInViewport) {
-        const reversedBoxes = [...headingBoxes].reverse();
+        const reversedBoxes = [...headingBoxes].reverse()
 
         firstHeadingInViewport = reversedBoxes.find(({ box }) => {
-          return box.bottom < TOP_OFFSET;
-        });
+          return box.bottom < TOP_OFFSET
+        })
       }
 
       if (!firstHeadingInViewport) {
-        setActiveHeading(null);
+        setActiveHeading(null)
       } else if (firstHeadingInViewport.id !== activeHeadingId) {
-        setActiveHeading(firstHeadingInViewport.id);
+        setActiveHeading(firstHeadingInViewport.id)
       }
+    }, 350)
 
-    }, 350);
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [activeHeadingId, headings]);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [activeHeadingId, headings])
 
-  return activeHeadingId;
-};
+  return activeHeadingId
+}
 
-const getStyles = (isActiveHeading) => {
+const getStyles = isActiveHeading => {
   const baseStyles = {
-    color: isActiveHeading ? 'var(--color-textPrimary)' : undefined,
-    background: isActiveHeading ? 'var(--color-gray300)' : undefined
-  };
+    color: isActiveHeading ? "var(--color-text)" : undefined,
+    background: isActiveHeading ? "var(--color-gray300)" : undefined,
+  }
   return {
     ...baseStyles,
     marginTop: 10,
     fontSize: 16,
     padding: 16,
-    borderRadius: 4
-  };
-};
+    borderRadius: 4,
+  }
+}
 
 const Wrapper = styled.nav`
   margin-bottom: 4rem;
-`;
+`
 
 const ContentLinkHeading = styled.li`
   display: block;
@@ -124,6 +116,6 @@ const ContentLinkHeading = styled.li`
     opacity: 1;
     transition: opacity 0ms;
   }
-`;
+`
 
 export default TableOfContents

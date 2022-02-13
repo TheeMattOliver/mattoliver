@@ -54,9 +54,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
             strokeWidth={2}
             size={24}
             color={`${
-              colorMode === "light"
-                ? COLORS.textPrimary.light
-                : COLORS.textPrimary.dark
+              colorMode === "light" ? COLORS.text.light : COLORS.text.dark
             }`}
             width={24}
           />
@@ -112,7 +110,7 @@ const Nav = styled.nav`
   gap: 16px;
 `
 const NavLink = styled(Link)`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   text-decoration: none;
   font-size: 2.125rem;
 

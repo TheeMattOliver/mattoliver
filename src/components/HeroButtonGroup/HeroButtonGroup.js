@@ -4,6 +4,7 @@ import { QUERIES } from "../../constants"
 
 import PrimaryHeroBtnLink from "./PrimaryHeroBtnLink"
 import SecondaryHeroBtnLink from "./SecondaryHeroBtnLink"
+import { Button } from "../Button"
 
 const HeroButtonGroup = () => {
   return (

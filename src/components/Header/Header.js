@@ -63,7 +63,7 @@ const HeaderSpacer = styled.div`
 const NavWrapper = styled.header`
   a,
   div {
-    color: var(--color-textPrimary);
+    color: var(--color-text);
   }
   display: flex;
   background: var(--color-background);

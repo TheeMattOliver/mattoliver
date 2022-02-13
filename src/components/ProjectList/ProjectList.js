@@ -113,7 +113,7 @@ const ProjectCardHeader = styled.div`
     font-size: calc(1rem + 1vw);
     display: inline-block;
     margin-bottom: 0.5rem;
-    color: var(--color-textPrimary);
+    color: var(--color-text);
   }
   small,
   time {
@@ -144,7 +144,7 @@ const OffsetProjectCardContentWrapper = styled.div`
     font-size: calc(1rem + 1vw);
     display: inline-block;
     margin-bottom: 0.5rem;
-    color: var(--color-textPrimary);
+    color: var(--color-text);
     text-decoration: none;
     &::before {
       content: "";
@@ -175,7 +175,7 @@ const OffsetProjectCardContentWrapper = styled.div`
       font-size: calc(1rem + 1vw);
       display: inline-block;
       margin-bottom: 0.5rem;
-      color: var(--color-textPrimary);
+      color: var(--color-text);
     }
     small,
     time {

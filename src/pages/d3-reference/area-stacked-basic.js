@@ -4,6 +4,8 @@ import styled from "styled-components"
 import AreaStackedBasic from "../../components/D3React/AreaStackedBasic"
 import DataToggleButton from "../../components/DataToggleButton"
 
+import { Button } from "../../components/Button"
+
 // each year has values that we want to stack on top of each other
 // the d3 stack function stacks all of our values together so we can
 // create sequences we can use for every section in a stack
@@ -86,9 +88,13 @@ export default function AreaStackedBasicPage() {
 
       <Actions>
         <ButtonWrapper>
-          <DataToggleButton onClick={() => setData(onAddDataClick)}>
+          <Button
+            variant="primary"
+            size="medium"
+            onClick={() => setData(onAddDataClick)}
+          >
             Add data
-          </DataToggleButton>
+          </Button>
         </ButtonWrapper>
         <FieldsWrapper>
           {allKeys.map(key => (
