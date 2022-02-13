@@ -21,7 +21,7 @@ const themeMap = {
 
 const PageHero = ({ heading, subheading, cmsData, hasEmoji, ...props }) => {
   const [theme, setTheme] = useState("primary")
-
+  console.log("theme: ", theme)
   return (
     <HeroWrapper>
       {hasEmoji ? (
@@ -31,6 +31,29 @@ const PageHero = ({ heading, subheading, cmsData, hasEmoji, ...props }) => {
       ) : (
         <PageTitle>{heading}</PageTitle>
       )}
+      <div style={{ display: "flex" }}>
+        <Button
+          variant="invisible"
+          size="large"
+          onClick={() => setTheme("creepy")}
+        >
+          Spooky
+        </Button>
+        <Button
+          variant="invisible"
+          size="large"
+          onClick={() => setTheme("space")}
+        >
+          Space
+        </Button>
+        <Button
+          variant="invisible"
+          size="large"
+          onClick={() => setTheme("primary")}
+        >
+          Normal
+        </Button>
+      </div>
 
       {!cmsData && (
         <PageHeroCopyWrapper>
