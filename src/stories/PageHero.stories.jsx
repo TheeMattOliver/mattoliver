@@ -10,7 +10,12 @@ export default {
     Story => {
       // Since portal roots are registered globally, we need this line so that each storybook
       // story works on its own.
-      return Story()
+      return (
+        <ThemeProvider>
+          <GlobalStyles />
+          {Story()}
+        </ThemeProvider>
+      )
     },
   ],
   argTypes: {
@@ -34,12 +39,7 @@ export default {
 }
 
 export const composedPageHero = args => {
-  return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <PageHero {...args} />
-    </ThemeProvider>
-  )
+  return <PageHero {...args} />
 }
 
 composedPageHero.args = {

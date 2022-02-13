@@ -14,12 +14,12 @@ const Select = ({ label, value, onChange, children }) => {
         {children}
       </NativeSelect>
 
-      <PresentationalBit>
+      <Presentational>
         {displayedValue}
         <IconWrapper style={{ "--size": 24 + "px" }}>
-          <Icon id="chevronDown" strokeWidth={1} size={24 + "px"} />
+          <Icon id="chevronDown" strokeWidth={1} size={32 + "px"} />
         </IconWrapper>
-      </PresentationalBit>
+      </Presentational>
     </Wrapper>
   )
 }
@@ -40,20 +40,23 @@ const NativeSelect = styled.select`
   width: 100%;
   height: 100%;
   opacity: 0;
+  cursor: pointer;
+  /* Allow the select to span the full height in Safari */
+  -webkit-appearance: none;
 `
 
-const PresentationalBit = styled.div`
+const Presentational = styled.div`
   color: var(--color-textWhite);
   background-color: var(--color-backgroundOverlayDark);
   border: 1px solid var(--color-textPrimary);
   font-size: ${16 / 16}rem;
-  height: 50px;
+  height: 38px;
   padding: 16px 16px;
   padding-right: 52px;
   transition: all 0.2s ease 0s;
-  cursor: pointer;
   border-radius: 5px;
-
+  display: flex;
+  align-items: center;
   /* we need to set the focus ring bc we set the opacity to 0, so use the adjacent sibling combinator; 
   "if native select is focused then the current element (ampersand = placeholder for "current thing") 
   should receive these styles " 
@@ -66,6 +69,7 @@ const PresentationalBit = styled.div`
     color: var(--color-textBlack);
     background-color: var(--color-gray100);
     border-color: var(--color-borderPrimary);
+    cursor: pointer;
   }
 `
 const IconWrapper = styled.div`
@@ -75,7 +79,7 @@ const IconWrapper = styled.div`
   right: 10px;
   margin: auto;
   width: var(--size);
-  height: var(--size);
+  height: 22px;
   /* to avoid having to use z-index, use this to ignore clicks on the caret to be able to use it*/
   pointer-events: none;
 `

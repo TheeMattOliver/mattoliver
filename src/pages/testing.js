@@ -6,6 +6,8 @@ import SEO from "../components/SEO"
 import MainLayout from "../components/MainLayout"
 
 import BrightTitle from "../components/BrightTitle"
+import Select from "../components/Select"
+import { ChevronDown } from "../components/Icon/ChevronDown"
 
 export default function TestingPage() {
   return (
@@ -15,6 +17,11 @@ export default function TestingPage() {
         <PageWrapper>
           <HugeP>hello world</HugeP>
           <BrightTitle>Big title</BrightTitle>
+          <Select>
+            <option>Test 1</option>
+            <option>Test 2</option>
+          </Select>
+          <ChevronDown color="#000" strokeWidth={2} width={24} />
         </PageWrapper>
       </MainLayout>
     </>

@@ -9,20 +9,25 @@ const SIZES = {
     "--fontSize": FONT_SIZES[0],
     "--lineHeight": 24 / 16 + "rem",
     "--padding": "4px 12px",
+    "--fontWeight": FONT_WEIGHTS.normal,
   },
   medium: {
     "--borderRadius": 5 + "px",
     "--fontSize": 18 / 16 + "rem",
     "--padding": "0px 16px",
-    "--height": "50px",
-    "--lineHeight": 38 / 16 + "rem",
-    "--minWidth": 184 + "px",
+    "--height": "42px",
+    "--lineHeight": 24 / 16 + "rem",
+    "--minWidth": 110 + "px",
     "--fontWeight": FONT_WEIGHTS.normal,
   },
   large: {
     "--borderRadius": 8 + "px",
     "--fontSize": 1.3125 + "rem",
     "--padding": "16px 32px",
+    "--height": "50px",
+    "--lineHeight": 38 / 16 + "rem",
+    "--minWidth": 184 + "px",
+    "--fontWeight": FONT_WEIGHTS.normal,
   },
 }
 
