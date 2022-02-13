@@ -25,7 +25,7 @@ const TitleWrapper = styled.div`
   }
 `
 export const HeroTitleText = styled.h2`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   font-weight: var(--font-weight-bold);
   font-size: clamp(2.625rem, 3.3vw + 1.25rem, 3.5rem);
   width: clamp(500px, 65%, 800px);

@@ -74,7 +74,7 @@ const FooterLeft = styled.div`
   display: flex;
 `
 const FooterCredit = styled.p`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
 `
 const FooterLink = styled.a`
   color: var(--color-textSecondary);

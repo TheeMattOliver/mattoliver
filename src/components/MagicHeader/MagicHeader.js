@@ -153,7 +153,7 @@ const NavLink = styled(Link)`
     height: 1px;
     bottom: -0.43rem;
     left: 0;
-    background-color: var(--color-textPrimary);
+    background-color: var(--color-text);
     transform: scaleX(0);
     transform-origin: top left;
     transition: transform 0.3s ease;
@@ -180,7 +180,7 @@ const NavLink = styled(Link)`
 const NavWrapper = styled.header`
   a,
   div {
-    color: var(--color-textPrimary);
+    color: var(--color-text);
   }
   display: flex;
   background: var(--color-background);

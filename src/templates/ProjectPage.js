@@ -228,7 +228,7 @@ const Wrapper = styled.div`
   gap: 16px;
   margin: 0 auto;
   isolation: isolate;
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   @media ${QUERIES.lgAndUp} {
     grid-template-areas:
       "header header"
@@ -280,7 +280,7 @@ const PageTitleBackground = styled.div`
 `
 
 const PageTitle = styled.h1`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   font-weight: ${FONT_WEIGHTS.ultrabold};
   font-size: clamp(2.2rem, 3.3vw + 1.25rem, 3.5rem);
 `
@@ -340,7 +340,7 @@ const LedeWrapper = styled.div`
   flex-direction: column;
 `
 const LedeText = styled.p`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   line-height: 1.5rem;
@@ -418,7 +418,7 @@ const SectionCopyWrapper = styled.div`
   line-height: 1.5rem;
   font-weight: ${FONT_WEIGHTS.light};
   p {
-    color: var(--color-textPrimary);
+    color: var(--color-text);
     margin-top: 0.75rem;
     line-height: 1.25rem;
     padding: 0 1rem;
@@ -528,7 +528,7 @@ const SectionCopyWrapper = styled.div`
 `
 
 const SectionCopyGraf = styled.p`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   margin-top: 0.75rem;
   line-height: 1.25rem;
   padding: 0 1rem;

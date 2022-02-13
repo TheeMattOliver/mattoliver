@@ -27,8 +27,8 @@ const PrimaryHeroBtnLink = styled(Link)`
   flex-shrink: 0;
   margin: 0px;
   color: var(--color-textWhite);
-  background-color: var(--color-textPrimary);
-  border: 1px solid var(--color-textPrimary);
+  background-color: var(--color-text);
+  border: 1px solid var(--color-text);
   transition: all 0.2s ease 0s;
   user-select: none;
   cursor: pointer;

@@ -1,8 +1,4 @@
 export const COLORS = {
-  textPrimary: {
-    light: "hsl(210deg, 12%, 16%)", // dark grey #24292E
-    dark: "hsl(210deg, 17%, 82%)", // light grey #C9D1D9
-  },
   text: {
     light: "hsl(210deg, 12%, 16%)", // dark grey #24292E
     dark: "hsl(210deg, 17%, 82%)", // light grey #C9D1D9
@@ -16,7 +12,7 @@ export const COLORS = {
     dark: "hsl(100, 100%, 100%)", // white
   },
   textSecondary: {
-    light: "hsl(212deg, 9%, 38%)", // gry #586069
+    light: "hsl(212deg, 9%, 38%)", // grey #586069
     dark: "hsl(212deg, 9%, 58%)", // light grey #8B949E
   },
   textTertiary: {
@@ -27,7 +23,7 @@ export const COLORS = {
     light: "hsl(212deg, 97%, 43%)", // blue #0366D6
     dark: "hsl(212deg, 100%, 67%)", // light blue #58A6FF
   },
-  background: {
+  backgroundDefault: {
     light: "hsl(0deg, 0%, 100%)", // white
     dark: "hsl(216deg, 28%, 7%)", // near-black #0D1117
   },

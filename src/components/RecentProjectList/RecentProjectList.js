@@ -81,7 +81,7 @@ const Wrapper = styled.div`
 `
 
 const SectionTitle = styled.h3`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   padding: 0;
   font-size: clamp(1.5rem, 2.25vw + 0.5rem, 2.5rem);
   @media ${QUERIES.lgAndUp} {
@@ -142,7 +142,7 @@ const ProjectCardFooter = styled.div`
     font-size: 1rem;
     display: inline-block;
     margin-bottom: 0.5rem;
-    color: var(--color-textPrimary);
+    color: var(--color-text);
   }
   p {
     color: var(--color-textTertiary);
@@ -222,7 +222,7 @@ const NavBtnWrapper = styled.div`
   width: 100%;
   justify-content: flex-end;
   padding: 2rem 1rem;
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   @media ${QUERIES.smAndUp} {
     padding: 2rem 2rem;
   }
@@ -240,7 +240,7 @@ const ProjectNavigationButton = styled(Link)`
     height: 1px;
     bottom: -0.43rem;
     left: 0;
-    background-color: var(--color-textPrimary);
+    background-color: var(--color-text);
     transform: scaleX(0);
     transform-origin: top left;
     transition: transform 0.3s ease;

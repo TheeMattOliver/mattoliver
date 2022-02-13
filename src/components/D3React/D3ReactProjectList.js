@@ -96,9 +96,9 @@ const ProjectCardContentInfo = styled.div`
   padding: 1rem 1rem 4.5rem 1rem;
   p {
     margin-bottom: 32px;
-    color: var(--color-textPrimary);
+    color: var(--color-text);
   }
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   font-weight: ${FONT_WEIGHTS.semibold};
   background: var(--color-hiddenBackgroundOverlay);
   transition: opacity 0.6s ease;

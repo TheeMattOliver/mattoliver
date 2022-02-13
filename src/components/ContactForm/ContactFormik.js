@@ -285,7 +285,7 @@ const FormWrapper = styled.div`
     /* text-lg font-medium text-gray-900 */
     font-size: 1.125rem;
     line-height: 1.75rem;
-    color: var(--color-textPrimary);
+    color: var(--color-text);
   }
   @media ${QUERIES.smAndUp} {
     padding: 2.5rem;
@@ -304,7 +304,7 @@ const StyledForm = styled(Form)`
   input,
   select,
   textarea {
-    color: var(--color-textPrimary);
+    color: var(--color-text);
   }
   @media ${QUERIES.smAndUp} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -317,7 +317,7 @@ const Label = styled.label`
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: ${FONT_WEIGHTS.semibold};
-  color: var(--color-textPrimary);
+  color: var(--color-text);
 `
 
 const InputWrapper = styled.div`

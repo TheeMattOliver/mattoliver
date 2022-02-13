@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `
 
 const SectionTitle = styled.h3`
-  color: var(--color-textPrimary);
+  color: var(--color-text);
   padding: 0 1rem;
   font-weight: medium;
   font-size: clamp(1.5rem, 2.25vw + 0.5rem, 2.5rem);

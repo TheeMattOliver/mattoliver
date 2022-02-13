@@ -2,7 +2,7 @@
   --initial-color-mode: light;
   --color-0: undefined;
   --color-1: undefined;
-  --color-textPrimary: hsl(210deg, 12%, 16%);
+  --color-text: hsl(210deg, 12%, 16%);
   --color-text: hsl(210deg, 12%, 16%);
   --color-textWhite: hsl(0deg, 0%, 96%);
   --color-textBlack: hsl(0deg, 0%, 0%);
@@ -38,7 +38,7 @@
   --initial-color-mode: light;
   --color-0: undefined;
   --color-1: undefined;
-  --color-textPrimary: hsl(210deg, 17%, 82%);
+  --color-text: hsl(210deg, 17%, 82%);
   --color-textWhite: hsl(0deg, 0%, 0%);
   --color-textBlack: hsl(100, 100%, 100%);
   --color-textSecondary: hsl(212deg, 9%, 58%);

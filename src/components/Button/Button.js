@@ -15,7 +15,7 @@ const SIZES = {
     "--borderRadius": 5 + "px",
     "--fontSize": 18 / 16 + "rem",
     "--padding": "0px 16px",
-    "--height": "42px",
+    "--height": "38px",
     "--lineHeight": 24 / 16 + "rem",
     "--minWidth": 110 + "px",
     "--fontWeight": FONT_WEIGHTS.normal,
@@ -31,7 +31,7 @@ const SIZES = {
   },
 }
 
-const Button = ({ variant, size, children }) => {
+const Button = ({ variant, size, children, ...props }) => {
   const styles = SIZES[size]
 
   let Component
@@ -48,7 +48,11 @@ const Button = ({ variant, size, children }) => {
   } else {
     throw new Error(`Unrecognized Button variant: ${variant}`)
   }
-  return <Component style={styles}>{children}</Component>
+  return (
+    <Component style={styles} {...props}>
+      {children}
+    </Component>
+  )
 }
 
 const ButtonBase = styled.button`
@@ -99,10 +103,10 @@ const DefaultButton = styled(ButtonBase)`
 `
 const PrimaryButton = styled(ButtonBase)`
   color: var(--color-textWhite);
-  background-color: var(--color-textPrimary);
-  border: 1px solid var(--color-textPrimary);
+  background-color: var(--color-text);
+  border: 1px solid var(--color-text);
   &:hover {
-    background-color: var(--color-textPrimary);
+    background-color: var(--color-text);
     color: #000;
     background-color: #fff;
     border-color: #000;
@@ -124,9 +128,9 @@ const OutlineButton = styled(ButtonBase)`
   background-color: var(--color-background);
   border: 1px solid var(--color-gray300);
   &:hover {
-    color: var(--color-textPrimary);
+    color: var(--color-text);
     background-color: var(--color-background);
-    border: 1px solid var(--color-textPrimary);
+    border: 1px solid var(--color-text);
   }
 `
 

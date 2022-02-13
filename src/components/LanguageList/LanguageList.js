@@ -24,7 +24,7 @@ const LanguageList = () => {
               style={{
                 color:
                   currentLocale === language
-                    ? `var(--color-textPrimary)`
+                    ? `var(--color-text)`
                     : `var(--color-textSecondary)`,
                 margin: 10,
                 textDecoration: `underline`,

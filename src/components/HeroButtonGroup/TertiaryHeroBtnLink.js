@@ -36,9 +36,9 @@ const TertiaryHeroBtnLink = styled(Link)`
   background-color: var(--color-background);
   border: 1px solid var(--color-gray300);
   &:hover {
-    color: var(--color-textPrimary);
+    color: var(--color-text);
     background-color: var(--color-background);
-    border: 1px solid var(--color-textPrimary);
+    border: 1px solid var(--color-text);
   }
 `
 
