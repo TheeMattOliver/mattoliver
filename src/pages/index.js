@@ -53,6 +53,7 @@ export default function HomePage({ data }) {
 
           {/* HeroButtonGroup */}
           <HeroButtonGroup />
+
           <Spacer axis="vertical" size={80} />
 
           {/* Recent projects */}

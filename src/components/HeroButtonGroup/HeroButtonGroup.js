@@ -1,13 +1,25 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
 import { QUERIES } from "../../constants"
-
-import PrimaryHeroBtnLink from "./PrimaryHeroBtnLink"
-import SecondaryHeroBtnLink from "./SecondaryHeroBtnLink"
-import { Button } from "../Button"
+import Modal from "../Modal"
+import { Button, DogButton } from "../Button"
 
 const HeroButtonGroup = () => {
+  const [showModal, setShowModal] = React.useState(false)
+  const [dogUrl, setDogUrl] = useState("")
+  const getDog = async () => {
+    console.log("hi")
+    const dogResponse = await fetch(`https://dog.ceo/api/breeds/image/random`)
+    const dogData = await dogResponse.json()
+    console.log("dogData: ", dogData)
+    setDogUrl(dogData.message)
+    setShowModal(true)
+  }
+  const clearDogs = () => setDogUrl("")
+
+  useEffect(() => clearDogs(), [])
+
   return (
     <Wrapper>
       <ButtonList>
@@ -21,20 +33,23 @@ const HeroButtonGroup = () => {
           >
             See some projects
           </Button>
-          {/* <PrimaryHeroBtnLink to="/work">View Portfolio</PrimaryHeroBtnLink> */}
         </ButtonContainer>
         <ButtonContainer>
-          <Button
-            variant="outline"
-            size="large"
-            onClick={() => {
-              navigate("/work")
-            }}
-          >
-            See some dogs
-          </Button>
+          <DogButton variant="outline" size="large" onClick={getDog}>
+            Dog, please
+          </DogButton>
         </ButtonContainer>
       </ButtonList>
+      <Modal
+        title="Hi there"
+        isOpen={showModal}
+        handleDismiss={() => setShowModal(false)}
+      >
+        <h2>Here is a dog:</h2>
+        <ImageContainer>
+          {dogUrl.length > 1 && <StyledImage src={dogUrl} alt="a dog" />}
+        </ImageContainer>
+      </Modal>
     </Wrapper>
   )
 }
@@ -65,15 +80,16 @@ const ButtonList = styled.div`
   gap: 16px;
 `
 
-// const ButtonListItem = styled.div`
-//   flex-basis: 100%;
-//   padding: 12px;
-//   min-width: 0px;
-//   gap: 16px;
-//   @media ${QUERIES.smAndUp} {
-//     flex-basis: 50%;
-//   }
-// `;
+const StyledImage = styled.img`
+  max-width: 500px;
+  max-height: 500px;
+`
+
+const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const ButtonContainer = styled.div`
   flex: 1;

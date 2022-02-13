@@ -30,6 +30,7 @@ const Header = siteTitle => {
           <NavLink to="/about">About</NavLink>
           <NavLink to="/work">Work</NavLink>
           <NavLink to="/contact">Contact</NavLink>
+
           <DarkToggleIcon />
         </DesktopNav>
         <MobileActions>

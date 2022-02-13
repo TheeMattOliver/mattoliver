@@ -21,8 +21,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@fontsource/creepster": "^4.5.1",
     "@heroicons/react": "^1.0.5",
-    "@reach/dialog": "^0.15.3",
+    "@reach/dialog": "^0.16.2",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/image-url": "^0.140.22",
     "babel-plugin-styled-components": "^1.12.0",

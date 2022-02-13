@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -8,19 +8,52 @@ import { FancyEmoji } from "../FancyEmoji"
 
 import Spacer from "../Spacer"
 import PortableText from "../PortableText"
+import { Button } from "../Button"
 
 import { QUERIES } from "../../constants"
+import { creepy, space, primary } from "../../theme"
+
+const themeMap = {
+  space: space,
+  primary: primary,
+  creepy: creepy,
+}
 
 const PageHero = ({ heading, subheading, cmsData, hasEmoji, ...props }) => {
+  const [theme, setTheme] = useState("primary")
+  console.log("theme: ", theme)
   return (
     <HeroWrapper>
       {hasEmoji ? (
         <PageTitle>
-          {heading} <FancyEmoji emoji={"👋"} />
+          {heading} <FancyEmoji emoji={themeMap[theme].emoji} />
         </PageTitle>
       ) : (
         <PageTitle>{heading}</PageTitle>
       )}
+      <div style={{ display: "flex" }}>
+        <Button
+          variant="invisible"
+          size="large"
+          onClick={() => setTheme("creepy")}
+        >
+          Spooky
+        </Button>
+        <Button
+          variant="invisible"
+          size="large"
+          onClick={() => setTheme("space")}
+        >
+          Space
+        </Button>
+        <Button
+          variant="invisible"
+          size="large"
+          onClick={() => setTheme("primary")}
+        >
+          Normal
+        </Button>
+      </div>
 
       {!cmsData && (
         <PageHeroCopyWrapper>
