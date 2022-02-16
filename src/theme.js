@@ -35,10 +35,10 @@ export const space = {
       link: "#000",
     },
     header: {
-      fontFamily: `'Western', sans-serif`,
+      fontFamily: `'VT323', mono`,
     },
     default: {
-      fontFamily: `'Playfair Display', serif`,
+      fontFamily: `'VT323', mono`,
     },
   },
   button: {
@@ -55,7 +55,7 @@ export const space = {
   border: "#FF5733",
 }
 
-export const creepy = {
+export const spooky = {
   emoji: "👻",
   backgroundImage:
     "https://i.pinimg.com/originals/37/3f/52/373f52fc14f9871c57c6c554af120e11.png",
@@ -83,4 +83,33 @@ export const creepy = {
     },
   },
   border: "#FF33FC",
+}
+
+export const tufte = {
+  emoji: "🗝️",
+  backgroundImage: "./cow.svg",
+  text: {
+    color: {
+      primary: "#FF5733",
+      link: "#000",
+    },
+    header: {
+      fontFamily: `'et-book', Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;`,
+    },
+    default: {
+      fontFamily: `'et-book', Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;`,
+    },
+  },
+  button: {
+    bg: {
+      default: "#FF5733",
+      hover: "#000",
+    },
+    color: "#fff",
+    shadow: {
+      default: "rgba(0, 0, 0, 0.1)",
+      hover: "rgba(219, 175, 173, 0.4)",
+    },
+  },
+  border: "#FF5733",
 }

@@ -10,6 +10,7 @@ import DarkToggleIcon from "../DarkToggleIcon"
 import MobileMenu from "../MobileMenu"
 import VisuallyHidden from "../VisuallyHidden"
 import { Icon } from "../Icon"
+import { ThemeToggle } from "../ThemeToggle"
 import UnstyledButton from "../UnstyledButton"
 
 import { MoonIcon, SunIcon } from "@heroicons/react/solid"

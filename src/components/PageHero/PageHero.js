@@ -3,30 +3,22 @@ import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import { PageTitle, HeroSubheading, HeroCopyText } from "."
-
+import { useTheme } from "../ThemeProvider"
 import { FancyEmoji } from "../FancyEmoji"
-
 import Spacer from "../Spacer"
 import PortableText from "../PortableText"
 import { Button } from "../Button"
 
 import { QUERIES } from "../../constants"
-import { creepy, space, primary } from "../../theme"
-
-const themeMap = {
-  space: space,
-  primary: primary,
-  creepy: creepy,
-}
 
 const PageHero = ({ heading, subheading, cmsData, hasEmoji, ...props }) => {
-  const [theme, setTheme] = useState("primary")
+  const { theme } = useTheme()
 
   return (
     <HeroWrapper>
       {hasEmoji ? (
         <PageTitle>
-          {heading} <FancyEmoji emoji={themeMap[theme].emoji} />
+          {heading} <FancyEmoji emoji={theme.emoji} />
         </PageTitle>
       ) : (
         <PageTitle>{heading}</PageTitle>

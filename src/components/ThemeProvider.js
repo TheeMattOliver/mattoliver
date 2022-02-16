@@ -7,11 +7,23 @@ import {
   INITIAL_COLOR_MODE_CSS_PROP,
 } from "../constants"
 
+import { space, primary, spooky, tufte } from "../theme"
+
+const themeMap = {
+  space: space,
+  primary: primary,
+  spooky: spooky,
+  tufte: tufte,
+}
+
+const defaultTheme = "primary"
 const defaultColorMode = "light"
 
-export const ThemeContext = React.createContext()
+export const ThemeContext = React.createContext({ setTheme: () => null })
 
 export const ThemeProvider = ({ children, ...props }) => {
+  const [theme, setTheme] = React.useState(props.theme)
+
   const [colorMode, rawSetColorMode] = React.useState(undefined)
 
   React.useEffect(() => {
@@ -47,14 +59,16 @@ export const ThemeProvider = ({ children, ...props }) => {
     }
 
     return {
+      theme,
+      setTheme,
       colorMode,
       setColorMode,
     }
-  }, [colorMode, rawSetColorMode])
+  }, [colorMode, theme, rawSetColorMode])
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <SCThemeProvider theme={contextValue}>{children}</SCThemeProvider>{" "}
+      <SCThemeProvider theme={theme}>{children}</SCThemeProvider>{" "}
     </ThemeContext.Provider>
   )
 }
