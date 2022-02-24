@@ -29,7 +29,7 @@ const DarkToggleIcon = () => {
               className="h-8 w-8 pl-2 pr-2 inline-block rounded-md hover:text-blue-500 transition ease-in-out duration-150"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
-              fill="currentColor"
+              fill="#000000"
             >
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </MoonIcon>

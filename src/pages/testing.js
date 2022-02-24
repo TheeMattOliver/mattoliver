@@ -7,6 +7,7 @@ import MainLayout from "../components/MainLayout"
 
 import BrightTitle from "../components/BrightTitle"
 import Select from "../components/Select"
+import ProjectGrid from "../components/ProjectGrid"
 import { ChevronDown } from "../components/Icon/ChevronDown"
 
 export default function TestingPage() {
@@ -21,6 +22,7 @@ export default function TestingPage() {
             <option>Test 1</option>
             <option>Test 2</option>
           </Select>
+          <ProjectGrid />
           <ChevronDown color="#000" strokeWidth={2} width={24} />
         </PageWrapper>
       </MainLayout>
