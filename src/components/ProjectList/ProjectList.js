@@ -191,7 +191,7 @@ const OffsetProjectCardContentWrapper = styled.div`
     border-radius: 0 0 5px 5px;
     border: solid 1px var(--color-borderPrimary);
     position: absolute;
-    bottom: -48px;
+    bottom: 30px;
   }
 `
 
