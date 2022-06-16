@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { QUERIES, FONT_WEIGHTS } from "../../constants"
 
 const ProjectGrid = ({ data }) => {
+  console.log("map: ", map)
   return (
     <ProjectsWrapper>
       <ProjectsGrid>
