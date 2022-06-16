@@ -54,7 +54,7 @@ export const ThemeProvider = ({ children, ...props }) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <SCThemeProvider theme={contextValue}>{children}</SCThemeProvider>{" "}
+      <SCThemeProvider theme={contextValue}>{children}</SCThemeProvider>
     </ThemeContext.Provider>
   )
 }

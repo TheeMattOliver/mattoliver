@@ -1,90 +1,48 @@
-/* eslint-disable no-unused-vars */
 import React from "react"
 import styled from "styled-components"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { Link } from "gatsby-plugin-react-intl"
+
+// import { Link } from "gatsby-plugin-react-intl"
 import { format } from "date-fns"
 
 import { QUERIES, TRANSITIONS } from "../../constants"
-import Spacer from "../Spacer"
 
-export default function ProjectList({ projects }) {
+const ProjectCard = () => {
   return (
-    <>
-      <GridWrapper>
-        {projects.map(project => {
-          return (
-            <ProjectCardWrapper key={project.id}>
-              <Link to={`/work/${project.slug.current}`}>
-                <ProjectCardHeader>
-                  <small>
-                    <time dateTime="">
-                      {format(new Date(project.startedAt), "MMMM yyyy")}
-                    </time>
-                  </small>
-                  <h2>{project.title}</h2>
-                  {` `}
-                  <span></span>
-                  {` `}
-                </ProjectCardHeader>
+    <ProjectCardWrapper>
+      <ProjectCardHeader>
+        <small>
+          <time dateTime="">{format(new Date(), "MMMM yyyy")}</time>
+        </small>
+        <h2>Project title here</h2>
+        {` `}
+        <span></span>
+        {` `}
+      </ProjectCardHeader>
 
-                <ProjectImageWrapper>
-                  <ProjectMainImage
-                    image={project.previewImage?.asset.gatsbyImageData}
-                    alt={``}
-                  />
-                  <OffsetProjectCardContentWrapper>
-                    <OffsetProjectCardHeader>
-                      <small>
-                        <time dateTime="">
-                          {format(new Date(project.startedAt), "MMMM yyyy")}
-                        </time>
-                        {` `}
-                        <span>-</span>
-                        {` `}
-                        <time dateTime="">
-                          {format(new Date(project.endedAt), "MMMM yyyy")}
-                        </time>
-                      </small>
-                      <h2>{project.title}</h2>
-                    </OffsetProjectCardHeader>
+      <ProjectImageWrapper>
+        <ProjectMainImage src={"https://loremflickr.com/640/360"} alt={``} />
+        <OffsetProjectCardContentWrapper>
+          <OffsetProjectCardHeader>
+            <small>
+              <time dateTime="">{format(new Date(), "MMMM yyyy")}</time>
+              {` `}
+              <span>-</span>
+              {` `}
+              <time dateTime="">{format(new Date(), "MMMM yyyy")}</time>
+            </small>
+            <h2>Project title here</h2>
+          </OffsetProjectCardHeader>
 
-                    <p>{project.excerpt.text[0]._rawChildren[0].text}</p>
-                  </OffsetProjectCardContentWrapper>
-                </ProjectImageWrapper>
+          <p>Excerpt text goes here</p>
+        </OffsetProjectCardContentWrapper>
+      </ProjectImageWrapper>
 
-                <ProjectCardContent>
-                  <p>{project.excerpt.text[0]._rawChildren[0].text}</p>
-                </ProjectCardContent>
-
-                <LargeMonitorSpacer axis="vertical" size={100} />
-              </Link>
-            </ProjectCardWrapper>
-          )
-        })}
-      </GridWrapper>
-    </>
+      <ProjectCardContent>
+        <p>Excerpt text goes here</p>
+      </ProjectCardContent>
+    </ProjectCardWrapper>
   )
 }
-
-const GridWrapper = styled.div`
-  --min-column-width: min(440px, 100%);
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(var(--min-column-width), 1fr)
-  );
-  gap: 2rem;
-  padding: 16px;
-  @media ${QUERIES.lgAndUp} {
-    max-width: 80rem;
-  }
-  @media ${QUERIES.xlAndUp} {
-    max-width: none;
-    gap: 2rem;
-    margin-right: 32px;
-  }
-`
 
 const ProjectCardWrapper = styled.div`
   position: relative;
@@ -95,14 +53,14 @@ const ProjectCardWrapper = styled.div`
   flex: 1;
 
   @media ${QUERIES.smAndUp} {
-    margin: 64px 52px 64px 32px;
+    /* margin: 64px 52px 64px 32px; */
     background: var(--color-backgroundOverlay);
   }
   @media ${QUERIES.lgAndUp} {
-    margin: 64px 52px 64px 32px;
+    /* margin: 64px 52px 64px 32px; */
   }
   @media ${QUERIES.xlAndUp} {
-    margin: 1rem;
+    /* margin: 1rem; */
   }
 `
 
@@ -201,13 +159,6 @@ const OffsetProjectCardHeader = styled.div`
   gap: 4px;
 `
 
-const LargeMonitorSpacer = styled(Spacer)`
-  display: none;
-  @media ${QUERIES.xlAndUp} {
-    display: block;
-  }
-`
-
 /* separate trigger from effect to avoid doom flicker
 listen for hovers on parent, apply transformation to child */
 const ProjectImageWrapper = styled.div`
@@ -218,7 +169,7 @@ const ProjectImageWrapper = styled.div`
   border-radius: 5px;
   transition: opacity 0.6s ease;
 `
-const ProjectMainImage = styled(GatsbyImage)`
+const ProjectMainImage = styled.img`
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: left top;
@@ -243,3 +194,4 @@ const ProjectMainImage = styled(GatsbyImage)`
     width: 100%;
   }
 `
+export default ProjectCard

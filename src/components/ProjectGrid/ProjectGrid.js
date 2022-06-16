@@ -4,85 +4,10 @@ import styled from "styled-components"
 import { QUERIES, FONT_WEIGHTS } from "../../constants"
 
 const ProjectGrid = ({ data }) => {
-  const items = [
-    {
-      id: "1",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "2",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "3",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "4",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "5",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "6",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "7",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "8",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "9",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "10",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "11",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-    {
-      id: "12",
-      href: "https://www.google.com",
-      title: "This title is a link",
-      imgUrl: "https://loremflickr.com/640/360",
-    },
-  ]
-
   return (
     <ProjectsWrapper>
       <ProjectsGrid>
-        {items.map(item => {
+        {data.map(item => {
           return (
             <ProjectCard key={item.id}>
               <a href={`/${item.href}`}>

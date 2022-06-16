@@ -1,3 +1,4 @@
+import React from "react"
 import "./styles.css"
 import styled, { createGlobalStyle } from "styled-components"
 
@@ -6,7 +7,7 @@ import { addons } from "@storybook/addons"
 import { addDecorator } from "@storybook/react"
 import { withPerformance } from "storybook-addon-performance"
 
-import { ThemeProvider } from "../src/components/ThemeProvider"
+import { ThemeProvider, ThemeContext } from "../src/components/ThemeProvider"
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -79,6 +80,7 @@ export const globalTypes = {
 }
 const withThemeProvider = (Story, context) => {
   console.log("context.globals.colorMode: ", context.globals.colorMode)
+
   if (context.globals.colorMode === "all") {
     return (
       <Wrapper>
