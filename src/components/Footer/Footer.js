@@ -22,20 +22,6 @@ const Footer = () => {
         </FooterLink>
       </FooterLeft>
 
-      <FooterLink href="mailto:mattoliver.mattoliver@gmail.com">
-        <VisuallyHidden>Email</VisuallyHidden>
-        <Icon
-          id={`email`}
-          size={24}
-          width={24}
-          strokeWidth={2}
-          aria-hidden="true"
-        />
-        {/* <svg className={`hover:text-blue-900 transition ease-in-out duration-150 h-10 w-10`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" stroke="currentColor">
-					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-				</svg> */}
-      </FooterLink>
-
       <FooterLink
         href="https://github.com/theemattoliver"
         rel="noopener noreferrer"
